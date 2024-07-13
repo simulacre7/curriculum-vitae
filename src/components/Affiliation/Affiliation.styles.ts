@@ -126,4 +126,6 @@ export const BadgeStyle = (theme: Theme) => css`
 export const BadgeListStyle = css`
   display: flex;
   gap: 0.2rem;
+  width: 100%;
+  flex-wrap: wrap;
 `;
