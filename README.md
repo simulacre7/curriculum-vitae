@@ -1,4 +1,19 @@
-# curriculum-vitae
+# Curriculum Vitae - Kihwan Kim
+https://kihwan.kim
+
+# Stack
+- React
+- Emotion
+- Vite
+- pnpm
+- ESlint
+- Prettier
+
+# Getting started
+```bash
+pnpm install
+pnpm dev
+```
 
 # License
 MIT License.
