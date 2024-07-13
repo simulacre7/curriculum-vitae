@@ -1,6 +1,7 @@
 export type CurriculumVitaeTheme = {
   colorScheme: 'light' | 'dark';
   colors: {
+    white: string;
     black: string;
     brightGreen: string;
     deepGreen: string;
@@ -12,6 +13,7 @@ export type CurriculumVitaeTheme = {
 export const lightTheme: CurriculumVitaeTheme = {
   colorScheme: 'light',
   colors: {
+    white: '#ffffff',
     black: '#000000',
     brightGreen: '#9dddc6',
     deepGreen: '#008080',
@@ -24,6 +26,7 @@ export const lightTheme: CurriculumVitaeTheme = {
 export const darkTheme: CurriculumVitaeTheme = {
   colorScheme: 'dark',
   colors: {
+    white: '#ffffff',
     black: '#000000',
     brightGreen: '#9dddc6',
     deepGreen: '#008080',
