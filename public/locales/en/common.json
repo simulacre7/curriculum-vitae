@@ -38,7 +38,8 @@
           "points": [
             "Divided inadequately modularized existing code into appropriate modules and improved interfaces",
             "Developed various new components"
-          ]
+          ],
+          "badges": ["TypeScript", "React", "Sass", "Material-UI", "jQuery"]
         },
         {
           "title": "AutoML Platform",
