@@ -1,7 +1,6 @@
-import { css } from '@emotion/react';
-import { BreakPoint, orBelow } from '../../styles/media';
-import { Theme } from '@emotion/react';
-import { hexToRGBA } from '../../styles/utils';
+import { css, Theme } from '@emotion/react';
+
+import { BreakPoint, orBelow, hexToRGBA } from '../../styles';
 
 export const containerStyle = () => css`
   padding: 1rem 0;

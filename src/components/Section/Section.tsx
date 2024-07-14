@@ -2,6 +2,7 @@ import * as styles from './Section.styles';
 
 interface SectionProps {
   title: string;
+
   children: React.ReactNode;
   isShortGap?: boolean;
 }

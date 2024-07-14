@@ -1,5 +1,4 @@
-import { css } from '@emotion/react';
-import { Theme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
 
 export const titleStyle = (theme: Theme) => css`
   margin-bottom: 0.5rem;

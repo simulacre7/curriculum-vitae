@@ -1,10 +1,10 @@
-import { Affiliation } from './components/Affiliation';
-import { Nameplate } from './components/NamePlate';
-import { Publication } from './components/Publication';
-import { Section } from './components/Section';
-import * as styles from './Context.styles';
+import * as styles from './CurriculumVitae.styles';
+import { Nameplate } from '..//NamePlate';
+import { Affiliation } from '../Affiliation';
+import { Publication } from '../Publication';
+import { Section } from '../Section';
 
-export function Content() {
+export function CurriculumVitae() {
   return (
     <div css={styles.contentStyle}>
       <Nameplate name="김기환" />

@@ -1,9 +1,10 @@
+import { useState } from 'react';
+
 import { Global, ThemeProvider } from '@emotion/react';
-import { defaultTheme } from './styles/theme';
 
 import * as styles from './App.styles';
-import { useState } from 'react';
-import { Content } from './Content';
+import { CurriculumVitae } from './components';
+import { defaultTheme } from './styles';
 
 function App() {
   //eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -12,7 +13,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={styles.globalStyles} />
-      <Content />
+      <CurriculumVitae />
     </ThemeProvider>
   );
 }

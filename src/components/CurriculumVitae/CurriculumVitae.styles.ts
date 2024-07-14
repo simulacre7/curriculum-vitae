@@ -1,5 +1,6 @@
 import { Theme, css } from '@emotion/react';
-import { BreakPoint, orBelow } from './styles/media';
+
+import { BreakPoint, orBelow } from '../../styles';
 
 export const contentStyle = css`
   margin-bottom: 6rem;

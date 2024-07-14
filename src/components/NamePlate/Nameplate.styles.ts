@@ -1,6 +1,6 @@
-import { css } from '@emotion/react';
-import { BreakPoint, orBelow } from '../../styles/media';
-import { Theme } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
+
+import { BreakPoint, orBelow } from '../../styles';
 
 export const nameStyle = (theme: Theme) => css`
   display: flex;
