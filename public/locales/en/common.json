@@ -49,7 +49,8 @@
             "Researched and developed explainable AI — XAI (eXplainable Artificial Intelligence) technologies",
             "Studied interfaces for effective interaction between AutoML engines and model developers",
             "Developed a dashboard for the development, management, and operation of machine learning models"
-          ]
+          ],
+          "badges": ["TypeScript", "React", "Sass", "Material-UI", "Python"]
         }
       ]
     }
@@ -76,7 +77,8 @@
             "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
             "Proposed a metric to evaluate the value of user logs from an AI perspective",
             "Implemented a web-based movie recommendation system for experimental environments"
-          ]
+          ],
+          "badges": ["Python", "Flask", "Surprise", "jQuery"]
         },
         {
           "title": "Modeling Web User Behavior",
@@ -86,7 +88,8 @@
             "Estimated user reward functions from behavior logs through Inverse Reinforcement Learning",
             "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
             "Utilized data analysis tools such as Tableau and implemented a history education tool based on Wikipedia documents"
-          ]
+          ],
+          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
         }
       ]
     }
