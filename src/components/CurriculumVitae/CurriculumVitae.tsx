@@ -1,38 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
 import * as styles from './CurriculumVitae.styles';
-import { Affiliation } from '../Affiliation';
+import { Affiliation, Project, Education } from '../Affiliation';
 import { LanguageSwitcher } from '../LanguageSwitcher';
 import { Nameplate } from '../NamePlate';
-import { Publication as PublicationComponent } from '../Publication';
+import { Publication, PublicationProps } from '../Publication';
 import { Section } from '../Section';
-
-interface Project {
-  title: string;
-  period: string;
-  description: string;
-  points: string[];
-  badges: string[];
-}
-
-interface EducationDegree {
-  degree: string;
-  period: string;
-}
-
-interface Education {
-  institution: string;
-  degrees: EducationDegree[];
-  projects: Project[];
-}
-
-interface Publication {
-  title: string;
-  uri: string;
-  authors: string[];
-  conference: string;
-  points: string[];
-}
 
 export function CurriculumVitae() {
   const { t } = useTranslation(['common']);
@@ -46,7 +19,7 @@ export function CurriculumVitae() {
   const education = t('education', { returnObjects: true }) as Education[];
   const publications = t('publications', {
     returnObjects: true,
-  }) as Publication[];
+  }) as PublicationProps[];
 
   return (
     <div css={styles.contentStyle}>
@@ -75,18 +48,7 @@ export function CurriculumVitae() {
               period: `2022-${t('present')}`,
             },
           ]}
-          projectList={ridiProjects.map((project) => ({
-            ...project,
-            badges: [
-              'Next.js',
-              'TypeScript',
-              'React',
-              'Emotion',
-              'Jest',
-              'PHP',
-              'Twig',
-            ],
-          }))}
+          projectList={ridiProjects}
         />
         <Affiliation
           name={t('company.tmax.name.1')}
@@ -102,13 +64,7 @@ export function CurriculumVitae() {
               <p css={styles.tmaxNameExtraStyle}>{t('company.tmax.name.3')}</p>
             </div>
           }
-          projectList={tmaxProjects.map((project, index) => ({
-            ...project,
-            badges:
-              index === 0
-                ? ['TypeScript', 'React', 'Sass', 'Material-UI', 'jQuery']
-                : ['TypeScript', 'React', 'Sass', 'Material-UI', 'Python'],
-          }))}
+          projectList={tmaxProjects}
         />
       </Section>
       <Section title="Education">
@@ -120,19 +76,13 @@ export function CurriculumVitae() {
               position: degree.degree,
               period: degree.period,
             }))}
-            projectList={edu.projects.map((project, index) => ({
-              ...project,
-              badges:
-                index === 0
-                  ? ['Python', 'Flask', 'Surprise', 'jQuery']
-                  : ['Python', 'TensorFlow', 'Keras', 'scikit-learn'],
-            }))}
+            projectList={edu.projects}
           />
         ))}
       </Section>
       <Section title="Publications" isShortGap>
         {publications.map((pub) => (
-          <PublicationComponent
+          <Publication
             key={pub.title}
             title={pub.title}
             uri={pub.uri}

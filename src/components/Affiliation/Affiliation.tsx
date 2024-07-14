@@ -13,6 +13,17 @@ interface ProjectProps {
   projectList: Project[];
 }
 
+interface EducationDegree {
+  degree: string;
+  period: string;
+}
+
+export interface Education {
+  institution: string;
+  degrees: EducationDegree[];
+  projects: Project[];
+}
+
 interface AffiliationProps {
   name: string;
   info: {
