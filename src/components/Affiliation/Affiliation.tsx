@@ -1,7 +1,7 @@
 // Experience 및 Education 섹션에 활용되는 Affiliation 컴포넌트
 import * as styles from './Affiliation.styles';
 
-type Project = {
+export type Project = {
   title: string;
   period: string;
   description: string;

@@ -1,0 +1,159 @@
+{
+  "name": "Kh.Kim",
+  "summary": "Hello, I am Kihwan Kim. Currently, I am a Frontend Engineer at unicorn startup RIDI, boasting over 6 years of industry and academic experience. For the last 2 years, my focus has been exclusively on front-end development. Before that, I dedicated 4 years to researching two key topics: visual analytics for explaining machine learning models and AI-driven user interfaces.",
+  "present": "Present",
+  "company": {
+    "ridi": {
+      "name": "RIDI Corporation",
+      "position": "Frontend Engineer",
+      "projects": [
+        {
+          "title": "RIDI website",
+          "period": "2022-Present",
+          "description": "I develop the frontend of a content platform that provides webtoons, web novels, comics, and e-books.",
+          "points": [
+            "Implementing new features to meet various business requirements",
+            "Maintaining existing systems: refactoring, writing test codes"
+          ]
+        }
+      ]
+    },
+    "tmax": {
+      "name": ["Tmax Enterprise", "Tmax BI", "Tmax Data"],
+      "position": "Researcher",
+      "projects": [
+        {
+          "title": "React Porting of Legacy System",
+          "period": "2021.01–2022.04",
+          "description": "Converted products implemented with a jQuery-based internal frontend library — TOP (Tmax One Platform) to React.",
+          "points": [
+            "Divided inadequately modularized existing code into appropriate modules and improved interfaces",
+            "Developed various new components"
+          ]
+        },
+        {
+          "title": "AutoML Platform",
+          "period": "2020.02–2022.04",
+          "description": "Developed a platform that automates repetitive and tedious machine learning model development tasks.",
+          "points": [
+            "Implemented a codeless development studio environment for non-experts",
+            "Researched and developed explainable AI — XAI (eXplainable Artificial Intelligence) technologies",
+            "Studied interfaces for effective interaction between AutoML engines and model developers",
+            "Developed a dashboard for the development, management, and operation of machine learning models"
+          ]
+        }
+      ]
+    }
+  },
+  "education": [
+    {
+      "institution": "Ulsan National Institute of Science and Technology (UNIST)",
+      "degrees": [
+        {
+          "degree": "Master of Science in Computer Science",
+          "period": "2018.03–2020.02"
+        },
+        {
+          "degree": "Bachelor of Science in Technology Management (Double Major in Computer Science)",
+          "period": "2013.03–2018.02"
+        }
+      ],
+      "projects": [
+        {
+          "title": "AI-centered UI/UX Design",
+          "period": "2019.01–2020.02",
+          "description": "Conducted research to answer the question, 'How should the UI be designed to better collect user preference data?'",
+          "points": [
+            "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
+            "Proposed a metric to evaluate the value of user logs from an AI perspective",
+            "Implemented a web-based movie recommendation system for experimental environments"
+          ]
+        },
+        {
+          "title": "Modeling Web User Behavior",
+          "period": "2019.02–2020.02",
+          "description": "Conducted research to understand and model user behavior patterns in web environments.",
+          "points": [
+            "Estimated user reward functions from behavior logs through Inverse Reinforcement Learning",
+            "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
+            "Utilized data analysis tools such as Tableau and implemented a history education tool based on Wikipedia documents"
+          ]
+        }
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
+      "uri": "https://arxiv.org/abs/2108.00151",
+      "authors": ["Kihwan Kim"],
+      "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
+      "points": [
+        "Investigated how to deliver random items to capture user preferences in recommendation systems",
+        "Implemented a web-based movie recommendation system used as an experimental environment",
+        "Proposed a metric to evaluate the value of user logs from an AI perspective",
+        "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
+        "Recruited 94 participants from Amazon MTurk",
+        "Collected real usage log data and survey responses by having participants use a Netflix-like experimental environment"
+      ]
+    },
+    {
+      "title": "ST-GRAT: A Novel Spatio-temporal Graph Attention Networks for Accurately Forecasting Dynamically Changing Road Speed",
+      "uri": "https://dl.acm.org/doi/10.1145/3340531.3411940",
+      "authors": [
+        "Cheonbok Park",
+        "Chunggi Lee",
+        "Hyojin Bahng",
+        "Yunwon Tae",
+        "Kihwan Kim",
+        "Seungmin Jin",
+        "Sungahn Ko",
+        "Jaegul Choo"
+      ],
+      "conference": "ACM International Conference on Information and Knowledge Management (CIKM), 2020",
+      "points": [
+        "Preprocessed vehicle detection sensor data installed on the road surface by Korea Expressway Corporation",
+        "Categorized cases where attention worked effectively by patterns"
+      ]
+    },
+    {
+      "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
+      "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
+      "authors": ["Kihwan Kim", "Sanghoon Kim", "Chunggi Lee", "Sungahn Ko"],
+      "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
+      "points": [
+        "Proposed a system to detect addiction disorders from smartphone usage logs through Inverse Reinforcement Learning"
+      ]
+    },
+    {
+      "title": "An Empirical Study on the Relationship Between the Number of Coordinated Views and Visual Analysis",
+      "uri": "https://arxiv.org/abs/2108.00151",
+      "authors": [
+        "Juyoung Oh",
+        "Chunggi Lee",
+        "Hwiyeon Kim",
+        "Kihwan Kim",
+        "Osang Kwon",
+        "Eric D. Ragan",
+        "Bum Chul Kwon",
+        "Sungahn Ko"
+      ],
+      "conference": "A Computing Research Repository (CoRR), 2204.09524, 2018",
+      "points": [
+        "Conducted experiments to see how the number of visualization charts affects data visual analysis",
+        "Had 44 participants use a visual analysis tool and solve data analysis tasks",
+        "Categorized users' analysis patterns through think-aloud protocol, recorded screens, and log data",
+        "Observed a positive correlation between the number of charts and task scores"
+      ]
+    },
+    {
+      "title": "Visualization-based Deep Learning Analysis Techniques",
+      "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
+      "authors": ["Jaesung Lee", "Kihwan Kim", "Chunggi Lee", "Sungahn Ko"],
+      "conference": "Noise & Vibration, Vol.27 No.6, 2017.11",
+      "points": [
+        "Summarized and investigated visualization techniques for interpreting deep learning models"
+      ]
+    }
+  ]
+}

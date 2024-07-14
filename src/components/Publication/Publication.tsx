@@ -1,9 +1,10 @@
 import React from 'react';
+
 import * as styles from './Publication.styles';
 
 const MY_NAME_LIST = ['Kihwan Kim', '김기환'];
 
-interface PublicationProps {
+export interface PublicationProps {
   title: string;
   uri: string;
   authors: string[];
