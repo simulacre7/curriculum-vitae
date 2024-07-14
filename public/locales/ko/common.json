@@ -14,6 +14,15 @@
           "points": [
             "비즈니스의 다양한 요구사항에 대응하는 신규 기능 구현",
             "기존 시스템의 유지 보수: 리팩토링, 테스트 코드 작성"
+          ],
+          "badges": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Emotion",
+            "Jest",
+            "PHP",
+            "Twig"
           ]
         }
       ]
@@ -29,7 +38,8 @@
           "points": [
             "모듈화가 미흡한 기존 코드를 용도에 맞게 분할하고 인터페이스를 개선",
             "각종 컴포넌트 신규 개발"
-          ]
+          ],
+          "badges": ["TypeScript", "React", "Sass", "Material-UI", "jQuery"]
         },
         {
           "title": "AutoML 플랫폼",
@@ -40,7 +50,8 @@
             "설명 가능한 AI — XAI(eXplainable Artificial Intelligence) 기술 연구 및 개발",
             "AutoML 엔진이 모델 개발자와 효과적으로 interaction 을 할 수 있는 인터페이스를 연구",
             "기계학습 모델의 개발, 관리 및 운영을 위한 대시보드 개발"
-          ]
+          ],
+          "badges": ["TypeScript", "React", "Sass", "Material-UI", "Python"]
         }
       ]
     }
@@ -67,7 +78,8 @@
             "추천시스템의 Explore-Exploit 문제에서 투명성이 데이터의 품질에 미치는 영향을 측정",
             "사용자 로그의 가치를 AI 측면에서 평가하는 metric 제안",
             "실험 환경용 웹 기반 영화 추천 시스템 구현"
-          ]
+          ],
+          "badges": ["Python", "Flask", "Surprise", "jQuery"]
         },
         {
           "title": "웹 사용자 행동 모델링",
@@ -77,14 +89,15 @@
             "역강화학습 — (Inverse Reinforcement Learning) 방법론을 통해, 사용자들의 행동 이력으로 사용자의 보상 함수를 추정",
             "Tableau와 같은 데이터 분석 도구, 위키피디아 문서 기반 역사 교육 도구, 카드 게임과 같은 다양한 웹 환경을 다룸",
             "데이터 분석 도구인 Tableau를 활용하고, 위키피디아 문서를 기반으로 한 역사 교육 도구를 구현"
-          ]
+          ],
+          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
         }
       ]
     }
   ],
   "publications": [
     {
-      "title": "추천 시스템에서 투명한 알고리즘 탐색에 대한 실증적 분석",
+      "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
       "uri": "https://arxiv.org/abs/2108.00151",
       "authors": ["김기환"],
       "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
@@ -98,7 +111,7 @@
       ]
     },
     {
-      "title": "ST-GRAT: 동적으로 변화하는 도로 속도를 정확하게 예측하기 위한 새로운 시공간 그래프 어텐션 네트워크",
+      "title": "ST-GRAT: A Novel Spatio-temporal Graph Attention Networks for Accurately Forecasting Dynamically Changing Road Speed",
       "uri": "https://dl.acm.org/doi/10.1145/3340531.3411940",
       "authors": [
         "박천복",
@@ -117,7 +130,7 @@
       ]
     },
     {
-      "title": "중독 메커니즘을 이해하기 위해 모바일 센서를 통한 탐색/활용 결정 모델링",
+      "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
       "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
       "authors": ["김기환", "김상훈", "이충기", "고성안"],
       "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
@@ -126,7 +139,7 @@
       ]
     },
     {
-      "title": "시각적 분석의 연계된 뷰 수와 시각적 분석 간의 관계에 대한 실증적 연구",
+      "title": "An Empirical Study on the Relationship Between the Number of Coordinated Views and Visual Analysis",
       "uri": "https://arxiv.org/abs/2108.00151",
       "authors": [
         "오주영",

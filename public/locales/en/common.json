@@ -14,6 +14,15 @@
           "points": [
             "Implementing new features to meet various business requirements",
             "Maintaining existing systems: refactoring, writing test codes"
+          ],
+          "badges": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Emotion",
+            "Jest",
+            "PHP",
+            "Twig"
           ]
         }
       ]
@@ -147,7 +156,7 @@
       ]
     },
     {
-      "title": "Visualization-based Deep Learning Analysis Techniques",
+      "title": "시각화 기반 딥러닝 분석 기술",
       "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
       "authors": ["Jaesung Lee", "Kihwan Kim", "Chunggi Lee", "Sungahn Ko"],
       "conference": "Noise & Vibration, Vol.27 No.6, 2017.11",
