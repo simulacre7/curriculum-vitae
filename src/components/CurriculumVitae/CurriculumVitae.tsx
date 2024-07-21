@@ -51,7 +51,7 @@ export function CurriculumVitae() {
           projectList={ridiProjects}
         />
         <Affiliation
-          name={t('company.tmax.name.1')}
+          name={t('company.tmax.name.0')}
           info={[
             {
               position: t('company.tmax.position'),
@@ -60,8 +60,8 @@ export function CurriculumVitae() {
           ]}
           extra={
             <div css={styles.tmaxNameExtraContainerStyle}>
+              <p css={styles.tmaxNameExtraStyle}>{t('company.tmax.name.1')}</p>
               <p css={styles.tmaxNameExtraStyle}>{t('company.tmax.name.2')}</p>
-              <p css={styles.tmaxNameExtraStyle}>{t('company.tmax.name.3')}</p>
             </div>
           }
           projectList={tmaxProjects}

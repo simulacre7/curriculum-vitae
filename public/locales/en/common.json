@@ -28,7 +28,7 @@
       ]
     },
     "tmax": {
-      "name": ["Tmax Enterprise", "Tmax BI", "Tmax Data"],
+      "name": ["Tmax Enterprise", "Currently TmaxBizAI", "Formerly TmaxData"],
       "position": "Researcher",
       "projects": [
         {
@@ -65,7 +65,7 @@
           "period": "2018.03–2020.02"
         },
         {
-          "degree": "Bachelor of Science in Technology Management (Double Major in Computer Science)",
+          "degree": "Bachelor of Science in Technology Management (Multi-disciplinary major in Computer Science)",
           "period": "2013.03–2018.02"
         }
       ],
