@@ -45,7 +45,7 @@ export function CurriculumVitae() {
           info={[
             {
               position: t('company.ridi.position'),
-              period: `2022-${t('present')}`,
+              period: `2022.05-${t('present')}`,
             },
           ]}
           projectList={ridiProjects}
