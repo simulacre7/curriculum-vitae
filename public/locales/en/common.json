@@ -12,8 +12,11 @@
           "period": "2022.05-Present",
           "description": "I develop the frontend of a content platform that provides webtoons, web novels, comics, and e-books.",
           "points": [
-            "Implementing new features to meet various business requirements",
-            "Maintaining existing systems: refactoring, writing test codes"
+            "Co-architected 'RiGrid', a server-driven UI system enabling layout flexibility, content-level control, and experimental branching",
+            "Improved structure to support app-update-free UI deployments, accelerating experiment velocity by over 50%",
+            "Established a consistent rendering pipeline using GraphQL BFF and async components across platforms",
+            "Implemented new features to meet various business requirements",
+            "Maintained existing systems: refactoring, writing test codes"
           ],
           "badges": [
             "Next.js",
