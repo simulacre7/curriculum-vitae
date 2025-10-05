@@ -19,13 +19,6 @@
             "Refactored authentication flow to simplify login and sign-up experience",
             "Integrated Amplitude and ChannelTalk for unified analytics and communication",
             "Built an iframe-based real-time preview system covering both editor and published views"
-          ],
-          "stack": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Emotion",
-            "Framer Motion"
           ]
         },
         {
@@ -36,13 +29,6 @@
             "Defined animation presets and transition rules within the design system",
             "Established MDC conventions for Cursor environment and component integration",
             "Collaborated with design team to document interaction guidelines"
-          ],
-          "stack": [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Emotion",
-            "Framer Motion"
           ]
         }
       ],
