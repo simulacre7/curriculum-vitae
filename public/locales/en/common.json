@@ -1,64 +1,127 @@
 {
   "name": "Kh.Kim",
-  "summary": "Hello, I am Kihwan Kim. Currently, I am a Frontend Engineer at unicorn startup RIDI, boasting over 7 years of industry and academic experience. For the last 3 years, my focus has been exclusively on front-end development. Before that, I dedicated 4 years to researching two key topics: visual analytics for explaining machine learning models and AI-driven user interfaces.",
+  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on large-scale content platforms, focusing on structural improvements and user experience optimization. Currently, at Levvels, a subsidiary of Dunamu, I continue to enhance frontend architecture and design interaction layers for commerce-oriented services. During my master’s studies, I researched visual analytics and AI-driven interfaces, and I’ve since integrated that analytical mindset into practical frontend development to design flexible and scalable user experiences. My experience across both industry and academia has given me a balanced perspective — not only on technical craftsmanship but also on problem framing and cross-functional collaboration.",
   "present": "Present",
-  "company": {
-    "ridi": {
-      "name": "RIDI Corporation",
-      "position": "Frontend Engineer",
+  "experience": [
+    {
+      "company": "Levvels",
+      "role": "Frontend Engineer",
+      "period": "Jul 2025–Present",
+      "summary": "Owned the frontend for a new commerce service, refining structure and UX through cart and auth refactors, analytics and communication tooling, and standardized interactions.",
       "projects": [
         {
-          "title": "RIDI website",
-          "period": "2022.05-Present",
-          "description": "I develop the frontend of a content platform that provides webtoons, web novels, comics, and e-books.",
-          "points": [
-            "Co-architected 'RiGrid', a server-driven UI system enabling layout flexibility, content-level control, and experimental branching",
-            "Improved structure to support app-update-free UI deployments, accelerating experiment velocity by over 50%",
-            "Established a consistent rendering pipeline using GraphQL BFF and async components across platforms",
-            "Implemented new features to meet various business requirements",
-            "Maintained existing systems: refactoring, writing test codes"
+          "title": "Commerce Frontend Development",
+          "period": "Jul 2025–Present",
+          "summary": "Designed and developed the frontend architecture for Levvels’ new commerce platform, including creator-facing channel experiences.",
+          "details": [
+            "Implemented shopping cart and product detail pages alongside creator channel and post experiences with responsive layouts, accessibility improvements, and live end-user views",
+            "Designed API integration and client-side caching logic",
+            "Refactored authentication flow to simplify login and sign-up experience",
+            "Integrated Amplitude and ChannelTalk for unified analytics and communication",
+            "Built an iframe-based real-time preview system covering both editor and published views"
           ],
-          "badges": [
+          "stack": [
+            "React",
             "Next.js",
             "TypeScript",
-            "React",
             "Emotion",
-            "Jest",
-            "PHP",
-            "Twig"
+            "Framer Motion"
+          ]
+        },
+        {
+          "title": "Design System & Interaction Standardization",
+          "period": "Sep 2025–Present",
+          "summary": "Standardized motion and MDC rules within the design system to ensure interaction consistency.",
+          "details": [
+            "Defined animation presets and transition rules within the design system",
+            "Established MDC conventions for Cursor environment and component integration",
+            "Collaborated with design team to document interaction guidelines"
+          ],
+          "stack": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Emotion",
+            "Framer Motion"
           ]
         }
+      ],
+      "stack": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Emotion",
+        "Framer Motion"
       ]
     },
-    "tmax": {
-      "name": ["Tmax Enterprise", "Currently TmaxBizAI", "Formerly TmaxData"],
-      "position": "Researcher",
+    {
+      "company": "RIDI Corp.",
+      "role": "Frontend Developer",
+      "period": "May 2022–Jul 2025",
+      "summary": "Developed the frontend of RIDI’s multi-format content platform spanning eBooks, webtoons, and web novels.",
       "projects": [
         {
-          "title": "React Porting of Legacy System",
-          "period": "2021.01–2022.04",
-          "description": "Converted products implemented with a jQuery-based internal frontend library — TOP (Tmax One Platform) to React.",
-          "points": [
-            "Divided inadequately modularized existing code into appropriate modules and improved interfaces",
-            "Developed various new components"
-          ],
-          "badges": ["TypeScript", "React", "Sass", "Material-UI", "jQuery"]
+          "title": "RIDI Web Platform",
+          "period": "May 2022–Jul 2025",
+          "summary": "Maintained and evolved the frontend for RIDI’s digital content marketplace.",
+          "details": [
+            "Co-designed and implemented the server-driven UI system ‘RiGrid’ for layout flexibility and experimentation",
+            "Enabled UI changes without app releases, speeding content operations by over 50%",
+            "Established GraphQL-based BFF and async rendering components for cross-platform consistency",
+            "Integrated Sentry and Amplitude to monitor errors and browser-specific issues"
+          ]
+        }
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Emotion",
+        "Jest",
+        "PHP",
+        "Twig"
+      ]
+    },
+    {
+      "company": "TmaxEnterprise",
+      "role": "Research Engineer",
+      "period": "Feb 2020–Apr 2022",
+      "summary": "Migrated enterprise products from a jQuery-based stack to React and built interfaces for the company’s AutoML platform.",
+      "aliases": [
+        "Currently TmaxBizAI",
+        "Formerly TmaxData"
+      ],
+      "projects": [
+        {
+          "title": "Legacy System React Migration",
+          "period": "Jan 2021–Apr 2022",
+          "summary": "Ported enterprise platform products from a jQuery-based internal library to React.",
+          "details": [
+            "Modularized legacy UI code and improved interface structure",
+            "Developed reusable components to replace bespoke legacy widgets"
+          ]
         },
         {
           "title": "AutoML Platform",
-          "period": "2020.02–2022.04",
-          "description": "Developed a platform that automates repetitive and tedious machine learning model development tasks.",
-          "points": [
-            "Implemented a codeless development studio environment for non-experts",
-            "Researched and developed explainable AI — XAI (eXplainable Artificial Intelligence) technologies",
-            "Studied interfaces for effective interaction between AutoML engines and model developers",
-            "Developed a dashboard for the development, management, and operation of machine learning models"
-          ],
-          "badges": ["TypeScript", "React", "Sass", "Material-UI", "Python"]
+          "period": "Feb 2020–Apr 2022",
+          "summary": "Built frontend and interaction patterns for the company’s AutoML platform.",
+          "details": [
+            "Implemented a codeless studio for non-expert model builders",
+            "Developed explainable AI (XAI) visualizations and dashboards",
+            "Researched interfaces to bridge AutoML engines and model developers"
+          ]
         }
+      ],
+      "stack": [
+        "React",
+        "TypeScript",
+        "Material-UI",
+        "Sass",
+        "Python",
+        "jQuery"
       ]
     }
-  },
+  ],
   "education": [
     {
       "institution": "Ulsan National Institute of Science and Technology (UNIST)",
@@ -82,7 +145,12 @@
             "Proposed a metric to evaluate the value of user logs from an AI perspective",
             "Implemented a web-based movie recommendation system for experimental environments"
           ],
-          "badges": ["Python", "Flask", "Surprise", "jQuery"]
+          "badges": [
+            "Python",
+            "Flask",
+            "Surprise",
+            "jQuery"
+          ]
         },
         {
           "title": "Modeling Web User Behavior",
@@ -93,7 +161,12 @@
             "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
             "Utilized data analysis tools such as Tableau and implemented a history education tool based on Wikipedia documents"
           ],
-          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
+          "badges": [
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "scikit-learn"
+          ]
         }
       ]
     }
@@ -102,7 +175,9 @@
     {
       "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
       "uri": "https://arxiv.org/abs/2108.00151",
-      "authors": ["Kihwan Kim"],
+      "authors": [
+        "Kihwan Kim"
+      ],
       "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
       "points": [
         "Investigated how to deliver random items to capture user preferences in recommendation systems",
@@ -135,7 +210,12 @@
     {
       "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
       "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
-      "authors": ["Kihwan Kim", "Sanghoon Kim", "Chunggi Lee", "Sungahn Ko"],
+      "authors": [
+        "Kihwan Kim",
+        "Sanghoon Kim",
+        "Chunggi Lee",
+        "Sungahn Ko"
+      ],
       "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
       "points": [
         "Proposed a system to detect addiction disorders from smartphone usage logs through Inverse Reinforcement Learning"
@@ -165,7 +245,12 @@
     {
       "title": "A Survey of Visualization Techniques for Interpreting Deep Learning",
       "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
-      "authors": ["Jaesung Lee", "Kihwan Kim", "Chunggi Lee", "Sungahn Ko"],
+      "authors": [
+        "Jaesung Lee",
+        "Kihwan Kim",
+        "Chunggi Lee",
+        "Sungahn Ko"
+      ],
       "conference": "Noise & Vibration, Vol.27 No.6, 2017.11",
       "points": [
         "Summarized and investigated visualization techniques for interpreting deep learning models"

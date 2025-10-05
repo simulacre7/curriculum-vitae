@@ -25,13 +25,12 @@ export const contactStyle = (theme: Theme) => css`
   }
 `;
 
-export const tmaxNameExtraContainerStyle = css`
-  display: block;
+export const aliasContainerStyle = css`
+  margin-top: 0.5rem;
 `;
 
-export const tmaxNameExtraStyle = (theme: Theme) => css`
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
+export const aliasTextStyle = (theme: Theme) => css`
+  font-size: 0.95rem;
+  line-height: 1.4;
   color: ${theme.colors.black};
 `;

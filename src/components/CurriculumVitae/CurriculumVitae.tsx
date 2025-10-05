@@ -1,21 +1,35 @@
 import { useTranslation } from 'react-i18next';
 
 import * as styles from './CurriculumVitae.styles';
-import { Affiliation, Project, Education } from '../Affiliation';
+import { Affiliation, Education, Project } from '../Affiliation';
 import { LanguageSwitcher } from '../LanguageSwitcher';
 import { Nameplate } from '../NamePlate';
 import { Publication, PublicationProps } from '../Publication';
 import { Section } from '../Section';
 
+type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  summary: string;
+  details?: string[];
+  stack?: string[];
+  projects?: ExperienceProject[];
+  aliases?: string[];
+};
+
+type ExperienceProject = {
+  title: string;
+  period: string;
+  summary?: string;
+  details?: string[];
+  stack?: string[];
+};
+
 export function CurriculumVitae() {
   const { t } = useTranslation(['common']);
 
-  const ridiProjects = t('company.ridi.projects', {
-    returnObjects: true,
-  }) as Project[];
-  const tmaxProjects = t('company.tmax.projects', {
-    returnObjects: true,
-  }) as Project[];
+  const experience = t('experience', { returnObjects: true }) as Experience[];
   const education = t('education', { returnObjects: true }) as Education[];
   const publications = t('publications', {
     returnObjects: true,
@@ -40,32 +54,45 @@ export function CurriculumVitae() {
         </address>
       </Section>
       <Section title="Experience">
-        <Affiliation
-          name={t('company.ridi.name')}
-          info={[
-            {
-              position: t('company.ridi.position'),
-              period: `2022.05-${t('present')}`,
-            },
-          ]}
-          projectList={ridiProjects}
-        />
-        <Affiliation
-          name={t('company.tmax.name.0')}
-          info={[
-            {
-              position: t('company.tmax.position'),
-              period: '2020.02–2022.04',
-            },
-          ]}
-          extra={
-            <div css={styles.tmaxNameExtraContainerStyle}>
-              <p css={styles.tmaxNameExtraStyle}>{t('company.tmax.name.1')}</p>
-              <p css={styles.tmaxNameExtraStyle}>{t('company.tmax.name.2')}</p>
+        {experience.map(({ company, role, period, summary, details, stack, projects, aliases }) => {
+          const projectList = projects?.map<Project>(
+            ({ title, period: projectPeriod, summary: projectSummary, details: projectDetails, stack: projectStack }) => ({
+              title,
+              period: projectPeriod,
+              description: projectSummary ?? '',
+              points: projectDetails ?? [],
+              badges: projectStack ?? [],
+            })
+          );
+
+          const aliasNode = aliases?.length ? (
+            <div css={styles.aliasContainerStyle}>
+              {aliases.map((alias) => (
+                <p key={alias} css={styles.aliasTextStyle}>
+                  {alias}
+                </p>
+              ))}
             </div>
-          }
-          projectList={tmaxProjects}
-        />
+          ) : undefined;
+
+          return (
+            <Affiliation
+              key={`${company}-${period}`}
+              name={company}
+              info={[
+                {
+                  position: role,
+                  period,
+                },
+              ]}
+              summary={summary}
+              projectList={projectList}
+              details={projectList ? undefined : details}
+              stack={stack}
+              extra={aliasNode}
+            />
+          );
+        })}
       </Section>
       <Section title="Education">
         {education.map((edu) => (

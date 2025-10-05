@@ -76,6 +76,28 @@ export const projectContainer = css`
   )}
 `;
 
+export const contentContainer = css`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  ${orBelow(
+    BreakPoint.DesktopSmall,
+    css`
+      margin-top: 1rem;
+      gap: 1rem;
+    `
+  )}
+`;
+
+export const summaryStyle = (theme: Theme) => css`
+  color: ${theme.colors.black};
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 1rem;
+`;
+
 export const projectTitleStyle = (theme: Theme) => css`
   color: ${theme.colors.black};
   font-size: 2rem;

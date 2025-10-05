@@ -18,22 +18,31 @@ export const containerStyle = css`
 
 export const anchorStyle = (theme: Theme) => css`
   color: ${theme.colors.grey};
+  text-decoration: underline;
+  text-decoration-color: ${theme.colors.grey};
+  text-underline-offset: 0.2em;
   &:visited {
     color: ${theme.colors.grey};
   }
+  &:focus-visible {
+    outline: none;
+    text-decoration-color: ${theme.colors.deepGreen};
+  }
   &:hover {
     color: ${theme.colors.deepGreen};
+    text-decoration-color: ${theme.colors.deepGreen};
   }
 `;
 
 export const selectedAnchorStyle = (theme: Theme) => css`
-  text-decoration: underline;
   color: ${theme.colors.green};
+  text-decoration-color: ${theme.colors.green};
 
   &:visited {
     color: ${theme.colors.green};
   }
   &:hover {
     color: ${theme.colors.deepGreen};
+    text-decoration-color: ${theme.colors.deepGreen};
   }
 `;
