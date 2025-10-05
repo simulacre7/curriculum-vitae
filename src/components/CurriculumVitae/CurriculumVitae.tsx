@@ -10,6 +10,9 @@ import { Section } from '../Section';
 export function CurriculumVitae() {
   const { t } = useTranslation(['common']);
 
+  const levvelsProjects = t('company.levvels.projects', {
+    returnObjects: true,
+  }) as Project[];
   const ridiProjects = t('company.ridi.projects', {
     returnObjects: true,
   }) as Project[];
@@ -41,11 +44,22 @@ export function CurriculumVitae() {
       </Section>
       <Section title="Experience">
         <Affiliation
+          name={t('company.levvels.name')}
+          info={[
+            {
+              position: t('company.levvels.position'),
+              period: t('company.levvels.period'),
+            },
+          ]}
+          extra={t('company.levvels.extra')}
+          projectList={levvelsProjects}
+        />
+        <Affiliation
           name={t('company.ridi.name')}
           info={[
             {
               position: t('company.ridi.position'),
-              period: `2022.05-${t('present')}`,
+              period: t('company.ridi.period'),
             },
           ]}
           projectList={ridiProjects}
@@ -55,7 +69,7 @@ export function CurriculumVitae() {
           info={[
             {
               position: t('company.tmax.position'),
-              period: '2020.02–2022.04',
+              period: t('company.tmax.period'),
             },
           ]}
           extra={
