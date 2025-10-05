@@ -44,12 +44,12 @@
       "company": "RIDI Corp.",
       "role": "Frontend Developer",
       "period": "May 2022–Jul 2025",
-      "summary": "Developed the frontend of RIDI’s multi-format content platform spanning eBooks, webtoons, and web novels.",
+      "summary": "Developed the frontend of RIDI’s multi-format content platform serving 2.13M monthly active users across eBooks, webtoons, and web novels.",
       "projects": [
         {
           "title": "RIDI Web Platform",
           "period": "May 2022–Jul 2025",
-          "summary": "Maintained and evolved the frontend for RIDI’s digital content marketplace.",
+          "summary": "Maintained and evolved the frontend for RIDI’s 2.13M MAU digital content marketplace.",
           "details": [
             "Co-designed and implemented the server-driven UI system ‘RiGrid’ for layout flexibility and experimentation",
             "Enabled UI changes without app releases, speeding content operations by over 50%",
