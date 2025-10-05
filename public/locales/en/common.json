@@ -1,60 +1,66 @@
 {
-  "name": "Kh.Kim",
-  "summary": "Hello, I am Kihwan Kim. Currently, I am a Frontend Engineer at unicorn startup RIDI, boasting over 7 years of industry and academic experience. For the last 3 years, my focus has been exclusively on front-end development. Before that, I dedicated 4 years to researching two key topics: visual analytics for explaining machine learning models and AI-driven user interfaces.",
+  "name": "Kihwan Kim",
+  "summary": "I'm Kihwan Kim, a Frontend Engineer working at Levvels and formerly at RIDI, focusing on large-scale web architecture improvements and interaction optimization. My academic background is in Visual Analytics and AI-driven Interfaces, and I integrate that research-oriented mindset into building flexible and scalable user experiences. Having worked across both industry and academia, I value not only technical precision but also balanced collaboration and thoughtful problem definition.",
   "present": "Present",
   "company": {
-    "ridi": {
-      "name": "RIDI Corporation",
+    "levvels": {
+      "name": "Levvels",
       "position": "Frontend Engineer",
+      "period": "Jul 2025–Present",
+      "extra": "Officially Levvels Inc. (pronounced ‘Levels’)",
       "projects": [
         {
-          "title": "RIDI website",
-          "period": "2022.05-Present",
-          "description": "I develop the frontend of a content platform that provides webtoons, web novels, comics, and e-books.",
+          "title": "New Commerce Platform Frontend",
+          "period": "Jul 2025–Present",
+          "description": "Designing and delivering the end-to-end frontend for Levvels’ commerce experience.",
           "points": [
-            "Co-architected 'RiGrid', a server-driven UI system enabling layout flexibility, content-level control, and experimental branching",
-            "Improved structure to support app-update-free UI deployments, accelerating experiment velocity by over 50%",
-            "Established a consistent rendering pipeline using GraphQL BFF and async components across platforms",
-            "Implemented new features to meet various business requirements",
-            "Maintained existing systems: refactoring, writing test codes"
+            "Developing and maintaining the entire frontend for the new commerce platform",
+            "Implemented the shopping cart system and API integration architecture",
+            "Integrated Amplitude and ChannelTalk for user behavior analytics and communication tracking",
+            "Refactored authentication flow for simplified login/signup and improved maintainability",
+            "Built PC layout design and standardized animations & transitions (mdc rules within the design system)",
+            "Developed creator channel home & post features — SNS-style posts, linked products, and editor preview (iframe-based)"
           ],
-          "badges": [
-            "Next.js",
-            "TypeScript",
-            "React",
-            "Emotion",
-            "Jest",
-            "PHP",
-            "Twig"
-          ]
+          "badges": ["React", "Next.js", "TypeScript", "Emotion", "Zustand", "Framer Motion"]
+        }
+      ]
+    },
+    "ridi": {
+      "name": "RIDI Corporation",
+      "position": "Frontend Developer",
+      "period": "May 2022–Jun 2025",
+      "projects": [
+        {
+          "title": "RIDI Webtoon, Web Novel & Ebook Platform",
+          "period": "May 2022–Jun 2025",
+          "description": "Led frontend development and operations for RIDI’s content platform.",
+          "points": [
+            "Developed and maintained the frontend for RIDI’s webtoon, web novel, and ebook platform",
+            "Co-designed and implemented the server-driven UI system 'RiGrid'",
+            "Enabled UI updates without app releases, improving content experiment speed by over 50%",
+            "Built GraphQL-based BFF and asynchronous rendering components for platform consistency",
+            "Performed refactoring and wrote test code for long-term maintainability"
+          ],
+          "badges": ["React", "TypeScript", "Next.js", "Emotion", "Jest", "PHP", "Twig"]
         }
       ]
     },
     "tmax": {
-      "name": ["Tmax Enterprise", "Currently TmaxBizAI", "Formerly TmaxData"],
-      "position": "Researcher",
+      "name": ["TmaxEnterprise", "Now TmaxBizAI", "Formerly TmaxData"],
+      "position": "Research Engineer",
+      "period": "Feb 2020–Apr 2022",
       "projects": [
         {
-          "title": "React Porting of Legacy System",
-          "period": "2021.01–2022.04",
-          "description": "Converted products implemented with a jQuery-based internal frontend library — TOP (Tmax One Platform) to React.",
+          "title": "AutoML Platform & XAI Research",
+          "period": "Feb 2020–Apr 2022",
+          "description": "Researched and built AutoML and explainable AI tooling for enterprise users.",
           "points": [
-            "Divided inadequately modularized existing code into appropriate modules and improved interfaces",
-            "Developed various new components"
+            "Developed AutoML platform and explainable AI (XAI) systems",
+            "Implemented a codeless machine learning studio for non-experts",
+            "Built visual dashboards for model training and operation",
+            "Migrated legacy jQuery-based UI to React with modular component design"
           ],
-          "badges": ["TypeScript", "React", "Sass", "Material-UI", "jQuery"]
-        },
-        {
-          "title": "AutoML Platform",
-          "period": "2020.02–2022.04",
-          "description": "Developed a platform that automates repetitive and tedious machine learning model development tasks.",
-          "points": [
-            "Implemented a codeless development studio environment for non-experts",
-            "Researched and developed explainable AI — XAI (eXplainable Artificial Intelligence) technologies",
-            "Studied interfaces for effective interaction between AutoML engines and model developers",
-            "Developed a dashboard for the development, management, and operation of machine learning models"
-          ],
-          "badges": ["TypeScript", "React", "Sass", "Material-UI", "Python"]
+          "badges": ["React", "TypeScript", "Sass", "Material-UI", "Python"]
         }
       ]
     }
@@ -64,36 +70,25 @@
       "institution": "Ulsan National Institute of Science and Technology (UNIST)",
       "degrees": [
         {
-          "degree": "Master of Science in Computer Science",
-          "period": "2018.03–2020.02"
+          "degree": "M.S. in Computer Science and Engineering",
+          "period": "Mar 2018–Feb 2020"
         },
         {
-          "degree": "Bachelor of Science in Technology Management (Multi-disciplinary major in Computer Science)",
-          "period": "2013.03–2018.02"
+          "degree": "B.S. in Technology Management with a Convergence Major in Computer Science",
+          "period": "Mar 2013–Feb 2018"
         }
       ],
       "projects": [
         {
-          "title": "AI-centered UI/UX Design",
-          "period": "2019.01–2020.02",
-          "description": "Conducted research to answer the question, 'How should the UI be designed to better collect user preference data?'",
+          "title": "Visual Analytics & AI-driven Interface Research",
+          "period": "Mar 2018–Feb 2020",
+          "description": "Researched visual analytics and AI-centric interface design for complex data experiences.",
           "points": [
-            "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
-            "Proposed a metric to evaluate the value of user logs from an AI perspective",
-            "Implemented a web-based movie recommendation system for experimental environments"
+            "Analyzed how transparency in recommendation exploration affects data quality",
+            "Built experimental systems and collected real-world user logs",
+            "Explored AI-driven UX methodologies for adaptive interfaces"
           ],
-          "badges": ["Python", "Flask", "Surprise", "jQuery"]
-        },
-        {
-          "title": "Modeling Web User Behavior",
-          "period": "2019.02–2020.02",
-          "description": "Conducted research to understand and model user behavior patterns in web environments.",
-          "points": [
-            "Estimated user reward functions from behavior logs through Inverse Reinforcement Learning",
-            "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
-            "Utilized data analysis tools such as Tableau and implemented a history education tool based on Wikipedia documents"
-          ],
-          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
+          "badges": ["Python", "Flask", "TensorFlow", "Keras", "scikit-learn"]
         }
       ]
     }
@@ -103,18 +98,14 @@
       "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
       "uri": "https://arxiv.org/abs/2108.00151",
       "authors": ["Kihwan Kim"],
-      "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
+      "conference": "CoRR, 2021",
       "points": [
-        "Investigated how to deliver random items to capture user preferences in recommendation systems",
-        "Implemented a web-based movie recommendation system used as an experimental environment",
-        "Proposed a metric to evaluate the value of user logs from an AI perspective",
-        "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
-        "Recruited 94 participants from Amazon MTurk",
-        "Collected real usage log data and survey responses by having participants use a Netflix-like experimental environment"
+        "Analyzed how transparency in recommendation exploration affects data quality",
+        "Built an experimental web system and collected real-world user logs"
       ]
     },
     {
-      "title": "ST-GRAT: A Novel Spatio-temporal Graph Attention Networks for Accurately Forecasting Dynamically Changing Road Speed",
+      "title": "ST-GRAT: Spatio-temporal Graph Attention Networks for Forecasting Road Speed",
       "uri": "https://dl.acm.org/doi/10.1145/3340531.3411940",
       "authors": [
         "Cheonbok Park",
@@ -126,20 +117,13 @@
         "Sungahn Ko",
         "Jaegul Choo"
       ],
-      "conference": "ACM International Conference on Information and Knowledge Management (CIKM), 2020",
-      "points": [
-        "Preprocessed vehicle detection sensor data installed on the road surface by Korea Expressway Corporation",
-        "Categorized cases where attention worked effectively by patterns"
-      ]
+      "conference": "ACM CIKM, 2020"
     },
     {
-      "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
+      "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing",
       "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
       "authors": ["Kihwan Kim", "Sanghoon Kim", "Chunggi Lee", "Sungahn Ko"],
-      "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
-      "points": [
-        "Proposed a system to detect addiction disorders from smartphone usage logs through Inverse Reinforcement Learning"
-      ]
+      "conference": "ACM MobiSys, 2019"
     },
     {
       "title": "An Empirical Study on the Relationship Between the Number of Coordinated Views and Visual Analysis",
@@ -154,22 +138,7 @@
         "Bum Chul Kwon",
         "Sungahn Ko"
       ],
-      "conference": "A Computing Research Repository (CoRR), 2204.09524, 2018",
-      "points": [
-        "Conducted experiments to see how the number of visualization charts affects data visual analysis",
-        "Had 44 participants use a visual analysis tool and solve data analysis tasks",
-        "Categorized users' analysis patterns through think-aloud protocol, recorded screens, and log data",
-        "Observed a positive correlation between the number of charts and task scores"
-      ]
-    },
-    {
-      "title": "A Survey of Visualization Techniques for Interpreting Deep Learning",
-      "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
-      "authors": ["Jaesung Lee", "Kihwan Kim", "Chunggi Lee", "Sungahn Ko"],
-      "conference": "Noise & Vibration, Vol.27 No.6, 2017.11",
-      "points": [
-        "Summarized and investigated visualization techniques for interpreting deep learning models"
-      ]
+      "conference": "CoRR, 2018"
     }
   ]
 }
