@@ -3,7 +3,7 @@ import { css, Theme } from '@emotion/react';
 import { BreakPoint, orBelow } from '../../styles';
 
 export const containerStyle = () => css`
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 `;
 
 export const titleStyle = (theme: Theme) => css`
@@ -25,7 +25,7 @@ export const titleStyle = (theme: Theme) => css`
 export const mainContentStyle = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   color: ${theme.colors.black};
   font-size: 1.2rem;
   font-weight: 400;

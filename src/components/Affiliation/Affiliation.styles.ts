@@ -65,7 +65,7 @@ export const projectListContainerStyle = (theme: Theme) => css`
 export const projectContainer = css`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 
   ${orBelow(
     BreakPoint.DesktopSmall,
@@ -149,4 +149,24 @@ export const BadgeListStyle = css`
   gap: 0.2rem;
   width: 100%;
   flex-wrap: wrap;
+`;
+
+export const desktopStackContainerStyle = css`
+  margin-top: 1rem;
+  ${orBelow(
+    BreakPoint.DesktopSmall,
+    css`
+      display: none;
+    `
+  )}
+`;
+
+export const mobileStackContainerStyle = css`
+  display: none;
+  ${orBelow(
+    BreakPoint.DesktopSmall,
+    css`
+      display: block;
+    `
+  )}
 `;

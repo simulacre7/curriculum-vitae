@@ -104,7 +104,7 @@ export function Affiliation({
   const detailItems = details && details.length > 0 ? details : null;
   const stackItems = stack && stack.length > 0 ? stack : null;
   const summaryText = summary && summary.trim().length > 0 ? summary : null;
-  const hasRightColumnContent = Boolean(projectItems || detailItems || stackItems);
+  const hasRightColumnContent = Boolean(projectItems || detailItems);
 
   return (
     <div css={styles.rowStyle}>
@@ -120,12 +120,21 @@ export function Affiliation({
         {summaryText ? (
           <p css={styles.summaryStyle}>{summaryText}</p>
         ) : null}
+        {stackItems ? (
+          <div css={styles.desktopStackContainerStyle}>
+            <StackList stack={stackItems} />
+          </div>
+        ) : null}
       </div>
       {hasRightColumnContent ? (
         <div css={styles.contentContainer}>
           {projectItems ? <Project projectList={projectItems} /> : null}
           {detailItems ? <DetailList details={detailItems} /> : null}
-          {stackItems ? <StackList stack={stackItems} /> : null}
+          {stackItems ? (
+            <div css={styles.mobileStackContainerStyle}>
+              <StackList stack={stackItems} />
+            </div>
+          ) : null}
         </div>
       ) : null}
     </div>

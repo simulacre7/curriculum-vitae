@@ -25,7 +25,8 @@ export const conferenceStyle = css`
 
 export const pointsListStyle = (theme: Theme) => css`
   padding-inline-start: 1.3rem;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
   & > li::marker {
     color: ${theme.colors.green};
   }
