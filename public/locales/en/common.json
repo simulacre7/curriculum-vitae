@@ -15,9 +15,6 @@
           "summary": "Designed and developed the frontend architecture for Levvels’ new commerce platform, including creator-facing channel experiences.",
           "details": [
             "Implemented shopping cart and product detail pages alongside creator channel and post experiences with responsive layouts, accessibility improvements, and live end-user views",
-            "Designed API integration and client-side caching logic",
-            "Refactored authentication flow to simplify login and sign-up experience",
-            "Integrated Amplitude and ChannelTalk for unified analytics and communication",
             "Built an iframe-based real-time preview system covering both editor and published views"
           ]
         },
