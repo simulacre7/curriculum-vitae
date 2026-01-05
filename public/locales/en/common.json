@@ -7,25 +7,25 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "Owned the frontend for a new commerce service, refining structure and UX through cart and auth refactors, analytics and communication tooling, and standardized interactions.",
+      "summary": "Led frontend interaction standards and architecture for a new commerce service, driving consistent UX, reusable patterns, and team-wide development conventions.",
       "projects": [
         {
           "title": "Commerce Frontend Development",
           "period": "Jul 2025–Present",
-          "summary": "Designed and developed the frontend architecture for Levvels’ new commerce platform, including creator-facing channel experiences.",
+          "summary": "Designed the frontend foundations for Levvels’ new commerce platform while aligning creator-facing channel experiences on common patterns.",
           "details": [
-            "Implemented shopping cart and product detail pages alongside creator channel and post experiences with responsive layouts, accessibility improvements, and live end-user views",
-            "Built an iframe-based real-time preview system covering both editor and published views"
+            "Aligned cart, product detail, and creator channel/post experiences on shared interaction patterns with accessibility and responsive baselines",
+            "Built an iframe-based real-time preview system that mirrored both editor and published views for faster UX validation"
           ]
         },
         {
           "title": "Design System & Interaction Standardization",
           "period": "Sep 2025–Present",
-          "summary": "Standardized motion and MDC rules within the design system to ensure interaction consistency.",
+          "summary": "Standardized design and interaction rules to ensure consistent UI/UX across an early-stage product.",
           "details": [
-            "Defined animation presets and transition rules within the design system",
-            "Established MDC conventions for Cursor environment and component integration",
-            "Collaborated with design team to document interaction guidelines"
+            "Defined reusable UI patterns, motion presets, and transition rules within the design system",
+            "Documented interaction guidelines with design to reduce implementation variance and speed up reviews",
+            "Encouraged feature delivery on standardized components, improving delivery speed and review efficiency"
           ]
         }
       ],
@@ -41,17 +41,17 @@
       "company": "RIDI Corp.",
       "role": "Frontend Developer",
       "period": "May 2022–Jul 2025",
-      "summary": "Developed the frontend of RIDI’s multi-format content platform serving 2.13M monthly active users across eBooks, webtoons, and web novels.",
+      "summary": "Introduced the RiGrid server-driven UI framework for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experimentation.",
       "projects": [
         {
           "title": "RIDI Web Platform",
           "period": "May 2022–Jul 2025",
-          "summary": "Maintained and evolved the frontend for RIDI’s 2.13M MAU digital content marketplace.",
+          "summary": "Designed and introduced the RiGrid server-driven UI framework to decouple UI delivery from client releases.",
           "details": [
-            "Co-designed and implemented the server-driven UI system ‘RiGrid’ for layout flexibility and experimentation",
-            "Enabled UI changes without app releases, speeding content operations by over 50%",
-            "Established GraphQL-based BFF and async rendering components for cross-platform consistency",
-            "Integrated Sentry and Amplitude to monitor errors and browser-specific issues"
+            "Defined UI layouts and components declaratively on the server and rendered them on clients at runtime",
+            "Eliminated deployment dependency for UI updates, allowing operators to manage configurations directly",
+            "Reduced lead time for repetitive UI/content changes by over 50% based on operational workflows",
+            "Maintained stability across devices for high-traffic content operations and rapid experimentation"
           ]
         }
       ],
@@ -69,7 +69,7 @@
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
       "period": "Feb 2020–Apr 2022",
-      "summary": "Migrated enterprise products from a jQuery-based stack to React and built interfaces for the company’s AutoML platform.",
+      "summary": "Re-architected legacy enterprise UIs with React and designed AutoML interfaces that improved model exploration and interpretation.",
       "aliases": [
         "Currently TmaxBizAI",
         "Formerly TmaxData"
@@ -78,20 +78,20 @@
         {
           "title": "Legacy System React Migration",
           "period": "Jan 2021–Apr 2022",
-          "summary": "Ported enterprise platform products from a jQuery-based internal library to React.",
+          "summary": "Re-architected jQuery-based enterprise products onto a React component model.",
           "details": [
-            "Modularized legacy UI code and improved interface structure",
-            "Developed reusable components to replace bespoke legacy widgets"
+            "Recomposed fragmented UI code into reusable components to improve extensibility",
+            "Modernized interface structure for maintainability and feature velocity"
           ]
         },
         {
           "title": "AutoML Platform",
           "period": "Feb 2020–Apr 2022",
-          "summary": "Built frontend and interaction patterns for the company’s AutoML platform.",
+          "summary": "Designed AutoML interfaces and visualizations to support model builders.",
           "details": [
-            "Implemented a codeless studio for non-expert model builders",
-            "Developed explainable AI (XAI) visualizations and dashboards",
-            "Researched interfaces to bridge AutoML engines and model developers"
+            "Implemented a codeless studio that lowered the barrier for non-expert model builders",
+            "Built XAI visualizations and dashboards for model interpretation and decision support",
+            "Researched interaction flows to bridge AutoML engines and model developers"
           ]
         }
       ],
