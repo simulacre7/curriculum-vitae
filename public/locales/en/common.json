@@ -44,17 +44,17 @@
       "summary": "Introduced the RiGrid server-driven UI framework for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experimentation.",
       "projects": [
         {
-          "title": "RIDI Web Platform",
-          "period": "May 2022–Jul 2025",
-          "summary": "Designed and introduced the RiGrid server-driven UI framework to decouple UI delivery from client releases.",
-          "details": [
-            "Defined UI layouts and components declaratively on the server and rendered them on clients at runtime",
-            "Eliminated deployment dependency for UI updates, allowing operators to manage configurations directly",
-            "Reduced lead time for repetitive UI/content changes by over 50% based on operational workflows",
-            "Maintained stability across devices for high-traffic content operations and rapid experimentation"
-          ]
-        }
-      ],
+            "title": "RIDI Web Platform",
+            "period": "May 2022–Jul 2025",
+            "summary": "Designed and introduced the RiGrid server-driven UI framework to decouple UI delivery from client releases.",
+            "details": [
+              "Defined UI layouts and components declaratively on the server and rendered them on clients at runtime",
+              "Eliminated deployment dependency for UI updates, allowing operators to manage configurations directly",
+              "Reduced turnaround time for repetitive UI/content changes by over 50% by enabling operators to update UI configurations without client redeployment.",
+              "Maintained stability across devices for high-traffic content operations and rapid experimentation"
+            ]
+          }
+        ],
       "stack": [
         "Next.js",
         "React",
