@@ -7,7 +7,7 @@
       "company": "Levvels",
       "role": "프론트엔드 엔지니어",
       "period": "2025.07–현재",
-      "summary": "AI Product와 Creator Commerce 영역에서 브라우저 에이전트, 생성형 UI, 커머스 프론트엔드를 다룹니다.",
+      "summary": "AI Product와 Vuddy 커머스 영역에서 브라우저 에이전트, 생성형 UI, 커머스 프론트엔드를 다룹니다.",
       "projects": [
         {
           "title": "PageAgent 기반 QA/CS 자동화",
@@ -30,9 +30,9 @@
           ]
         },
         {
-          "title": "Creator Commerce 프론트엔드",
+          "title": "Vuddy 커머스 프론트엔드",
           "period": "2025.07–현재",
-          "summary": "Vuddy와 Creator channel의 커머스 프론트엔드를 지속적으로 운영하고 개선하고 있습니다.",
+          "summary": "Vuddy의 상품 탐색, 장바구니, 인증 등 커머스 프론트엔드를 지속적으로 운영하고 개선하고 있습니다.",
           "details": [
             "장바구니와 인증 시스템 유지보수 및 개선",
             "Amplitude, ChannelTalk 기반 운영 흐름 관리",
