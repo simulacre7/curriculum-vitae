@@ -18,7 +18,7 @@ export const rowStyle = () => css`
 `;
 
 export const leftColumnStyle = () => css`
-  flex-basis: 50%;
+  flex-basis: 42%;
   padding-right: 2rem;
   flex-shrink: 0;
   ${orBelow(
@@ -52,6 +52,7 @@ export const affiliationTextStyle = (theme: Theme) => css`
 
   display: flex;
   flex-wrap: wrap;
+  text-wrap: balance;
 `;
 
 export const projectListContainerStyle = (theme: Theme) => css`
@@ -80,6 +81,8 @@ export const contentContainer = css`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex: 1;
+  min-width: 0;
 
   ${orBelow(
     BreakPoint.DesktopSmall,
@@ -96,6 +99,7 @@ export const summaryStyle = (theme: Theme) => css`
   font-weight: 400;
   line-height: 1.5;
   margin-top: 1rem;
+  text-wrap: pretty;
 `;
 
 export const projectTitleStyle = (theme: Theme) => css`
@@ -104,6 +108,7 @@ export const projectTitleStyle = (theme: Theme) => css`
   font-weight: bold;
   line-height: 1.235;
   margin-bottom: 0.5rem;
+  text-wrap: balance;
 
   ${orBelow(
     BreakPoint.DesktopSmall,
@@ -118,6 +123,7 @@ const projectTextStyle = (theme: Theme) => css`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  text-wrap: pretty;
 `;
 
 export const projectPeriodStyle = (theme: Theme) => css`
@@ -132,6 +138,7 @@ export const projectDescriptionStyle = (theme: Theme) => css`
 
 export const projectListStyle = (theme: Theme) => css`
   ${projectTextStyle(theme)}
+  margin-bottom: 0.35rem;
 `;
 
 export const BadgeStyle = (theme: Theme) => css`
