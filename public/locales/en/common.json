@@ -6,12 +6,12 @@
     {
       "company": "Levvels",
       "role": "Frontend Engineer",
-      "period": "2024–Present",
+      "period": "Jul 2025–Present",
       "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend.",
       "projects": [
         {
           "title": "PageAgent QA/CS Automation",
-          "period": "2024–Present",
+          "period": "Jul 2025–Present",
           "summary": "Extended Alibaba PageAgent into an internal browser agent for QA/CS automation.",
           "details": [
             "Automated repetitive QA/CS flows",
@@ -21,7 +21,7 @@
         },
         {
           "title": "Generative UI and AI Chat Interfaces",
-          "period": "2024–Present",
+          "period": "Jul 2025–Present",
           "summary": "Explored ways to render LLM responses as structured UI.",
           "details": [
             "Connected LLM responses to UI components",
@@ -31,7 +31,7 @@
         },
         {
           "title": "Creator Commerce Frontend",
-          "period": "2024–Present",
+          "period": "Jul 2025–Present",
           "summary": "Improved commerce and tooling flows for Vuddy and creator channels.",
           "details": [
             "Improved cart and authentication flows",
@@ -104,13 +104,13 @@
     {
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
-      "period": "Feb 2020–Apr 2022",
+      "period": "Feb 2020–May 2022",
       "summary": "Worked on AutoML product planning and interfaces that translated AI capabilities into usable service experiences.",
       "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
       "projects": [
         {
           "title": "Legacy System React Migration",
-          "period": "Jan 2021–Apr 2022",
+          "period": "Jan 2021–May 2022",
           "summary": "Ported enterprise platform products from a jQuery-based internal library to React.",
           "details": [
             "Modularized legacy UI code and improved interface structure",
@@ -119,7 +119,7 @@
         },
         {
           "title": "AutoML Platform",
-          "period": "Feb 2020–Apr 2022",
+          "period": "Feb 2020–May 2022",
           "summary": "Designed feature flows and frontend interactions for an AutoML platform.",
           "details": [
             "Implemented a codeless studio for non-expert model builders",
