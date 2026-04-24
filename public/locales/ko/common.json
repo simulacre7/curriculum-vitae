@@ -11,7 +11,7 @@
       "projects": [
         {
           "title": "PageAgent 기반 QA/CS 자동화",
-          "period": "2025.07–현재",
+          "period": "2026.03–현재",
           "summary": "Alibaba PageAgent를 사내 QA/CS 자동화용 브라우저 에이전트로 확장했습니다.",
           "details": [
             "QA/CS 반복 흐름 자동화",
@@ -21,7 +21,7 @@
         },
         {
           "title": "Generative UI 및 AI Chat 인터페이스",
-          "period": "2025.07–현재",
+          "period": "2026.03–현재",
           "summary": "LLM 응답을 구조화된 UI로 표현하는 방식을 탐색했습니다.",
           "details": [
             "schema 기반 UI 컴포넌트 연결",
@@ -32,11 +32,11 @@
         {
           "title": "Creator Commerce 프론트엔드",
           "period": "2025.07–현재",
-          "summary": "Vuddy와 Creator channel의 커머스 흐름과 운영 도구 연동을 개선했습니다.",
+          "summary": "Vuddy와 Creator channel의 커머스 프론트엔드를 지속적으로 운영하고 개선하고 있습니다.",
           "details": [
-            "장바구니와 인증 시스템 개선",
-            "Amplitude, ChannelTalk 운영 흐름 연결",
-            "Design System 기반 재사용 패턴화"
+            "장바구니와 인증 시스템 유지보수 및 개선",
+            "Amplitude, ChannelTalk 기반 운영 흐름 관리",
+            "Design System 기반 프론트엔드 패턴 정리"
           ]
         }
       ],

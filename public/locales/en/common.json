@@ -11,7 +11,7 @@
       "projects": [
         {
           "title": "PageAgent QA/CS Automation",
-          "period": "Jul 2025–Present",
+          "period": "Mar 2026–Present",
           "summary": "Extended Alibaba PageAgent into an internal browser agent for QA/CS automation.",
           "details": [
             "Automated repetitive QA/CS flows",
@@ -21,7 +21,7 @@
         },
         {
           "title": "Generative UI and AI Chat Interfaces",
-          "period": "Jul 2025–Present",
+          "period": "Mar 2026–Present",
           "summary": "Explored ways to render LLM responses as structured UI.",
           "details": [
             "Connected LLM responses to UI components",
@@ -32,11 +32,11 @@
         {
           "title": "Creator Commerce Frontend",
           "period": "Jul 2025–Present",
-          "summary": "Improved commerce and tooling flows for Vuddy and creator channels.",
+          "summary": "Continuously operate and improve commerce frontend flows for Vuddy and creator channels.",
           "details": [
-            "Improved cart and authentication flows",
-            "Connected Amplitude and ChannelTalk to operations",
-            "Organized reusable design-system patterns"
+            "Maintain and improve cart and authentication systems",
+            "Manage operations flows with Amplitude and ChannelTalk",
+            "Organize reusable frontend patterns through the design system"
           ]
         }
       ],
