@@ -1,31 +1,42 @@
 {
   "name": "Kh.Kim",
-  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on large-scale content platforms, focusing on structural improvements and user experience optimization. Currently, at Levvels, a subsidiary of Dunamu, I continue to enhance frontend architecture and design interaction layers for commerce-oriented services. During my master’s studies, I researched visual analytics and AI-driven interfaces, and I’ve since integrated that analytical mindset into practical frontend development to design flexible and scalable user experiences. My experience across both industry and academia has given me a balanced perspective — not only on technical craftsmanship but also on problem framing and cross-functional collaboration.",
+  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on performance optimization, cross-device stability, and server-driven UI migration for a large-scale content platform. I’m currently at Levvels, a subsidiary of Dunamu, building AI-powered browser agents, generative UI, and commerce frontend experiences. During my master’s studies, I researched visual analytics and AI-driven recommender interfaces, and I bring that analytical mindset into product engineering, interaction design, and frontend architecture.",
   "present": "Present",
   "experience": [
     {
       "company": "Levvels",
       "role": "Frontend Engineer",
-      "period": "Jul 2025–Present",
-      "summary": "Owned the frontend for a new commerce service, refining structure and UX through cart and auth refactors, analytics and communication tooling, and standardized interactions.",
+      "period": "2024–Present",
+      "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend.",
       "projects": [
         {
-          "title": "Commerce Frontend Development",
-          "period": "Jul 2025–Present",
-          "summary": "Designed and developed the frontend architecture for Levvels’ new commerce platform, including creator-facing channel experiences.",
+          "title": "PageAgent QA/CS Automation",
+          "period": "2024–Present",
+          "summary": "Extended Alibaba PageAgent into an internal browser agent for QA/CS automation.",
           "details": [
-            "Implemented shopping cart and product detail pages alongside creator channel and post experiences with responsive layouts, accessibility improvements, and live end-user views",
-            "Built an iframe-based real-time preview system covering both editor and published views"
+            "Automated repetitive QA/CS flows",
+            "Explored Chrome-profile-based deployment",
+            "Structured operations for real workplace use"
           ]
         },
         {
-          "title": "Design System & Interaction Standardization",
-          "period": "Sep 2025–Present",
-          "summary": "Standardized motion and MDC rules within the design system to ensure interaction consistency.",
+          "title": "Generative UI and AI Chat Interfaces",
+          "period": "2024–Present",
+          "summary": "Explored ways to render LLM responses as structured UI.",
           "details": [
-            "Defined animation presets and transition rules within the design system",
-            "Established MDC conventions for Cursor environment and component integration",
-            "Collaborated with design team to document interaction guidelines"
+            "Connected LLM responses to UI components",
+            "Improved streaming and scroll stability",
+            "Designed choices, branching, and regeneration flows"
+          ]
+        },
+        {
+          "title": "Creator Commerce Frontend",
+          "period": "2024–Present",
+          "summary": "Improved commerce and tooling flows for Vuddy and creator channels.",
+          "details": [
+            "Improved cart and authentication flows",
+            "Connected Amplitude and ChannelTalk to operations",
+            "Organized reusable design-system patterns"
           ]
         }
       ],
@@ -33,28 +44,51 @@
         "React",
         "Next.js",
         "TypeScript",
-        "Emotion",
-        "Framer Motion"
+        "Browser Agent",
+        "LLM Prompt Engineering",
+        "Amplitude",
+        "ChannelTalk"
       ]
     },
     {
       "company": "RIDI Corp.",
       "role": "Frontend Developer",
       "period": "May 2022–Jul 2025",
-      "summary": "Introduced the RiGrid server-driven UI framework for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experimentation.",
+      "summary": "Introduced RiGrid server-driven UI for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experiments.",
       "projects": [
         {
-            "title": "RIDI Web Platform",
-            "period": "May 2022–Jul 2025",
-            "summary": "Designed and introduced the RiGrid server-driven UI framework to decouple UI delivery from client releases.",
-            "details": [
-              "Defined UI layouts and components declaratively on the server and rendered them on clients at runtime",
-              "Eliminated deployment dependency for UI updates, allowing operators to manage configurations directly",
-              "Reduced turnaround time for repetitive UI/content changes by over 50% by enabling operators to update UI configurations without client redeployment.",
-              "Maintained stability across devices for high-traffic content operations and rapid experimentation"
-            ]
-          }
-        ],
+          "title": "RIDI Web Platform",
+          "period": "May 2022–Jul 2025",
+          "summary": "Contributed to RiGrid and island-architecture migration.",
+          "details": [
+            "Rendered server-declared UI on the client",
+            "Migrated PHP pages toward React",
+            "Made A/B tests and operational UI changes more flexible",
+            "Kept mobile, desktop, and special-device stability"
+          ]
+        },
+        {
+          "title": "Large-scale List Rendering Optimization",
+          "period": "May 2022–Jul 2025",
+          "summary": "Improved rendering bottlenecks and perceived speed for 6,000+ item lists.",
+          "details": [
+            "Analyzed frame drops from large DOM trees",
+            "Rendered only the visible range with windowing",
+            "Handled scroll position and dynamic heights",
+            "Improved skeleton UI for perceived speed"
+          ]
+        },
+        {
+          "title": "User Environment Stabilization",
+          "period": "May 2022–Jul 2025",
+          "summary": "Improved real-user stability with Sentry tracking and browser/device fixes.",
+          "details": [
+            "Tracked real-user errors with Sentry",
+            "Handled translation-plugin conflicts",
+            "Improved E-ink rendering and UX issues"
+          ]
+        }
+      ],
       "stack": [
         "Next.js",
         "React",
@@ -62,18 +96,17 @@
         "Emotion",
         "Jest",
         "PHP",
-        "Twig"
+        "Twig",
+        "Sentry",
+        "Virtualization"
       ]
     },
     {
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
       "period": "Feb 2020–Apr 2022",
-      "summary": "Migrated enterprise products from a jQuery-based stack to React and built interfaces for the company’s AutoML platform.",
-      "aliases": [
-        "Currently TmaxBizAI",
-        "Formerly TmaxData"
-      ],
+      "summary": "Worked on AutoML product planning and interfaces that translated AI capabilities into usable service experiences.",
+      "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
       "projects": [
         {
           "title": "Legacy System React Migration",
@@ -87,11 +120,12 @@
         {
           "title": "AutoML Platform",
           "period": "Feb 2020–Apr 2022",
-          "summary": "Built frontend and interaction patterns for the company’s AutoML platform.",
+          "summary": "Designed feature flows and frontend interactions for an AutoML platform.",
           "details": [
             "Implemented a codeless studio for non-expert model builders",
             "Developed explainable AI (XAI) visualizations and dashboards",
-            "Researched interfaces to bridge AutoML engines and model developers"
+            "Researched interfaces between AutoML engines and model developers",
+            "Clarified requirements for an early-stage platform"
           ]
         }
       ],
@@ -120,20 +154,17 @@
       ],
       "projects": [
         {
-          "title": "AI-centered UI/UX Design",
+          "title": "AI-driven UI and Recommender System Research",
           "period": "2019.01–2020.02",
-          "description": "Conducted research to answer the question, 'How should the UI be designed to better collect user preference data?'",
+          "description": "Studied how exploratory items should be disclosed in recommender-system interfaces to collect better user logs and feedback.",
           "points": [
             "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
+            "Analyzed how disclosure patterns for exploratory items affect user perception and data quality",
             "Proposed a metric to evaluate the value of user logs from an AI perspective",
-            "Implemented a web-based movie recommendation system for experimental environments"
+            "Implemented a web-based movie recommendation system for experimental environments",
+            "Designed data-driven UI experiments and evaluation flows"
           ],
-          "badges": [
-            "Python",
-            "Flask",
-            "Surprise",
-            "jQuery"
-          ]
+          "badges": ["Python", "Flask", "Surprise", "jQuery"]
         },
         {
           "title": "Modeling Web User Behavior",
@@ -144,12 +175,7 @@
             "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
             "Utilized data analysis tools such as Tableau and implemented a history education tool based on Wikipedia documents"
           ],
-          "badges": [
-            "Python",
-            "TensorFlow",
-            "Keras",
-            "scikit-learn"
-          ]
+          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
         }
       ]
     }
@@ -158,9 +184,7 @@
     {
       "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
       "uri": "https://arxiv.org/abs/2108.00151",
-      "authors": [
-        "Kihwan Kim"
-      ],
+      "authors": ["Kihwan Kim"],
       "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
       "points": [
         "Investigated how to deliver random items to capture user preferences in recommendation systems",
@@ -193,12 +217,7 @@
     {
       "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
       "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
-      "authors": [
-        "Kihwan Kim",
-        "Sanghoon Kim",
-        "Chunggi Lee",
-        "Sungahn Ko"
-      ],
+      "authors": ["Kihwan Kim", "Sanghoon Kim", "Chunggi Lee", "Sungahn Ko"],
       "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
       "points": [
         "Proposed a system to detect addiction disorders from smartphone usage logs through Inverse Reinforcement Learning"
@@ -228,12 +247,7 @@
     {
       "title": "A Survey of Visualization Techniques for Interpreting Deep Learning",
       "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
-      "authors": [
-        "Jaesung Lee",
-        "Kihwan Kim",
-        "Chunggi Lee",
-        "Sungahn Ko"
-      ],
+      "authors": ["Jaesung Lee", "Kihwan Kim", "Chunggi Lee", "Sungahn Ko"],
       "conference": "Noise & Vibration, Vol.27 No.6, 2017.11",
       "points": [
         "Summarized and investigated visualization techniques for interpreting deep learning models"
