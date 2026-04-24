@@ -7,36 +7,36 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "2024–Present",
-      "summary": "Working across AI product and creator commerce, with a focus on browser-agent automation, generative UI exploration, and commerce frontend architecture.",
+      "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend architecture.",
       "projects": [
         {
-          "title": "Internal PageAgent-based QA/CS Automation",
+          "title": "PageAgent QA/CS Automation",
           "period": "2024–Present",
-          "summary": "Customized Alibaba PageAgent into an internal browser agent for QA/CS automation and designed a deployment model for organizational use.",
+          "summary": "Extended Alibaba PageAgent into an internal browser agent for QA/CS automation.",
           "details": [
-            "Designed custom skills and system prompts to automate repetitive browser-based QA/CS workflows",
-            "Explored Chrome managed profile deployment to support usability and adoption within the organization",
-            "Structured the work as an operational agent system rather than a one-off proof of concept"
+            "Automated repetitive QA/CS flows with custom skills and system prompts",
+            "Explored internal deployment through Chrome managed profiles",
+            "Structured the agent around real operational use, beyond a proof of concept"
           ]
         },
         {
           "title": "Generative UI and AI Chat Interfaces",
           "period": "2024–Present",
-          "summary": "Explored schema-based UI composition and streaming conversation experiences for rendering LLM responses as structured interfaces.",
+          "summary": "Explored schema-based interfaces for rendering LLM responses as structured UI.",
           "details": [
-            "Investigated schema and DSL structures that connect LLM responses to UI components",
-            "Designed interfaces around chunked streaming, scroll stability, and long-conversation performance",
+            "Investigated schema and DSL structures connecting LLM responses to UI components",
+            "Designed for streaming, scroll stability, and long-conversation performance",
             "Defined AI interaction models such as choices, branching, and regeneration"
           ]
         },
         {
           "title": "Creator Commerce Frontend",
           "period": "2024–Present",
-          "summary": "Improved commerce flows for Vuddy and creator channels, including cart, authentication, interaction, and operational tooling.",
+          "summary": "Improved cart, authentication, interaction, and tooling flows for Vuddy and creator channels.",
           "details": [
-            "Improved core commerce flows including cart and authentication systems",
-            "Connected analytics and communication tooling such as Amplitude and ChannelTalk to product workflows",
-            "Organized repeatable frontend patterns through design-system and interaction work"
+            "Improved core commerce flows around cart and authentication systems",
+            "Connected Amplitude and ChannelTalk to product and operations workflows",
+            "Organized reusable patterns through design-system and interaction work"
           ]
         }
       ],
@@ -59,33 +59,33 @@
         {
           "title": "RIDI Web Platform",
           "period": "May 2022–Jul 2025",
-          "summary": "Contributed to RiGrid server-driven UI and island-architecture migration work to make UI delivery less dependent on client releases.",
+          "summary": "Contributed to RiGrid server-driven UI and island-architecture migration.",
           "details": [
-            "Defined UI layouts and components declaratively on the server and rendered them on clients at runtime",
-            "Incrementally migrated PHP-based pages toward React while preserving existing operating flows",
+            "Designed a runtime where clients interpret server-declared UI",
+            "Migrated PHP pages toward React while preserving existing operating flows",
             "Improved flexibility for A/B testing and operational UI changes",
-            "Maintained stability across mobile, desktop, and special device environments in high-traffic content operations"
+            "Maintained stability across mobile, desktop, and special device environments"
           ]
         },
         {
           "title": "Large-scale List Rendering Optimization",
           "period": "May 2022–Jul 2025",
-          "summary": "Improved DOM rendering bottlenecks and perceived loading performance on pages rendering more than 6,000 content items.",
+          "summary": "Improved DOM rendering bottlenecks and perceived speed for 6,000+ item lists.",
           "details": [
-            "Analyzed frame drops and slow initial rendering caused by large DOM trees",
-            "Applied windowing-based virtualization so only the visible range was rendered",
-            "Implemented scroll-position-based rendering control and dynamic height handling",
+            "Analyzed frame drops caused by large DOM trees",
+            "Applied windowing virtualization to render only the visible range",
+            "Handled scroll-position rendering and dynamic item heights",
             "Improved skeleton UI to reduce perceived loading cost"
           ]
         },
         {
           "title": "User Environment Stabilization",
           "period": "May 2022–Jul 2025",
-          "summary": "Improved real-user stability by tracking production errors with Sentry and addressing browser, extension, and device-specific issues.",
+          "summary": "Improved real-user stability with Sentry tracking and browser/device fixes.",
           "details": [
-            "Tracked errors from real user environments with Sentry and analyzed issues by browser and device",
-            "Investigated and handled conflicts with external extensions such as browser translation plugins",
-            "Improved rendering and UX issues for E-ink device environments such as RIDIBOOKS PAPER"
+            "Tracked real-user errors with Sentry and analyzed them by browser and device",
+            "Handled conflicts with external extensions such as translation plugins",
+            "Improved E-ink rendering and UX issues for RIDIBOOKS PAPER"
           ]
         }
       ],
