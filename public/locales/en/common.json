@@ -1,42 +1,42 @@
 {
   "name": "Kh.Kim",
-  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on performance optimization, cross-device stability, and server-driven UI migration for a large-scale content platform. I’m currently at Levvels, a subsidiary of Dunamu, building AI-powered browser agent workflows, generative UI experiments, and commerce frontend experiences. During my master’s studies, I researched visual analytics and AI-driven interfaces for recommender systems, and I bring that analytical mindset into product engineering, interaction design, and frontend architecture.",
+  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on performance optimization, cross-device stability, and server-driven UI migration for a large-scale content platform. I’m currently at Levvels, a subsidiary of Dunamu, building AI-powered browser agents, generative UI, and commerce frontend experiences. During my master’s studies, I researched visual analytics and AI-driven recommender interfaces, and I bring that analytical mindset into product engineering, interaction design, and frontend architecture.",
   "present": "Present",
   "experience": [
     {
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "2024–Present",
-      "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend architecture.",
+      "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend.",
       "projects": [
         {
           "title": "PageAgent QA/CS Automation",
           "period": "2024–Present",
           "summary": "Extended Alibaba PageAgent into an internal browser agent for QA/CS automation.",
           "details": [
-            "Automated repetitive QA/CS flows with custom skills and system prompts",
-            "Explored internal deployment through Chrome managed profiles",
-            "Structured the agent around real operational use, beyond a proof of concept"
+            "Automated repetitive QA/CS flows",
+            "Explored Chrome-profile-based deployment",
+            "Structured operations for real workplace use"
           ]
         },
         {
           "title": "Generative UI and AI Chat Interfaces",
           "period": "2024–Present",
-          "summary": "Explored schema-based interfaces for rendering LLM responses as structured UI.",
+          "summary": "Explored ways to render LLM responses as structured UI.",
           "details": [
-            "Investigated schema and DSL structures connecting LLM responses to UI components",
-            "Designed for streaming, scroll stability, and long-conversation performance",
-            "Defined AI interaction models such as choices, branching, and regeneration"
+            "Connected LLM responses to UI components",
+            "Improved streaming and scroll stability",
+            "Designed choices, branching, and regeneration flows"
           ]
         },
         {
           "title": "Creator Commerce Frontend",
           "period": "2024–Present",
-          "summary": "Improved cart, authentication, interaction, and tooling flows for Vuddy and creator channels.",
+          "summary": "Improved commerce and tooling flows for Vuddy and creator channels.",
           "details": [
-            "Improved core commerce flows around cart and authentication systems",
-            "Connected Amplitude and ChannelTalk to product and operations workflows",
-            "Organized reusable patterns through design-system and interaction work"
+            "Improved cart and authentication flows",
+            "Connected Amplitude and ChannelTalk to operations",
+            "Organized reusable design-system patterns"
           ]
         }
       ],
@@ -54,28 +54,28 @@
       "company": "RIDI Corp.",
       "role": "Frontend Developer",
       "period": "May 2022–Jul 2025",
-      "summary": "Introduced the RiGrid server-driven UI framework for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experimentation.",
+      "summary": "Introduced RiGrid server-driven UI for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experiments.",
       "projects": [
         {
           "title": "RIDI Web Platform",
           "period": "May 2022–Jul 2025",
-          "summary": "Contributed to RiGrid server-driven UI and island-architecture migration.",
+          "summary": "Contributed to RiGrid and island-architecture migration.",
           "details": [
-            "Designed a runtime where clients interpret server-declared UI",
-            "Migrated PHP pages toward React while preserving existing operating flows",
-            "Improved flexibility for A/B testing and operational UI changes",
-            "Maintained stability across mobile, desktop, and special device environments"
+            "Rendered server-declared UI on the client",
+            "Migrated PHP pages toward React",
+            "Made A/B tests and operational UI changes more flexible",
+            "Kept mobile, desktop, and special-device stability"
           ]
         },
         {
           "title": "Large-scale List Rendering Optimization",
           "period": "May 2022–Jul 2025",
-          "summary": "Improved DOM rendering bottlenecks and perceived speed for 6,000+ item lists.",
+          "summary": "Improved rendering bottlenecks and perceived speed for 6,000+ item lists.",
           "details": [
-            "Analyzed frame drops caused by large DOM trees",
-            "Applied windowing virtualization to render only the visible range",
-            "Handled scroll-position rendering and dynamic item heights",
-            "Improved skeleton UI to reduce perceived loading cost"
+            "Analyzed frame drops from large DOM trees",
+            "Rendered only the visible range with windowing",
+            "Handled scroll position and dynamic heights",
+            "Improved skeleton UI for perceived speed"
           ]
         },
         {
@@ -83,9 +83,9 @@
           "period": "May 2022–Jul 2025",
           "summary": "Improved real-user stability with Sentry tracking and browser/device fixes.",
           "details": [
-            "Tracked real-user errors with Sentry and analyzed them by browser and device",
-            "Handled conflicts with external extensions such as translation plugins",
-            "Improved E-ink rendering and UX issues for RIDIBOOKS PAPER"
+            "Tracked real-user errors with Sentry",
+            "Handled translation-plugin conflicts",
+            "Improved E-ink rendering and UX issues"
           ]
         }
       ],
@@ -105,7 +105,7 @@
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
       "period": "Feb 2020–Apr 2022",
-      "summary": "Worked on AutoML product and platform planning, designing UI/UX and React-based interfaces that translated AI capabilities into usable service experiences.",
+      "summary": "Worked on AutoML product planning and interfaces that translated AI capabilities into usable service experiences.",
       "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
       "projects": [
         {
@@ -120,12 +120,12 @@
         {
           "title": "AutoML Platform",
           "period": "Feb 2020–Apr 2022",
-          "summary": "Designed data-driven features, user scenarios, and frontend interaction patterns for an AutoML platform.",
+          "summary": "Designed feature flows and frontend interactions for an AutoML platform.",
           "details": [
             "Implemented a codeless studio for non-expert model builders",
             "Developed explainable AI (XAI) visualizations and dashboards",
-            "Researched interfaces to bridge AutoML engines and model developers",
-            "Clarified requirements and product structure in an early-stage platform"
+            "Researched interfaces between AutoML engines and model developers",
+            "Clarified requirements for an early-stage platform"
           ]
         }
       ],
