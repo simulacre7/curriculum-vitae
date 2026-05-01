@@ -46,7 +46,7 @@
       "company": "RIDI Corp.",
       "role": "Frontend Developer",
       "period": "May 2022–Jul 2025",
-      "summary": "Introduced RiGrid server-driven UI for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experiments.",
+      "summary": "Built React-based clients across web, mobile, and desktop surfaces. Introduced RiGrid server-driven UI for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experiments.",
       "projects": [
         {
           "title": "RIDI Web Platform",
