@@ -8,6 +8,10 @@ export const containerStyle = css`
   justify-content: flex-end;
   margin-right: -2rem;
 
+  @media print {
+    display: none;
+  }
+
   ${orBelow(
     BreakPoint.DesktopSmall,
     css`

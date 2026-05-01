@@ -18,6 +18,20 @@ pnpm install
 pnpm dev
 ```
 
+# Submission PDF
+
+Generate a Korean resume PDF without the language switcher, then append the PageAgent case study PDF from the sibling `pageagent-generative-ui-case-study` repository.
+
+```bash
+pnpm build:submission-pdf
+```
+
+Output:
+
+```text
+submission/KihwanKim_CV_PageAgent_Portfolio.pdf
+```
+
 # License
 
 MIT License.
