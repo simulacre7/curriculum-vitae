@@ -9,8 +9,6 @@ export const containerStyle = () => css`
 export const rowStyle = () => css`
   display: flex;
   width: 100%;
-  break-inside: avoid;
-  page-break-inside: avoid;
 
   ${orBelow(
     BreakPoint.DesktopSmall,
@@ -18,6 +16,10 @@ export const rowStyle = () => css`
       flex-direction: column;
     `
   )}
+
+  @media print {
+    flex-direction: row;
+  }
 `;
 
 export const leftColumnStyle = () => css`
@@ -30,6 +32,10 @@ export const leftColumnStyle = () => css`
       flex-basis: 100%;
     `
   )}
+
+  @media print {
+    flex-basis: 50%;
+  }
 `;
 
 export const infoStyle = (theme: Theme) => css`
@@ -37,10 +43,6 @@ export const infoStyle = (theme: Theme) => css`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-
-  @media print {
-    font-size: 0.9rem;
-  }
 `;
 
 export const affiliationTextStyle = (theme: Theme) => css`
@@ -59,10 +61,6 @@ export const affiliationTextStyle = (theme: Theme) => css`
 
   display: flex;
   flex-wrap: wrap;
-
-  @media print {
-    font-size: 1.65rem;
-  }
 `;
 
 export const projectListContainerStyle = (theme: Theme) => css`
@@ -87,11 +85,6 @@ export const projectContainer = css`
   )}
 `;
 
-export const projectItemStyle = css`
-  break-inside: avoid;
-  page-break-inside: avoid;
-`;
-
 export const contentContainer = css`
   display: flex;
   flex-direction: column;
@@ -104,6 +97,10 @@ export const contentContainer = css`
       gap: 1rem;
     `
   )}
+
+  @media print {
+    margin-top: 0;
+  }
 `;
 
 export const summaryStyle = (theme: Theme) => css`
@@ -112,10 +109,6 @@ export const summaryStyle = (theme: Theme) => css`
   font-weight: 400;
   line-height: 1.5;
   margin-top: 1rem;
-
-  @media print {
-    font-size: 0.9rem;
-  }
 `;
 
 export const projectTitleStyle = (theme: Theme) => css`
@@ -124,6 +117,8 @@ export const projectTitleStyle = (theme: Theme) => css`
   font-weight: bold;
   line-height: 1.235;
   margin-bottom: 0.5rem;
+  break-after: avoid;
+  page-break-after: avoid;
 
   ${orBelow(
     BreakPoint.DesktopSmall,
@@ -131,12 +126,6 @@ export const projectTitleStyle = (theme: Theme) => css`
       font-size: 1.25rem;
     `
   )}
-
-  @media print {
-    font-size: 1.35rem;
-    break-after: avoid;
-    page-break-after: avoid;
-  }
 `;
 
 const projectTextStyle = (theme: Theme) => css`
@@ -144,15 +133,13 @@ const projectTextStyle = (theme: Theme) => css`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-
-  @media print {
-    font-size: 0.9rem;
-  }
 `;
 
 export const projectPeriodStyle = (theme: Theme) => css`
   ${projectTextStyle(theme)}
   margin-bottom: 1rem;
+  break-after: avoid;
+  page-break-after: avoid;
 `;
 
 export const projectDescriptionStyle = (theme: Theme) => css`
@@ -189,6 +176,10 @@ export const desktopStackContainerStyle = css`
       display: none;
     `
   )}
+
+  @media print {
+    display: block;
+  }
 `;
 
 export const mobileStackContainerStyle = css`
@@ -199,4 +190,8 @@ export const mobileStackContainerStyle = css`
       display: block;
     `
   )}
+
+  @media print {
+    display: none;
+  }
 `;

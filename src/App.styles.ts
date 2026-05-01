@@ -64,33 +64,6 @@ export const globalStyles = (theme: Theme) => css`
     )}
   }
 
-  @media print {
-    :root {
-      max-width: none;
-    }
-
-    body {
-      margin: 0;
-      padding: 0 0.8rem;
-      min-height: auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-      break-after: avoid;
-      page-break-after: avoid;
-    }
-
-    p,
-    li {
-      orphans: 3;
-      widows: 3;
-    }
-  }
-
   h1 {
     font-size: 3.2em;
     line-height: 1.1;

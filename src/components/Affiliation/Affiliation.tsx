@@ -62,7 +62,7 @@ function Project({ projectList }: ProjectProps) {
         const badgeItems = badges?.length ? badges : null;
 
         return (
-          <div key={title} css={styles.projectItemStyle}>
+          <div key={title}>
             <div css={styles.projectTitleStyle}>{title}</div>
             <div css={styles.projectPeriodStyle}>{period}</div>
             {descriptionText ? (
