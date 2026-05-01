@@ -1,32 +1,23 @@
 {
   "name": "Kh.Kim",
-  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on performance optimization, cross-device stability, and server-driven UI migration for a large-scale content platform. I’m currently at Levvels, a subsidiary of Dunamu, building AI-powered browser agents, generative UI, and commerce frontend experiences. During my master’s studies, I researched visual analytics and AI-driven recommender interfaces, and I bring that analytical mindset into product engineering, interaction design, and frontend architecture.",
+  "summary": "I’m Kihwan Kim, a Frontend Engineer. At RIDI, I worked on performance optimization, cross-device stability, and server-driven UI migration for a large-scale content platform. I’m currently at Levvels, a subsidiary of Dunamu, building AI-powered browser agents, generative UI, and commerce frontend experiences. For internal operations, I extended generative UI beyond screen generation into an agent execution layer that connects and controls multiple systems. During my master’s studies, I researched visual analytics and AI-driven recommender interfaces, and I bring that analytical mindset into product engineering, interaction design, and frontend architecture.",
   "present": "Present",
   "experience": [
     {
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend.",
+      "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend. For internal tools, I explored and implemented an agent-based interface that turns natural-language requests into workflows across multiple systems.",
       "projects": [
         {
-          "title": "PageAgent QA/CS Automation",
+          "title": "PageAgent-based Generative UI for Operations",
           "period": "Mar 2026–Present",
-          "summary": "Extended Alibaba PageAgent into an internal browser agent for QA/CS automation.",
+          "summary": "Redefined generative UI as an agent execution layer that connects and controls internal systems, rather than only generating UI.",
           "details": [
-            "Automated repetitive QA/CS flows",
-            "Explored Chrome-profile-based deployment",
-            "Structured operations for real workplace use"
-          ]
-        },
-        {
-          "title": "Generative UI and AI Chat Interfaces",
-          "period": "Mar 2026–Present",
-          "summary": "Explored ways to render LLM responses as structured UI.",
-          "details": [
-            "Connected LLM responses to UI components",
-            "Improved streaming and scroll stability",
-            "Designed choices, branching, and regeneration flows"
+            "Designed lookup flows across user, payment, and account-mapping tools from natural-language CS requests",
+            "Extended Alibaba PageAgent to automate tab navigation, clicks, and inputs in a Chrome Managed Profile environment",
+            "Separated nondeterministic generative UI output from reproducible action sequences and result presentation",
+            "Reduced repetitive investigation work where CS/QA operators had to manually inspect multiple tables and services"
           ]
         },
         {
@@ -45,6 +36,7 @@
         "Next.js",
         "TypeScript",
         "Browser Agent",
+        "Generative UI",
         "LLM Prompt Engineering",
         "Amplitude",
         "ChannelTalk"
