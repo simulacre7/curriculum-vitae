@@ -62,7 +62,7 @@ function Project({ projectList }: ProjectProps) {
         const badgeItems = badges?.length ? badges : null;
 
         return (
-          <div key={title}>
+          <div key={title} css={styles.projectItemStyle}>
             <div css={styles.projectTitleStyle}>{title}</div>
             <div css={styles.projectPeriodStyle}>{period}</div>
             {descriptionText ? (
@@ -100,7 +100,8 @@ export function Affiliation({
   stack,
   extra,
 }: AffiliationProps) {
-  const projectItems = projectList && projectList.length > 0 ? projectList : null;
+  const projectItems =
+    projectList && projectList.length > 0 ? projectList : null;
   const detailItems = details && details.length > 0 ? details : null;
   const stackItems = stack && stack.length > 0 ? stack : null;
   const summaryText = summary && summary.trim().length > 0 ? summary : null;
@@ -117,9 +118,7 @@ export function Affiliation({
           </div>
         ))}
         <div>{extra}</div>
-        {summaryText ? (
-          <p css={styles.summaryStyle}>{summaryText}</p>
-        ) : null}
+        {summaryText ? <p css={styles.summaryStyle}>{summaryText}</p> : null}
         {stackItems ? (
           <div css={styles.desktopStackContainerStyle}>
             <StackList stack={stackItems} />

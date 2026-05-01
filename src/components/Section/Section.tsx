@@ -5,16 +5,27 @@ interface SectionProps {
 
   children: React.ReactNode;
   isShortGap?: boolean;
+  printBreakBefore?: boolean;
 }
 
 const NUM_OF_LETTERS_TO_HIGHLIGHT = 3;
 
-export function Section({ title, children, isShortGap }: SectionProps) {
+export function Section({
+  title,
+  children,
+  isShortGap,
+  printBreakBefore,
+}: SectionProps) {
   const highlightedText = title.slice(0, NUM_OF_LETTERS_TO_HIGHLIGHT);
   const remainingText = title.slice(NUM_OF_LETTERS_TO_HIGHLIGHT);
 
   return (
-    <section css={styles.containerStyle}>
+    <section
+      css={[
+        styles.containerStyle,
+        printBreakBefore && styles.printBreakBeforeStyle,
+      ]}
+    >
       <h2 css={styles.titleStyle}>
         <span>{highlightedText}</span>
         {remainingText}

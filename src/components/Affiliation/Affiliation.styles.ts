@@ -9,6 +9,9 @@ export const containerStyle = () => css`
 export const rowStyle = () => css`
   display: flex;
   width: 100%;
+  break-inside: avoid;
+  page-break-inside: avoid;
+
   ${orBelow(
     BreakPoint.DesktopSmall,
     css`
@@ -34,6 +37,10 @@ export const infoStyle = (theme: Theme) => css`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+
+  @media print {
+    font-size: 0.9rem;
+  }
 `;
 
 export const affiliationTextStyle = (theme: Theme) => css`
@@ -52,6 +59,10 @@ export const affiliationTextStyle = (theme: Theme) => css`
 
   display: flex;
   flex-wrap: wrap;
+
+  @media print {
+    font-size: 1.65rem;
+  }
 `;
 
 export const projectListContainerStyle = (theme: Theme) => css`
@@ -76,6 +87,11 @@ export const projectContainer = css`
   )}
 `;
 
+export const projectItemStyle = css`
+  break-inside: avoid;
+  page-break-inside: avoid;
+`;
+
 export const contentContainer = css`
   display: flex;
   flex-direction: column;
@@ -96,6 +112,10 @@ export const summaryStyle = (theme: Theme) => css`
   font-weight: 400;
   line-height: 1.5;
   margin-top: 1rem;
+
+  @media print {
+    font-size: 0.9rem;
+  }
 `;
 
 export const projectTitleStyle = (theme: Theme) => css`
@@ -111,6 +131,12 @@ export const projectTitleStyle = (theme: Theme) => css`
       font-size: 1.25rem;
     `
   )}
+
+  @media print {
+    font-size: 1.35rem;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
 `;
 
 const projectTextStyle = (theme: Theme) => css`
@@ -118,6 +144,10 @@ const projectTextStyle = (theme: Theme) => css`
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+
+  @media print {
+    font-size: 0.9rem;
+  }
 `;
 
 export const projectPeriodStyle = (theme: Theme) => css`

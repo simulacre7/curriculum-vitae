@@ -54,45 +54,62 @@ export function CurriculumVitae() {
         </address>
       </Section>
       <Section title="Experience">
-        {experience.map(({ company, role, period, summary, details, stack, projects, aliases }) => {
-          const projectList = projects?.map<Project>(
-            ({ title, period: projectPeriod, summary: projectSummary, details: projectDetails, stack: projectStack }) => ({
-              title,
-              period: projectPeriod,
-              description: projectSummary ?? '',
-              points: projectDetails ?? [],
-              badges: projectStack ?? [],
-            })
-          );
+        {experience.map(
+          ({
+            company,
+            role,
+            period,
+            summary,
+            details,
+            stack,
+            projects,
+            aliases,
+          }) => {
+            const projectList = projects?.map<Project>(
+              ({
+                title,
+                period: projectPeriod,
+                summary: projectSummary,
+                details: projectDetails,
+                stack: projectStack,
+              }) => ({
+                title,
+                period: projectPeriod,
+                description: projectSummary ?? '',
+                points: projectDetails ?? [],
+                badges: projectStack ?? [],
+              })
+            );
 
-          const aliasNode = aliases?.length ? (
-            <div css={styles.aliasContainerStyle}>
-              {aliases.map((alias) => (
-                <p key={alias} css={styles.aliasTextStyle}>
-                  {alias}
-                </p>
-              ))}
-            </div>
-          ) : undefined;
+            const aliasNode = aliases?.length ? (
+              <div css={styles.aliasContainerStyle}>
+                {aliases.map((alias) => (
+                  <p key={alias} css={styles.aliasTextStyle}>
+                    {alias}
+                  </p>
+                ))}
+              </div>
+            ) : undefined;
 
-          return (
-            <Affiliation
-              key={`${company}-${period}`}
-              name={company}
-              info={[
-                {
-                  position: role,
-                  period,
-                },
-              ]}
-              summary={summary}
-              projectList={projectList}
-              details={projectList ? undefined : details}
-              stack={stack}
-              extra={aliasNode}
-            />
-          );
-        })}
+            return (
+              <Affiliation
+                key={`${company}-${period}`}
+                name={company}
+                info={[
+                  {
+                    position: role,
+                    period,
+                  },
+                ]}
+                summary={summary}
+                projectList={projectList}
+                details={projectList ? undefined : details}
+                stack={stack}
+                extra={aliasNode}
+              />
+            );
+          }
+        )}
       </Section>
       <Section title="Education">
         {education.map((edu) => (
@@ -107,7 +124,7 @@ export function CurriculumVitae() {
           />
         ))}
       </Section>
-      <Section title="Publications" isShortGap>
+      <Section title="Publications" isShortGap printBreakBefore>
         {publications.map((pub) => (
           <Publication
             key={pub.title}

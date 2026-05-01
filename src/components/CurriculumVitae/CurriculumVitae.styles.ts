@@ -4,6 +4,10 @@ import { BreakPoint, orBelow } from '../../styles';
 
 export const contentStyle = css`
   margin-bottom: 6rem;
+
+  @media print {
+    margin-bottom: 0;
+  }
 `;
 
 export const contactStyle = (theme: Theme) => css`

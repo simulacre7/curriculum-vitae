@@ -20,7 +20,7 @@ export function Publication({
   points = [],
 }: PublicationProps) {
   return (
-    <div>
+    <div css={styles.containerStyle}>
       <h4 css={styles.titleStyle}>
         <a href={uri}>{title}</a>
       </h4>
