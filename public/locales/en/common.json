@@ -10,7 +10,7 @@
       "summary": "Working across AI product and creator commerce, with a focus on browser agents, generative UI, and commerce frontend. For internal tools, I explored and implemented an agent-based interface that turns natural-language requests into workflows across multiple systems.",
       "projects": [
         {
-          "title": "PageAgent-based Generative UI for Operations",
+          "title": "PageAgent-based Internal Operations Automation",
           "period": "Mar 2026–Present",
           "summary": "Redefined generative UI as an agent execution layer that connects and controls internal systems, rather than only generating UI.",
           "details": [

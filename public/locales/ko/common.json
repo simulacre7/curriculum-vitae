@@ -10,7 +10,7 @@
       "summary": "AI Product와 Vuddy 커머스 영역에서 브라우저 에이전트, 생성형 UI, 커머스 프론트엔드를 다룹니다. 내부 운영 도구에서는 자연어 요청을 여러 시스템 조작 흐름으로 변환하는 Agent 기반 인터페이스를 검토하고 구현했습니다.",
       "projects": [
         {
-          "title": "PageAgent 기반 Generative UI 운영 자동화",
+          "title": "PageAgent 기반 내부 운영 자동화",
           "period": "2026.03–현재",
           "summary": "Generative UI를 단순 UI 생성이 아니라 여러 내부 시스템을 연결하고 조작하는 Agent 실행 레이어로 재정의했습니다.",
           "details": [
