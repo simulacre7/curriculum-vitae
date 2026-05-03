@@ -85,6 +85,11 @@ export const projectContainer = css`
   )}
 `;
 
+export const projectItemStyle = css`
+  break-inside: avoid;
+  page-break-inside: avoid;
+`;
+
 export const contentContainer = css`
   display: flex;
   flex-direction: column;

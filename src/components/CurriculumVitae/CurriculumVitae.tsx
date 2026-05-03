@@ -111,7 +111,7 @@ export function CurriculumVitae() {
           }
         )}
       </Section>
-      <Section title="Education">
+      <Section title="Education" printBreakBefore>
         {education.map((edu) => (
           <Affiliation
             key={edu.institution}
