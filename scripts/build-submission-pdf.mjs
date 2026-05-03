@@ -187,7 +187,8 @@ const createCoverHtml = (totalPages) => {
       <div class="role">Software Engineer</div>
       <p class="summary">
         이력서와 포트폴리오를 하나로 묶어, 경력과 연구 이력은 물론 제품 개발 과정에서 다룬
-        운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI 사례를 함께 정리했습니다.
+        운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI, 추천 시스템 실험 사례를
+        함께 정리했습니다.
       </p>
 
       <div class="rule"></div>
@@ -205,7 +206,7 @@ const createCoverHtml = (totalPages) => {
         <div>
           <div class="title">Portfolio Case Studies · 포트폴리오</div>
           <div class="description">
-            PageAgent 운영 자동화, RiGrid Server Driven UI, 렌더링 최적화, AutoML XAI
+            PageAgent 운영 자동화, RiGrid Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템
           </div>
         </div>
       </section>
@@ -251,6 +252,7 @@ const footerLabels = [
   'Kihwan Kim · Software Engineer · Server Driven UI / RiGrid / Product UI Platform',
   'Kihwan Kim · Software Engineer · Virtualization / Rendering Performance / React',
   'Kihwan Kim · Software Engineer · AutoML / Explainable AI / Enterprise AI Product',
+  'Kihwan Kim · Software Engineer · Recommender Systems / Experiment Platform / UX Research',
 ];
 
 const drawSubmissionFooters = async (pdf) => {
