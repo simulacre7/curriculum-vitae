@@ -3,6 +3,10 @@ import { css, Theme } from '@emotion/react';
 import { BreakPoint, orBelow } from './styles';
 
 export const globalStyles = (theme: Theme) => css`
+  @page {
+    size: A4;
+  }
+
   * {
     margin: 0;
     padding: 0;
