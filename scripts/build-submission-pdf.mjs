@@ -72,7 +72,7 @@ const waitForServer = async (targetUrl, timeoutMs = 15000) => {
   throw new Error(`Timed out waiting for ${targetUrl}`);
 };
 
-const createCoverHtml = () => {
+const createCoverHtml = (totalPages) => {
   writeFileSync(
     coverHtml,
     `<!doctype html>
@@ -162,13 +162,18 @@ const createCoverHtml = () => {
         line-height: 1.5;
       }
 
-      .site {
+      .cover-footer {
         position: absolute;
         left: 18mm;
-        bottom: 13.4mm;
+        right: 18mm;
+        bottom: 24mm;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
       }
 
-      .site a {
+      .cover-footer a,
+      .cover-footer span {
         color: #5e5e5e;
         font-size: 10pt;
         text-decoration: none;
@@ -205,7 +210,10 @@ const createCoverHtml = () => {
         </div>
       </section>
 
-      <div class="site"><a href="https://kihwan.kim">https://kihwan.kim</a></div>
+      <div class="cover-footer">
+        <a href="https://kihwan.kim">https://kihwan.kim</a>
+        <span>1 / ${totalPages}</span>
+      </div>
     </main>
   </body>
 </html>`
@@ -231,19 +239,62 @@ const printPdf = (targetUrl, output) => {
   );
 };
 
-const drawPageNumbers = async (pdf) => {
+const getPdfPageCount = async (sourcePdf) => {
+  const pdf = await PDFDocument.load(readFileSync(sourcePdf));
+  return pdf.getPageCount();
+};
+
+const footerLabels = [
+  ...Array(5).fill('Kihwan Kim · Software Engineer · Curriculum Vitae'),
+  'Kihwan Kim · Software Engineer · PageAgent / Generative UI / Internal Tool Automation',
+  'Kihwan Kim · Software Engineer · PageAgent / Generative UI / Internal Tool Automation',
+  'Kihwan Kim · Software Engineer · Server Driven UI / RiGrid / Product UI Platform',
+  'Kihwan Kim · Software Engineer · Virtualization / Rendering Performance / React',
+  'Kihwan Kim · Software Engineer · AutoML / Explainable AI / Enterprise AI Product',
+];
+
+const drawSubmissionFooters = async (pdf) => {
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const totalPages = pdf.getPageCount();
+  const color = rgb(0.58, 0.58, 0.58);
+  const ruleColor = rgb(0.82, 0.9, 0.87);
+  const fontSize = 8;
+  const y = 38;
 
   pdf.getPages().forEach((page, index) => {
+    if (index === 0) {
+      return;
+    }
+
     const { width } = page.getSize();
+    const footerLabel = footerLabels[index - 1] ?? 'Kihwan Kim · Software Engineer';
     const label = `${index + 1} / ${totalPages}`;
-    page.drawText(label, {
-      x: width - 52 - font.widthOfTextAtSize(label, 8),
-      y: 38,
-      size: 8,
+    const leftX = 52;
+    const rightX = width - 52 - font.widthOfTextAtSize(label, fontSize);
+
+    if (index > 0) {
+      page.drawLine({
+        start: { x: leftX, y: y + 23 },
+        end: { x: width - 52, y: y + 23 },
+        thickness: 0.6,
+        color: ruleColor,
+      });
+    }
+
+    page.drawText(footerLabel, {
+      x: leftX,
+      y,
+      size: fontSize,
       font,
-      color: rgb(0.58, 0.58, 0.58),
+      color,
+    });
+
+    page.drawText(label, {
+      x: rightX,
+      y,
+      size: fontSize,
+      font,
+      color,
     });
   });
 };
@@ -257,13 +308,12 @@ const mergePdfs = async () => {
     pages.forEach((page) => mergedPdf.addPage(page));
   }
 
-  await drawPageNumbers(mergedPdf);
+  await drawSubmissionFooters(mergedPdf);
 
   writeFileSync(outputPdf, await mergedPdf.save());
 };
 
 run('pnpm', ['build']);
-createCoverHtml();
 
 const server = spawn(
   'pnpm',
@@ -288,8 +338,10 @@ server.stderr.on('data', (data) => process.stderr.write(data));
 
 try {
   await waitForServer(url);
-  printPdf(pathToFileURL(coverHtml).href, coverPdf);
   printPdf(url, cvPdf);
+  const totalPages = 1 + (await getPdfPageCount(cvPdf)) + (await getPdfPageCount(portfolioPdf));
+  createCoverHtml(totalPages);
+  printPdf(pathToFileURL(coverHtml).href, coverPdf);
   await mergePdfs();
   console.log(`Wrote ${outputPdf}`);
 } finally {
