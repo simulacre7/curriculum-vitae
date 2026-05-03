@@ -3,7 +3,15 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
+import {
+  PDFArray,
+  PDFDocument,
+  PDFName,
+  PDFNumber,
+  PDFString,
+  StandardFonts,
+  rgb,
+} from 'pdf-lib';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const submissionDir = resolve(root, 'submission');
@@ -173,13 +181,12 @@ const createCoverHtml = () => {
   </head>
   <body>
     <main class="page">
-      <div class="eyebrow">CV + Portfolio Submission</div>
+      <div class="eyebrow">Curriculum Vitae · Portfolio Submission</div>
       <h1>김기환 · Kihwan Kim</h1>
-      <div class="role">Frontend Engineer</div>
+      <div class="role">Full-stack Product Engineer</div>
       <p class="summary">
-        이 문서는 이력서와 프론트엔드 엔지니어링 포트폴리오를 함께 묶은 제출용 자료입니다.
-        CV에서는 경력과 연구 이력을, Portfolio에서는 운영 자동화, Server Driven UI, 대규모
-        렌더링 최적화 사례를 정리했습니다.
+        이력서와 포트폴리오를 하나로 묶어, 경력과 연구 이력은 물론 제품 개발 과정에서 다룬
+        운영 자동화, Server Driven UI, 대규모 렌더링 최적화 사례를 함께 정리했습니다.
       </p>
 
       <div class="rule"></div>
@@ -202,7 +209,7 @@ const createCoverHtml = () => {
         </div>
       </section>
 
-      <div class="site">kihwan.kim</div>
+      <div class="site">https://kihwan.kim</div>
     </main>
   </body>
 </html>`
@@ -245,6 +252,35 @@ const drawPageNumbers = async (pdf) => {
   });
 };
 
+const addCoverLink = (pdf) => {
+  const page = pdf.getPage(0);
+  const context = pdf.context;
+  const rect = PDFArray.withContext(context);
+
+  [51, 57, 133, 70].forEach((value) => rect.push(PDFNumber.of(value)));
+
+  const link = context.obj({
+    Type: 'Annot',
+    Subtype: 'Link',
+    Rect: rect,
+    Border: [0, 0, 0],
+    A: {
+      Type: 'Action',
+      S: 'URI',
+      URI: PDFString.of('https://kihwan.kim'),
+    },
+  });
+
+  const annots = page.node.lookupMaybe(PDFName.of('Annots'), PDFArray);
+  if (annots) {
+    annots.push(link);
+  } else {
+    const newAnnots = PDFArray.withContext(context);
+    newAnnots.push(link);
+    page.node.set(PDFName.of('Annots'), newAnnots);
+  }
+};
+
 const mergePdfs = async () => {
   const mergedPdf = await PDFDocument.create();
 
@@ -254,6 +290,7 @@ const mergePdfs = async () => {
     pages.forEach((page) => mergedPdf.addPage(page));
   }
 
+  addCoverLink(mergedPdf);
   await drawPageNumbers(mergedPdf);
 
   writeFileSync(outputPdf, await mergedPdf.save());
