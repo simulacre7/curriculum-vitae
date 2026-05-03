@@ -1,13 +1,15 @@
 import { execFileSync, spawn } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const submissionDir = resolve(root, 'submission');
 const tempDir = resolve(root, '.tmp-submission');
+const coverHtml = resolve(tempDir, 'cover.html');
+const coverPdf = resolve(tempDir, 'KihwanKim_Cover.pdf');
 const cvPdf = resolve(tempDir, 'KihwanKim_CV.pdf');
 const portfolioPdf = resolve(
   root,
@@ -70,7 +72,144 @@ const waitForServer = async (targetUrl, timeoutMs = 15000) => {
   throw new Error(`Timed out waiting for ${targetUrl}`);
 };
 
-const printPdf = () => {
+const createCoverHtml = () => {
+  writeFileSync(
+    coverHtml,
+    `<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #000000;
+        background: #ffffff;
+        font-family:
+          Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+          "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        padding: 52mm 18mm 24mm;
+      }
+
+      .eyebrow {
+        color: #3eb489;
+        font-size: 10pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 20px 0 0;
+        font-size: 34pt;
+        line-height: 1.15;
+      }
+
+      .role {
+        margin-top: 14px;
+        font-size: 17pt;
+      }
+
+      .summary {
+        margin-top: 38px;
+        max-width: 680px;
+        color: #5e5e5e;
+        font-size: 11pt;
+        line-height: 1.6;
+      }
+
+      .rule {
+        margin-top: 64px;
+        border-top: 1px solid rgba(62, 180, 137, 0.26);
+      }
+
+      .section {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .number {
+        color: #3eb489;
+        font-size: 11pt;
+        font-weight: 700;
+      }
+
+      .title {
+        font-size: 15pt;
+        font-weight: 700;
+      }
+
+      .description {
+        margin-top: 8px;
+        color: #5e5e5e;
+        font-size: 10.5pt;
+        line-height: 1.5;
+      }
+
+      .site {
+        position: absolute;
+        left: 18mm;
+        bottom: 24mm;
+        color: #5e5e5e;
+        font-size: 10pt;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="eyebrow">CV + Portfolio Submission</div>
+      <h1>김기환 · Kihwan Kim</h1>
+      <div class="role">Frontend Engineer</div>
+      <p class="summary">
+        이 문서는 이력서와 프론트엔드 엔지니어링 포트폴리오를 함께 묶은 제출용 자료입니다.
+        CV에서는 경력과 연구 이력을, Portfolio에서는 운영 자동화, Server Driven UI, 대규모
+        렌더링 최적화 사례를 정리했습니다.
+      </p>
+
+      <div class="rule"></div>
+
+      <section class="section">
+        <div class="number">01</div>
+        <div>
+          <div class="title">Curriculum Vitae · 이력서</div>
+          <div class="description">경력, 프로젝트, 학력, 연구 및 논문 이력</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="number">02</div>
+        <div>
+          <div class="title">Portfolio Case Studies · 포트폴리오</div>
+          <div class="description">
+            PageAgent 운영 자동화, RiGrid Server Driven UI, 대규모 콘텐츠 렌더링 최적화
+          </div>
+        </div>
+      </section>
+
+      <div class="site">kihwan.kim</div>
+    </main>
+  </body>
+</html>`
+  );
+};
+
+const printPdf = (targetUrl, output) => {
   execFileSync(
     chrome,
     [
@@ -82,97 +221,11 @@ const printPdf = () => {
       '--print-to-pdf-no-header',
       '--run-all-compositor-stages-before-draw',
       '--virtual-time-budget=5000',
-      `--print-to-pdf=${cvPdf}`,
-      url,
+      `--print-to-pdf=${output}`,
+      targetUrl,
     ],
     { stdio: 'inherit' }
   );
-};
-
-const drawCoverPage = async (pdf) => {
-  const page = pdf.addPage([594.96, 841.92]);
-  const font = await pdf.embedFont(StandardFonts.Helvetica);
-  const boldFont = await pdf.embedFont(StandardFonts.HelveticaBold);
-  const green = rgb(0.243, 0.706, 0.537);
-  const black = rgb(0, 0, 0);
-  const gray = rgb(0.36, 0.36, 0.36);
-
-  page.drawText('CURRICULUM VITAE + PORTFOLIO', {
-    x: 52,
-    y: 710,
-    size: 10,
-    font: boldFont,
-    color: green,
-  });
-
-  page.drawText('Kihwan Kim', {
-    x: 52,
-    y: 650,
-    size: 34,
-    font: boldFont,
-    color: black,
-  });
-
-  page.drawText('Frontend Engineer', {
-    x: 52,
-    y: 615,
-    size: 17,
-    font,
-    color: black,
-  });
-
-  page.drawText('Submission package containing CV and selected frontend engineering case studies.', {
-    x: 52,
-    y: 570,
-    size: 11,
-    font,
-    color: gray,
-  });
-
-  page.drawLine({
-    start: { x: 52, y: 505 },
-    end: { x: 542, y: 505 },
-    thickness: 1,
-    color: rgb(0.82, 0.9, 0.87),
-  });
-
-  const sections = [
-    ['01', 'Curriculum Vitae', 'Experience, projects, education, and publications'],
-    ['02', 'Portfolio Case Studies', 'PageAgent automation, RiGrid Server Driven UI, and rendering performance'],
-  ];
-
-  sections.forEach(([number, title, description], index) => {
-    const y = 455 - index * 72;
-    page.drawText(number, {
-      x: 52,
-      y,
-      size: 11,
-      font: boldFont,
-      color: green,
-    });
-    page.drawText(title, {
-      x: 96,
-      y,
-      size: 14,
-      font: boldFont,
-      color: black,
-    });
-    page.drawText(description, {
-      x: 96,
-      y: y - 22,
-      size: 10,
-      font,
-      color: gray,
-    });
-  });
-
-  page.drawText('kihwan.kim', {
-    x: 52,
-    y: 92,
-    size: 10,
-    font,
-    color: gray,
-  });
 };
 
 const drawPageNumbers = async (pdf) => {
@@ -184,7 +237,7 @@ const drawPageNumbers = async (pdf) => {
     const label = `${index + 1} / ${totalPages}`;
     page.drawText(label, {
       x: width - 52 - font.widthOfTextAtSize(label, 8),
-      y: 28,
+      y: 38,
       size: 8,
       font,
       color: rgb(0.58, 0.58, 0.58),
@@ -195,9 +248,7 @@ const drawPageNumbers = async (pdf) => {
 const mergePdfs = async () => {
   const mergedPdf = await PDFDocument.create();
 
-  await drawCoverPage(mergedPdf);
-
-  for (const sourcePdf of [cvPdf, portfolioPdf]) {
+  for (const sourcePdf of [coverPdf, cvPdf, portfolioPdf]) {
     const pdf = await PDFDocument.load(readFileSync(sourcePdf));
     const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
     pages.forEach((page) => mergedPdf.addPage(page));
@@ -209,6 +260,7 @@ const mergePdfs = async () => {
 };
 
 run('pnpm', ['build']);
+createCoverHtml();
 
 const server = spawn(
   'pnpm',
@@ -233,7 +285,8 @@ server.stderr.on('data', (data) => process.stderr.write(data));
 
 try {
   await waitForServer(url);
-  printPdf();
+  printPdf(pathToFileURL(coverHtml).href, coverPdf);
+  printPdf(url, cvPdf);
   await mergePdfs();
   console.log(`Wrote ${outputPdf}`);
 } finally {
