@@ -20,7 +20,7 @@ const portfolioPdf = resolve(
 );
 const outputPdf = resolve(
   submissionDir,
-  'KihwanKim_CV_PageAgent_Portfolio.pdf'
+  'KihwanKim_CV_and_Portfolio.pdf'
 );
 const port = Number(process.env.CV_PDF_PORT ?? 4177);
 const url = `http://127.0.0.1:${port}/?lng=ko`;

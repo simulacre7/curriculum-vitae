@@ -29,7 +29,7 @@ pnpm build:submission-pdf
 Output:
 
 ```text
-submission/KihwanKim_CV_PageAgent_Portfolio.pdf
+submission/KihwanKim_CV_and_Portfolio.pdf
 ```
 
 # License
