@@ -3,15 +3,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-import {
-  PDFArray,
-  PDFDocument,
-  PDFName,
-  PDFNumber,
-  PDFString,
-  StandardFonts,
-  rgb,
-} from 'pdf-lib';
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const submissionDir = resolve(root, 'submission');
@@ -173,9 +165,13 @@ const createCoverHtml = () => {
       .site {
         position: absolute;
         left: 18mm;
-        bottom: 24mm;
+        bottom: 13.4mm;
+      }
+
+      .site a {
         color: #5e5e5e;
         font-size: 10pt;
+        text-decoration: none;
       }
     </style>
   </head>
@@ -209,7 +205,7 @@ const createCoverHtml = () => {
         </div>
       </section>
 
-      <div class="site">https://kihwan.kim</div>
+      <div class="site"><a href="https://kihwan.kim">https://kihwan.kim</a></div>
     </main>
   </body>
 </html>`
@@ -252,35 +248,6 @@ const drawPageNumbers = async (pdf) => {
   });
 };
 
-const addCoverLink = (pdf) => {
-  const page = pdf.getPage(0);
-  const context = pdf.context;
-  const rect = PDFArray.withContext(context);
-
-  [51, 57, 133, 70].forEach((value) => rect.push(PDFNumber.of(value)));
-
-  const link = context.obj({
-    Type: 'Annot',
-    Subtype: 'Link',
-    Rect: rect,
-    Border: [0, 0, 0],
-    A: {
-      Type: 'Action',
-      S: 'URI',
-      URI: PDFString.of('https://kihwan.kim'),
-    },
-  });
-
-  const annots = page.node.lookupMaybe(PDFName.of('Annots'), PDFArray);
-  if (annots) {
-    annots.push(link);
-  } else {
-    const newAnnots = PDFArray.withContext(context);
-    newAnnots.push(link);
-    page.node.set(PDFName.of('Annots'), newAnnots);
-  }
-};
-
 const mergePdfs = async () => {
   const mergedPdf = await PDFDocument.create();
 
@@ -290,7 +257,6 @@ const mergePdfs = async () => {
     pages.forEach((page) => mergedPdf.addPage(page));
   }
 
-  addCoverLink(mergedPdf);
   await drawPageNumbers(mergedPdf);
 
   writeFileSync(outputPdf, await mergedPdf.save());
