@@ -145,7 +145,7 @@ const createCoverHtml = (totalPages) => {
         display: grid;
         grid-template-columns: 44px 1fr;
         gap: 18px;
-        margin-top: 34px;
+        margin-top: 24px;
       }
 
       .number {
@@ -155,12 +155,12 @@ const createCoverHtml = (totalPages) => {
       }
 
       .title {
-        font-size: 15pt;
+        font-size: 13.5pt;
         font-weight: 700;
       }
 
       .description {
-        margin-top: 8px;
+        margin-top: 6px;
         color: #5e5e5e;
         font-size: 10.5pt;
         line-height: 1.5;
@@ -356,16 +356,32 @@ const createPortfolioCoverHtml = (totalPages) => {
       <section class="section">
         <div class="number">02</div>
         <div>
-          <div class="title">Product UI Platform</div>
-          <div class="description">RiGrid Server Driven UI와 대용량 렌더링 최적화</div>
+          <div class="title">RiGrid Server Driven UI</div>
+          <div class="description">운영자가 제어하고 실험할 수 있는 멀티 플랫폼 UI 구성</div>
         </div>
       </section>
 
       <section class="section">
         <div class="number">03</div>
         <div>
-          <div class="title">AI Product & Research</div>
-          <div class="description">AutoML XAI와 추천 시스템 탐색/실험 플랫폼</div>
+          <div class="title">Rendering Performance</div>
+          <div class="description">대용량 콘텐츠 환경을 위한 가상화와 렌더링 최적화</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="number">04</div>
+        <div>
+          <div class="title">AutoML XAI</div>
+          <div class="description">기업 의사결정을 위한 설명가능한 AI 제품 설계와 구현</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="number">05</div>
+        <div>
+          <div class="title">Transparent Exploration in Recommender Systems</div>
+          <div class="description">추천 시스템의 탐색 과정과 사용자 보상 함수 연구</div>
         </div>
       </section>
 
