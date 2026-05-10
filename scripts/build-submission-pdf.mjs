@@ -336,7 +336,7 @@ const createPortfolioCoverHtml = (totalPages) => {
   <body>
     <main class="page">
       <div class="eyebrow">Selected Product Engineering Work</div>
-      <h1>Kihwan Kim</h1>
+      <h1>김기환</h1>
       <div class="role">Software Engineer</div>
       <p class="summary">
         제품 개발 과정에서 다룬 운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI,
