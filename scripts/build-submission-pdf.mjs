@@ -10,6 +10,8 @@ const submissionDir = resolve(root, 'submission');
 const tempDir = resolve(root, '.tmp-submission');
 const coverHtml = resolve(tempDir, 'cover.html');
 const coverPdf = resolve(tempDir, 'KihwanKim_Cover.pdf');
+const portfolioCoverHtml = resolve(tempDir, 'portfolio-cover.html');
+const portfolioCoverPdf = resolve(tempDir, 'KihwanKim_Portfolio_Cover.pdf');
 const cvPdf = resolve(tempDir, 'KihwanKim_CV.pdf');
 const portfolioPdf = resolve(
   root,
@@ -223,6 +225,160 @@ const createCoverHtml = (totalPages) => {
   );
 };
 
+const createPortfolioCoverHtml = (totalPages) => {
+  writeFileSync(
+    portfolioCoverHtml,
+    `<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #000000;
+        background: #ffffff;
+        font-family:
+          Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+          "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        padding: 52mm 18mm 24mm;
+      }
+
+      .eyebrow {
+        color: #3eb489;
+        font-size: 10pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 20px 0 0;
+        font-size: 34pt;
+        line-height: 1.15;
+      }
+
+      .role {
+        margin-top: 14px;
+        font-size: 17pt;
+      }
+
+      .summary {
+        margin-top: 38px;
+        max-width: 680px;
+        color: #5e5e5e;
+        font-size: 11pt;
+        line-height: 1.6;
+      }
+
+      .rule {
+        margin-top: 64px;
+        border-top: 1px solid rgba(62, 180, 137, 0.26);
+      }
+
+      .section {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .number {
+        color: #3eb489;
+        font-size: 11pt;
+        font-weight: 700;
+      }
+
+      .title {
+        font-size: 15pt;
+        font-weight: 700;
+      }
+
+      .description {
+        margin-top: 8px;
+        color: #5e5e5e;
+        font-size: 10.5pt;
+        line-height: 1.5;
+      }
+
+      .cover-footer {
+        position: absolute;
+        left: 18mm;
+        right: 18mm;
+        bottom: 24mm;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+
+      .cover-footer a,
+      .cover-footer span {
+        color: #5e5e5e;
+        font-size: 10pt;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="eyebrow">Portfolio Case Studies · 포트폴리오</div>
+      <h1>김기환 포트폴리오<br />Kihwan Kim Portfolio</h1>
+      <div class="role">Software Engineer</div>
+      <p class="summary">
+        제품 개발 과정에서 다룬 운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI,
+        추천 시스템 실험 사례를 선별해 정리했습니다.
+      </p>
+
+      <div class="rule"></div>
+
+      <section class="section">
+        <div class="number">01</div>
+        <div>
+          <div class="title">Agentic Internal Operations</div>
+          <div class="description">PageAgent와 Generative UI를 활용한 내부 운영 자동화</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="number">02</div>
+        <div>
+          <div class="title">Product UI Platform</div>
+          <div class="description">RiGrid Server Driven UI와 대용량 렌더링 최적화</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="number">03</div>
+        <div>
+          <div class="title">AI Product & Research</div>
+          <div class="description">AutoML XAI와 추천 시스템 탐색/실험 플랫폼</div>
+        </div>
+      </section>
+
+      <div class="cover-footer">
+        <a href="https://kihwan.kim">https://kihwan.kim</a>
+        <span>1 / ${totalPages}</span>
+      </div>
+    </main>
+  </body>
+</html>`
+  );
+};
+
 const printPdf = (targetUrl, output) => {
   execFileSync(
     chrome,
@@ -315,6 +471,23 @@ const copyPdfWithFooters = async (sourcePdf, outputPdf, footerLabels) => {
   writeFileSync(outputPdf, await output.save());
 };
 
+const createPortfolioPdf = async () => {
+  const output = await PDFDocument.create();
+
+  for (const sourcePdf of [portfolioCoverPdf, portfolioPdf]) {
+    const source = await PDFDocument.load(readFileSync(sourcePdf));
+    const pages = await output.copyPages(source, source.getPageIndices());
+    pages.forEach((page) => output.addPage(page));
+  }
+
+  await drawSubmissionFooters(output, {
+    footerLabels: portfolioFooterLabels,
+    skipPages: 1,
+  });
+
+  writeFileSync(portfolioOutputPdf, await output.save());
+};
+
 const mergePdfs = async (cvFooterLabels) => {
   const mergedPdf = await PDFDocument.create();
 
@@ -362,15 +535,14 @@ try {
   const portfolioPageCount = await getPdfPageCount(portfolioPdf);
   const cvFooterLabels = createCvFooterLabels(cvPageCount);
   const totalPages = 1 + cvPageCount + portfolioPageCount;
+  const portfolioTotalPages = 1 + portfolioPageCount;
 
   createCoverHtml(totalPages);
+  createPortfolioCoverHtml(portfolioTotalPages);
   printPdf(pathToFileURL(coverHtml).href, coverPdf);
+  printPdf(pathToFileURL(portfolioCoverHtml).href, portfolioCoverPdf);
   await copyPdfWithFooters(cvPdf, cvOutputPdf, cvFooterLabels);
-  await copyPdfWithFooters(
-    portfolioPdf,
-    portfolioOutputPdf,
-    portfolioFooterLabels
-  );
+  await createPortfolioPdf();
   await mergePdfs(cvFooterLabels);
   console.log(`Wrote ${combinedOutputPdf}`);
   console.log(`Wrote ${cvOutputPdf}`);

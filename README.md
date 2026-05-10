@@ -20,7 +20,7 @@ pnpm dev
 
 # Submission PDF
 
-Generate submission PDFs from the Korean resume and the portfolio PDF in the sibling `pageagent-generative-ui-case-study` repository.
+Generate submission PDFs from the Korean resume and the portfolio PDF in the sibling `pageagent-generative-ui-case-study` repository. The combined file and standalone portfolio include their own cover pages.
 
 ```bash
 pnpm build:submission-pdf
