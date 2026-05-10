@@ -110,7 +110,7 @@ const createCoverHtml = (totalPages) => {
       }
 
       .eyebrow {
-        color: #3eb489;
+        color: #5e5e5e;
         font-size: 10pt;
         font-weight: 700;
         letter-spacing: 0.08em;
@@ -259,7 +259,7 @@ const createPortfolioCoverHtml = (totalPages) => {
       }
 
       .eyebrow {
-        color: #3eb489;
+        color: #5e5e5e;
         font-size: 10pt;
         font-weight: 700;
         letter-spacing: 0.08em;
