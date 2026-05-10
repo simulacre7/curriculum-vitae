@@ -20,7 +20,7 @@ pnpm dev
 
 # Submission PDF
 
-Generate a Korean resume PDF without the language switcher, then append the PageAgent case study PDF from the sibling `pageagent-generative-ui-case-study` repository.
+Generate submission PDFs from the Korean resume and the portfolio PDF in the sibling `pageagent-generative-ui-case-study` repository.
 
 ```bash
 pnpm build:submission-pdf
@@ -30,6 +30,8 @@ Output:
 
 ```text
 submission/KihwanKim_CV_and_Portfolio.pdf
+submission/KihwanKim_CV.pdf
+submission/KihwanKim_Portfolio.pdf
 ```
 
 # License

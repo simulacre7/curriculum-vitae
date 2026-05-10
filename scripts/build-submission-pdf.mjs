@@ -18,10 +18,12 @@ const portfolioPdf = resolve(
   'submission',
   'KihwanKim_PageAgent_InternalOps_CaseStudy.pdf'
 );
-const outputPdf = resolve(
+const combinedOutputPdf = resolve(
   submissionDir,
   'KihwanKim_CV_and_Portfolio.pdf'
 );
+const cvOutputPdf = resolve(submissionDir, 'KihwanKim_CV.pdf');
+const portfolioOutputPdf = resolve(submissionDir, 'KihwanKim_Portfolio.pdf');
 const port = Number(process.env.CV_PDF_PORT ?? 4177);
 const url = `http://127.0.0.1:${port}/?lng=ko`;
 
@@ -245,8 +247,10 @@ const getPdfPageCount = async (sourcePdf) => {
   return pdf.getPageCount();
 };
 
-const footerLabels = [
-  ...Array(5).fill('Kihwan Kim · Software Engineer · Curriculum Vitae'),
+const createCvFooterLabels = (pageCount) =>
+  Array(pageCount).fill('Kihwan Kim · Software Engineer · Curriculum Vitae');
+
+const portfolioFooterLabels = [
   'Kihwan Kim · Software Engineer · PageAgent / Generative UI / Internal Tool Automation',
   'Kihwan Kim · Software Engineer · PageAgent / Generative UI / Internal Tool Automation',
   'Kihwan Kim · Software Engineer · Server Driven UI / RiGrid / Product UI Platform',
@@ -255,7 +259,7 @@ const footerLabels = [
   'Kihwan Kim · Software Engineer · Recommender Systems / Experiment Platform / UX Research',
 ];
 
-const drawSubmissionFooters = async (pdf) => {
+const drawSubmissionFooters = async (pdf, { footerLabels, skipPages = 0 }) => {
   const font = await pdf.embedFont(StandardFonts.Helvetica);
   const totalPages = pdf.getPageCount();
   const color = rgb(0.58, 0.58, 0.58);
@@ -264,24 +268,23 @@ const drawSubmissionFooters = async (pdf) => {
   const y = 38;
 
   pdf.getPages().forEach((page, index) => {
-    if (index === 0) {
+    if (index < skipPages) {
       return;
     }
 
     const { width } = page.getSize();
-    const footerLabel = footerLabels[index - 1] ?? 'Kihwan Kim · Software Engineer';
+    const footerLabel =
+      footerLabels[index - skipPages] ?? 'Kihwan Kim · Software Engineer';
     const label = `${index + 1} / ${totalPages}`;
     const leftX = 52;
     const rightX = width - 52 - font.widthOfTextAtSize(label, fontSize);
 
-    if (index > 0) {
-      page.drawLine({
-        start: { x: leftX, y: y + 23 },
-        end: { x: width - 52, y: y + 23 },
-        thickness: 0.6,
-        color: ruleColor,
-      });
-    }
+    page.drawLine({
+      start: { x: leftX, y: y + 23 },
+      end: { x: width - 52, y: y + 23 },
+      thickness: 0.6,
+      color: ruleColor,
+    });
 
     page.drawText(footerLabel, {
       x: leftX,
@@ -301,7 +304,18 @@ const drawSubmissionFooters = async (pdf) => {
   });
 };
 
-const mergePdfs = async () => {
+const copyPdfWithFooters = async (sourcePdf, outputPdf, footerLabels) => {
+  const output = await PDFDocument.create();
+  const source = await PDFDocument.load(readFileSync(sourcePdf));
+  const pages = await output.copyPages(source, source.getPageIndices());
+  pages.forEach((page) => output.addPage(page));
+
+  await drawSubmissionFooters(output, { footerLabels });
+
+  writeFileSync(outputPdf, await output.save());
+};
+
+const mergePdfs = async (cvFooterLabels) => {
   const mergedPdf = await PDFDocument.create();
 
   for (const sourcePdf of [coverPdf, cvPdf, portfolioPdf]) {
@@ -310,9 +324,12 @@ const mergePdfs = async () => {
     pages.forEach((page) => mergedPdf.addPage(page));
   }
 
-  await drawSubmissionFooters(mergedPdf);
+  await drawSubmissionFooters(mergedPdf, {
+    footerLabels: [...cvFooterLabels, ...portfolioFooterLabels],
+    skipPages: 1,
+  });
 
-  writeFileSync(outputPdf, await mergedPdf.save());
+  writeFileSync(combinedOutputPdf, await mergedPdf.save());
 };
 
 run('pnpm', ['build']);
@@ -341,11 +358,23 @@ server.stderr.on('data', (data) => process.stderr.write(data));
 try {
   await waitForServer(url);
   printPdf(url, cvPdf);
-  const totalPages = 1 + (await getPdfPageCount(cvPdf)) + (await getPdfPageCount(portfolioPdf));
+  const cvPageCount = await getPdfPageCount(cvPdf);
+  const portfolioPageCount = await getPdfPageCount(portfolioPdf);
+  const cvFooterLabels = createCvFooterLabels(cvPageCount);
+  const totalPages = 1 + cvPageCount + portfolioPageCount;
+
   createCoverHtml(totalPages);
   printPdf(pathToFileURL(coverHtml).href, coverPdf);
-  await mergePdfs();
-  console.log(`Wrote ${outputPdf}`);
+  await copyPdfWithFooters(cvPdf, cvOutputPdf, cvFooterLabels);
+  await copyPdfWithFooters(
+    portfolioPdf,
+    portfolioOutputPdf,
+    portfolioFooterLabels
+  );
+  await mergePdfs(cvFooterLabels);
+  console.log(`Wrote ${combinedOutputPdf}`);
+  console.log(`Wrote ${cvOutputPdf}`);
+  console.log(`Wrote ${portfolioOutputPdf}`);
 } finally {
   server.kill('SIGTERM');
 }
