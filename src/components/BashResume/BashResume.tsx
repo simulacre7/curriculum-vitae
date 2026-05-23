@@ -413,8 +413,15 @@ const getCommandOutput = (
   }
 };
 
-export function BashResume() {
-  const initialLanguage = useMemo(() => getInitialLanguage(), []);
+type BashResumeProps = {
+  routeLanguage?: SupportedLanguage;
+};
+
+export function BashResume({ routeLanguage }: BashResumeProps) {
+  const initialLanguage = useMemo(
+    () => routeLanguage ?? getInitialLanguage(),
+    [routeLanguage]
+  );
   const [language, setLanguage] =
     useState<SupportedLanguage>(initialLanguage);
   const [bash, setBash] = useState<Bash | null>(null);
@@ -512,6 +519,9 @@ export function BashResume() {
       setLanguage(nextLanguage);
       window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
       const nextUrl = new URL(window.location.href);
+      if (nextUrl.pathname.startsWith('/bash')) {
+        nextUrl.pathname = `/bash/${nextLanguage}`;
+      }
       nextUrl.searchParams.set('lng', nextLanguage);
       window.history.replaceState(null, '', nextUrl);
       void i18n.changeLanguage(nextLanguage);
