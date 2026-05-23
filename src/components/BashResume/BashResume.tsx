@@ -9,6 +9,12 @@ import {
   useState,
 } from 'react';
 
+import i18n, {
+  DEFAULT_LANGUAGE,
+  LANGUAGE_STORAGE_KEY,
+  SUPPORTED_LANGUAGES,
+  SupportedLanguage,
+} from '../../i18n';
 import * as styles from './BashResume.styles';
 
 type ResumeData = {
@@ -37,6 +43,8 @@ type TerminalLine = {
   kind?: 'command' | 'stderr' | 'system';
 };
 
+type ResumeMap = Record<SupportedLanguage, ResumeData>;
+
 const HOME = '/home/kihwan';
 const INITIAL_COMMANDS = [
   'about',
@@ -47,20 +55,111 @@ const INITIAL_COMMANDS = [
   'contact',
 ];
 
-const intro = [
-  'Kihwan Kim / terminal resume',
-  '',
-  '짧은 명령어로 이력서를 탐색할 수 있습니다.',
-  '  about    소개',
-  '  work     경력',
-  '  agent    Agent/Gen UI',
-  '  stack    기술',
-  '  papers   연구',
-  '  contact  연락처',
-  '',
-  '더 보고 싶으면 `guide`를 입력하세요.',
-  '',
-];
+const isSupportedLanguage = (value: string | null): value is SupportedLanguage =>
+  SUPPORTED_LANGUAGES.some((language) => language === value);
+
+const getInitialLanguage = (): SupportedLanguage => {
+  if (typeof window === 'undefined') return DEFAULT_LANGUAGE;
+
+  const queryLanguage = new URLSearchParams(window.location.search).get('lng');
+  if (isSupportedLanguage(queryLanguage)) return queryLanguage;
+
+  const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  if (isSupportedLanguage(storedLanguage)) return storedLanguage;
+
+  return DEFAULT_LANGUAGE;
+};
+
+const copy = {
+  ko: {
+    intro: [
+      'Kihwan Kim / terminal resume',
+      '',
+      '짧은 명령어로 이력서를 탐색할 수 있습니다.',
+      '  about    소개',
+      '  work     경력',
+      '  agent    Agent/Gen UI',
+      '  stack    기술',
+      '  papers   연구',
+      '  contact  연락처',
+      '',
+      '더 보고 싶으면 `guide`를 입력하세요.',
+      '언어 변경: `lang en`',
+      '',
+    ],
+    ready: 'ready. try `about` first.',
+    noProject: '관련 프로젝트를 찾지 못했습니다.',
+    focus: 'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+    guide: [
+      '읽기 좋은 명령어',
+      '  about    소개',
+      '  work     경력',
+      '  agent    에이전트/생성형 UI 프로젝트',
+      '  stack    기술 스택',
+      '  papers   연구/논문',
+      '  contact  연락처',
+      '  lang     현재 언어',
+      '  lang en  영어로 전환',
+      '  lang ko  한국어로 전환',
+      '',
+      '숨은 파일시스템도 있습니다.',
+      '  ls',
+      '  cat README.md',
+      '  tree resume',
+      '  grep -R "Agent" resume',
+      '',
+      'clear로 화면을 비울 수 있습니다.',
+    ],
+    currentLanguage: '현재 언어: 한국어',
+    languageChanged: '언어를 한국어로 전환했습니다.',
+    unsupportedLanguage: '지원하지 않는 언어입니다. `lang ko` 또는 `lang en`을 사용하세요.',
+    mounting: 'resume data is still mounting',
+  },
+  en: {
+    intro: [
+      'Kihwan Kim / terminal resume',
+      '',
+      'Explore this resume with short commands.',
+      '  about    profile',
+      '  work     career',
+      '  agent    Agent/Gen UI',
+      '  stack    tools',
+      '  papers   research',
+      '  contact  links',
+      '',
+      'Type `guide` for more.',
+      'Switch language: `lang ko`',
+      '',
+    ],
+    ready: 'ready. try `about` first.',
+    noProject: 'No matching project found.',
+    focus: 'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+    guide: [
+      'Readable commands',
+      '  about    profile',
+      '  work     career',
+      '  agent    agent/generative UI work',
+      '  stack    stack',
+      '  papers   research',
+      '  contact  links',
+      '  lang     current language',
+      '  lang en  switch to English',
+      '  lang ko  switch to Korean',
+      '',
+      'There is also a hidden filesystem.',
+      '  ls',
+      '  cat README.md',
+      '  tree resume',
+      '  grep -R "Agent" resume',
+      '',
+      'Use clear to reset the screen.',
+    ],
+    currentLanguage: 'current language: English',
+    languageChanged: 'Switched language to English.',
+    unsupportedLanguage: 'Unsupported language. Use `lang ko` or `lang en`.',
+    mounting: 'resume data is still mounting',
+  },
+} satisfies Record<SupportedLanguage, Record<string, string | string[]>>;
 
 const makeMarkdown = (resume: ResumeData, locale: 'ko' | 'en') => {
   const lines = [
@@ -191,6 +290,7 @@ const formatList = (items: string[], prefix = '- ') =>
 
 const getProjectText = (
   resume: ResumeData,
+  language: SupportedLanguage,
   matcher: (project: NonNullable<ResumeData['experience'][number]['projects']>[number]) => boolean
 ) => {
   const matches = resume.experience.flatMap((job) =>
@@ -199,7 +299,7 @@ const getProjectText = (
       .map((project) => ({ company: job.company, project }))
   );
 
-  if (!matches.length) return '관련 프로젝트를 찾지 못했습니다.';
+  if (!matches.length) return copy[language].noProject;
 
   return matches
     .map(({ company, project }) =>
@@ -215,7 +315,11 @@ const getProjectText = (
     .join('\n\n');
 };
 
-const getCommandOutput = (command: string, resume: ResumeData) => {
+const getCommandOutput = (
+  command: string,
+  resume: ResumeData,
+  language: SupportedLanguage
+) => {
   switch (command) {
     case 'about':
       return [
@@ -223,7 +327,7 @@ const getCommandOutput = (command: string, resume: ResumeData) => {
         '',
         resume.summary,
         '',
-        'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+        copy[language].focus,
       ].join('\n');
     case 'work':
       return resume.experience
@@ -240,10 +344,13 @@ const getCommandOutput = (command: string, resume: ResumeData) => {
         )
         .join('\n\n');
     case 'agent':
-      return getProjectText(resume, (project) =>
-        /agent|generative|pageagent|자동화/i.test(
-          `${project.title} ${project.summary ?? ''}`
-        )
+      return getProjectText(
+        resume,
+        language,
+        (project) =>
+          /agent|generative|pageagent|자동화|browser|ui/i.test(
+            `${project.title} ${project.summary ?? ''}`
+          )
       );
     case 'stack': {
       const stack = Array.from(
@@ -278,45 +385,37 @@ const getCommandOutput = (command: string, resume: ResumeData) => {
       ].join('\n');
     case 'guide':
     case 'help':
-      return [
-        '읽기 좋은 명령어',
-        '  about    소개',
-        '  work     경력',
-        '  agent    에이전트/생성형 UI 프로젝트',
-        '  stack    기술 스택',
-        '  papers   연구/논문',
-        '  contact  연락처',
-        '',
-        '숨은 파일시스템도 있습니다.',
-        '  ls',
-        '  cat README.md',
-        '  tree resume',
-        '  grep -R "Agent" resume',
-        '',
-        'clear로 화면을 비울 수 있습니다.',
-      ].join('\n');
+      return copy[language].guide.join('\n');
     default:
       return null;
   }
 };
 
 export function BashResume() {
+  const initialLanguage = useMemo(() => getInitialLanguage(), []);
+  const [language, setLanguage] =
+    useState<SupportedLanguage>(initialLanguage);
   const [bash, setBash] = useState<Bash | null>(null);
-  const [resume, setResume] = useState<ResumeData | null>(null);
+  const [resumes, setResumes] = useState<ResumeMap | null>(null);
   const [cwd, setCwd] = useState(HOME);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([]);
   const [, setHistoryIndex] = useState<number | null>(null);
   const [lines, setLines] = useState<TerminalLine[]>(
-    intro.map((text, index) => ({ id: index, text, kind: 'system' }))
+    copy[initialLanguage].intro.map((text, index) => ({
+      id: index,
+      text,
+      kind: 'system',
+    }))
   );
   const [isRunning, setIsRunning] = useState(true);
-  const nextId = useRef(intro.length);
+  const nextId = useRef(copy[initialLanguage].intro.length);
   const inputRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
   const didMountFilesystem = useRef(false);
 
   const sampleCommands = useMemo(() => INITIAL_COMMANDS, []);
+  const resume = resumes?.[language] ?? null;
 
   const appendLine = (text: string, kind?: TerminalLine['kind']) => {
     setLines((prev) => [...prev, { id: nextId.current++, text, kind }]);
@@ -339,7 +438,7 @@ export function BashResume() {
         fetch('/locales/en/common.json').then((res) => res.json()),
       ]);
 
-      setResume(ko);
+      setResumes({ ko, en });
       setBash(
         new Bash({
           cwd: HOME,
@@ -353,14 +452,14 @@ export function BashResume() {
         })
       );
       setIsRunning(false);
-      appendLine('ready. try `about` first.', 'system');
+      appendLine(copy[initialLanguage].ready, 'system');
     };
 
     void load().catch((error) => {
       setIsRunning(false);
       appendLine(`failed to mount resume: ${String(error)}`, 'stderr');
     });
-  }, []);
+  }, [initialLanguage]);
 
   useEffect(() => {
     bodyRef.current?.scrollTo({
@@ -379,8 +478,31 @@ export function BashResume() {
       return;
     }
 
+    if (/^lang(?:\s|$)/.test(command)) {
+      const nextLanguage = command.split(/\s+/)[1];
+
+      if (!nextLanguage) {
+        appendLine(copy[language].currentLanguage, 'system');
+        return;
+      }
+
+      if (!isSupportedLanguage(nextLanguage)) {
+        appendLine(copy[language].unsupportedLanguage, 'stderr');
+        return;
+      }
+
+      setLanguage(nextLanguage);
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+      const nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.set('lng', nextLanguage);
+      window.history.replaceState(null, '', nextUrl);
+      void i18n.changeLanguage(nextLanguage);
+      appendLine(copy[nextLanguage].languageChanged, 'system');
+      return;
+    }
+
     if (resume) {
-      const commandOutput = getCommandOutput(command, resume);
+      const commandOutput = getCommandOutput(command, resume, language);
       if (commandOutput) {
         appendBlock(commandOutput);
         return;
@@ -388,12 +510,12 @@ export function BashResume() {
     }
 
     if (command === 'help' || command === 'guide') {
-      appendLine('resume data is still mounting', 'stderr');
+      appendLine(copy[language].mounting, 'stderr');
       return;
     }
 
     if (!bash) {
-      appendLine('resume filesystem is still mounting', 'stderr');
+      appendLine(copy[language].mounting, 'stderr');
       return;
     }
 
