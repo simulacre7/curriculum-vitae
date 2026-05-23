@@ -53,7 +53,7 @@ const pages = [
     path: '/bash',
     title: '김기환 | Terminal CV',
     description:
-      '짧은 명령어로 김기환의 경력, Agent/Generative UI 작업, 기술 스택과 연구를 탐색하는 터미널형 CV입니다.',
+      '김기환의 경력, 기술 스택, 연구 이력을 짧은 명령어로 훑어볼 수 있는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -67,7 +67,7 @@ const pages = [
     path: '/bash/ko',
     title: '김기환 | Terminal CV',
     description:
-      '짧은 명령어로 김기환의 경력, Agent/Generative UI 작업, 기술 스택과 연구를 탐색하는 터미널형 CV입니다.',
+      '김기환의 경력, 기술 스택, 연구 이력을 짧은 명령어로 훑어볼 수 있는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -81,7 +81,7 @@ const pages = [
     path: '/bash/en',
     title: 'Kihwan Kim | Terminal CV',
     description:
-      'Explore Kihwan Kim’s career, agent/generative UI work, stack, and research through a terminal-shaped CV.',
+      'A terminal-shaped CV for scanning Kihwan Kim’s career, stack, and research with short commands.',
     image: '/og/bash-en.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },

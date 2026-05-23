@@ -179,7 +179,7 @@ const images = [
       name: '김기환',
       label: 'Terminal CV',
       command: '$ about · work · agent · stack',
-      description: '명령어로 탐색하는 Agent/Generative UI 중심 CV',
+      description: '짧은 명령어로 경력, 기술 스택, 연구 이력 훑어보기',
     }),
   ],
   [
@@ -188,7 +188,7 @@ const images = [
       name: 'Kihwan Kim',
       label: 'Terminal CV',
       command: '$ about · work · agent · stack',
-      description: 'A command-driven CV for agentic UI and frontend work',
+      description: 'Scan career, stack, and research with short commands',
     }),
   ],
 ];
