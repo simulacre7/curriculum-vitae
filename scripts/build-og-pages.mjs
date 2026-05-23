@@ -9,9 +9,9 @@ const pages = [
     output: 'index.html',
     lang: 'ko',
     path: '/',
-    title: '김기환 | 이력서',
+    title: '김기환 | CV',
     description:
-      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 이력서입니다.',
+      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -23,9 +23,9 @@ const pages = [
     output: 'ko/index.html',
     lang: 'ko',
     path: '/ko',
-    title: '김기환 | 이력서',
+    title: '김기환 | CV',
     description:
-      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 이력서입니다.',
+      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -51,9 +51,9 @@ const pages = [
     output: 'bash/index.html',
     lang: 'ko',
     path: '/bash',
-    title: '김기환 | 터미널 이력서',
+    title: '김기환 | Terminal CV',
     description:
-      '짧은 명령어로 김기환의 경력, Agent/Generative UI 작업, 기술 스택과 연구를 탐색하는 터미널형 이력서입니다.',
+      '짧은 명령어로 김기환의 경력, Agent/Generative UI 작업, 기술 스택과 연구를 탐색하는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -65,9 +65,9 @@ const pages = [
     output: 'bash/ko/index.html',
     lang: 'ko',
     path: '/bash/ko',
-    title: '김기환 | 터미널 이력서',
+    title: '김기환 | Terminal CV',
     description:
-      '짧은 명령어로 김기환의 경력, Agent/Generative UI 작업, 기술 스택과 연구를 탐색하는 터미널형 이력서입니다.',
+      '짧은 명령어로 김기환의 경력, Agent/Generative UI 작업, 기술 스택과 연구를 탐색하는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -79,9 +79,9 @@ const pages = [
     output: 'bash/en/index.html',
     lang: 'en',
     path: '/bash/en',
-    title: 'Kihwan Kim | Terminal Resume',
+    title: 'Kihwan Kim | Terminal CV',
     description:
-      'Explore Kihwan Kim’s career, agent/generative UI work, stack, and research through a terminal-shaped resume.',
+      'Explore Kihwan Kim’s career, agent/generative UI work, stack, and research through a terminal-shaped CV.',
     image: '/og/bash-en.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },

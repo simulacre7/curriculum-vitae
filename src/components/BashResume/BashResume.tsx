@@ -74,9 +74,9 @@ const getInitialLanguage = (): SupportedLanguage => {
 const copy = {
   ko: {
     intro: [
-      'Kihwan Kim / terminal resume',
+      'Kihwan Kim / terminal CV',
       '',
-      '짧은 명령어로 이력서를 탐색할 수 있습니다.',
+      '짧은 명령어로 CV를 탐색할 수 있습니다.',
       '  about    소개',
       '  work     경력',
       '  agent    Agent/Gen UI',
@@ -118,9 +118,9 @@ const copy = {
   },
   en: {
     intro: [
-      'Kihwan Kim / terminal resume',
+      'Kihwan Kim / terminal CV',
       '',
-      'Explore this resume with short commands.',
+      'Explore this CV with short commands.',
       '  about    profile',
       '  work     career',
       '  agent    Agent/Gen UI',
@@ -229,7 +229,7 @@ const makeFiles = (ko: ResumeData, en: ResumeData) => {
     [`${HOME}/README.md`]: [
       '# /home/kihwan',
       '',
-      'This is a terminal-shaped resume.',
+      'This is a terminal-shaped CV.',
       '',
       'Try:',
       ...INITIAL_COMMANDS.map((command) => `  ${command}`),
