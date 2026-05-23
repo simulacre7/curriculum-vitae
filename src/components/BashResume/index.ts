@@ -1,0 +1,1 @@
+export { BashResume } from './BashResume';
