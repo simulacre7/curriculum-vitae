@@ -1,5 +1,9 @@
-/?lng=en /en 301!
-/?lng=ko /ko 301!
-/bash?lng=en /bash/en 301!
-/bash?lng=ko /bash/ko 301!
+/ lng=en /en 301!
+/ lng=ko /ko 301!
+/bash lng=en /bash/en 301!
+/bash lng=ko /bash/ko 301!
+/ko lng=:lng /ko 301!
+/en lng=:lng /en 301!
+/bash/ko lng=:lng /bash/ko 301!
+/bash/en lng=:lng /bash/en 301!
 /* /index.html 200
