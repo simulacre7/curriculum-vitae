@@ -4,59 +4,36 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import * as styles from './LanguageSwitcher.styles';
-import {
-  DEFAULT_LANGUAGE,
-  SUPPORTED_LANGUAGES,
-  SupportedLanguage,
-} from '../../i18n';
+import { DEFAULT_LANGUAGE, SupportedLanguage } from '../../i18n';
 
-const isSupportedLanguage = (lng: string | null): lng is SupportedLanguage =>
-  SUPPORTED_LANGUAGES.some((supportedLng) => supportedLng === lng);
+const getPathLanguage = (pathname: string): SupportedLanguage | null => {
+  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
+  if (pathname === '/ko' || pathname.startsWith('/ko/')) return 'ko';
+  return null;
+};
 
 const getResolvedLanguage = (lng: string | undefined): SupportedLanguage => {
   const language = lng?.split('-')[0] ?? null;
-  return isSupportedLanguage(language) ? language : DEFAULT_LANGUAGE;
+  return language === 'ko' || language === 'en' ? language : DEFAULT_LANGUAGE;
 };
 
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const currentLanguage = getResolvedLanguage(
-    i18n.resolvedLanguage ?? i18n.language
-  );
+  const currentLanguage =
+    getPathLanguage(location.pathname) ??
+    getResolvedLanguage(i18n.resolvedLanguage ?? i18n.language);
 
   useEffect(() => {
-    const queryParams = new URLSearchParams(location.search);
-    const lng = queryParams.get('lng');
-    if (!lng) {
-      document.documentElement.lang = currentLanguage;
-      return;
+    if (i18n.language !== currentLanguage) {
+      void i18n.changeLanguage(currentLanguage);
     }
-
-    if (!isSupportedLanguage(lng)) {
-      queryParams.delete('lng');
-      navigate(
-        {
-          search: queryParams.toString(),
-        },
-        { replace: true }
-      );
-      return;
-    }
-
-    if (lng !== currentLanguage) {
-      i18n.changeLanguage(lng);
-      return;
-    }
-
     document.documentElement.lang = currentLanguage;
-  }, [location.search, navigate, i18n, currentLanguage]);
+  }, [i18n, currentLanguage]);
 
   const changeLanguage = (lng: SupportedLanguage) => {
-    const queryParams = new URLSearchParams(location.search);
-    queryParams.set('lng', lng);
-    navigate({ search: queryParams.toString() });
+    navigate(`/${lng}`);
   };
 
   return (
@@ -66,7 +43,7 @@ export const LanguageSwitcher = () => {
           styles.anchorStyle,
           currentLanguage === 'ko' && styles.selectedAnchorStyle,
         ]}
-        href="?lng=ko"
+        href="/ko"
         onClick={(e) => {
           e.preventDefault();
           changeLanguage('ko');
@@ -79,7 +56,7 @@ export const LanguageSwitcher = () => {
           styles.anchorStyle,
           currentLanguage === 'en' && styles.selectedAnchorStyle,
         ]}
-        href="?lng=en"
+        href="/en"
         onClick={(e) => {
           e.preventDefault();
           changeLanguage('en');

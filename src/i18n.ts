@@ -11,20 +11,28 @@ export const LANGUAGE_STORAGE_KEY = 'cvLng';
 const isSupportedLanguage = (lng: string | null): lng is SupportedLanguage =>
   SUPPORTED_LANGUAGES.some((supportedLng) => supportedLng === lng);
 
+const getPathLanguage = (pathname: string): SupportedLanguage | null => {
+  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
+  if (pathname === '/ko' || pathname.startsWith('/ko/')) return 'ko';
+  if (pathname === '/bash/en' || pathname.startsWith('/bash/en/')) return 'en';
+  if (pathname === '/bash/ko' || pathname.startsWith('/bash/ko/')) return 'ko';
+  return null;
+};
+
 const getInitialLanguage = () => {
   if (typeof window === 'undefined') {
     return DEFAULT_LANGUAGE;
+  }
+
+  const pathLanguage = getPathLanguage(window.location.pathname);
+  if (pathLanguage) {
+    return pathLanguage;
   }
 
   const queryParams = new URLSearchParams(window.location.search);
   const queryLanguage = queryParams.get('lng');
   if (isSupportedLanguage(queryLanguage)) {
     return queryLanguage;
-  }
-
-  const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  if (isSupportedLanguage(storedLanguage)) {
-    return storedLanguage;
   }
 
   return DEFAULT_LANGUAGE;
@@ -40,8 +48,7 @@ i18n
     lng: getInitialLanguage(),
     debug: false,
     detection: {
-      order: ['querystring', 'localStorage'],
-      lookupQuerystring: 'lng',
+      order: ['localStorage'],
       lookupLocalStorage: LANGUAGE_STORAGE_KEY,
       caches: ['localStorage'],
     },

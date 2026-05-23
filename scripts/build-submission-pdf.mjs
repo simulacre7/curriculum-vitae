@@ -27,7 +27,7 @@ const combinedOutputPdf = resolve(
 const cvOutputPdf = resolve(submissionDir, 'KihwanKim_CV.pdf');
 const portfolioOutputPdf = resolve(submissionDir, 'KihwanKim_Portfolio.pdf');
 const port = Number(process.env.CV_PDF_PORT ?? 4177);
-const url = `http://127.0.0.1:${port}/?lng=ko`;
+const url = `http://127.0.0.1:${port}/ko`;
 
 const chromeCandidates = [
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',

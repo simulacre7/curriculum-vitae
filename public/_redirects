@@ -1,1 +1,5 @@
+/?lng=en /en 301!
+/?lng=ko /ko 301!
+/bash?lng=en /bash/en 301!
+/bash?lng=ko /bash/ko 301!
 /* /index.html 200

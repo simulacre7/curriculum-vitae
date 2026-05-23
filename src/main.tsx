@@ -1,7 +1,13 @@
 import React, { Suspense, lazy, useLayoutEffect } from 'react';
 
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 
 import App from './App.tsx';
 import i18n, { LANGUAGE_STORAGE_KEY, SupportedLanguage } from './i18n.ts';
@@ -21,9 +27,43 @@ function LocalizedApp({ language }: { language: SupportedLanguage }) {
   return <App />;
 }
 
+function LegacyLocaleRedirect() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useLayoutEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const queryLanguage = queryParams.get('lng');
+    if (queryLanguage !== 'ko' && queryLanguage !== 'en') return;
+
+    if (location.pathname === '/') {
+      navigate(`/${queryLanguage}`, { replace: true });
+      return;
+    }
+
+    if (location.pathname === '/bash') {
+      navigate(`/bash/${queryLanguage}`, { replace: true });
+      return;
+    }
+
+    queryParams.delete('lng');
+    navigate(
+      {
+        pathname: location.pathname,
+        search: queryParams.toString(),
+        hash: location.hash,
+      },
+      { replace: true }
+    );
+  }, [location.pathname, location.search, navigate]);
+
+  return null;
+}
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Router>
+      <LegacyLocaleRedirect />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/ko" element={<LocalizedApp language="ko" />} />

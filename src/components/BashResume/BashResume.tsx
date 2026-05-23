@@ -61,11 +61,12 @@ const isSupportedLanguage = (value: string | null): value is SupportedLanguage =
 const getInitialLanguage = (): SupportedLanguage => {
   if (typeof window === 'undefined') return DEFAULT_LANGUAGE;
 
+  const pathname = window.location.pathname;
+  if (pathname === '/bash/en' || pathname.startsWith('/bash/en/')) return 'en';
+  if (pathname === '/bash/ko' || pathname.startsWith('/bash/ko/')) return 'ko';
+
   const queryLanguage = new URLSearchParams(window.location.search).get('lng');
   if (isSupportedLanguage(queryLanguage)) return queryLanguage;
-
-  const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  if (isSupportedLanguage(storedLanguage)) return storedLanguage;
 
   return DEFAULT_LANGUAGE;
 };
@@ -522,7 +523,7 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
       if (nextUrl.pathname.startsWith('/bash')) {
         nextUrl.pathname = `/bash/${nextLanguage}`;
       }
-      nextUrl.searchParams.set('lng', nextLanguage);
+      nextUrl.searchParams.delete('lng');
       window.history.replaceState(null, '', nextUrl);
       void i18n.changeLanguage(nextLanguage);
       const nextLines = makeInitialLines(nextLanguage, nextId.current, true);
