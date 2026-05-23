@@ -21,10 +21,30 @@ export const globalStyles = css`
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    min-height: 100dvh;
     background:
       radial-gradient(circle at 15% 0%, rgba(34, 197, 94, 0.16), transparent 26rem),
       radial-gradient(circle at 100% 30%, rgba(236, 72, 153, 0.12), transparent 24rem),
       #070907;
+  }
+
+  @media (max-width: 720px) {
+    html,
+    body,
+    #root {
+      width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-width: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(34, 197, 94, 0.13), transparent 18rem),
+        #070907;
+    }
   }
 
   a {
@@ -39,11 +59,18 @@ export const globalStyles = css`
 
 export const screenStyle = css`
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 24px;
   color: #e8f2ea;
 
   @media (max-width: 720px) {
-    padding: 12px;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100svh;
+    padding: max(8px, env(safe-area-inset-top))
+      max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))
+      max(8px, env(safe-area-inset-left));
   }
 `;
 
@@ -51,6 +78,7 @@ export const terminalStyle = css`
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: calc(100vh - 48px);
+  min-height: calc(100dvh - 48px);
   border: 1px solid rgba(232, 242, 234, 0.18);
   border-radius: 8px;
   overflow: hidden;
@@ -58,7 +86,12 @@ export const terminalStyle = css`
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.46);
 
   @media (max-width: 720px) {
-    min-height: calc(100vh - 24px);
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: auto;
+    height: calc(100svh - max(16px, env(safe-area-inset-top)) - max(8px, env(safe-area-inset-bottom)));
+    border-radius: 7px;
   }
 `;
 
@@ -71,6 +104,20 @@ export const titleBarStyle = css`
   padding: 0 14px;
   border-bottom: 1px solid rgba(232, 242, 234, 0.14);
   background: rgba(255, 255, 255, 0.04);
+
+  @media (max-width: 720px) {
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 520px) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    min-height: 0;
+    padding: 8px 10px;
+  }
 `;
 
 export const trafficLightsStyle = css`
@@ -94,18 +141,38 @@ export const trafficLightsStyle = css`
   span:nth-of-type(3) {
     background: #28c840;
   }
+
+  @media (max-width: 420px) {
+    gap: 6px;
+
+    span {
+      width: 10px;
+      height: 10px;
+    }
+  }
 `;
 
 export const titleStyle = css`
   min-width: 0;
+  flex: 1 1 auto;
   overflow: hidden;
   color: rgba(232, 242, 234, 0.72);
   font-size: 0.82rem;
+  text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  @media (max-width: 420px) {
+    font-size: 0.74rem;
+  }
+
+  @media (max-width: 520px) {
+    padding-right: 0;
+  }
 `;
 
 export const toolbarStyle = css`
+  flex: 0 0 auto;
   display: flex;
   gap: 8px;
 
@@ -124,6 +191,27 @@ export const toolbarStyle = css`
     border-color: rgba(82, 246, 139, 0.5);
     color: #b7f7c8;
   }
+
+  @media (max-width: 520px) {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-top: 6px;
+    scrollbar-width: none;
+    gap: 4px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    button {
+      flex: 0 0 auto;
+      min-width: 0;
+      height: 26px;
+      padding: 0 7px;
+      font-size: 0.78rem;
+    }
+  }
 `;
 
 export const bodyStyle = css`
@@ -132,24 +220,48 @@ export const bodyStyle = css`
   padding: 18px;
   overflow: auto;
   scrollbar-color: rgba(82, 246, 139, 0.42) transparent;
+  -webkit-overflow-scrolling: touch;
 
   @media (max-width: 720px) {
-    padding: 14px;
+    padding: 14px 12px calc(16px + env(safe-area-inset-bottom));
+    overscroll-behavior: contain;
+  }
+
+  @media (max-width: 420px) {
+    padding: 12px 10px calc(14px + env(safe-area-inset-bottom));
   }
 `;
 
 export const outputStyle = css`
   margin: 0;
+  max-width: 100%;
   color: #d8e8db;
   font-size: 0.95rem;
   letter-spacing: 0;
   line-height: 1.45;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  word-break: break-word;
+
+  @media (max-width: 720px) {
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const lineStyle = css`
   min-height: 1.45em;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  @media (max-width: 720px) {
+    min-height: 1.55em;
+  }
 `;
 
 export const commandStyle = css`
@@ -167,10 +279,16 @@ export const systemStyle = css`
 export const promptRowStyle = css`
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   gap: 8px;
   margin-top: 2px;
   min-height: 1.45em;
+
+  @media (max-width: 720px) {
+    gap: 0 7px;
+    min-height: 1.55em;
+  }
 `;
 
 export const promptStyle = css`
@@ -180,6 +298,7 @@ export const promptStyle = css`
 `;
 
 export const commandInputTextStyle = css`
+  flex: 1 1 8ch;
   min-width: 1ch;
   color: #f1fff4;
   white-space: pre-wrap;

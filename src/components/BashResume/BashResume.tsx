@@ -51,11 +51,11 @@ const intro = [
   'Kihwan Kim / terminal resume',
   '',
   '짧은 명령어로 이력서를 탐색할 수 있습니다.',
-  '  about    한 줄 소개와 현재 관심사',
-  '  work     주요 경력 요약',
-  '  agent    브라우저 에이전트/Generative UI 작업',
-  '  stack    자주 쓰는 기술',
-  '  papers   연구와 논문',
+  '  about    소개',
+  '  work     경력',
+  '  agent    Agent/Gen UI',
+  '  stack    기술',
+  '  papers   연구',
   '  contact  연락처',
   '',
   '더 보고 싶으면 `guide`를 입력하세요.',
@@ -367,7 +367,7 @@ export function BashResume() {
       top: bodyRef.current.scrollHeight,
       behavior: 'smooth',
     });
-  }, [lines]);
+  }, [input, lines]);
 
   const runCommand = async (rawCommand: string) => {
     const command = rawCommand.trim();
@@ -521,6 +521,7 @@ export function BashResume() {
                 value={input}
                 autoComplete="off"
                 autoCapitalize="off"
+                enterKeyHint="go"
                 spellCheck={false}
                 onChange={(event) => setInput(event.target.value)}
                 onKeyDown={onKeyDown}
