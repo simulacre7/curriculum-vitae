@@ -17,6 +17,8 @@ const getResolvedLanguage = (lng: string | undefined): SupportedLanguage => {
   return language === 'ko' || language === 'en' ? language : DEFAULT_LANGUAGE;
 };
 
+const prefetchedLanguages = new Set<SupportedLanguage>();
+
 export const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
   const location = useLocation();
@@ -36,6 +38,12 @@ export const LanguageSwitcher = () => {
     navigate(`/${lng}`);
   };
 
+  const prefetchLanguage = (lng: SupportedLanguage) => {
+    if (lng === currentLanguage || prefetchedLanguages.has(lng)) return;
+    prefetchedLanguages.add(lng);
+    void i18n.loadLanguages(lng);
+  };
+
   return (
     <div css={styles.containerStyle}>
       <a
@@ -44,6 +52,9 @@ export const LanguageSwitcher = () => {
           currentLanguage === 'ko' && styles.selectedAnchorStyle,
         ]}
         href="/ko"
+        onFocus={() => prefetchLanguage('ko')}
+        onMouseEnter={() => prefetchLanguage('ko')}
+        onTouchStart={() => prefetchLanguage('ko')}
         onClick={(e) => {
           e.preventDefault();
           changeLanguage('ko');
@@ -57,6 +68,9 @@ export const LanguageSwitcher = () => {
           currentLanguage === 'en' && styles.selectedAnchorStyle,
         ]}
         href="/en"
+        onFocus={() => prefetchLanguage('en')}
+        onMouseEnter={() => prefetchLanguage('en')}
+        onTouchStart={() => prefetchLanguage('en')}
         onClick={(e) => {
           e.preventDefault();
           changeLanguage('en');
