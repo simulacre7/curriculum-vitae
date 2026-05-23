@@ -11,7 +11,7 @@ const pages = [
     path: '/',
     title: '김기환 | CV',
     description:
-      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 CV입니다.',
+      '김기환의 경력과 프로젝트, 연구 이력을 한곳에 정리한 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -25,7 +25,7 @@ const pages = [
     path: '/ko',
     title: '김기환 | CV',
     description:
-      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 CV입니다.',
+      '김기환의 경력과 프로젝트, 연구 이력을 한곳에 정리한 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -39,7 +39,7 @@ const pages = [
     path: '/en',
     title: 'Kihwan Kim | Curriculum Vitae',
     description:
-      'Curriculum vitae of Kihwan Kim, a software engineer focused on frontend platforms, product experience, and research-informed UI.',
+      'Kihwan Kim’s curriculum vitae, covering career experience, projects, and research.',
     image: '/og/cv-en.png',
     alternates: [
       { lang: 'x-default', path: '/' },
