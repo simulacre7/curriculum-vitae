@@ -285,6 +285,28 @@ const shellQuote = (value: string) => `'${value.replace(/'/g, "'\\''")}'`;
 const prompt = (cwd: string) =>
   `kihwan@cv:${cwd.replace(HOME, '~') || '/'}$`;
 
+const makeInitialLines = (
+  language: SupportedLanguage,
+  startId = 0,
+  includeReady = false
+) => {
+  const initialLines: TerminalLine[] = copy[language].intro.map((text, index) => ({
+    id: startId + index,
+    text,
+    kind: 'system',
+  }));
+
+  if (includeReady) {
+    initialLines.push({
+      id: startId + initialLines.length,
+      text: copy[language].ready,
+      kind: 'system',
+    });
+  }
+
+  return initialLines;
+};
+
 const formatList = (items: string[], prefix = '- ') =>
   items.map((item) => `${prefix}${item}`).join('\n');
 
@@ -402,11 +424,7 @@ export function BashResume() {
   const [history, setHistory] = useState<string[]>([]);
   const [, setHistoryIndex] = useState<number | null>(null);
   const [lines, setLines] = useState<TerminalLine[]>(
-    copy[initialLanguage].intro.map((text, index) => ({
-      id: index,
-      text,
-      kind: 'system',
-    }))
+    makeInitialLines(initialLanguage)
   );
   const [isRunning, setIsRunning] = useState(true);
   const nextId = useRef(copy[initialLanguage].intro.length);
@@ -497,7 +515,14 @@ export function BashResume() {
       nextUrl.searchParams.set('lng', nextLanguage);
       window.history.replaceState(null, '', nextUrl);
       void i18n.changeLanguage(nextLanguage);
-      appendLine(copy[nextLanguage].languageChanged, 'system');
+      const nextLines = makeInitialLines(nextLanguage, nextId.current, true);
+      nextLines.push({
+        id: nextId.current + nextLines.length,
+        text: copy[nextLanguage].languageChanged,
+        kind: 'system',
+      });
+      nextId.current += nextLines.length;
+      setLines(nextLines);
       return;
     }
 
