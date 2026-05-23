@@ -165,25 +165,61 @@ export const systemStyle = css`
 `;
 
 export const promptRowStyle = css`
-  display: grid;
-  grid-template-columns: auto 1fr;
+  position: relative;
+  display: flex;
   align-items: baseline;
   gap: 8px;
   margin-top: 2px;
+  min-height: 1.45em;
 `;
 
 export const promptStyle = css`
+  flex: 0 0 auto;
   color: #82f6a3;
   white-space: nowrap;
 `;
 
+export const commandInputTextStyle = css`
+  min-width: 1ch;
+  color: #f1fff4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+`;
+
+export const caretStyle = css`
+  display: inline-block;
+  width: 0.62ch;
+  height: 1.1em;
+  margin-left: 1px;
+  vertical-align: -0.16em;
+  background: #82f6a3;
+  animation: terminal-caret-blink 1s steps(1, end) infinite;
+
+  @keyframes terminal-caret-blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+`;
+
 export const inputStyle = css`
-  width: 100%;
-  min-width: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
   border: 0;
   outline: 0;
   padding: 0;
-  color: #f1fff4;
+  opacity: 0;
   background: transparent;
-  caret-color: #82f6a3;
+  color: transparent;
+  caret-color: transparent;
+  pointer-events: none;
 `;

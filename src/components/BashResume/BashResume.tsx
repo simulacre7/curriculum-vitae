@@ -509,10 +509,15 @@ export function BashResume() {
               <label css={styles.promptStyle} htmlFor="bash-resume-input">
                 {isRunning ? '...' : prompt(cwd)}
               </label>
+              <span css={styles.commandInputTextStyle} aria-hidden="true">
+                {input}
+                <span css={styles.caretStyle} />
+              </span>
               <input
                 ref={inputRef}
                 id="bash-resume-input"
                 css={styles.inputStyle}
+                aria-label="terminal command"
                 value={input}
                 autoComplete="off"
                 autoCapitalize="off"
