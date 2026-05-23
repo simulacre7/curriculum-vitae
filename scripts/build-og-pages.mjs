@@ -11,7 +11,7 @@ const pages = [
     path: '/',
     title: '김기환 | 이력서',
     description:
-      'AI 기반 브라우저 에이전트, Generative UI, 대규모 프론트엔드 플랫폼을 다루는 소프트웨어 엔지니어 김기환의 이력서입니다.',
+      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 이력서입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -25,7 +25,7 @@ const pages = [
     path: '/ko',
     title: '김기환 | 이력서',
     description:
-      'AI 기반 브라우저 에이전트, Generative UI, 대규모 프론트엔드 플랫폼을 다루는 소프트웨어 엔지니어 김기환의 이력서입니다.',
+      '프론트엔드 플랫폼, 제품 경험, 연구 기반 UI를 다루는 소프트웨어 엔지니어 김기환의 이력서입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -39,7 +39,7 @@ const pages = [
     path: '/en',
     title: 'Kihwan Kim | Curriculum Vitae',
     description:
-      'Curriculum vitae of Kihwan Kim, a software engineer working on browser agents, generative UI, and large-scale frontend platforms.',
+      'Curriculum vitae of Kihwan Kim, a software engineer focused on frontend platforms, product experience, and research-informed UI.',
     image: '/og/cv-en.png',
     alternates: [
       { lang: 'x-default', path: '/' },
