@@ -169,18 +169,13 @@ const createHtml = async () => {
       body {
         min-height: 100vh;
         padding: 12mm;
-        background:
-          radial-gradient(circle at 12% 0%, rgba(34, 197, 94, 0.16), transparent 82mm),
-          radial-gradient(circle at 100% 20%, rgba(236, 72, 153, 0.1), transparent 72mm),
-          #070907;
+        background: #070907;
       }
 
       .terminal {
         min-height: calc(297mm - 24mm);
-        border: 1px solid rgba(232, 242, 234, 0.22);
-        border-radius: 3mm;
-        overflow: hidden;
-        background: rgba(5, 7, 5, 0.9);
+        border: 0.3mm solid #2a3a31;
+        background: #020807;
       }
 
       .titlebar {
@@ -190,8 +185,8 @@ const createHtml = async () => {
         gap: 8mm;
         min-height: 12mm;
         padding: 0 5mm;
-        border-bottom: 1px solid rgba(232, 242, 234, 0.14);
-        background: rgba(255, 255, 255, 0.04);
+        border-bottom: 0.3mm solid #203027;
+        background: #0b100d;
       }
 
       .lights {
@@ -219,7 +214,7 @@ const createHtml = async () => {
 
       .title {
         flex: 1;
-        color: rgba(232, 242, 234, 0.72);
+        color: #a8b9ad;
         text-align: center;
       }
 
@@ -247,7 +242,7 @@ const createHtml = async () => {
       }
 
       .subtitle {
-        color: rgba(232, 242, 234, 0.74);
+        color: #a8b9ad;
         font-size: 12pt;
       }
 
@@ -285,7 +280,7 @@ const createHtml = async () => {
         gap: 7mm;
         margin-top: 2mm;
         padding-top: 4mm;
-        border-top: 1px solid rgba(232, 242, 234, 0.14);
+        border-top: 0.3mm solid #203027;
         page-break-inside: avoid;
         break-inside: avoid;
       }
