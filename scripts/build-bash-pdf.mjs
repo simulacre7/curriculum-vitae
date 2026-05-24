@@ -351,7 +351,7 @@ const createHtml = async () => {
         <section class="hero">
           <div class="path">kihwan.kim/bash</div>
           <h1>김기환</h1>
-          <div class="subtitle">Terminal CV · Software Engineer</div>
+          <div class="subtitle">Software Engineer</div>
         </section>
         ${commandBlock('about', outputs.about)}
         ${commandBlock('work', outputs.work)}
