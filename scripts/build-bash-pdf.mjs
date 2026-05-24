@@ -127,15 +127,17 @@ const commandBlock = (command, output) => `
 
 const createBackgroundDataUrl = async () => {
   const svg = `<svg width="1240" height="1754" viewBox="0 0 1240 1754" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="green" cx="12%" cy="0%" r="52%">
+        <stop offset="0%" stop-color="#123f25" stop-opacity="1"/>
+        <stop offset="58%" stop-color="#070907" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="magenta" cx="100%" cy="18%" r="46%">
+        <stop offset="0%" stop-color="#28101d" stop-opacity="1"/>
+        <stop offset="64%" stop-color="#070907" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
     <rect width="1240" height="1754" fill="#070907"/>
-    <radialGradient id="green" cx="12%" cy="0%" r="52%">
-      <stop offset="0%" stop-color="#123f25" stop-opacity="1"/>
-      <stop offset="58%" stop-color="#070907" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="magenta" cx="100%" cy="18%" r="46%">
-      <stop offset="0%" stop-color="#28101d" stop-opacity="1"/>
-      <stop offset="64%" stop-color="#070907" stop-opacity="0"/>
-    </radialGradient>
     <rect width="1240" height="1754" fill="url(#green)"/>
     <rect width="1240" height="1754" fill="url(#magenta)"/>
   </svg>`;
@@ -198,7 +200,7 @@ const createHtml = async () => {
 
       .terminal {
         min-height: calc(297mm - 24mm);
-        border: 0.3mm solid #2a3a31;
+        border: 0.3mm solid #314239;
         background: #020807;
       }
 
