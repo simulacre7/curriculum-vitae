@@ -339,9 +339,9 @@ const createHtml = async (target, backgroundDataUrl) => {
 
       .contact {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 38mm;
+        grid-template-columns: minmax(0, 1fr) 46mm;
         align-items: center;
-        gap: 7mm;
+        gap: 6mm;
         margin-top: 2mm;
         padding-top: 4mm;
         border-top: 0.3mm solid #203027;
@@ -359,12 +359,13 @@ const createHtml = async (target, backgroundDataUrl) => {
         gap: 2mm;
         color: #82f6a3;
         text-align: center;
-        font-size: 7.5pt;
+        font-size: 6.6pt;
+        white-space: nowrap;
       }
 
       .qr-card img {
-        width: 34mm;
-        height: 34mm;
+        width: 32mm;
+        height: 32mm;
         border: 1.3mm solid #e8f2ea;
         border-radius: 2mm;
         background: #e8f2ea;
@@ -403,7 +404,7 @@ const createHtml = async (target, backgroundDataUrl) => {
           </div>
           <a class="qr-card" href="${target.bashUrl}">
             <img src="${qrDataUrl}" alt="QR code for ${target.bashUrl}" />
-            <div>$ open ${target.bashUrl.replace('https://', '')}</div>
+            <div>web: ${target.bashUrl.replace('https://', '')}</div>
           </a>
         </section>
       </div>
