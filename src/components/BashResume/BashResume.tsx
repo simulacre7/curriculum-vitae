@@ -1,5 +1,3 @@
-import { Global } from '@emotion/react';
-import { Bash } from 'just-bash/browser';
 import {
   FormEvent,
   KeyboardEvent,
@@ -9,13 +7,16 @@ import {
   useState,
 } from 'react';
 
+import { Global } from '@emotion/react';
+import { Bash } from 'just-bash/browser';
+
+import * as styles from './BashResume.styles';
 import i18n, {
   DEFAULT_LANGUAGE,
   LANGUAGE_STORAGE_KEY,
   SUPPORTED_LANGUAGES,
   SupportedLanguage,
 } from '../../i18n';
-import * as styles from './BashResume.styles';
 
 type ResumeData = {
   name: string;
@@ -46,6 +47,8 @@ type TerminalLine = {
 type ResumeMap = Record<SupportedLanguage, ResumeData>;
 
 const HOME = '/home/kihwan';
+const TERMINAL_CV_PDF_URL =
+  'https://kihwan.kim/downloads/kihwan-kim-terminal-cv.pdf';
 const INITIAL_COMMANDS = [
   'about',
   'work',
@@ -55,7 +58,9 @@ const INITIAL_COMMANDS = [
   'contact',
 ];
 
-const isSupportedLanguage = (value: string | null): value is SupportedLanguage =>
+const isSupportedLanguage = (
+  value: string | null
+): value is SupportedLanguage =>
   SUPPORTED_LANGUAGES.some((language) => language === value);
 
 const getInitialLanguage = (): SupportedLanguage => {
@@ -90,7 +95,8 @@ const copy = {
     ],
     ready: 'ready. try `about` first.',
     noProject: '관련 프로젝트를 찾지 못했습니다.',
-    focus: 'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+    focus:
+      'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
     guide: [
       '읽기 좋은 명령어',
       '  about    소개',
@@ -99,6 +105,7 @@ const copy = {
       '  stack    기술 스택',
       '  papers   연구/논문',
       '  contact  연락처',
+      '  pdf      PDF 다운로드',
       '  lang     현재 언어',
       '  lang en  영어로 전환',
       '  lang ko  한국어로 전환',
@@ -113,7 +120,8 @@ const copy = {
     ],
     currentLanguage: '현재 언어: 한국어',
     languageChanged: '언어를 한국어로 전환했습니다.',
-    unsupportedLanguage: '지원하지 않는 언어입니다. `lang ko` 또는 `lang en`을 사용하세요.',
+    unsupportedLanguage:
+      '지원하지 않는 언어입니다. `lang ko` 또는 `lang en`을 사용하세요.',
     mounting: 'resume data is still mounting',
   },
   en: {
@@ -134,7 +142,8 @@ const copy = {
     ],
     ready: 'ready. try `about` first.',
     noProject: 'No matching project found.',
-    focus: 'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+    focus:
+      'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
     guide: [
       'Readable commands',
       '  about    profile',
@@ -143,6 +152,7 @@ const copy = {
       '  stack    stack',
       '  papers   research',
       '  contact  links',
+      '  pdf      download PDF',
       '  lang     current language',
       '  lang en  switch to English',
       '  lang ko  switch to Korean',
@@ -241,24 +251,32 @@ const makeFiles = (ko: ResumeData, en: ResumeData) => {
       '  resume/full.en.md    English markdown resume',
       '  resume/experience/   Company notes',
       '  contact.txt          Links',
+      '  terminal-cv.pdf      Static PDF export',
     ].join('\n'),
     [`${HOME}/contact.txt`]: [
       'email    mailto:juljin1875@gmail.com',
       'linkedin https://www.linkedin.com/in/1875/',
       'github   https://github.com/simulacre7/',
       'web      https://kihwan.kim',
+      `pdf      ${TERMINAL_CV_PDF_URL}`,
     ].join('\n'),
+    [`${HOME}/terminal-cv.pdf`]: TERMINAL_CV_PDF_URL,
     [`${HOME}/resume/ko.json`]: JSON.stringify(ko, null, 2),
     [`${HOME}/resume/en.json`]: JSON.stringify(en, null, 2),
     [`${HOME}/resume/full.ko.md`]: makeMarkdown(ko, 'ko'),
     [`${HOME}/resume/full.en.md`]: makeMarkdown(en, 'en'),
-    [`${HOME}/resume/publications.json`]: JSON.stringify(ko.publications, null, 2),
+    [`${HOME}/resume/publications.json`]: JSON.stringify(
+      ko.publications,
+      null,
+      2
+    ),
     [`${HOME}/resume/education.json`]: JSON.stringify(ko.education, null, 2),
   };
 
   ko.experience.forEach((item, index) => {
-    files[`${HOME}/resume/experience/${companyFileName(item.company, index)}.md`] =
-      makeExperienceFile(item);
+    files[
+      `${HOME}/resume/experience/${companyFileName(item.company, index)}.md`
+    ] = makeExperienceFile(item);
   });
 
   return files;
@@ -283,19 +301,20 @@ const normalizeCdPath = (cwd: string, target: string) => {
 
 const shellQuote = (value: string) => `'${value.replace(/'/g, "'\\''")}'`;
 
-const prompt = (cwd: string) =>
-  `kihwan@cv:${cwd.replace(HOME, '~') || '/'}$`;
+const prompt = (cwd: string) => `kihwan@cv:${cwd.replace(HOME, '~') || '/'}$`;
 
 const makeInitialLines = (
   language: SupportedLanguage,
   startId = 0,
   includeReady = false
 ) => {
-  const initialLines: TerminalLine[] = copy[language].intro.map((text, index) => ({
-    id: startId + index,
-    text,
-    kind: 'system',
-  }));
+  const initialLines: TerminalLine[] = copy[language].intro.map(
+    (text, index) => ({
+      id: startId + index,
+      text,
+      kind: 'system',
+    })
+  );
 
   if (includeReady) {
     initialLines.push({
@@ -314,7 +333,9 @@ const formatList = (items: string[], prefix = '- ') =>
 const getProjectText = (
   resume: ResumeData,
   language: SupportedLanguage,
-  matcher: (project: NonNullable<ResumeData['experience'][number]['projects']>[number]) => boolean
+  matcher: (
+    project: NonNullable<ResumeData['experience'][number]['projects']>[number]
+  ) => boolean
 ) => {
   const matches = resume.experience.flatMap((job) =>
     (job.projects ?? [])
@@ -359,7 +380,10 @@ const getCommandOutput = (
             `${item.company} / ${item.role} / ${item.period}`,
             item.summary,
             item.projects?.length
-              ? formatList(item.projects.map((project) => project.title), '  - ')
+              ? formatList(
+                  item.projects.map((project) => project.title),
+                  '  - '
+                )
               : '',
           ]
             .filter(Boolean)
@@ -367,13 +391,10 @@ const getCommandOutput = (
         )
         .join('\n\n');
     case 'agent':
-      return getProjectText(
-        resume,
-        language,
-        (project) =>
-          /agent|generative|pageagent|자동화|browser|ui/i.test(
-            `${project.title} ${project.summary ?? ''}`
-          )
+      return getProjectText(resume, language, (project) =>
+        /agent|generative|pageagent|자동화|browser|ui/i.test(
+          `${project.title} ${project.summary ?? ''}`
+        )
       );
     case 'stack': {
       const stack = Array.from(
@@ -405,7 +426,10 @@ const getCommandOutput = (
         'linkedin https://www.linkedin.com/in/1875/',
         'github   https://github.com/simulacre7/',
         'web      https://kihwan.kim',
+        `pdf      ${TERMINAL_CV_PDF_URL}`,
       ].join('\n');
+    case 'pdf':
+      return `download: ${TERMINAL_CV_PDF_URL}`;
     case 'guide':
     case 'help':
       return copy[language].guide.join('\n');
@@ -423,8 +447,7 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
     () => routeLanguage ?? getInitialLanguage(),
     [routeLanguage]
   );
-  const [language, setLanguage] =
-    useState<SupportedLanguage>(initialLanguage);
+  const [language, setLanguage] = useState<SupportedLanguage>(initialLanguage);
   const [bash, setBash] = useState<Bash | null>(null);
   const [resumes, setResumes] = useState<ResumeMap | null>(null);
   const [cwd, setCwd] = useState(HOME);
