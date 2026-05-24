@@ -404,7 +404,7 @@ const createHtml = async (target, backgroundDataUrl) => {
           </div>
           <a class="qr-card" href="${target.bashUrl}">
             <img src="${qrDataUrl}" alt="QR code for ${target.bashUrl}" />
-            <div>web: ${target.bashUrl.replace('https://', '')}</div>
+            <div>www.${target.bashUrl.replace('https://', '')}</div>
           </a>
         </section>
       </div>
