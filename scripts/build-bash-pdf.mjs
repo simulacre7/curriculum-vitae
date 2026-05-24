@@ -147,7 +147,7 @@ const createHtml = async () => {
     <style>
       @page {
         size: A4;
-        margin: 12mm;
+        margin: 0;
       }
 
       * {
@@ -167,6 +167,8 @@ const createHtml = async () => {
       }
 
       body {
+        min-height: 100vh;
+        padding: 12mm;
         background:
           radial-gradient(circle at 12% 0%, rgba(34, 197, 94, 0.16), transparent 82mm),
           radial-gradient(circle at 100% 20%, rgba(236, 72, 153, 0.1), transparent 72mm),
@@ -250,7 +252,8 @@ const createHtml = async () => {
       }
 
       .command-block {
-        margin: 0 0 6mm;
+        margin: 0 0 5mm;
+        padding-top: 7mm;
         page-break-inside: avoid;
         break-inside: avoid;
       }
@@ -280,7 +283,7 @@ const createHtml = async () => {
         grid-template-columns: minmax(0, 1fr) 38mm;
         align-items: center;
         gap: 7mm;
-        margin-top: 3mm;
+        margin-top: 2mm;
         padding-top: 4mm;
         border-top: 1px solid rgba(232, 242, 234, 0.14);
         page-break-inside: avoid;
