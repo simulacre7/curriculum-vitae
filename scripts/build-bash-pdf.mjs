@@ -5,6 +5,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import QRCode from 'qrcode';
+import sharp from 'sharp';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const tempDir = resolve(root, '.tmp-bash-pdf');
@@ -124,10 +125,32 @@ const commandBlock = (command, output) => `
   </section>
 `;
 
+const createBackgroundDataUrl = async () => {
+  const svg = `<svg width="1240" height="1754" viewBox="0 0 1240 1754" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1240" height="1754" fill="#070907"/>
+    <radialGradient id="green" cx="12%" cy="0%" r="52%">
+      <stop offset="0%" stop-color="#123f25" stop-opacity="1"/>
+      <stop offset="58%" stop-color="#070907" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="magenta" cx="100%" cy="18%" r="46%">
+      <stop offset="0%" stop-color="#28101d" stop-opacity="1"/>
+      <stop offset="64%" stop-color="#070907" stop-opacity="0"/>
+    </radialGradient>
+    <rect width="1240" height="1754" fill="url(#green)"/>
+    <rect width="1240" height="1754" fill="url(#magenta)"/>
+  </svg>`;
+  const png = await sharp(Buffer.from(svg))
+    .png({ compressionLevel: 9, adaptiveFiltering: true })
+    .toBuffer();
+
+  return `data:image/png;base64,${png.toString('base64')}`;
+};
+
 const createHtml = async () => {
   const resume = JSON.parse(
     await readFile(resolve(root, 'public/locales/ko/common.json'), 'utf8')
   );
+  const backgroundDataUrl = await createBackgroundDataUrl();
   const qrDataUrl = await QRCode.toDataURL(bashUrl, {
     color: {
       dark: '#0b1f12',
@@ -169,7 +192,8 @@ const createHtml = async () => {
       body {
         min-height: 100vh;
         padding: 12mm;
-        background: #070907;
+        background:
+          #070907 url("${backgroundDataUrl}") center top / cover no-repeat;
       }
 
       .terminal {
