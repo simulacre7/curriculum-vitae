@@ -49,6 +49,8 @@ type ResumeMap = Record<SupportedLanguage, ResumeData>;
 const HOME = '/home/kihwan';
 const TERMINAL_CV_PDF_URL =
   'https://kihwan.kim/downloads/kihwan-kim-terminal-cv.pdf';
+const TERMINAL_CV_EN_PDF_URL =
+  'https://kihwan.kim/downloads/kihwan-kim-terminal-cv-en.pdf';
 const INITIAL_COMMANDS = [
   'about',
   'work',
@@ -106,6 +108,7 @@ const copy = {
       '  papers   연구/논문',
       '  contact  연락처',
       '  pdf      PDF 다운로드',
+      '  pdf en   영문 PDF 다운로드',
       '  lang     현재 언어',
       '  lang en  영어로 전환',
       '  lang ko  한국어로 전환',
@@ -153,6 +156,7 @@ const copy = {
       '  papers   research',
       '  contact  links',
       '  pdf      download PDF',
+      '  pdf ko   download Korean PDF',
       '  lang     current language',
       '  lang en  switch to English',
       '  lang ko  switch to Korean',
@@ -251,16 +255,19 @@ const makeFiles = (ko: ResumeData, en: ResumeData) => {
       '  resume/full.en.md    English markdown resume',
       '  resume/experience/   Company notes',
       '  contact.txt          Links',
-      '  terminal-cv.pdf      Static PDF export',
+      '  terminal-cv.pdf      Korean static PDF export',
+      '  terminal-cv.en.pdf   English static PDF export',
     ].join('\n'),
     [`${HOME}/contact.txt`]: [
       'email    mailto:juljin1875@gmail.com',
       'linkedin https://www.linkedin.com/in/1875/',
       'github   https://github.com/simulacre7/',
       'web      https://kihwan.kim',
-      `pdf      ${TERMINAL_CV_PDF_URL}`,
+      `pdf ko   ${TERMINAL_CV_PDF_URL}`,
+      `pdf en   ${TERMINAL_CV_EN_PDF_URL}`,
     ].join('\n'),
     [`${HOME}/terminal-cv.pdf`]: TERMINAL_CV_PDF_URL,
+    [`${HOME}/terminal-cv.en.pdf`]: TERMINAL_CV_EN_PDF_URL,
     [`${HOME}/resume/ko.json`]: JSON.stringify(ko, null, 2),
     [`${HOME}/resume/en.json`]: JSON.stringify(en, null, 2),
     [`${HOME}/resume/full.ko.md`]: makeMarkdown(ko, 'ko'),
@@ -426,10 +433,18 @@ const getCommandOutput = (
         'linkedin https://www.linkedin.com/in/1875/',
         'github   https://github.com/simulacre7/',
         'web      https://kihwan.kim',
-        `pdf      ${TERMINAL_CV_PDF_URL}`,
+        `pdf ko   ${TERMINAL_CV_PDF_URL}`,
+        `pdf en   ${TERMINAL_CV_EN_PDF_URL}`,
       ].join('\n');
     case 'pdf':
+      return [
+        `ko: ${TERMINAL_CV_PDF_URL}`,
+        `en: ${TERMINAL_CV_EN_PDF_URL}`,
+      ].join('\n');
+    case 'pdf ko':
       return `download: ${TERMINAL_CV_PDF_URL}`;
+    case 'pdf en':
+      return `download: ${TERMINAL_CV_EN_PDF_URL}`;
     case 'guide':
     case 'help':
       return copy[language].guide.join('\n');

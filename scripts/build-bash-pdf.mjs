@@ -10,9 +10,45 @@ import sharp from 'sharp';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const tempDir = resolve(root, '.tmp-bash-pdf');
 const outputDir = resolve(root, 'dist', 'downloads');
-const outputPdf = resolve(outputDir, 'kihwan-kim-terminal-cv.pdf');
-const tempHtml = resolve(tempDir, 'terminal-cv.html');
-const bashUrl = 'https://kihwan.kim/bash';
+
+const pdfTargets = [
+  {
+    locale: 'ko',
+    resumePath: resolve(root, 'public/locales/ko/common.json'),
+    tempHtml: resolve(tempDir, 'terminal-cv.ko.html'),
+    outputPdf: resolve(outputDir, 'kihwan-kim-terminal-cv.pdf'),
+    bashUrl: 'https://kihwan.kim/bash',
+    pathLabel: 'kihwan.kim/bash',
+    title: '김기환 Terminal CV',
+    heading: '김기환',
+    subtitle: 'Software Engineer',
+    contactLines: [
+      'email    juljin1875@gmail.com',
+      'linkedin https://www.linkedin.com/in/1875/',
+      'github   https://github.com/simulacre7/',
+      'web      https://kihwan.kim',
+    ],
+    noProject: '관련 프로젝트를 찾지 못했습니다.',
+  },
+  {
+    locale: 'en',
+    resumePath: resolve(root, 'public/locales/en/common.json'),
+    tempHtml: resolve(tempDir, 'terminal-cv.en.html'),
+    outputPdf: resolve(outputDir, 'kihwan-kim-terminal-cv-en.pdf'),
+    bashUrl: 'https://kihwan.kim/bash/en',
+    pathLabel: 'kihwan.kim/bash/en',
+    title: 'Kihwan Kim Terminal CV',
+    heading: 'Kihwan Kim',
+    subtitle: 'Software Engineer',
+    contactLines: [
+      'email    juljin1875@gmail.com',
+      'linkedin https://www.linkedin.com/in/1875/',
+      'github   https://github.com/simulacre7/',
+      'web      https://kihwan.kim',
+    ],
+    noProject: 'No matching project found.',
+  },
+];
 
 const chromeCandidates = [
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -44,14 +80,14 @@ const escapeHtml = (value) =>
 const formatList = (items, prefix = '- ') =>
   items.map((item) => `${prefix}${item}`).join('\n');
 
-const getProjectText = (resume, matcher) => {
+const getProjectText = (resume, matcher, noProject) => {
   const matches = resume.experience.flatMap((job) =>
     (job.projects ?? [])
       .filter(matcher)
       .map((project) => ({ ...project, company: job.company }))
   );
 
-  if (!matches.length) return '관련 프로젝트를 찾지 못했습니다.';
+  if (!matches.length) return noProject;
 
   return matches
     .map((project) =>
@@ -67,7 +103,7 @@ const getProjectText = (resume, matcher) => {
     .join('\n\n');
 };
 
-const commandOutputs = (resume) => ({
+const commandOutputs = (resume, noProject) => ({
   about: [
     resume.name,
     '',
@@ -91,10 +127,13 @@ const commandOutputs = (resume) => ({
         .join('\n')
     )
     .join('\n\n'),
-  agent: getProjectText(resume, (project) =>
-    /agent|generative|pageagent|자동화|browser|ui/i.test(
-      `${project.title} ${project.summary ?? ''}`
-    )
+  agent: getProjectText(
+    resume,
+    (project) =>
+      /agent|generative|pageagent|자동화|browser|ui/i.test(
+        `${project.title} ${project.summary ?? ''}`
+      ),
+    noProject
   ),
   stack: Array.from(
     new Set(resume.experience.flatMap((item) => item.stack ?? []))
@@ -148,12 +187,9 @@ const createBackgroundDataUrl = async () => {
   return `data:image/png;base64,${png.toString('base64')}`;
 };
 
-const createHtml = async () => {
-  const resume = JSON.parse(
-    await readFile(resolve(root, 'public/locales/ko/common.json'), 'utf8')
-  );
-  const backgroundDataUrl = await createBackgroundDataUrl();
-  const qrDataUrl = await QRCode.toDataURL(bashUrl, {
+const createHtml = async (target, backgroundDataUrl) => {
+  const resume = JSON.parse(await readFile(target.resumePath, 'utf8'));
+  const qrDataUrl = await QRCode.toDataURL(target.bashUrl, {
     color: {
       dark: '#0b1f12',
       light: '#e8f2ea',
@@ -162,13 +198,13 @@ const createHtml = async () => {
     margin: 1,
     width: 320,
   });
-  const outputs = commandOutputs(resume);
+  const outputs = commandOutputs(resume, target.noProject);
 
   return `<!doctype html>
-<html lang="ko">
+<html lang="${target.locale}">
   <head>
     <meta charset="utf-8" />
-    <title>김기환 Terminal CV</title>
+    <title>${escapeHtml(target.title)}</title>
     <style>
       @page {
         size: A4;
@@ -344,14 +380,14 @@ const createHtml = async () => {
     <main class="terminal">
       <header class="titlebar">
         <div class="lights" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="title">kihwan.kim/bash</div>
+        <div class="title">${escapeHtml(target.pathLabel)}</div>
         <div>Terminal CV</div>
       </header>
       <div class="content">
         <section class="hero">
-          <div class="path">kihwan.kim/bash</div>
-          <h1>김기환</h1>
-          <div class="subtitle">Software Engineer</div>
+          <div class="path">${escapeHtml(target.pathLabel)}</div>
+          <h1>${escapeHtml(target.heading)}</h1>
+          <div class="subtitle">${escapeHtml(target.subtitle)}</div>
         </section>
         ${commandBlock('about', outputs.about)}
         ${commandBlock('work', outputs.work)}
@@ -362,19 +398,12 @@ const createHtml = async () => {
           <div>
             <div class="prompt"><span>kihwan@cv:~$</span> contact</div>
             <div class="contact-lines">
-              ${lineBlock(
-                [
-                  'email    juljin1875@gmail.com',
-                  'linkedin https://www.linkedin.com/in/1875/',
-                  'github   https://github.com/simulacre7/',
-                  'web      https://kihwan.kim',
-                ].join('\n')
-              )}
+              ${lineBlock(target.contactLines.join('\n'))}
             </div>
           </div>
-          <a class="qr-card" href="${bashUrl}">
-            <img src="${qrDataUrl}" alt="QR code for ${bashUrl}" />
-            <div>$ open kihwan.kim/bash</div>
+          <a class="qr-card" href="${target.bashUrl}">
+            <img src="${qrDataUrl}" alt="QR code for ${target.bashUrl}" />
+            <div>$ open ${target.bashUrl.replace('https://', '')}</div>
           </a>
         </section>
       </div>
@@ -385,21 +414,25 @@ const createHtml = async () => {
 
 await mkdir(tempDir, { recursive: true });
 await mkdir(outputDir, { recursive: true });
-await writeFile(tempHtml, await createHtml());
+const backgroundDataUrl = await createBackgroundDataUrl();
 
-execFileSync(
-  chrome,
-  [
-    '--headless',
-    '--disable-gpu',
-    '--no-first-run',
-    '--no-default-browser-check',
-    '--no-pdf-header-footer',
-    '--print-to-pdf-no-header',
-    '--run-all-compositor-stages-before-draw',
-    '--virtual-time-budget=5000',
-    `--print-to-pdf=${outputPdf}`,
-    pathToFileURL(tempHtml).href,
-  ],
-  { cwd: root, stdio: 'inherit' }
-);
+for (const target of pdfTargets) {
+  await writeFile(target.tempHtml, await createHtml(target, backgroundDataUrl));
+
+  execFileSync(
+    chrome,
+    [
+      '--headless',
+      '--disable-gpu',
+      '--no-first-run',
+      '--no-default-browser-check',
+      '--no-pdf-header-footer',
+      '--print-to-pdf-no-header',
+      '--run-all-compositor-stages-before-draw',
+      '--virtual-time-budget=5000',
+      `--print-to-pdf=${target.outputPdf}`,
+      pathToFileURL(target.tempHtml).href,
+    ],
+    { cwd: root, stdio: 'inherit' }
+  );
+}
