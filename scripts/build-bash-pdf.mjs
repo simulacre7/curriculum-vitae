@@ -201,6 +201,7 @@ const createHtml = async () => {
       .terminal {
         min-height: calc(297mm - 24mm);
         border: 0.3mm solid #314239;
+        border-radius: 3mm;
         background: #020807;
       }
 
@@ -212,6 +213,7 @@ const createHtml = async () => {
         min-height: 12mm;
         padding: 0 5mm;
         border-bottom: 0.3mm solid #203027;
+        border-radius: 2.7mm 2.7mm 0 0;
         background: #0b100d;
       }
 
