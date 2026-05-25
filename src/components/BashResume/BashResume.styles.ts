@@ -290,6 +290,11 @@ export const systemStyle = css`
   color: #a8b9ad;
 `;
 
+export const bulletStyle = css`
+  padding-left: 2ch;
+  text-indent: -2ch;
+`;
+
 export const segmentStyle = css`
   color: inherit;
 `;

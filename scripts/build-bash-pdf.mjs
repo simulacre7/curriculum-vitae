@@ -127,14 +127,7 @@ const commandOutputs = (resume, noProject) => ({
         .join('\n')
     )
     .join('\n\n'),
-  agent: getProjectText(
-    resume,
-    (project) =>
-      /agent|generative|pageagent|자동화|browser|ui/i.test(
-        `${project.title} ${project.summary ?? ''}`
-      ),
-    noProject
-  ),
+  projects: getProjectText(resume, () => true, noProject),
   stack: Array.from(
     new Set(resume.experience.flatMap((item) => item.stack ?? []))
   ).join('  '),
@@ -149,7 +142,10 @@ const commandOutputs = (resume, noProject) => ({
 const lineBlock = (text) =>
   escapeHtml(text)
     .split('\n')
-    .map((line) => `<div class="line">${line || '&nbsp;'}</div>`)
+    .map((line) => {
+      const className = /^\s*-\s/.test(line) ? 'line bullet-line' : 'line';
+      return `<div class="${className}">${line || '&nbsp;'}</div>`;
+    })
     .join('');
 
 const commandBlock = (command, output) => `
@@ -367,6 +363,11 @@ const createHtml = async (target, backgroundDataUrl) => {
         min-height: 1.48em;
       }
 
+      .bullet-line {
+        padding-left: 3.2mm;
+        text-indent: -3.2mm;
+      }
+
       .paper {
         margin-bottom: 3.6mm;
       }
@@ -383,6 +384,8 @@ const createHtml = async (target, backgroundDataUrl) => {
 
       .paper-point {
         margin-top: 0.7mm;
+        padding-left: 3.2mm;
+        text-indent: -3.2mm;
         color: #d8e8db;
       }
 
@@ -462,7 +465,7 @@ const createHtml = async (target, backgroundDataUrl) => {
         </section>
         ${commandBlock('about', outputs.about)}
         ${commandBlock('work', outputs.work)}
-        ${commandBlock('agent', outputs.agent)}
+        ${commandBlock('projects', outputs.projects)}
         ${commandBlock('stack', outputs.stack)}
         ${papersBlock(outputs.papers)}
         <section class="command-block contact">

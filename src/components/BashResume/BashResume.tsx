@@ -42,7 +42,7 @@ type TerminalLine = {
   id: number;
   text?: string;
   segments?: TerminalSegment[];
-  kind?: 'command' | 'stderr' | 'system';
+  kind?: 'command' | 'stderr' | 'system' | 'bullet';
 };
 
 type TerminalSegment = {
@@ -65,7 +65,7 @@ const TERMINAL_CV_EN_PDF_URL =
 const INITIAL_COMMANDS = [
   'about',
   'work',
-  'agent',
+  'projects',
   'stack',
   'papers',
   'contact',
@@ -121,7 +121,7 @@ const copy = {
       '짧은 명령어로 CV를 탐색할 수 있습니다.',
       '  about    소개',
       '  work     경력',
-      '  agent    Agent/Gen UI',
+      '  projects 프로젝트',
       '  stack    기술',
       '  papers   연구',
       '  contact  연락처',
@@ -138,7 +138,7 @@ const copy = {
       '읽기 좋은 명령어',
       '  about    소개',
       '  work     경력',
-      '  agent    에이전트/생성형 UI 프로젝트',
+      '  projects 주요 프로젝트',
       '  stack    기술 스택',
       '  papers   연구/논문',
       '  contact  연락처',
@@ -152,7 +152,7 @@ const copy = {
       '  ls',
       '  cat README.md',
       '  tree resume',
-      '  grep -R "Agent" resume',
+      '  grep -R "React" resume',
       '',
       'clear로 화면을 비울 수 있습니다.',
     ],
@@ -169,7 +169,7 @@ const copy = {
       'Explore this CV with short commands.',
       '  about    profile',
       '  work     career',
-      '  agent    Agent/Gen UI',
+      '  projects projects',
       '  stack    tools',
       '  papers   research',
       '  contact  links',
@@ -186,7 +186,7 @@ const copy = {
       'Readable commands',
       '  about    profile',
       '  work     career',
-      '  agent    agent/generative UI work',
+      '  projects project highlights',
       '  stack    stack',
       '  papers   research',
       '  contact  links',
@@ -200,7 +200,7 @@ const copy = {
       '  ls',
       '  cat README.md',
       '  tree resume',
-      '  grep -R "Agent" resume',
+      '  grep -R "React" resume',
       '',
       'Use clear to reset the screen.',
     ],
@@ -436,6 +436,7 @@ const getPapersOutput = (resume: ResumeData): TerminalLineDraft[] =>
 
     if (item.points?.[0]) {
       lines.push({
+        kind: 'bullet',
         segments: [{ text: '- ', kind: 'muted' }, { text: item.points[0] }],
       });
     }
@@ -478,6 +479,8 @@ const getCommandOutput = (
             .join('\n')
         )
         .join('\n\n');
+    case 'projects':
+      return getProjectText(resume, language, () => true);
     case 'agent':
       return getProjectText(resume, language, (project) =>
         /agent|generative|pageagent|자동화|browser|ui/i.test(
@@ -550,7 +553,7 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
   const appendBlock = (text: string, kind?: TerminalLine['kind']) => {
     const normalized = text.endsWith('\n') ? text.slice(0, -1) : text;
     for (const row of normalized.split('\n')) {
-      appendLine(row, kind);
+      appendLine(row, kind ?? (/^\s*-\s/.test(row) ? 'bullet' : undefined));
     }
   };
 
@@ -768,6 +771,7 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
                     kind === 'command' && styles.commandStyle,
                     kind === 'stderr' && styles.stderrStyle,
                     kind === 'system' && styles.systemStyle,
+                    kind === 'bullet' && styles.bulletStyle,
                   ]}
                 >
                   {segments?.length
