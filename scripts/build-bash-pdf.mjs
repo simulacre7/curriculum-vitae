@@ -22,11 +22,11 @@ const pdfTargets = [
     title: '김기환 Terminal CV',
     heading: '김기환',
     subtitle: 'Software Engineer',
-    contactLines: [
-      'email    juljin1875@gmail.com',
-      'linkedin https://www.linkedin.com/in/1875/',
-      'github   https://github.com/simulacre7/',
-      'web      https://kihwan.kim',
+    contactItems: [
+      ['email', 'juljin1875@gmail.com'],
+      ['linkedin', 'https://www.linkedin.com/in/1875/'],
+      ['github', 'https://github.com/simulacre7/'],
+      ['web', 'https://kihwan.kim'],
     ],
     noProject: '관련 프로젝트를 찾지 못했습니다.',
   },
@@ -40,11 +40,11 @@ const pdfTargets = [
     title: 'Kihwan Kim Terminal CV',
     heading: 'Kihwan Kim',
     subtitle: 'Software Engineer',
-    contactLines: [
-      'email    juljin1875@gmail.com',
-      'linkedin https://www.linkedin.com/in/1875/',
-      'github   https://github.com/simulacre7/',
-      'web      https://kihwan.kim',
+    contactItems: [
+      ['email', 'juljin1875@gmail.com'],
+      ['linkedin', 'https://www.linkedin.com/in/1875/'],
+      ['github', 'https://github.com/simulacre7/'],
+      ['web', 'https://kihwan.kim'],
     ],
     noProject: 'No matching project found.',
   },
@@ -138,17 +138,12 @@ const commandOutputs = (resume, noProject) => ({
   stack: Array.from(
     new Set(resume.experience.flatMap((item) => item.stack ?? []))
   ).join('  '),
-  papers: resume.publications
-    .map((publication) =>
-      [
-        publication.title,
-        publication.conference,
-        publication.points?.[0] ? `- ${publication.points[0]}` : '',
-      ]
-        .filter(Boolean)
-        .join('\n')
-    )
-    .join('\n\n'),
+  papers: resume.publications.map((publication) => ({
+    title: publication.title,
+    uri: publication.uri,
+    conference: publication.conference,
+    point: publication.points?.[0] ?? '',
+  })),
 });
 
 const lineBlock = (text) =>
@@ -163,6 +158,41 @@ const commandBlock = (command, output) => `
     <div class="output">${lineBlock(output)}</div>
   </section>
 `;
+
+const papersBlock = (papers) => `
+  <section class="command-block">
+    <div class="prompt"><span>kihwan@cv:~$</span> papers</div>
+    <div class="paper-list">
+      ${papers
+        .map(
+          (paper) => `
+            <article class="paper">
+              <a class="paper-title" href="${escapeHtml(paper.uri ?? '#')}">${escapeHtml(paper.title)}</a>
+              <div class="paper-meta">${escapeHtml(paper.conference)}</div>
+              ${
+                paper.point
+                  ? `<div class="paper-point"><span>- </span>${escapeHtml(paper.point)}</div>`
+                  : ''
+              }
+            </article>
+          `
+        )
+        .join('')}
+    </div>
+  </section>
+`;
+
+const contactBlock = (items) =>
+  items
+    .map(
+      ([label, value]) => `
+        <div class="contact-line">
+          <span class="contact-label">${escapeHtml(label)}</span>
+          <span class="contact-value">${escapeHtml(value)}</span>
+        </div>
+      `
+    )
+    .join('');
 
 const createBackgroundDataUrl = async () => {
   const svg = `<svg width="1240" height="1754" viewBox="0 0 1240 1754" xmlns="http://www.w3.org/2000/svg">
@@ -337,6 +367,29 @@ const createHtml = async (target, backgroundDataUrl) => {
         min-height: 1.48em;
       }
 
+      .paper {
+        margin-bottom: 3.6mm;
+      }
+
+      .paper-title {
+        color: #f1fff4;
+        font-weight: 700;
+      }
+
+      .paper-meta {
+        margin-top: 0.7mm;
+        color: #a8b9ad;
+      }
+
+      .paper-point {
+        margin-top: 0.7mm;
+        color: #d8e8db;
+      }
+
+      .paper-point span {
+        color: #7f9186;
+      }
+
       .contact {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 46mm;
@@ -351,6 +404,23 @@ const createHtml = async (target, backgroundDataUrl) => {
 
       .contact-lines {
         color: #d8e8db;
+      }
+
+      .contact-line {
+        display: grid;
+        grid-template-columns: 16mm minmax(0, 1fr);
+        column-gap: 3mm;
+        min-height: 1.48em;
+      }
+
+      .contact-label {
+        color: #82f6a3;
+        font-weight: 700;
+      }
+
+      .contact-value {
+        color: #f1fff4;
+        overflow-wrap: anywhere;
       }
 
       .qr-card {
@@ -394,12 +464,12 @@ const createHtml = async (target, backgroundDataUrl) => {
         ${commandBlock('work', outputs.work)}
         ${commandBlock('agent', outputs.agent)}
         ${commandBlock('stack', outputs.stack)}
-        ${commandBlock('papers', outputs.papers)}
+        ${papersBlock(outputs.papers)}
         <section class="command-block contact">
           <div>
             <div class="prompt"><span>kihwan@cv:~$</span> contact</div>
             <div class="contact-lines">
-              ${lineBlock(target.contactLines.join('\n'))}
+              ${contactBlock(target.contactItems)}
             </div>
           </div>
           <a class="qr-card" href="${target.bashUrl}">

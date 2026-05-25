@@ -8,8 +8,7 @@ export const globalStyles = css`
   :root {
     color: #e8f2ea;
     background: #070907;
-    font-family:
-      "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     font-synthesis: none;
     line-height: 1.45;
     text-rendering: optimizeLegibility;
@@ -22,9 +21,16 @@ export const globalStyles = css`
     min-width: 320px;
     min-height: 100vh;
     min-height: 100dvh;
-    background:
-      radial-gradient(circle at 15% 0%, rgba(34, 197, 94, 0.16), transparent 26rem),
-      radial-gradient(circle at 100% 30%, rgba(236, 72, 153, 0.12), transparent 24rem),
+    background: radial-gradient(
+        circle at 15% 0%,
+        rgba(34, 197, 94, 0.16),
+        transparent 26rem
+      ),
+      radial-gradient(
+        circle at 100% 30%,
+        rgba(236, 72, 153, 0.12),
+        transparent 24rem
+      ),
       #070907;
   }
 
@@ -41,8 +47,11 @@ export const globalStyles = css`
     body {
       min-width: 0;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 15% 0%, rgba(34, 197, 94, 0.13), transparent 18rem),
+      background: radial-gradient(
+          circle at 15% 0%,
+          rgba(34, 197, 94, 0.13),
+          transparent 18rem
+        ),
         #070907;
     }
   }
@@ -90,7 +99,12 @@ export const terminalStyle = css`
     min-width: 0;
     max-width: 100%;
     min-height: auto;
-    height: calc(100svh - max(16px, env(safe-area-inset-top)) - max(8px, env(safe-area-inset-bottom)));
+    height: calc(
+      100svh - max(16px, env(safe-area-inset-top)) - max(
+          8px,
+          env(safe-area-inset-bottom)
+        )
+    );
     border-radius: 7px;
   }
 `;
@@ -274,6 +288,40 @@ export const stderrStyle = css`
 
 export const systemStyle = css`
   color: #a8b9ad;
+`;
+
+export const segmentStyle = css`
+  color: inherit;
+`;
+
+export const labelSegmentStyle = css`
+  color: #82f6a3;
+  font-weight: 700;
+`;
+
+export const linkSegmentStyle = css`
+  color: #f1fff4;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: #b7f7c8;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+`;
+
+export const titleSegmentStyle = css`
+  color: #f1fff4;
+  font-weight: 700;
+`;
+
+export const metaSegmentStyle = css`
+  color: #a8b9ad;
+`;
+
+export const mutedSegmentStyle = css`
+  color: #7f9186;
 `;
 
 export const promptRowStyle = css`

@@ -40,9 +40,20 @@ type ResumeData = {
 
 type TerminalLine = {
   id: number;
-  text: string;
+  text?: string;
+  segments?: TerminalSegment[];
   kind?: 'command' | 'stderr' | 'system';
 };
+
+type TerminalSegment = {
+  text: string;
+  kind?: 'label' | 'link' | 'title' | 'meta' | 'muted';
+  href?: string;
+};
+
+type TerminalLineDraft = Omit<TerminalLine, 'id'>;
+
+type CommandOutput = string | TerminalLineDraft[];
 
 type ResumeMap = Record<SupportedLanguage, ResumeData>;
 
@@ -58,6 +69,30 @@ const INITIAL_COMMANDS = [
   'stack',
   'papers',
   'contact',
+];
+const CONTACT_ITEMS = [
+  {
+    label: 'email',
+    value: 'juljin1875@gmail.com',
+    href: 'mailto:juljin1875@gmail.com',
+  },
+  {
+    label: 'linkedin',
+    value: 'https://www.linkedin.com/in/1875/',
+    href: 'https://www.linkedin.com/in/1875/',
+  },
+  {
+    label: 'github',
+    value: 'https://github.com/simulacre7/',
+    href: 'https://github.com/simulacre7/',
+  },
+  { label: 'web', value: 'https://kihwan.kim', href: 'https://kihwan.kim' },
+  { label: 'pdf ko', value: TERMINAL_CV_PDF_URL, href: TERMINAL_CV_PDF_URL },
+  {
+    label: 'pdf en',
+    value: TERMINAL_CV_EN_PDF_URL,
+    href: TERMINAL_CV_EN_PDF_URL,
+  },
 ];
 
 const isSupportedLanguage = (
@@ -337,6 +372,8 @@ const makeInitialLines = (
 const formatList = (items: string[], prefix = '- ') =>
   items.map((item) => `${prefix}${item}`).join('\n');
 
+const labelText = (label: string) => label.padEnd(9, ' ');
+
 const getProjectText = (
   resume: ResumeData,
   language: SupportedLanguage,
@@ -366,11 +403,55 @@ const getProjectText = (
     .join('\n\n');
 };
 
+const getContactOutput = (): TerminalLineDraft[] =>
+  CONTACT_ITEMS.map((item) => ({
+    segments: [
+      { text: labelText(item.label), kind: 'label' },
+      { text: item.value, kind: 'link', href: item.href },
+    ],
+  }));
+
+const getPapersOutput = (resume: ResumeData): TerminalLineDraft[] =>
+  resume.publications.flatMap((publication, index) => {
+    const item = publication as {
+      title: string;
+      uri?: string;
+      conference: string;
+      points?: string[];
+    };
+    const lines: TerminalLineDraft[] = [
+      {
+        segments: [
+          {
+            text: item.title,
+            kind: 'title',
+            href: item.uri,
+          },
+        ],
+      },
+      {
+        segments: [{ text: item.conference, kind: 'meta' }],
+      },
+    ];
+
+    if (item.points?.[0]) {
+      lines.push({
+        segments: [{ text: '- ', kind: 'muted' }, { text: item.points[0] }],
+      });
+    }
+
+    if (index < resume.publications.length - 1) {
+      lines.push({ text: '' });
+    }
+
+    return lines;
+  });
+
 const getCommandOutput = (
   command: string,
   resume: ResumeData,
   language: SupportedLanguage
-) => {
+): CommandOutput | null => {
   switch (command) {
     case 'about':
       return [
@@ -410,32 +491,9 @@ const getCommandOutput = (
       return stack.join('  ');
     }
     case 'papers':
-      return resume.publications
-        .map((publication) => {
-          const item = publication as {
-            title: string;
-            conference: string;
-            points?: string[];
-          };
-
-          return [
-            item.title,
-            item.conference,
-            item.points?.[0] ? `- ${item.points[0]}` : '',
-          ]
-            .filter(Boolean)
-            .join('\n');
-        })
-        .join('\n\n');
+      return getPapersOutput(resume);
     case 'contact':
-      return [
-        'email    juljin1875@gmail.com',
-        'linkedin https://www.linkedin.com/in/1875/',
-        'github   https://github.com/simulacre7/',
-        'web      https://kihwan.kim',
-        `pdf ko   ${TERMINAL_CV_PDF_URL}`,
-        `pdf en   ${TERMINAL_CV_EN_PDF_URL}`,
-      ].join('\n');
+      return getContactOutput();
     case 'pdf':
       return [
         `ko: ${TERMINAL_CV_PDF_URL}`,
@@ -485,10 +543,25 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
     setLines((prev) => [...prev, { id: nextId.current++, text, kind }]);
   };
 
+  const appendDraftLine = (line: TerminalLineDraft) => {
+    setLines((prev) => [...prev, { ...line, id: nextId.current++ }]);
+  };
+
   const appendBlock = (text: string, kind?: TerminalLine['kind']) => {
     const normalized = text.endsWith('\n') ? text.slice(0, -1) : text;
     for (const row of normalized.split('\n')) {
       appendLine(row, kind);
+    }
+  };
+
+  const appendOutput = (output: CommandOutput, kind?: TerminalLine['kind']) => {
+    if (typeof output === 'string') {
+      appendBlock(output, kind);
+      return;
+    }
+
+    for (const line of output) {
+      appendDraftLine({ ...line, kind: line.kind ?? kind });
     }
   };
 
@@ -578,7 +651,7 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
     if (resume) {
       const commandOutput = getCommandOutput(command, resume, language);
       if (commandOutput) {
-        appendBlock(commandOutput);
+        appendOutput(commandOutput);
         return;
       }
     }
@@ -687,7 +760,7 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
           </header>
           <div ref={bodyRef} css={styles.bodyStyle}>
             <pre css={styles.outputStyle} aria-live="polite">
-              {lines.map(({ id, text, kind }) => (
+              {lines.map(({ id, text, segments, kind }) => (
                 <div
                   key={id}
                   css={[
@@ -697,7 +770,43 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
                     kind === 'system' && styles.systemStyle,
                   ]}
                 >
-                  {text || ' '}
+                  {segments?.length
+                    ? segments.map((segment, index) => {
+                        const content = segment.text || ' ';
+                        const segmentStyle = [
+                          styles.segmentStyle,
+                          segment.kind === 'label' && styles.labelSegmentStyle,
+                          segment.kind === 'link' && styles.linkSegmentStyle,
+                          segment.kind === 'title' && styles.titleSegmentStyle,
+                          segment.kind === 'meta' && styles.metaSegmentStyle,
+                          segment.kind === 'muted' && styles.mutedSegmentStyle,
+                        ];
+
+                        if (segment.href) {
+                          return (
+                            <a
+                              key={`${segment.text}-${index}`}
+                              css={segmentStyle}
+                              href={segment.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              onClick={(event) => event.stopPropagation()}
+                            >
+                              {content}
+                            </a>
+                          );
+                        }
+
+                        return (
+                          <span
+                            key={`${segment.text}-${index}`}
+                            css={segmentStyle}
+                          >
+                            {content}
+                          </span>
+                        );
+                      })
+                    : text || ' '}
                 </div>
               ))}
             </pre>
