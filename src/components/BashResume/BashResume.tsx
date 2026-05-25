@@ -369,7 +369,7 @@ const makeInitialLines = (
   return initialLines;
 };
 
-const formatList = (items: string[], prefix = '- ') =>
+const formatList = (items: string[], prefix = '  - ') =>
   items.map((item) => `${prefix}${item}`).join('\n');
 
 const labelText = (label: string) => label.padEnd(9, ' ');
@@ -437,7 +437,7 @@ const getPapersOutput = (resume: ResumeData): TerminalLineDraft[] =>
     if (item.points?.[0]) {
       lines.push({
         kind: 'bullet',
-        segments: [{ text: '- ', kind: 'muted' }, { text: item.points[0] }],
+        segments: [{ text: '  - ', kind: 'muted' }, { text: item.points[0] }],
       });
     }
 

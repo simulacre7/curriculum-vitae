@@ -291,8 +291,8 @@ export const systemStyle = css`
 `;
 
 export const bulletStyle = css`
-  padding-left: 2ch;
-  text-indent: -2ch;
+  padding-left: 4ch;
+  text-indent: -4ch;
 `;
 
 export const segmentStyle = css`

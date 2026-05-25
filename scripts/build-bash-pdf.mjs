@@ -77,7 +77,7 @@ const escapeHtml = (value) =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
-const formatList = (items, prefix = '- ') =>
+const formatList = (items, prefix = '  - ') =>
   items.map((item) => `${prefix}${item}`).join('\n');
 
 const getProjectText = (resume, matcher, noProject) => {
@@ -167,7 +167,7 @@ const papersBlock = (papers) => `
               <div class="paper-meta">${escapeHtml(paper.conference)}</div>
               ${
                 paper.point
-                  ? `<div class="paper-point"><span>- </span>${escapeHtml(paper.point)}</div>`
+                  ? `<div class="paper-point"><span>  - </span>${escapeHtml(paper.point)}</div>`
                   : ''
               }
             </article>
@@ -364,8 +364,8 @@ const createHtml = async (target, backgroundDataUrl) => {
       }
 
       .bullet-line {
-        padding-left: 3.2mm;
-        text-indent: -3.2mm;
+        padding-left: 6.4mm;
+        text-indent: -6.4mm;
       }
 
       .paper {
@@ -384,8 +384,8 @@ const createHtml = async (target, backgroundDataUrl) => {
 
       .paper-point {
         margin-top: 0.7mm;
-        padding-left: 3.2mm;
-        text-indent: -3.2mm;
+        padding-left: 6.4mm;
+        text-indent: -6.4mm;
         color: #d8e8db;
       }
 
