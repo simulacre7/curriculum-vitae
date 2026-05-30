@@ -12,11 +12,11 @@
     },
     {
       "title": "Product Experimentation Infrastructure",
-      "description": "On content platforms, I used server-driven UI and gradual migration to reduce the deployment cost of operational UI changes and A/B tests."
+      "description": "I used server-driven UI and gradual migration to decouple operational UI changes and A/B tests from deployment cycles."
     },
     {
       "title": "AI-Native Development Workflow",
-      "description": "I am exploring how AI and executable prototypes can turn ideas into reviewable product changes faster."
+      "description": "I am exploring how AI agents can turn ideas into executable prototypes that teams can review as product-like interfaces."
     },
     {
       "title": "Collaboration and Operations Tooling",
