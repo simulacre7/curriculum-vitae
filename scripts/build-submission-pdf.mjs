@@ -423,14 +423,7 @@ const getPdfPageCount = async (sourcePdf) => {
 const createCvFooterLabels = (pageCount) =>
   Array(pageCount).fill('Kihwan Kim · Software Engineer · Curriculum Vitae');
 
-const portfolioFooterLabels = [
-  'Kihwan Kim · Software Engineer · PageAgent / Browser Automation / Internal Tool Automation',
-  'Kihwan Kim · Software Engineer · PageAgent / Browser Automation / Internal Tool Automation',
-  'Kihwan Kim · Software Engineer · Server Driven UI / RiGrid / Product UI Platform',
-  'Kihwan Kim · Software Engineer · Virtualization / Rendering Performance / React',
-  'Kihwan Kim · Software Engineer · AutoML / Explainable AI / Enterprise AI Product',
-  'Kihwan Kim · Software Engineer · Recommender Systems / Experiment Platform / UX Research',
-];
+const portfolioFooterLabels = Array(6).fill('');
 
 const drawSubmissionFooters = async (pdf, { footerLabels, skipPages = 0 }) => {
   const font = await pdf.embedFont(StandardFonts.Helvetica);
@@ -446,8 +439,7 @@ const drawSubmissionFooters = async (pdf, { footerLabels, skipPages = 0 }) => {
     }
 
     const { width } = page.getSize();
-    const footerLabel =
-      footerLabels[index - skipPages] ?? 'Kihwan Kim · Software Engineer';
+    const footerLabel = footerLabels[index - skipPages] ?? '';
     const label = `${index + 1} / ${totalPages}`;
     const leftX = 52;
     const rightX = width - 52 - font.widthOfTextAtSize(label, fontSize);
@@ -459,13 +451,15 @@ const drawSubmissionFooters = async (pdf, { footerLabels, skipPages = 0 }) => {
       color: ruleColor,
     });
 
-    page.drawText(footerLabel, {
-      x: leftX,
-      y,
-      size: fontSize,
-      font,
-      color,
-    });
+    if (footerLabel) {
+      page.drawText(footerLabel, {
+        x: leftX,
+        y,
+        size: fontSize,
+        font,
+        color,
+      });
+    }
 
     page.drawText(label, {
       x: rightX,
