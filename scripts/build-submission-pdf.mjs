@@ -186,8 +186,8 @@ const createCoverHtml = (totalPages) => {
   </head>
   <body>
     <main class="page">
-      <div class="eyebrow">Curriculum Vitae · Portfolio Submission</div>
-      <h1>김기환 · Kihwan Kim</h1>
+      <div class="eyebrow">Curriculum Vitae · Portfolio</div>
+      <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Software Engineer</div>
       <p class="summary">
         이력서와 포트폴리오를 하나로 묶어, 복잡한 시스템을 사람이 이해하고 사용하기 쉬운
@@ -335,7 +335,7 @@ const createPortfolioCoverHtml = (totalPages) => {
   </head>
   <body>
     <main class="page">
-      <div class="eyebrow">Selected Product Engineering Work</div>
+      <div class="eyebrow">Selected Work</div>
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Software Engineer</div>
       <p class="summary">
@@ -420,8 +420,7 @@ const getPdfPageCount = async (sourcePdf) => {
   return pdf.getPageCount();
 };
 
-const createCvFooterLabels = (pageCount) =>
-  Array(pageCount).fill('Kihwan Kim · Software Engineer · Curriculum Vitae');
+const createCvFooterLabels = (pageCount) => Array(pageCount).fill('');
 
 const portfolioFooterLabels = Array(6).fill('');
 
