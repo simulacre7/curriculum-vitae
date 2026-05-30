@@ -173,10 +173,9 @@ const createCoverHtml = (totalPages) => {
         bottom: 24mm;
         display: flex;
         align-items: baseline;
-        justify-content: space-between;
+        justify-content: flex-end;
       }
 
-      .cover-footer a,
       .cover-footer span {
         color: #5e5e5e;
         font-size: 10pt;
@@ -216,7 +215,6 @@ const createCoverHtml = (totalPages) => {
       </section>
 
       <div class="cover-footer">
-        <a href="https://kihwan.kim">https://kihwan.kim</a>
         <span>1 / ${totalPages}</span>
       </div>
     </main>
@@ -322,10 +320,9 @@ const createPortfolioCoverHtml = (totalPages) => {
         bottom: 24mm;
         display: flex;
         align-items: baseline;
-        justify-content: space-between;
+        justify-content: flex-end;
       }
 
-      .cover-footer a,
       .cover-footer span {
         color: #5e5e5e;
         font-size: 10pt;
@@ -387,7 +384,6 @@ const createPortfolioCoverHtml = (totalPages) => {
       </section>
 
       <div class="cover-footer">
-        <a href="https://kihwan.kim">https://kihwan.kim</a>
         <span>1 / ${totalPages}</span>
       </div>
     </main>

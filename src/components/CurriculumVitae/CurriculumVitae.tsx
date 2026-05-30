@@ -60,6 +60,13 @@ export function CurriculumVitae() {
           <a id="github" href="https://github.com/simulacre7/">
             GitHub
           </a>
+          <a
+            id="website"
+            href="https://kihwan.kim"
+            css={styles.printOnlyContactLinkStyle}
+          >
+            https://kihwan.kim
+          </a>
         </address>
       </Section>
       <Section title="Experience">

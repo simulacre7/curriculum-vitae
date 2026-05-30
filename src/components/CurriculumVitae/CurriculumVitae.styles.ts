@@ -25,6 +25,14 @@ export const contactStyle = (theme: Theme) => css`
   }
 `;
 
+export const printOnlyContactLinkStyle = css`
+  display: none;
+
+  @media print {
+    display: inline;
+  }
+`;
+
 export const aliasContainerStyle = css`
   margin-top: 0.5rem;
 `;
