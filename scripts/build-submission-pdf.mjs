@@ -189,9 +189,10 @@ const createCoverHtml = (totalPages) => {
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Frontend Engineer</div>
       <p class="summary">
-        이력서와 포트폴리오를 하나로 묶어, 복잡한 시스템을 사람이 이해하고 사용하기 쉬운
-        인터페이스와 운영 구조로 풀어낸 작업을 정리했습니다. 내부 운영 자동화, Server Driven
-        UI, 렌더링 최적화, AI 제품/XAI, 추천 시스템 실험 사례를 포함합니다.
+        이력서와 포트폴리오를 하나로 묶어, HCI와 Visual Analytics에서 출발한 관심이 AI 시스템,
+        제품 플랫폼, 내부 운영 자동화로 이어진 과정을 정리했습니다. 핵심은 사람이 복잡한
+        시스템을 더 잘 이해하고 다룰 수 있도록 프론트엔드와 자동화 레이어를 설계하고 구현한
+        일입니다.
       </p>
 
       <div class="rule"></div>
@@ -209,7 +210,7 @@ const createCoverHtml = (totalPages) => {
         <div>
           <div class="title">Portfolio · 포트폴리오</div>
           <div class="description">
-            PageAgent 내부 운영 자동화, RiGrid Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템
+            내부 운영 자동화, Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템 실험
           </div>
         </div>
       </section>
@@ -336,9 +337,9 @@ const createPortfolioCoverHtml = (totalPages) => {
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Frontend Engineer</div>
       <p class="summary">
-        복잡한 시스템을 사람이 이해하고 사용하기 쉬운 인터페이스와 운영 구조로 풀어낸 작업을
-        선별했습니다. 내부 운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI, 추천
-        시스템 실험 사례를 포함합니다.
+        HCI와 Visual Analytics에서 출발한 관심이 AI 시스템, 제품 플랫폼, 내부 운영 자동화로
+        이어진 과정을 정리했습니다. 사람이 복잡한 시스템을 더 잘 이해하고 다룰 수 있도록
+        프론트엔드와 자동화 레이어를 설계하고 구현한 작업입니다.
       </p>
 
       <div class="rule"></div>
@@ -347,7 +348,7 @@ const createPortfolioCoverHtml = (totalPages) => {
         <div class="number">01</div>
         <div>
           <div class="title">Internal Operations Automation</div>
-          <div class="description">PageAgent로 내부 도구 조회와 조작을 연결한 운영 자동화</div>
+          <div class="description">내부 도구와 외부 서비스 조회를 연결한 브라우저 자동화</div>
         </div>
       </section>
 
@@ -355,7 +356,7 @@ const createPortfolioCoverHtml = (totalPages) => {
         <div class="number">02</div>
         <div>
           <div class="title">RiGrid Server Driven UI</div>
-          <div class="description">운영자가 제어하고 실험할 수 있는 멀티 플랫폼 UI 구성</div>
+          <div class="description">운영 UI 변경과 A/B 테스트의 배포 의존성을 낮춘 구조</div>
         </div>
       </section>
 
@@ -371,7 +372,7 @@ const createPortfolioCoverHtml = (totalPages) => {
         <div class="number">04</div>
         <div>
           <div class="title">AutoML XAI</div>
-          <div class="description">기업 의사결정을 위한 설명가능한 AI 제품 설계와 구현</div>
+          <div class="description">비전문가도 AI 예측 근거를 검증할 수 있는 XAI UI</div>
         </div>
       </section>
 
@@ -379,7 +380,7 @@ const createPortfolioCoverHtml = (totalPages) => {
         <div class="number">05</div>
         <div>
           <div class="title">Transparent Exploration in Recommender Systems</div>
-          <div class="description">추천 시스템의 탐색 과정과 사용자 보상 함수 연구</div>
+          <div class="description">추천 설명이 사용자 피드백에 미치는 영향을 검증한 실험 시스템</div>
         </div>
       </section>
 

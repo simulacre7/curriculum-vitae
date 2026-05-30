@@ -1,26 +1,26 @@
 {
   "name": "Kh.Kim",
-  "summary": "Frontend Engineer with 7 years of experience building interfaces and systems for complex product environments.\n\nMy work has consistently focused on helping people understand, operate, and experiment with complex systems more effectively.\n\nThat perspective comes from my background in HCI and Visual Analytics, and has continued through AutoML platforms, data visualization, content platforms, server-driven UI, and AI-native development workflows.\n\nThe recurring question is the same: how can we reduce friction between people, tools, information, and execution? I design and build frontend systems, collaboration flows, and operational tools that help teams move from ideas to working systems faster.",
+  "summary": "Frontend Engineer with 7 years of experience.\n\nMy work started in HCI and Visual Analytics, where I studied how people understand and work with complex systems. That interest has continued through AutoML/XAI, data visualization, content platforms, server-driven UI, and internal operations automation.\n\nRecently, I have been working on AI-native product development, GitHub-centered collaboration, and browser automation. I design and build frontend systems that reduce friction between people, tools, information, and execution.",
   "careAbout": [
     {
       "title": "Human-System Interaction",
-      "description": "Rooted in HCI and Visual Analytics, this is the lens I use for designing interfaces that make complex information and tools easier to understand and operate."
+      "description": "My starting point is HCI and Visual Analytics: turning complex information, tools, and models into interfaces people can understand, inspect, and use."
     },
     {
-      "title": "Experimentation Systems",
-      "description": "I build frontend structures that let teams change, test, and operate product experiences without being blocked by deployment cycles or organizational handoffs."
+      "title": "Understandable AI Systems",
+      "description": "In AutoML and XAI, I built product UI that helps non-expert users inspect predictions, evidence, and edge cases before they act."
+    },
+    {
+      "title": "Product Experimentation Infrastructure",
+      "description": "On content platforms, I used server-driven UI and gradual migration to reduce the deployment cost of operational UI changes and A/B tests."
     },
     {
       "title": "AI-Native Development Workflow",
-      "description": "I explore how AI can turn ideas into executable prototypes and work that teams can review, discuss, and iterate on together."
+      "description": "I am exploring how AI and executable prototypes can turn ideas into reviewable product changes faster."
     },
     {
-      "title": "Cross-functional Collaboration",
-      "description": "I work on GitHub-centric workflows and internal tooling patterns that help product, operations, QA, and engineering share context and execute together."
-    },
-    {
-      "title": "Organizational Tooling",
-      "description": "I build tools and frontend systems that reduce repetitive lookup, verification, and handoff work so teams can act with less friction."
+      "title": "Collaboration and Operations Tooling",
+      "description": "Through GitHub-centered workflows, internal-tool integration, and browser automation, I reduce the cost of moving between people, tools, and information."
     }
   ],
   "present": "Present",
@@ -29,23 +29,23 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "Exploring AI-native product development and internal operations workflows while building creator-commerce frontend systems. I focus on turning repetitive lookup and decision work into executable workflows, and on making commerce operations more flexible through frontend structure.",
+      "summary": "Exploring AI-native product development and internal operations automation while building creator-commerce frontend systems. I use GitHub-centered collaboration, executable prototypes, and browser automation to reduce the cost of product changes and repeated investigation work.",
       "projects": [
         {
           "title": "PageAgent-based Internal Operations Automation",
           "period": "Mar 2026–Present",
-          "summary": "Experimented with an operations automation structure that turns natural-language requests into reproducible browser actions and result UI, reducing the friction of moving across multiple internal tools.",
+          "summary": "Turned repeated CS/QA investigation work into an automation target, connecting natural-language requests to browser actions and verifiable result UI.",
           "details": [
-            "Connected distributed user, payment, and account-mapping systems into a single investigation flow",
+            "Connected account, payment, and mapping data from several internal tools so operators could compare the necessary context in one result view",
             "Extended Alibaba PageAgent for a Chrome Managed Profile environment to automate tab navigation, clicks, and inputs",
-            "Separated nondeterministic generation from reproducible action sequences and result presentation",
+            "Separated LLM output from reproducible action sequences and result presentation",
             "Simplified repeated CS/QA investigation work that required manually checking multiple tables and services"
           ]
         },
         {
           "title": "Vuddy Commerce Frontend",
           "period": "Jul 2025–Present",
-          "summary": "Maintained commerce flows such as product discovery, cart, and authentication while connecting operational context, analytics, and design-system patterns to reduce change cost.",
+          "summary": "Improved commerce flows such as product discovery, cart, and authentication while using analytics and design-system patterns to lower frontend change cost.",
           "details": [
             "Tracked and improved operational issues in cart and authentication flows",
             "Reflected user-flow and operations context from Amplitude and ChannelTalk into frontend improvements",

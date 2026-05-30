@@ -51,6 +51,13 @@ export function CurriculumVitae() {
           <p key={paragraph}>{paragraph}</p>
         ))}
         <address css={styles.contactStyle}>
+          <a
+            id="website"
+            href="https://kihwan.kim"
+            css={styles.printOnlyContactLinkStyle}
+          >
+            https://kihwan.kim
+          </a>
           <a id="email" href="mailto:juljin1875@gmail.com">
             juljin1875@gmail.com
           </a>
@@ -60,16 +67,19 @@ export function CurriculumVitae() {
           <a id="github" href="https://github.com/simulacre7/">
             GitHub
           </a>
-          <a
-            id="website"
-            href="https://kihwan.kim"
-            css={styles.printOnlyContactLinkStyle}
-          >
-            https://kihwan.kim
-          </a>
         </address>
       </Section>
-      <Section title="Experience">
+      <Section title="What I Care About">
+        <div css={styles.careListStyle}>
+          {careAbout.map(({ title, description }) => (
+            <article key={title} css={styles.careItemStyle}>
+              <h3 css={styles.careTitleStyle}>{title}</h3>
+              <p css={styles.careDescriptionStyle}>{description}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+      <Section title="Experience" printBreakBefore>
         {experience.map(
           ({
             company,
@@ -126,16 +136,6 @@ export function CurriculumVitae() {
             );
           }
         )}
-      </Section>
-      <Section title="What I Care About">
-        <div css={styles.careListStyle}>
-          {careAbout.map(({ title, description }) => (
-            <article key={title} css={styles.careItemStyle}>
-              <h3 css={styles.careTitleStyle}>{title}</h3>
-              <p css={styles.careDescriptionStyle}>{description}</p>
-            </article>
-          ))}
-        </div>
       </Section>
       <Section title="Education" printBreakBefore>
         {education.map((edu) => (

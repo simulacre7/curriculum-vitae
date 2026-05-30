@@ -19,6 +19,8 @@ export const rowStyle = () => css`
 
   @media print {
     flex-direction: row;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 `;
 

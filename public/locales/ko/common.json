@@ -1,26 +1,26 @@
 {
   "name": "김기환",
-  "summary": "7년차 프론트엔드 엔지니어입니다.\n\n복잡한 시스템을 사람이 이해하고 사용하기 쉬운 인터페이스로 풀어내는 일에 관심이 있습니다. 화면 구현에 그치지 않고, 팀의 실험과 운영 속도를 높이는 구조를 함께 설계합니다.\n\nHCI와 Visual Analytics 연구에서 출발해 AutoML, 데이터 시각화, 콘텐츠 플랫폼, Server-Driven UI를 다뤄왔습니다. 최근에는 AI-Native 개발 흐름과 내부 운영 자동화를 실험하고 있습니다.\n\n결국 관심사는 하나입니다. 사람, 도구, 정보가 맞물려 일하는 과정의 마찰을 줄이고, 제품과 조직의 실행 속도를 높이는 것입니다.",
+  "summary": "7년차 프론트엔드 엔지니어입니다.\n\nHCI와 Visual Analytics 연구에서 출발해, 복잡한 시스템을 사람이 이해하고 다룰 수 있는 인터페이스로 풀어내는 일을 해왔습니다. 이 관심사는 AutoML/XAI, 데이터 시각화, 콘텐츠 플랫폼, Server-Driven UI, 내부 운영 자동화로 이어졌습니다.\n\n최근에는 AI-Native 제품 개발과 GitHub 중심 협업, 브라우저 자동화를 실험하고 있습니다. 사람, 도구, 정보가 맞물려 일하는 과정의 마찰을 줄이는 프론트엔드 시스템을 설계하고 구현합니다.",
   "careAbout": [
     {
       "title": "Human-System Interaction",
-      "description": "HCI와 Visual Analytics에서 출발했습니다. 복잡한 정보와 도구를 이해하고 사용하기 쉬운 인터페이스로 풀어냅니다."
+      "description": "출발점은 HCI와 Visual Analytics입니다. 복잡한 정보, 도구, 모델을 사람이 이해하고 판단할 수 있는 인터페이스로 바꿉니다."
     },
     {
-      "title": "Experimentation Systems",
-      "description": "제품 변경과 실험이 배포 주기나 조직 간 전달 과정에 막히지 않는 구조를 만듭니다."
+      "title": "Understandable AI Systems",
+      "description": "AutoML과 XAI에서는 모델의 결과와 근거를 비전문가도 검증할 수 있는 UI로 만들었습니다."
+    },
+    {
+      "title": "Product Experimentation Infrastructure",
+      "description": "콘텐츠 플랫폼에서는 Server-Driven UI와 점진적 마이그레이션으로 운영 UI 변경과 A/B 테스트의 배포 의존성을 줄였습니다."
     },
     {
       "title": "AI-Native Development Workflow",
-      "description": "AI로 아이디어를 빠르게 프로토타입으로 만들고, 팀이 함께 검토하며 개선하는 개발 흐름을 실험합니다."
+      "description": "AI와 실행 가능한 프로토타입을 활용해 아이디어가 검토 가능한 제품 변경으로 더 빨리 이어지는 방식을 실험합니다."
     },
     {
-      "title": "Cross-functional Collaboration",
-      "description": "기획, 운영, QA, 개발이 같은 정보를 보고 판단하도록 GitHub 중심 협업과 내부 도구 연결을 다룹니다."
-    },
-    {
-      "title": "Organizational Tooling",
-      "description": "반복적인 조회, 확인, 전달 업무를 줄여 팀이 더 빨리 판단하고 움직이게 돕습니다."
+      "title": "Collaboration and Operations Tooling",
+      "description": "GitHub 중심 협업, 내부 도구 연결, 브라우저 자동화로 팀이 여러 시스템을 오가는 비용을 줄이는 방법을 다룹니다."
     }
   ],
   "present": "현재",
@@ -29,26 +29,26 @@
       "company": "Levvels",
       "role": "프론트엔드 엔지니어",
       "period": "2025.07–현재",
-      "summary": "AI-Native 제품 개발과 내부 운영 자동화를 실험합니다. 반복적인 조회와 판단 업무를 자동화하고, 크리에이터 커머스의 프론트엔드 변경 비용을 낮춥니다.",
+      "summary": "AI-Native 제품 개발과 내부 운영 자동화를 실험하고 있습니다. GitHub 중심 협업, 실행 가능한 프로토타입, 브라우저 자동화를 활용해 제품 변경과 반복 조사 업무의 비용을 낮춥니다.",
       "projects": [
         {
           "title": "PageAgent 기반 내부 운영 자동화",
           "period": "2026.03–현재",
-          "summary": "CS/QA가 여러 내부 도구를 오가는 부담을 줄였습니다. 자연어 요청을 브라우저 자동 조작과 결과 화면으로 연결했습니다.",
+          "summary": "CS/QA가 여러 내부 도구를 오가며 확인하던 업무를 자동화 대상으로 정리했습니다. 자연어 요청을 브라우저 조작과 검증 가능한 결과 화면으로 연결했습니다.",
           "details": [
-            "계정, 결제, 매핑 등 여러 내부 도구에 흩어진 정보를 한 번에 확인하도록 연결",
+            "계정, 결제, 매핑 등 여러 내부 도구에 흩어진 정보를 결과 화면에서 비교할 수 있도록 연결",
             "Chrome Managed Profile 환경에 맞게 Alibaba PageAgent를 확장하고 탭 이동, 클릭, 입력 등 화면 조작을 자동화",
-            "생성 결과를 그대로 쓰지 않고, 실행 절차와 결과 화면을 분리해 재현성 확보",
+            "LLM 응답을 그대로 쓰지 않고, 실행 절차와 결과 화면을 분리해 재현성 확보",
             "CS/QA의 반복적인 테이블 조회와 교차 확인을 자동화"
           ]
         },
         {
           "title": "Vuddy 커머스 프론트엔드",
           "period": "2025.07–현재",
-          "summary": "상품 탐색, 장바구니, 인증 등 커머스 핵심 흐름을 개선했습니다. 분석 도구와 디자인 시스템을 정비해 변경 비용을 낮췄습니다.",
+          "summary": "상품 탐색, 장바구니, 인증 등 커머스 핵심 기능을 개선했습니다. 분석 도구와 디자인 시스템을 활용해 사용자 행동을 확인하고 프론트엔드 변경 비용을 낮췄습니다.",
           "details": [
             "장바구니와 인증 시스템의 운영 이슈 추적 및 개선",
-            "Amplitude, ChannelTalk에서 확인한 사용자 흐름과 운영 이슈 반영",
+            "Amplitude, ChannelTalk에서 확인한 사용자 행동과 운영 이슈 반영",
             "Design System 기반 프론트엔드 패턴을 정리해 반복 구현 비용 축소"
           ]
         }
@@ -119,7 +119,7 @@
       "company": "티맥스엔터프라이즈",
       "role": "연구원",
       "period": "2020.02–2022.05",
-      "summary": "비전문가도 AI/분석 기능을 다룰 수 있도록 AutoML 플랫폼의 사용 흐름, 시각화, 인터랙션을 설계했습니다. AI 시스템의 사용성과 설명 가능성을 제품 UI로 풀어냈습니다.",
+      "summary": "비전문가도 AI/분석 기능을 다룰 수 있도록 AutoML 플랫폼의 사용 경험, 시각화, 인터랙션을 설계했습니다. AI 시스템을 이해하고 검증할 수 있는 UI로 풀어냈습니다.",
       "aliases": ["現 티맥스비즈에이아이", "舊 티맥스데이터"],
       "projects": [
         {
