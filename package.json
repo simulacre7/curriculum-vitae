@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/build-og-pages.mjs && node scripts/build-bash-pdf.mjs",
+    "build": "tsc -b && node scripts/generate-og-images.mjs && vite build && node scripts/build-og-pages.mjs && node scripts/build-bash-pdf.mjs",
     "build:og-images": "node scripts/generate-og-images.mjs",
     "build:submission-pdf": "node scripts/build-submission-pdf.mjs",
     "format": "prettier --write .",

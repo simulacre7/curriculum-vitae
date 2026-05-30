@@ -52,7 +52,7 @@ const baseSvg = (children) => `
 </svg>
 `;
 
-const makeCvSvg = ({ heading, name, role, focus, watermark }) =>
+const makeCvSvg = ({ heading, name, role, focus }) =>
   baseSvg(
     shellCard(`
       ${text(heading, {
@@ -86,14 +86,6 @@ const makeCvSvg = ({ heading, name, role, focus, watermark }) =>
         'font-family': fontStack,
         'font-size': 29,
         'font-weight': 700,
-      })}
-      ${text(watermark, {
-        x: 920,
-        y: 548,
-        fill: '#173421',
-        'font-family': fontStack,
-        'font-size': 148,
-        'font-weight': 900,
       })}
     `)
   );
@@ -141,14 +133,6 @@ const makeBashSvg = ({ name, label, command, description }) =>
         'font-size': 29,
         'font-weight': 700,
       })}
-      ${text('bash', {
-        x: 850,
-        y: 548,
-        fill: '#16341f',
-        'font-family': fontStack,
-        'font-size': 152,
-        'font-weight': 900,
-      })}
     `)
   );
 
@@ -159,8 +143,7 @@ const images = [
       heading: 'Curriculum Vitae',
       name: '김기환',
       role: 'Software Engineer',
-      focus: 'Frontend Platforms · Product Experience · Research-informed UI',
-      watermark: 'CV',
+      focus: 'Human-System Interaction · Experimentation · AI-Native Workflows',
     }),
   ],
   [
@@ -169,8 +152,7 @@ const images = [
       heading: 'Curriculum Vitae',
       name: 'Kihwan Kim',
       role: 'Software Engineer',
-      focus: 'Frontend Platforms · Product Experience · Research-informed UI',
-      watermark: 'CV',
+      focus: 'Human-System Interaction · Experimentation · AI-Native Workflows',
     }),
   ],
   [
@@ -178,8 +160,8 @@ const images = [
     makeBashSvg({
       name: '김기환',
       label: 'Terminal CV',
-      command: '$ about · work · agent · stack',
-      description: '짧은 명령어로 경력, 기술 스택, 연구 이력 훑어보기',
+      command: '$ about · projects · themes · papers',
+      description: '경력, 프로젝트, 연구, 반복되는 관심사 탐색하기',
     }),
   ],
   [
@@ -187,8 +169,8 @@ const images = [
     makeBashSvg({
       name: 'Kihwan Kim',
       label: 'Terminal CV',
-      command: '$ about · work · agent · stack',
-      description: 'Scan career, stack, and research with short commands',
+      command: '$ about · projects · themes · papers',
+      description: 'Explore career, projects, research, and recurring themes',
     }),
   ],
 ];

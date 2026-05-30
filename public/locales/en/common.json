@@ -8,11 +8,11 @@
     },
     {
       "title": "Experimentation Systems",
-      "description": "I care about frontend structures that let teams change, test, and operate product experiences without being blocked by deployment cycles or organizational handoffs."
+      "description": "I build frontend structures that let teams change, test, and operate product experiences without being blocked by deployment cycles or organizational handoffs."
     },
     {
       "title": "AI-Native Development Workflow",
-      "description": "I explore how AI can turn ideas into executable prototypes and collaboration-ready work units, beyond simply generating code."
+      "description": "I explore how AI can turn ideas into executable prototypes and work that teams can review, discuss, and iterate on together."
     },
     {
       "title": "Cross-functional Collaboration",
@@ -29,7 +29,7 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "Exploring AI-native product development and collaboration workflows while building creator-commerce frontend systems. I focus on turning repetitive lookup and decision work into executable workflows, and on making commerce operations more flexible through frontend structure.",
+      "summary": "Exploring AI-native product development and internal operations workflows while building creator-commerce frontend systems. I focus on turning repetitive lookup and decision work into executable workflows, and on making commerce operations more flexible through frontend structure.",
       "projects": [
         {
           "title": "PageAgent-based Internal Operations Automation",

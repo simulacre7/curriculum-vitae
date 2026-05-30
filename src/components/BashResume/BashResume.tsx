@@ -522,11 +522,7 @@ const getCommandOutput = (
     case 'themes':
       return getThemesOutput(resume);
     case 'agent':
-      return getProjectText(resume, language, (project) =>
-        /agent|generative|pageagent|자동화|browser|ui/i.test(
-          `${project.title} ${project.summary ?? ''}`
-        )
-      );
+      return getProjectText(resume, language, () => true);
     case 'stack': {
       const stack = Array.from(
         new Set(resume.experience.flatMap((item) => item.stack ?? []))

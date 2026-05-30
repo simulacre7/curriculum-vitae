@@ -11,7 +11,7 @@ const pages = [
     path: '/',
     title: '김기환 | CV',
     description:
-      '김기환의 경력과 프로젝트, 연구 이력을 한곳에 정리한 CV입니다.',
+      '복잡한 시스템을 더 쉽게 이해하고 실행할 수 있게 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -25,7 +25,7 @@ const pages = [
     path: '/ko',
     title: '김기환 | CV',
     description:
-      '김기환의 경력과 프로젝트, 연구 이력을 한곳에 정리한 CV입니다.',
+      '복잡한 시스템을 더 쉽게 이해하고 실행할 수 있게 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -39,7 +39,7 @@ const pages = [
     path: '/en',
     title: 'Kihwan Kim | Curriculum Vitae',
     description:
-      'Kihwan Kim’s curriculum vitae, covering career experience, projects, and research.',
+      'Kihwan Kim’s CV: frontend engineering across human-system interaction, experimentation systems, and AI-native workflows.',
     image: '/og/cv-en.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -53,7 +53,7 @@ const pages = [
     path: '/bash',
     title: '김기환 | Terminal CV',
     description:
-      '김기환의 경력, 기술 스택, 연구 이력을 짧은 명령어로 훑어볼 수 있는 터미널형 CV입니다.',
+      '짧은 명령어로 김기환의 경력, 프로젝트, 연구, 반복되는 관심사를 탐색하는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -67,7 +67,7 @@ const pages = [
     path: '/bash/ko',
     title: '김기환 | Terminal CV',
     description:
-      '김기환의 경력, 기술 스택, 연구 이력을 짧은 명령어로 훑어볼 수 있는 터미널형 CV입니다.',
+      '짧은 명령어로 김기환의 경력, 프로젝트, 연구, 반복되는 관심사를 탐색하는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -81,7 +81,7 @@ const pages = [
     path: '/bash/en',
     title: 'Kihwan Kim | Terminal CV',
     description:
-      'A terminal-shaped CV for scanning Kihwan Kim’s career, stack, and research with short commands.',
+      'A terminal-shaped CV for exploring Kihwan Kim’s career, projects, research, and recurring engineering themes.',
     image: '/og/bash-en.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -139,7 +139,7 @@ const metaFor = (page) => {
 const applyMeta = (html, page) => {
   const withoutBaseMeta = html
     .replace(/\s*<title>.*?<\/title>/s, '')
-    .replace(/\s*<meta name="description" content=".*?" \/>/s, '');
+    .replace(/\s*<meta\s+name="description"[^>]*\/?>/s, '');
   const withLang = withoutBaseMeta.replace(
     /<html[^>]*>/,
     `<html lang="${page.lang}">`
