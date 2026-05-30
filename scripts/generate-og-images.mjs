@@ -161,7 +161,7 @@ const images = [
       name: '김기환',
       label: 'Terminal CV',
       command: '$ about · projects · themes · papers',
-      description: '경력, 프로젝트, 연구, 반복되는 관심사 탐색하기',
+      description: '경력, 프로젝트, 연구, 커리어 테마 탐색하기',
     }),
   ],
   [

@@ -189,8 +189,8 @@ const createCoverHtml = (totalPages) => {
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Frontend Engineer</div>
       <p class="summary">
-        이력서와 포트폴리오를 하나로 묶어, HCI와 Visual Analytics에서 시작한 관심이 AI 시스템,
-        제품 플랫폼, 내부 운영 자동화로 이어진 과정을 정리했습니다. 복잡한 시스템을 사람이
+        이력서와 포트폴리오를 하나로 묶어, HCI와 Visual Analytics 연구에서 시작해 AI 시스템,
+        제품 플랫폼, 내부 운영 자동화로 이어진 작업을 정리했습니다. 복잡한 시스템을 사람이
         이해하고 사용할 수 있게 만든 프론트엔드 구현과 브라우저 자동화 작업을 중심으로
         담았습니다.
       </p>
@@ -337,8 +337,8 @@ const createPortfolioCoverHtml = (totalPages) => {
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Frontend Engineer</div>
       <p class="summary">
-        HCI와 Visual Analytics에서 시작한 관심이 AI 시스템, 제품 플랫폼, 내부 운영 자동화로
-        이어진 과정을 정리했습니다. 복잡한 시스템을 사람이 이해하고 사용할 수 있게 만든
+        HCI와 Visual Analytics 연구에서 시작해 AI 시스템, 제품 플랫폼, 내부 운영 자동화로
+        이어진 작업을 정리했습니다. 복잡한 시스템을 사람이 이해하고 사용할 수 있게 만든
         프론트엔드 구현과 브라우저 자동화 작업입니다.
       </p>
 
