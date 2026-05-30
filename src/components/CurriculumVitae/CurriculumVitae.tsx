@@ -69,7 +69,7 @@ export function CurriculumVitae() {
           </a>
         </address>
       </Section>
-      <Section title="Themes Across My Career">
+      <Section title="Themes">
         <div css={styles.careListStyle}>
           {careAbout.map(({ title, description }) => (
             <article key={title} css={styles.careItemStyle}>

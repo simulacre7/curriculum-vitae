@@ -226,7 +226,7 @@ const makeMarkdown = (resume: ResumeData, locale: 'ko' | 'en') => {
     '',
     resume.summary,
     '',
-    '## Themes Across My Career',
+    '## Themes',
     ...resume.careAbout.flatMap((theme) => [
       '',
       `### ${theme.title}`,
