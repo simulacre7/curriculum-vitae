@@ -26,10 +26,16 @@ type ExperienceProject = {
   stack?: string[];
 };
 
+type CareAbout = {
+  title: string;
+  description: string;
+};
+
 export function CurriculumVitae() {
   const { t } = useTranslation(['common']);
 
   const experience = t('experience', { returnObjects: true }) as Experience[];
+  const careAbout = t('careAbout', { returnObjects: true }) as CareAbout[];
   const education = t('education', { returnObjects: true }) as Education[];
   const publications = t('publications', {
     returnObjects: true,
@@ -113,6 +119,16 @@ export function CurriculumVitae() {
             );
           }
         )}
+      </Section>
+      <Section title="What I Care About">
+        <div css={styles.careListStyle}>
+          {careAbout.map(({ title, description }) => (
+            <article key={title} css={styles.careItemStyle}>
+              <h3 css={styles.careTitleStyle}>{title}</h3>
+              <p css={styles.careDescriptionStyle}>{description}</p>
+            </article>
+          ))}
+        </div>
       </Section>
       <Section title="Education" printBreakBefore>
         {education.map((edu) => (

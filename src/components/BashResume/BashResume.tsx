@@ -21,6 +21,10 @@ import i18n, {
 type ResumeData = {
   name: string;
   summary: string;
+  careAbout: {
+    title: string;
+    description: string;
+  }[];
   experience: {
     company: string;
     role: string;
@@ -66,6 +70,7 @@ const INITIAL_COMMANDS = [
   'about',
   'work',
   'projects',
+  'themes',
   'stack',
   'papers',
   'contact',
@@ -122,6 +127,7 @@ const copy = {
       '  about    소개',
       '  work     경력',
       '  projects 프로젝트',
+      '  themes   관심사',
       '  stack    기술',
       '  papers   연구',
       '  contact  연락처',
@@ -133,12 +139,13 @@ const copy = {
     ready: 'ready. try `about` first.',
     noProject: '관련 프로젝트를 찾지 못했습니다.',
     focus:
-      'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
     guide: [
       '읽기 좋은 명령어',
       '  about    소개',
       '  work     경력',
       '  projects 주요 프로젝트',
+      '  themes   반복되는 관심사',
       '  stack    기술 스택',
       '  papers   연구/논문',
       '  contact  연락처',
@@ -170,6 +177,7 @@ const copy = {
       '  about    profile',
       '  work     career',
       '  projects projects',
+      '  themes   themes',
       '  stack    tools',
       '  papers   research',
       '  contact  links',
@@ -181,12 +189,13 @@ const copy = {
     ready: 'ready. try `about` first.',
     noProject: 'No matching project found.',
     focus:
-      'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
+      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
     guide: [
       'Readable commands',
       '  about    profile',
       '  work     career',
       '  projects project highlights',
+      '  themes   recurring themes',
       '  stack    stack',
       '  papers   research',
       '  contact  links',
@@ -216,6 +225,13 @@ const makeMarkdown = (resume: ResumeData, locale: 'ko' | 'en') => {
     `# ${resume.name}`,
     '',
     resume.summary,
+    '',
+    '## What I Care About',
+    ...resume.careAbout.flatMap((theme) => [
+      '',
+      `### ${theme.title}`,
+      theme.description,
+    ]),
     '',
     '## Experience',
     ...resume.experience.flatMap((item) => [
@@ -448,6 +464,28 @@ const getPapersOutput = (resume: ResumeData): TerminalLineDraft[] =>
     return lines;
   });
 
+const getThemesOutput = (resume: ResumeData): TerminalLineDraft[] =>
+  resume.careAbout.flatMap((theme, index) => {
+    const lines: TerminalLineDraft[] = [
+      {
+        segments: [{ text: theme.title, kind: 'title' }],
+      },
+      {
+        kind: 'bullet',
+        segments: [
+          { text: '  - ', kind: 'muted' },
+          { text: theme.description },
+        ],
+      },
+    ];
+
+    if (index < resume.careAbout.length - 1) {
+      lines.push({ text: '' });
+    }
+
+    return lines;
+  });
+
 const getCommandOutput = (
   command: string,
   resume: ResumeData,
@@ -481,6 +519,8 @@ const getCommandOutput = (
         .join('\n\n');
     case 'projects':
       return getProjectText(resume, language, () => true);
+    case 'themes':
+      return getThemesOutput(resume);
     case 'agent':
       return getProjectText(resume, language, (project) =>
         /agent|generative|pageagent|자동화|browser|ui/i.test(

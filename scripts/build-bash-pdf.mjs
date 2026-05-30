@@ -28,6 +28,8 @@ const pdfTargets = [
       ['github', 'https://github.com/simulacre7/'],
       ['web', 'https://kihwan.kim'],
     ],
+    focus:
+      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
     noProject: '관련 프로젝트를 찾지 못했습니다.',
   },
   {
@@ -46,6 +48,8 @@ const pdfTargets = [
       ['github', 'https://github.com/simulacre7/'],
       ['web', 'https://kihwan.kim'],
     ],
+    focus:
+      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
     noProject: 'No matching project found.',
   },
 ];
@@ -103,14 +107,8 @@ const getProjectText = (resume, matcher, noProject) => {
     .join('\n\n');
 };
 
-const commandOutputs = (resume, noProject) => ({
-  about: [
-    resume.name,
-    '',
-    resume.summary,
-    '',
-    'focus: Agentic UI, Browser Agent, Server-Driven UI, frontend architecture',
-  ].join('\n'),
+const commandOutputs = (resume, noProject, focus) => ({
+  about: [resume.name, '', resume.summary, '', focus].join('\n'),
   work: resume.experience
     .map((item) =>
       [
@@ -128,6 +126,9 @@ const commandOutputs = (resume, noProject) => ({
     )
     .join('\n\n'),
   projects: getProjectText(resume, () => true, noProject),
+  themes: resume.careAbout
+    .map((theme) => [theme.title, `  - ${theme.description}`].join('\n'))
+    .join('\n\n'),
   stack: Array.from(
     new Set(resume.experience.flatMap((item) => item.stack ?? []))
   ).join('  '),
@@ -224,7 +225,7 @@ const createHtml = async (target, backgroundDataUrl) => {
     margin: 1,
     width: 320,
   });
-  const outputs = commandOutputs(resume, target.noProject);
+  const outputs = commandOutputs(resume, target.noProject, target.focus);
 
   return `<!doctype html>
 <html lang="${target.locale}">
@@ -466,6 +467,7 @@ const createHtml = async (target, backgroundDataUrl) => {
         ${commandBlock('about', outputs.about)}
         ${commandBlock('work', outputs.work)}
         ${commandBlock('projects', outputs.projects)}
+        ${commandBlock('themes', outputs.themes)}
         ${commandBlock('stack', outputs.stack)}
         ${papersBlock(outputs.papers)}
         <section class="command-block contact">

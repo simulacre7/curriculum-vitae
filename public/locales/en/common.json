@@ -1,33 +1,55 @@
 {
   "name": "Kh.Kim",
-  "summary": "Frontend Engineer with 7 years of experience building products and systems for experimentation, collaboration, and execution.\n\nBeyond feature development, I am interested in how teams work together, how ideas become products, and how technology can reduce execution bottlenecks.\n\nMy recent work spans server-driven UI, AI-native development workflows, and cross-functional collaboration systems that help organizations move faster and with greater flexibility.",
+  "summary": "Frontend Engineer with 7 years of experience building interfaces and systems for complex product environments.\n\nMy work has consistently focused on helping people understand, operate, and experiment with complex systems more effectively.\n\nThat perspective comes from my background in HCI and Visual Analytics, and has continued through AutoML platforms, data visualization, content platforms, server-driven UI, and AI-native development workflows.\n\nThe recurring question is the same: how can we reduce friction between people, tools, information, and execution? I design and build frontend systems, collaboration flows, and operational tools that help teams move from ideas to working systems faster.",
+  "careAbout": [
+    {
+      "title": "Human-System Interaction",
+      "description": "Rooted in HCI and Visual Analytics, this is the lens I use for designing interfaces that make complex information and tools easier to understand and operate."
+    },
+    {
+      "title": "Experimentation Systems",
+      "description": "I care about frontend structures that let teams change, test, and operate product experiences without being blocked by deployment cycles or organizational handoffs."
+    },
+    {
+      "title": "AI-Native Development Workflow",
+      "description": "I explore how AI can turn ideas into executable prototypes and collaboration-ready work units, beyond simply generating code."
+    },
+    {
+      "title": "Cross-functional Collaboration",
+      "description": "I work on GitHub-centric workflows and internal tooling patterns that help product, operations, QA, and engineering share context and execute together."
+    },
+    {
+      "title": "Organizational Tooling",
+      "description": "I build tools and frontend systems that reduce repetitive lookup, verification, and handoff work so teams can act with less friction."
+    }
+  ],
   "present": "Present",
   "experience": [
     {
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "Working on internal operations automation and creator-commerce frontend systems. For internal tools, I explored and implemented an agent-based interface that turns natural-language requests into workflows across multiple systems.",
+      "summary": "Exploring AI-native product development and collaboration workflows while building creator-commerce frontend systems. I focus on turning repetitive lookup and decision work into executable workflows, and on making commerce operations more flexible through frontend structure.",
       "projects": [
         {
           "title": "PageAgent-based Internal Operations Automation",
           "period": "Mar 2026–Present",
-          "summary": "Redefined generative UI as an agent execution layer that connects and controls internal systems, rather than only generating UI.",
+          "summary": "Experimented with an operations automation structure that turns natural-language requests into reproducible browser actions and result UI, reducing the friction of moving across multiple internal tools.",
           "details": [
-            "Designed lookup flows across user, payment, and account-mapping tools from natural-language CS requests",
-            "Extended Alibaba PageAgent to automate tab navigation, clicks, and inputs in a Chrome Managed Profile environment",
-            "Separated nondeterministic generative UI output from reproducible action sequences and result presentation",
-            "Reduced repetitive investigation work where CS/QA operators had to manually inspect multiple tables and services"
+            "Connected distributed user, payment, and account-mapping systems into a single investigation flow",
+            "Extended Alibaba PageAgent for a Chrome Managed Profile environment to automate tab navigation, clicks, and inputs",
+            "Separated nondeterministic generation from reproducible action sequences and result presentation",
+            "Simplified repeated CS/QA investigation work that required manually checking multiple tables and services"
           ]
         },
         {
           "title": "Vuddy Commerce Frontend",
           "period": "Jul 2025–Present",
-          "summary": "Continuously operate and improve Vuddy commerce frontend flows, including product discovery, cart, and authentication.",
+          "summary": "Maintained commerce flows such as product discovery, cart, and authentication while connecting operational context, analytics, and design-system patterns to reduce change cost.",
           "details": [
-            "Maintain and improve cart and authentication systems",
-            "Manage operations flows with Amplitude and ChannelTalk",
-            "Organize reusable frontend patterns through the design system"
+            "Tracked and improved operational issues in cart and authentication flows",
+            "Reflected user-flow and operations context from Amplitude and ChannelTalk into frontend improvements",
+            "Organized reusable frontend patterns through the design system to reduce repeated implementation work"
           ]
         }
       ],
@@ -46,23 +68,23 @@
       "company": "RIDI Corp.",
       "role": "Frontend Engineer",
       "period": "May 2022–Jul 2025",
-      "summary": "Built React-based clients across web, mobile, and desktop surfaces. Introduced RiGrid server-driven UI for RIDI’s 2.13M MAU content platform, enabling operator-led UI changes and faster experiments.",
+      "summary": "Focused on reducing the dependency between product experimentation, operational UI changes, and deployment cycles in a large content platform. Through server-driven UI and gradual migration, I helped create structures that let operators adjust and test experiences faster.",
       "projects": [
         {
           "title": "RIDI Web Platform",
           "period": "May 2022–Jul 2025",
-          "summary": "Contributed to RiGrid and island-architecture migration.",
+          "summary": "Used server-declared UI and island architecture to gradually move legacy pages into React while lowering the execution cost of operational UI changes and A/B tests.",
           "details": [
-            "Rendered server-declared UI on the client",
-            "Migrated PHP pages toward React",
-            "Made A/B tests and operational UI changes more flexible",
-            "Kept mobile, desktop, and special-device stability"
+            "Rendered server-declared UI on the client to decouple screen changes from deployment cycles",
+            "Migrated PHP pages toward React incrementally to reduce migration risk",
+            "Created a more flexible foundation for A/B tests and operational UI changes",
+            "Maintained stability across mobile, desktop, and special-device environments"
           ]
         },
         {
           "title": "Large-scale List Rendering Optimization",
           "period": "May 2022–Jul 2025",
-          "summary": "Improved rendering bottlenecks and perceived speed for 6,000+ item lists.",
+          "summary": "Improved list rendering structure and loading experience so large-scale content exploration would not limit user experience or product experimentation.",
           "details": [
             "Analyzed frame drops from large DOM trees",
             "Rendered only the visible range with windowing",
@@ -73,7 +95,7 @@
         {
           "title": "User Environment Stabilization",
           "period": "May 2022–Jul 2025",
-          "summary": "Improved real-user stability with Sentry tracking and browser/device fixes.",
+          "summary": "Reduced instability caused by browser, device, and extension differences, improving both product experience and operational response.",
           "details": [
             "Tracked real-user errors with Sentry",
             "Handled translation-plugin conflicts",
@@ -97,13 +119,13 @@
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
       "period": "Feb 2020–May 2022",
-      "summary": "Worked on AutoML product planning and interfaces that translated AI capabilities into usable service experiences.",
+      "summary": "Designed product flows, visualizations, and interactions that helped non-expert users work with complex AI and analytics systems. The focus was not technology first, but the usability, explainability, and workflow of AI systems.",
       "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
       "projects": [
         {
           "title": "Legacy System React Migration",
           "period": "Jan 2021–May 2022",
-          "summary": "Ported enterprise platform products from a jQuery-based internal library to React.",
+          "summary": "Moved a tightly coupled internal UI library toward React to create a more consistent and extensible foundation for platform interfaces.",
           "details": [
             "Modularized legacy UI code and improved interface structure",
             "Developed reusable components to replace bespoke legacy widgets"
@@ -112,7 +134,7 @@
         {
           "title": "AutoML Platform",
           "period": "Feb 2020–May 2022",
-          "summary": "Designed feature flows and frontend interactions for an AutoML platform.",
+          "summary": "Designed and implemented codeless studio flows and XAI visualizations so users without model-development experience could explore and operate AI capabilities.",
           "details": [
             "Implemented a codeless studio for non-expert model builders",
             "Developed explainable AI (XAI) visualizations and dashboards",
@@ -148,20 +170,20 @@
         {
           "title": "AI-driven UI and Recommender System Research",
           "period": "2019.01–2020.02",
-          "description": "Studied how exploratory items should be disclosed in recommender-system interfaces to collect better user logs and feedback.",
+          "description": "Studied how recommender systems should communicate algorithmic exploration so users can understand the system and provide higher-quality feedback.",
           "points": [
             "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
             "Analyzed how disclosure patterns for exploratory items affect user perception and data quality",
             "Proposed a metric to evaluate the value of user logs from an AI perspective",
             "Implemented a web-based movie recommendation system for experimental environments",
-            "Designed data-driven UI experiments and evaluation flows"
+            "Designed data-driven UI experiments to observe interaction between people and recommendation algorithms"
           ],
           "badges": ["Python", "Flask", "Surprise", "jQuery"]
         },
         {
           "title": "Modeling Web User Behavior",
           "period": "2019.02–2020.02",
-          "description": "Conducted research to understand and model user behavior patterns in web environments.",
+          "description": "Modeled decision-making and behavior patterns in complex web environments to better understand interaction between people and systems.",
           "points": [
             "Estimated user reward functions from behavior logs through Inverse Reinforcement Learning",
             "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
