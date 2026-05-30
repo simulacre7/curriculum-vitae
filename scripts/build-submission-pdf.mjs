@@ -210,7 +210,7 @@ const createCoverHtml = (totalPages) => {
         <div>
           <div class="title">Portfolio · 포트폴리오</div>
           <div class="description">
-            내부 운영 자동화, Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템 실험
+            내부 운영 자동화, 서버 주도 UI, 렌더링 최적화, AutoML XAI, 추천 시스템 실험
           </div>
         </div>
       </section>
@@ -355,7 +355,7 @@ const createPortfolioCoverHtml = (totalPages) => {
       <section class="section">
         <div class="number">02</div>
         <div>
-          <div class="title">RiGrid Server Driven UI</div>
+          <div class="title">RiGrid 서버 주도 UI</div>
           <div class="description">운영 UI 변경과 A/B 테스트를 배포 일정과 분리한 구조</div>
         </div>
       </section>
