@@ -11,7 +11,7 @@ const pages = [
     path: '/',
     title: '김기환 | CV',
     description:
-      '복잡한 시스템을 더 쉽게 이해하고 실행할 수 있게 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
+      '복잡한 시스템을 사람이 더 쉽게 이해하고 다룰 수 있게 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -25,7 +25,7 @@ const pages = [
     path: '/ko',
     title: '김기환 | CV',
     description:
-      '복잡한 시스템을 더 쉽게 이해하고 실행할 수 있게 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
+      '복잡한 시스템을 사람이 더 쉽게 이해하고 다룰 수 있게 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -53,7 +53,7 @@ const pages = [
     path: '/bash',
     title: '김기환 | Terminal CV',
     description:
-      '짧은 명령어로 김기환의 경력, 프로젝트, 연구, 반복되는 관심사를 탐색하는 터미널형 CV입니다.',
+      '짧은 명령어로 김기환의 경력, 프로젝트, 연구와 관심사를 탐색하는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
@@ -67,7 +67,7 @@ const pages = [
     path: '/bash/ko',
     title: '김기환 | Terminal CV',
     description:
-      '짧은 명령어로 김기환의 경력, 프로젝트, 연구, 반복되는 관심사를 탐색하는 터미널형 CV입니다.',
+      '짧은 명령어로 김기환의 경력, 프로젝트, 연구와 관심사를 탐색하는 터미널형 CV입니다.',
     image: '/og/bash-ko.png',
     alternates: [
       { lang: 'x-default', path: '/bash' },
