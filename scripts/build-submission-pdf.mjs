@@ -190,9 +190,9 @@ const createCoverHtml = (totalPages) => {
       <h1>김기환 · Kihwan Kim</h1>
       <div class="role">Software Engineer</div>
       <p class="summary">
-        이력서와 포트폴리오를 하나로 묶어, 경력과 연구 이력은 물론 제품 개발 과정에서 다룬
-        운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI, 추천 시스템 실험 사례를
-        함께 정리했습니다.
+        이력서와 포트폴리오를 하나로 묶어, 복잡한 시스템을 사람이 이해하고 사용하기 쉬운
+        인터페이스와 운영 구조로 풀어낸 작업을 정리했습니다. 내부 운영 자동화, Server Driven
+        UI, 렌더링 최적화, AI 제품/XAI, 추천 시스템 실험 사례를 포함합니다.
       </p>
 
       <div class="rule"></div>
@@ -210,7 +210,7 @@ const createCoverHtml = (totalPages) => {
         <div>
           <div class="title">Portfolio Case Studies · 포트폴리오</div>
           <div class="description">
-            PageAgent 운영 자동화, RiGrid Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템
+            PageAgent 내부 운영 자동화, RiGrid Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템
           </div>
         </div>
       </section>
@@ -339,8 +339,9 @@ const createPortfolioCoverHtml = (totalPages) => {
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
       <div class="role">Software Engineer</div>
       <p class="summary">
-        제품 개발 과정에서 다룬 운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI,
-        추천 시스템 실험 사례를 선별해 정리했습니다.
+        복잡한 시스템을 사람이 이해하고 사용하기 쉬운 인터페이스와 운영 구조로 풀어낸 작업을
+        선별했습니다. 내부 운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI, 추천
+        시스템 실험 사례를 포함합니다.
       </p>
 
       <div class="rule"></div>
@@ -348,8 +349,8 @@ const createPortfolioCoverHtml = (totalPages) => {
       <section class="section">
         <div class="number">01</div>
         <div>
-          <div class="title">Agentic Internal Operations</div>
-          <div class="description">PageAgent와 Generative UI를 활용한 내부 운영 자동화</div>
+          <div class="title">Internal Operations Automation</div>
+          <div class="description">PageAgent로 내부 도구 조회와 조작을 연결한 운영 자동화</div>
         </div>
       </section>
 
@@ -423,8 +424,8 @@ const createCvFooterLabels = (pageCount) =>
   Array(pageCount).fill('Kihwan Kim · Software Engineer · Curriculum Vitae');
 
 const portfolioFooterLabels = [
-  'Kihwan Kim · Software Engineer · PageAgent / Generative UI / Internal Tool Automation',
-  'Kihwan Kim · Software Engineer · PageAgent / Generative UI / Internal Tool Automation',
+  'Kihwan Kim · Software Engineer · PageAgent / Browser Automation / Internal Tool Automation',
+  'Kihwan Kim · Software Engineer · PageAgent / Browser Automation / Internal Tool Automation',
   'Kihwan Kim · Software Engineer · Server Driven UI / RiGrid / Product UI Platform',
   'Kihwan Kim · Software Engineer · Virtualization / Rendering Performance / React',
   'Kihwan Kim · Software Engineer · AutoML / Explainable AI / Enterprise AI Product',
