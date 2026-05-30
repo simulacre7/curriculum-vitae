@@ -187,7 +187,7 @@ const createCoverHtml = (totalPages) => {
     <main class="page">
       <div class="eyebrow">Curriculum Vitae · Portfolio</div>
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
-      <div class="role">Software Engineer</div>
+      <div class="role">Frontend Engineer</div>
       <p class="summary">
         이력서와 포트폴리오를 하나로 묶어, 복잡한 시스템을 사람이 이해하고 사용하기 쉬운
         인터페이스와 운영 구조로 풀어낸 작업을 정리했습니다. 내부 운영 자동화, Server Driven
@@ -207,7 +207,7 @@ const createCoverHtml = (totalPages) => {
       <section class="section">
         <div class="number">02</div>
         <div>
-          <div class="title">Portfolio Case Studies · 포트폴리오</div>
+          <div class="title">Portfolio · 포트폴리오</div>
           <div class="description">
             PageAgent 내부 운영 자동화, RiGrid Server Driven UI, 렌더링 최적화, AutoML XAI, 추천 시스템
           </div>
@@ -332,9 +332,9 @@ const createPortfolioCoverHtml = (totalPages) => {
   </head>
   <body>
     <main class="page">
-      <div class="eyebrow">Selected Work</div>
+      <div class="eyebrow">Portfolio</div>
       <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
-      <div class="role">Software Engineer</div>
+      <div class="role">Frontend Engineer</div>
       <p class="summary">
         복잡한 시스템을 사람이 이해하고 사용하기 쉬운 인터페이스와 운영 구조로 풀어낸 작업을
         선별했습니다. 내부 운영 자동화, Server Driven UI, 렌더링 최적화, AI 제품/XAI, 추천
