@@ -34,13 +34,16 @@ export function CurriculumVitae() {
   const publications = t('publications', {
     returnObjects: true,
   }) as PublicationProps[];
+  const summary = t('summary');
 
   return (
     <div css={styles.contentStyle}>
       <LanguageSwitcher />
       <Nameplate name={t('name')} />
       <Section title="Summary" isShortGap>
-        <p>{t('summary')}</p>
+        {summary.split(/\n{2,}/).map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
         <address css={styles.contactStyle}>
           <a id="email" href="mailto:juljin1875@gmail.com">
             juljin1875@gmail.com
