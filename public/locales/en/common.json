@@ -1,6 +1,6 @@
 {
   "name": "Kh.Kim",
-  "summary": "Frontend Engineer with 7 years of experience.\n\nMy work started in HCI and Visual Analytics, where I studied how people understand and work with complex systems. That interest has continued through AutoML/XAI, data visualization, content platforms, server-driven UI, and internal operations automation.\n\nRecently, I have been working on AI-native product development, GitHub-centered collaboration, and browser automation. I design and build frontend systems that reduce friction between people, tools, information, and execution.",
+  "summary": "Frontend Engineer with 7 years of experience.\n\nMy work started in HCI and Visual Analytics, where I studied how people understand and work with complex systems. That interest has continued through AutoML and explainable AI (XAI), data visualization, content platforms, server-driven UI, and internal operations automation.\n\nRecently, I have been working on AI-native product development, GitHub-centered collaboration, and browser automation. I design and build frontend systems that reduce friction between people, tools, information, and execution.",
   "careAbout": [
     {
       "title": "Human-System Interaction",
@@ -8,7 +8,7 @@
     },
     {
       "title": "Understandable AI Systems",
-      "description": "In AutoML and XAI, I built product UI that helps non-expert users inspect predictions, evidence, and edge cases before they act."
+      "description": "In AutoML and explainable AI (XAI), I built product UI that helps non-expert users inspect predictions, evidence, and edge cases before they act."
     },
     {
       "title": "Product Experimentation Infrastructure",
@@ -134,10 +134,10 @@
         {
           "title": "AutoML Platform",
           "period": "Feb 2020–May 2022",
-          "summary": "Designed and implemented codeless studio flows and XAI visualizations so users without model-development experience could explore and operate AI capabilities.",
+          "summary": "Designed and implemented codeless studio flows and explainable AI visualizations so users without model-development experience could explore and operate AI capabilities.",
           "details": [
             "Implemented a codeless studio for non-expert model builders",
-            "Developed explainable AI (XAI) visualizations and dashboards",
+            "Developed explainable AI visualizations and dashboards",
             "Researched interfaces between AutoML engines and model developers",
             "Clarified requirements for an early-stage platform"
           ]

@@ -210,7 +210,7 @@ const createCoverHtml = (totalPages) => {
         <div>
           <div class="title">Portfolio · 포트폴리오</div>
           <div class="description">
-            내부 운영 자동화, 서버 주도 UI, 렌더링 최적화, AutoML XAI, 추천 시스템 실험
+            내부 운영 자동화, 서버 주도 UI, 렌더링 최적화, AutoML·예측 설명 UI, 추천 시스템 실험
           </div>
         </div>
       </section>
@@ -371,8 +371,8 @@ const createPortfolioCoverHtml = (totalPages) => {
       <section class="section">
         <div class="number">04</div>
         <div>
-          <div class="title">AutoML XAI</div>
-          <div class="description">비전문가도 AI 예측 근거를 검증할 수 있는 XAI UI</div>
+          <div class="title">AutoML · 예측 설명 UI</div>
+          <div class="description">비전문가도 AI 예측 근거를 검증할 수 있는 UI</div>
         </div>
       </section>
 
