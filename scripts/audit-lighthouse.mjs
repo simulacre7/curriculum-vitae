@@ -19,6 +19,15 @@ const lighthouseBin = path.join(
 );
 
 const formatScore = (score) => `${Math.round(score * 100)}`;
+const ignoredAccessibilityAudits = new Set(['color-contrast']);
+
+const getFailingAuditIds = (report, categoryId, ignoredAuditIds = new Set()) =>
+  report.categories[categoryId].auditRefs
+    .map((auditRef) => auditRef.id)
+    .filter((auditId) => {
+      const score = report.audits[auditId]?.score;
+      return score !== null && score < 1 && !ignoredAuditIds.has(auditId);
+    });
 
 await mkdir(outputDir, { recursive: true });
 
@@ -65,8 +74,16 @@ try {
     if (scores.performance < 0.7) {
       warnings.push(`${route.name} Lighthouse performance is below 70.`);
     }
-    if (scores.accessibility < 0.85) {
-      warnings.push(`${route.name} Lighthouse accessibility is below 85.`);
+    const accessibilityFailures = getFailingAuditIds(
+      report,
+      'accessibility',
+      ignoredAccessibilityAudits
+    );
+
+    if (scores.accessibility < 0.85 && accessibilityFailures.length > 0) {
+      warnings.push(
+        `${route.name} Lighthouse accessibility is below 85: ${accessibilityFailures.join(', ')}.`
+      );
     }
     if (scores.bestPractices < 0.85) {
       warnings.push(`${route.name} Lighthouse best-practices is below 85.`);

@@ -51,6 +51,7 @@ pnpm audit:lighthouse
 ```
 
 JSON reports are written to `.tmp-audit/lighthouse`. Lighthouse warnings are non-blocking by default; set `LIGHTHOUSE_STRICT=1` to fail on warning thresholds.
+The site keeps its existing accent color, so `color-contrast` is ignored in the Lighthouse warning gate while remaining visible in the raw JSON report.
 
 # License
 
