@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && node scripts/generate-og-images.mjs && vite build && node scripts/build-og-pages.mjs && node scripts/build-bash-pdf.mjs",
+    "build": "tsc -b && node scripts/generate-og-images.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir .tmp-ssr --emptyOutDir true && node scripts/build-og-pages.mjs && node scripts/prerender-cv-pages.mjs && node scripts/build-bash-pdf.mjs",
     "build:og-images": "node scripts/generate-og-images.mjs",
     "build:submission-pdf": "node scripts/build-submission-pdf.mjs",
     "format": "prettier --write .",
@@ -13,11 +13,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.11.4",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.5",
     "i18next": "^23.11.5",
-    "i18next-browser-languagedetector": "^8.0.0",
-    "i18next-http-backend": "^2.5.2",
     "just-bash": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

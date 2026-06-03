@@ -1,7 +1,8 @@
 import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
+
+import enCommon from '../public/locales/en/common.json';
+import koCommon from '../public/locales/ko/common.json';
 
 export const SUPPORTED_LANGUAGES = ['ko', 'en'] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
@@ -38,26 +39,25 @@ const getInitialLanguage = () => {
   return DEFAULT_LANGUAGE;
 };
 
-i18n
-  .use(HttpApi)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    supportedLngs: SUPPORTED_LANGUAGES,
-    fallbackLng: DEFAULT_LANGUAGE,
-    lng: getInitialLanguage(),
-    debug: false,
-    detection: {
-      order: ['localStorage'],
-      lookupLocalStorage: LANGUAGE_STORAGE_KEY,
-      caches: ['localStorage'],
+i18n.use(initReactI18next).init({
+  supportedLngs: SUPPORTED_LANGUAGES,
+  fallbackLng: DEFAULT_LANGUAGE,
+  lng: getInitialLanguage(),
+  ns: ['common'],
+  defaultNS: 'common',
+  resources: {
+    ko: {
+      common: koCommon,
     },
-    interpolation: {
-      escapeValue: false, // React already does escaping
+    en: {
+      common: enCommon,
     },
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
-  });
+  },
+  initImmediate: false,
+  debug: false,
+  interpolation: {
+    escapeValue: false, // React already does escaping
+  },
+});
 
 export default i18n;
