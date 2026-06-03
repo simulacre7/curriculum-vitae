@@ -1,8 +1,10 @@
 import { Suspense, lazy, useEffect } from 'react';
 
+import { Global } from '@emotion/react';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import App from './App';
+import * as bashStyles from './components/BashResume/BashResume.styles';
 import i18n, { LANGUAGE_STORAGE_KEY, SupportedLanguage } from './i18n';
 
 const BashResume = lazy(() =>
@@ -53,6 +55,45 @@ function LegacyLocaleRedirect() {
   return null;
 }
 
+function BashFallback() {
+  const quickCommands = ['about', 'work', 'projects'];
+
+  return (
+    <>
+      <Global styles={bashStyles.globalStyles} />
+      <main css={bashStyles.screenStyle}>
+        <section css={bashStyles.terminalStyle} aria-busy="true">
+          <header css={bashStyles.titleBarStyle}>
+            <div css={bashStyles.trafficLightsStyle} aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div css={bashStyles.titleStyle}>kihwan.kim/bash</div>
+            <nav css={bashStyles.toolbarStyle} aria-label="quick commands">
+              {quickCommands.map((command) => (
+                <button key={command} type="button" disabled>
+                  {command}
+                </button>
+              ))}
+            </nav>
+          </header>
+          <div css={bashStyles.bodyStyle}>
+            <pre css={bashStyles.outputStyle} aria-live="polite">
+              <div css={[bashStyles.lineStyle, bashStyles.systemStyle]}>
+                mounting terminal...
+              </div>
+              <div css={[bashStyles.lineStyle, bashStyles.commandStyle]}>
+                kihwan@cv:~$
+              </div>
+            </pre>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
+
 export function AppRoutes() {
   return (
     <>
@@ -64,7 +105,7 @@ export function AppRoutes() {
         <Route
           path="/bash"
           element={
-            <Suspense fallback={null}>
+            <Suspense fallback={<BashFallback />}>
               <BashResume />
             </Suspense>
           }
@@ -72,7 +113,7 @@ export function AppRoutes() {
         <Route
           path="/bash/ko"
           element={
-            <Suspense fallback={null}>
+            <Suspense fallback={<BashFallback />}>
               <BashResume routeLanguage="ko" />
             </Suspense>
           }
@@ -80,7 +121,7 @@ export function AppRoutes() {
         <Route
           path="/bash/en"
           element={
-            <Suspense fallback={null}>
+            <Suspense fallback={<BashFallback />}>
               <BashResume routeLanguage="en" />
             </Suspense>
           }

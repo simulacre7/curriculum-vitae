@@ -21,18 +21,18 @@ export function Publication({
 }: PublicationProps) {
   return (
     <div css={styles.containerStyle}>
-      <h4 css={styles.titleStyle}>
+      <h3 css={styles.titleStyle}>
         <a href={uri}>{title}</a>
-      </h4>
+      </h3>
       {authors.length > 0 && (
-        <h5 css={styles.authorStyle}>
+        <p css={styles.authorStyle}>
           {authors.map((author, index) => (
             <React.Fragment key={author}>
               {index > 0 && ', '}
               {MY_NAME_LIST.includes(author) ? <b>{author}</b> : author}
             </React.Fragment>
           ))}
-        </h5>
+        </p>
       )}
       <p css={styles.conferenceStyle}>{conference}</p>
       {points.length > 0 && (

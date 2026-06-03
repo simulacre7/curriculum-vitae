@@ -43,7 +43,7 @@ export function CurriculumVitae() {
   const summary = t('summary');
 
   return (
-    <div css={styles.contentStyle}>
+    <main css={styles.contentStyle}>
       <LanguageSwitcher />
       <Nameplate name={t('name')} />
       <Section title="Summary" isShortGap>
@@ -162,6 +162,6 @@ export function CurriculumVitae() {
           />
         ))}
       </Section>
-    </div>
+    </main>
   );
 }

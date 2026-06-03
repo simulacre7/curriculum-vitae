@@ -8,6 +8,9 @@
     "build": "tsc -b && node scripts/generate-og-images.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir .tmp-ssr --emptyOutDir true && node scripts/build-og-pages.mjs && node scripts/prerender-cv-pages.mjs && node scripts/build-bash-pdf.mjs",
     "build:og-images": "node scripts/generate-og-images.mjs",
     "build:submission-pdf": "node scripts/build-submission-pdf.mjs",
+    "audit:performance": "pnpm build && node scripts/audit-performance.mjs",
+    "audit:lighthouse": "pnpm build && node scripts/audit-lighthouse.mjs",
+    "audit:site": "pnpm build && node scripts/audit-performance.mjs && node scripts/audit-lighthouse.mjs",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -38,6 +41,7 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "lighthouse": "^13.3.0",
     "pdf-lib": "^1.17.1",
     "prettier": "^3.3.2",
     "qrcode": "^1.5.4",

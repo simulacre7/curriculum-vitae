@@ -51,6 +51,7 @@ const pages = [
     output: 'bash/index.html',
     lang: 'ko',
     path: '/bash',
+    preloadFont: false,
     title: '김기환 | Terminal CV',
     description:
       '짧은 명령어로 김기환의 경력, 프로젝트, 연구와 커리어 테마를 탐색하는 터미널형 CV입니다.',
@@ -65,6 +66,7 @@ const pages = [
     output: 'bash/ko/index.html',
     lang: 'ko',
     path: '/bash/ko',
+    preloadFont: false,
     title: '김기환 | Terminal CV',
     description:
       '짧은 명령어로 김기환의 경력, 프로젝트, 연구와 커리어 테마를 탐색하는 터미널형 CV입니다.',
@@ -79,6 +81,7 @@ const pages = [
     output: 'bash/en/index.html',
     lang: 'en',
     path: '/bash/en',
+    preloadFont: false,
     title: 'Kihwan Kim | Terminal CV',
     description:
       'A terminal-shaped CV for exploring Kihwan Kim’s career, projects, research, and recurring engineering themes.',
@@ -144,7 +147,7 @@ const applyMeta = (html, page) => {
     /<html[^>]*>/,
     `<html lang="${page.lang}">`
   );
-  return withLang.replace(
+  const withMeta = withLang.replace(
     '    <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
     `    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n${metaFor(
       page
@@ -153,6 +156,15 @@ const applyMeta = (html, page) => {
       .filter((line) => !line.startsWith('    <html'))
       .join('\n')}`
   );
+
+  if (page.preloadFont === false) {
+    return withMeta.replace(
+      /\s*<link\s+rel="preload"\s+href="\/fonts\/PretendardVariable\.v1\.3\.9\.cv-subset\.woff2"\s+as="font"\s+type="font\/woff2"\s+crossorigin\s*\/>/s,
+      ''
+    );
+  }
+
+  return withMeta;
 };
 
 const template = await readFile(path.join(DIST_DIR, 'index.html'), 'utf8');

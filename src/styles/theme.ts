@@ -16,8 +16,8 @@ export const lightTheme: CurriculumVitaeTheme = {
     white: '#ffffff',
     black: '#000000',
     brightGreen: '#9dddc6',
-    deepGreen: '#008080',
-    green: '#3eb489',
+    deepGreen: '#005f5f',
+    green: '#007a70',
     grey: '#5e5e5e',
   },
 };
@@ -29,8 +29,8 @@ export const darkTheme: CurriculumVitaeTheme = {
     white: '#ffffff',
     black: '#000000',
     brightGreen: '#9dddc6',
-    deepGreen: '#008080',
-    green: '#3eb489',
+    deepGreen: '#005f5f',
+    green: '#007a70',
     grey: '#5e5e5e',
   },
 };

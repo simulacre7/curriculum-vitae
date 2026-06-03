@@ -34,6 +34,24 @@ submission/KihwanKim_CV.pdf
 submission/KihwanKim_Portfolio.pdf
 ```
 
+# Performance Audit
+
+Run the focused regression audit before deployment:
+
+```bash
+pnpm audit:performance
+```
+
+It checks prerendered CV HTML, runtime locale requests, self-hosted font requests, font subset size, FCP, and CLS.
+
+Generate supplemental Lighthouse reports:
+
+```bash
+pnpm audit:lighthouse
+```
+
+JSON reports are written to `.tmp-audit/lighthouse`. Lighthouse warnings are non-blocking by default; set `LIGHTHOUSE_STRICT=1` to fail on warning thresholds.
+
 # License
 
 MIT License.

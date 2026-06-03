@@ -608,33 +608,30 @@ export function BashResume({ routeLanguage }: BashResumeProps) {
     if (didMountFilesystem.current) return;
     didMountFilesystem.current = true;
 
-    const load = async () => {
-      const [ko, en] = await Promise.all([
-        fetch('/locales/ko/common.json').then((res) => res.json()),
-        fetch('/locales/en/common.json').then((res) => res.json()),
-      ]);
+    const ko = i18n.getResourceBundle('ko', 'common') as ResumeData | null;
+    const en = i18n.getResourceBundle('en', 'common') as ResumeData | null;
 
-      setResumes({ ko, en });
-      setBash(
-        new Bash({
-          cwd: HOME,
-          env: {
-            HOME,
-            USER: 'kihwan',
-            SHELL: '/bin/just-bash',
-            LANG: 'ko_KR.UTF-8',
-          },
-          files: makeFiles(ko, en),
-        })
-      );
+    if (!ko || !en) {
       setIsRunning(false);
-      appendLine(copy[initialLanguage].ready, 'system');
-    };
+      appendLine('failed to mount resume: missing locale resources', 'stderr');
+      return;
+    }
 
-    void load().catch((error) => {
-      setIsRunning(false);
-      appendLine(`failed to mount resume: ${String(error)}`, 'stderr');
-    });
+    setResumes({ ko, en });
+    setBash(
+      new Bash({
+        cwd: HOME,
+        env: {
+          HOME,
+          USER: 'kihwan',
+          SHELL: '/bin/just-bash',
+          LANG: 'ko_KR.UTF-8',
+        },
+        files: makeFiles(ko, en),
+      })
+    );
+    setIsRunning(false);
+    appendLine(copy[initialLanguage].ready, 'system');
   }, [initialLanguage]);
 
   useEffect(() => {
