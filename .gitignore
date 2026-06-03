@@ -13,6 +13,7 @@ dist-ssr
 .tmp-ssr
 .tmp-submission
 .tmp-bash-pdf
+.tmp-font
 *.local
 
 # Editor directories and files

@@ -3,6 +3,25 @@ import { css, Theme } from '@emotion/react';
 import { BreakPoint, orBelow } from './styles';
 
 export const globalStyles = (theme: Theme) => css`
+  @font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 45 920;
+    font-display: swap;
+    src: url('/fonts/PretendardVariable.v1.3.9.cv-subset.woff2')
+      format('woff2-variations');
+  }
+
+  @font-face {
+    font-family: 'Pretendard Fallback';
+    src: local('Apple SD Gothic Neo'), local('Noto Sans KR'),
+      local('Malgun Gothic'), local('Arial');
+    size-adjust: 100%;
+    ascent-override: 92%;
+    descent-override: 24%;
+    line-gap-override: 0%;
+  }
+
   @page {
     size: A4;
   }
@@ -16,6 +35,7 @@ export const globalStyles = (theme: Theme) => css`
   :root {
     font-family:
       Pretendard,
+      Pretendard Fallback,
       -apple-system,
       BlinkMacSystemFont,
       system-ui,
