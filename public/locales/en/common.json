@@ -169,6 +169,22 @@
       ]
     }
   ],
+  "openSource": [
+    {
+      "name": "OpenMMO",
+      "uri": "https://github.com/Julian-adv/OpenMMO",
+      "role": "Contributor",
+      "period": "2026.07–present",
+      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design; all four PRs merged.",
+      "details": [
+        "Filled client test gaps: fishing state transitions, bilinear water-surface sampling, and click-intent routing (#56)",
+        "UX fixes: cancel scheduled sounds when a cast is aborted, fall back to walking on out-of-range water clicks — exposing the server constant through WebAssembly so client and server share one value (#64, #65)",
+        "Solved unbounded growth of the server's terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)",
+        "Driving a minimap design proposal that addresses the maintainer's stated concerns on performance and server data range (#11)"
+      ],
+      "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"]
+    }
+  ],
   "education": [
     {
       "institution": "Ulsan National Institute of Science and Technology (UNIST)",

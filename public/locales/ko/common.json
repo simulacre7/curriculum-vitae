@@ -169,6 +169,22 @@
       ]
     }
   ],
+  "openSource": [
+    {
+      "name": "OpenMMO",
+      "uri": "https://github.com/Julian-adv/OpenMMO",
+      "role": "Contributor",
+      "period": "2026.07–현재",
+      "summary": "AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly)에 기여하고 있습니다. 게임 개발 경험 없이 시작해 클라이언트 테스트에서 Rust 서버 설계까지 기여 범위를 넓혔고, 4건의 PR이 모두 머지되었습니다.",
+      "details": [
+        "클라이언트 테스트 공백 해소: 낚시 상태 전이, 수면 높이 이중선형 샘플링, 클릭 인텐트 분기 (#56)",
+        "UX 수정: 어보트된 캐스팅의 예약 사운드 취소, 사거리 밖 물 클릭은 이동으로 폴백 — 서버 상수를 WebAssembly로 노출해 클라이언트·서버가 값을 공유 (#64, #65)",
+        "서버 지형 타일 캐시의 무제한 성장 해결: 읽기 경합 없는 세대-스윕 eviction과 용량 퓨즈 설계·구현 (#68)",
+        "유보적이던 메인테이너의 우려(성능, 서버 데이터 범위)를 반영한 미니맵 기능 설계 제안 진행 중 (#11)"
+      ],
+      "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"]
+    }
+  ],
   "education": [
     {
       "institution": "울산과학기술원 (UNIST)",

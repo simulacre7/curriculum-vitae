@@ -23,6 +23,7 @@ export interface Education {
 
 interface AffiliationProps {
   name: string;
+  uri?: string;
   info: {
     position: string;
     period: string;
@@ -98,6 +99,7 @@ function Project({ projectList }: ProjectProps) {
 
 export function Affiliation({
   name,
+  uri,
   info,
   projectList,
   summary,
@@ -116,7 +118,9 @@ export function Affiliation({
   return (
     <div css={styles.rowStyle(allowPrintBreak)}>
       <div css={styles.leftColumnStyle}>
-        <div css={styles.affiliationTextStyle}>{name}</div>
+        <div css={styles.affiliationTextStyle}>
+          {uri ? <a href={uri}>{name}</a> : name}
+        </div>
         {info.map(({ position, period }) => (
           <div key={position + period} css={styles.infoStyle}>
             <div>{position}</div>
