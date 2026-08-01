@@ -51,6 +51,11 @@
             "Updated the cart, identity verification, secondary-creator onboarding, and cancellation, return, and exchange flows as policies and APIs changed",
             "Fixed HLS home-carousel and mobile WebView issues involving safe areas, scrolling, and back navigation"
           ]
+        },
+        {
+          "title": "PageAgent-based Internal Operations Automation",
+          "period": "Mar 2026–Present",
+          "summary": "Built a prototype to reduce repetitive CS and QA checks. It began as a generative UI experiment for reconstructing results, then shifted to a PageAgent execution layer that connected and operated the existing tools."
         }
       ],
       "stack": [
@@ -63,7 +68,9 @@
         "Playwright",
         "Sentry",
         "Mixpanel",
-        "ChannelTalk"
+        "ChannelTalk",
+        "PageAgent",
+        "Generative UI"
       ]
     },
     {

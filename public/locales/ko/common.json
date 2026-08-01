@@ -51,6 +51,11 @@
             "장바구니, 본인인증, 2차 창작자 신청과 취소·반품·교환 정책 변경 반영",
             "HLS 홈 캐러셀과 모바일 WebView의 safe area·스크롤·뒤로가기 문제 개선"
           ]
+        },
+        {
+          "title": "PageAgent 기반 내부 운영 자동화",
+          "period": "2026.03–현재",
+          "summary": "CS/QA 확인 작업을 줄이는 프로토타입입니다. 생성형 UI로 결과를 재구성하는 실험에서 시작해, 기존 시스템을 연결·조작하는 PageAgent 실행 레이어로 방향을 바꿨습니다."
         }
       ],
       "stack": [
@@ -63,7 +68,9 @@
         "Playwright",
         "Sentry",
         "Mixpanel",
-        "ChannelTalk"
+        "ChannelTalk",
+        "PageAgent",
+        "Generative UI"
       ]
     },
     {

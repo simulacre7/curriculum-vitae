@@ -129,10 +129,8 @@ export const projectTitleStyle = (theme: Theme) => css`
 
   & > a {
     color: inherit;
-    text-decoration: underline;
-    text-decoration-color: ${theme.colors.green};
-    text-decoration-thickness: 0.08em;
-    text-underline-offset: 0.15em;
+    font-weight: inherit;
+    text-decoration: none;
   }
 
   & > a:visited {
