@@ -11,7 +11,7 @@ const pages = [
     path: '/',
     title: '김기환 | CV',
     description:
-      'Vuddy의 커머스 흐름과 Samantha의 실시간 채팅·운영 도구를 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
+      '복잡한 시스템을 이해하기 쉬운 화면과 자동화로 풀어낸 프론트엔드 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -25,7 +25,7 @@ const pages = [
     path: '/ko',
     title: '김기환 | CV',
     description:
-      'Vuddy의 커머스 흐름과 Samantha의 실시간 채팅·운영 도구를 만드는 프론트엔드 엔지니어 김기환의 CV입니다.',
+      '복잡한 시스템을 이해하기 쉬운 화면과 자동화로 풀어낸 프론트엔드 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -39,7 +39,7 @@ const pages = [
     path: '/en',
     title: 'Kihwan Kim | Curriculum Vitae',
     description:
-      "Kihwan Kim's CV, featuring frontend work on Vuddy commerce and Samantha's real-time chat and operations tools.",
+      'Kihwan Kim’s CV: frontend engineering across human-system interaction, experimentation systems, and AI-native workflows.',
     image: '/og/cv-en.png',
     alternates: [
       { lang: 'x-default', path: '/' },

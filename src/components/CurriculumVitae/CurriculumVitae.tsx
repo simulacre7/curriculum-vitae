@@ -24,29 +24,23 @@ type ExperienceProject = {
   summary?: string;
   details?: string[];
   stack?: string[];
-  featured?: boolean;
+};
+
+type CareAbout = {
+  title: string;
+  description: string;
 };
 
 export function CurriculumVitae() {
-  const { t, i18n } = useTranslation(['common']);
+  const { t } = useTranslation(['common']);
 
   const experience = t('experience', { returnObjects: true }) as Experience[];
+  const careAbout = t('careAbout', { returnObjects: true }) as CareAbout[];
   const education = t('education', { returnObjects: true }) as Education[];
   const publications = t('publications', {
     returnObjects: true,
   }) as PublicationProps[];
   const summary = t('summary');
-  const language = i18n.resolvedLanguage?.startsWith('en') ? 'en' : 'ko';
-  const pdfHref =
-    language === 'en'
-      ? '/downloads/kihwan-kim-terminal-cv-en.pdf'
-      : '/downloads/kihwan-kim-terminal-cv.pdf';
-  const terminalHref = language === 'en' ? '/bash/en' : '/bash/ko';
-  const selectedWork = experience.flatMap(({ company, projects = [] }) =>
-    projects
-      .filter(({ featured }) => featured)
-      .map((project) => ({ company, ...project }))
-  );
 
   return (
     <main css={styles.contentStyle}>
@@ -56,19 +50,6 @@ export function CurriculumVitae() {
         {summary.split(/\n{2,}/).map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <nav css={styles.actionListStyle} aria-label={t('actions.ariaLabel')}>
-          <a
-            css={[styles.actionLinkStyle, styles.primaryActionLinkStyle]}
-            href={pdfHref}
-            download
-            type="application/pdf"
-          >
-            {t('actions.pdf')}
-          </a>
-          <a css={styles.actionLinkStyle} href={terminalHref}>
-            {t('actions.terminal')}
-          </a>
-        </nav>
         <address css={styles.contactStyle}>
           <a
             id="website"
@@ -88,20 +69,12 @@ export function CurriculumVitae() {
           </a>
         </address>
       </Section>
-      <Section title="Selected Work" isShortGap>
-        <div css={styles.selectedWorkListStyle}>
-          {selectedWork.map(({ company, title, period, summary }) => (
-            <article
-              key={`${company}-${title}`}
-              css={styles.selectedWorkItemStyle}
-            >
-              <h3 css={styles.selectedWorkTitleStyle}>{title}</h3>
-              <p css={styles.selectedWorkMetaStyle}>
-                {company} · {period}
-              </p>
-              {summary && (
-                <p css={styles.selectedWorkSummaryStyle}>{summary}</p>
-              )}
+      <Section title="Themes">
+        <div css={styles.careListStyle}>
+          {careAbout.map(({ title, description }) => (
+            <article key={title} css={styles.careItemStyle}>
+              <h3 css={styles.careTitleStyle}>{title}</h3>
+              <p css={styles.careDescriptionStyle}>{description}</p>
             </article>
           ))}
         </div>
@@ -159,13 +132,12 @@ export function CurriculumVitae() {
                 details={projectList ? undefined : details}
                 stack={stack}
                 extra={aliasNode}
-                allowPrintBreak
               />
             );
           }
         )}
       </Section>
-      <Section title="Education">
+      <Section title="Education" printBreakBefore>
         {education.map((edu) => (
           <Affiliation
             key={edu.institution}

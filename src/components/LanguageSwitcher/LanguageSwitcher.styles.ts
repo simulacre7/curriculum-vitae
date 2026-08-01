@@ -29,8 +29,7 @@ export const anchorStyle = (theme: Theme) => css`
     color: ${theme.colors.grey};
   }
   &:focus-visible {
-    outline: 3px solid ${theme.colors.deepGreen};
-    outline-offset: 3px;
+    outline: none;
     text-decoration-color: ${theme.colors.deepGreen};
   }
   &:hover {
@@ -40,11 +39,11 @@ export const anchorStyle = (theme: Theme) => css`
 `;
 
 export const selectedAnchorStyle = (theme: Theme) => css`
-  color: ${theme.colors.deepGreen};
-  text-decoration-color: ${theme.colors.deepGreen};
+  color: ${theme.colors.green};
+  text-decoration-color: ${theme.colors.green};
 
   &:visited {
-    color: ${theme.colors.deepGreen};
+    color: ${theme.colors.green};
   }
   &:hover {
     color: ${theme.colors.deepGreen};

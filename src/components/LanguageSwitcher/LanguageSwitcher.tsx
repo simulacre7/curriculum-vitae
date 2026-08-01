@@ -52,7 +52,6 @@ export const LanguageSwitcher = () => {
           currentLanguage === 'ko' && styles.selectedAnchorStyle,
         ]}
         href="/ko"
-        aria-current={currentLanguage === 'ko' ? 'page' : undefined}
         onFocus={() => prefetchLanguage('ko')}
         onMouseEnter={() => prefetchLanguage('ko')}
         onTouchStart={() => prefetchLanguage('ko')}
@@ -69,7 +68,6 @@ export const LanguageSwitcher = () => {
           currentLanguage === 'en' && styles.selectedAnchorStyle,
         ]}
         href="/en"
-        aria-current={currentLanguage === 'en' ? 'page' : undefined}
         onFocus={() => prefetchLanguage('en')}
         onMouseEnter={() => prefetchLanguage('en')}
         onTouchStart={() => prefetchLanguage('en')}
