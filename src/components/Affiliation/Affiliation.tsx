@@ -24,6 +24,8 @@ export interface Education {
 interface AffiliationProps {
   name: string;
   uri?: string;
+  /** Repo URL used to turn #123 references in details into links. */
+  refBaseUri?: string;
   info: {
     position: string;
     period: string;
@@ -41,10 +43,12 @@ interface BadgeProps {
 }
 
 interface ProjectProps {
+  refBaseUri?: string;
   projectList: Project[];
 }
 
 interface DetailListProps {
+  refBaseUri?: string;
   details: string[];
 }
 
@@ -67,11 +71,33 @@ function GitHubMark() {
   );
 }
 
+/** Turn #123 references into repo links. GitHub's /issues/N redirects to
+ *  the pull request when the number is a PR, so one path covers both. */
+function linkifyRefs(text: string, refBaseUri?: string) {
+  if (!refBaseUri) return text;
+  const parts = text.split(/(#\d+)/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, index) => {
+    const match = /^#(\d+)$/.exec(part);
+    return match ? (
+      <a
+        key={`${part}-${index}`}
+        css={styles.refLinkStyle}
+        href={`${refBaseUri}/issues/${match[1]}`}
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    );
+  });
+}
+
 function Badge({ name }: BadgeProps) {
   return <div css={styles.BadgeStyle}>{name}</div>;
 }
 
-function Project({ projectList }: ProjectProps) {
+function Project({ projectList, refBaseUri }: ProjectProps) {
   return (
     <div css={styles.projectContainer}>
       {projectList.map((project) => {
@@ -93,7 +119,7 @@ function Project({ projectList }: ProjectProps) {
               <ul css={styles.projectListContainerStyle}>
                 {pointItems.map((point) => (
                   <li key={point} css={styles.projectListStyle}>
-                    {point}
+                    {linkifyRefs(point, refBaseUri)}
                   </li>
                 ))}
               </ul>
@@ -115,6 +141,7 @@ function Project({ projectList }: ProjectProps) {
 export function Affiliation({
   name,
   uri,
+  refBaseUri,
   info,
   projectList,
   summary,
@@ -159,8 +186,12 @@ export function Affiliation({
       </div>
       {hasRightColumnContent ? (
         <div css={styles.contentContainer}>
-          {projectItems ? <Project projectList={projectItems} /> : null}
-          {detailItems ? <DetailList details={detailItems} /> : null}
+          {projectItems ? (
+            <Project projectList={projectItems} refBaseUri={refBaseUri} />
+          ) : null}
+          {detailItems ? (
+            <DetailList details={detailItems} refBaseUri={refBaseUri} />
+          ) : null}
           {stackItems ? (
             <div css={styles.mobileStackContainerStyle}>
               <StackList stack={stackItems} />
@@ -172,12 +203,12 @@ export function Affiliation({
   );
 }
 
-function DetailList({ details }: DetailListProps) {
+function DetailList({ details, refBaseUri }: DetailListProps) {
   return (
     <ul css={styles.projectListContainerStyle}>
       {details.map((detail) => (
         <li key={detail} css={styles.projectListStyle}>
-          {detail}
+          {linkifyRefs(detail, refBaseUri)}
         </li>
       ))}
     </ul>

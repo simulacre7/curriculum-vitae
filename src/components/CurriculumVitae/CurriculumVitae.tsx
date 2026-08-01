@@ -38,7 +38,10 @@ type OpenSource = {
   role: string;
   period: string;
   summary: string;
-  details?: string[];
+  projects?: {
+    title: string;
+    details: string[];
+  }[];
   stack?: string[];
 };
 
@@ -161,6 +164,7 @@ export function CurriculumVitae() {
             key={oss.name}
             name={oss.name}
             uri={oss.uri}
+            refBaseUri={oss.uri}
             info={[
               {
                 position: oss.role,
@@ -168,7 +172,13 @@ export function CurriculumVitae() {
               },
             ]}
             summary={oss.summary}
-            details={oss.details}
+            projectList={oss.projects?.map<Project>(({ title, details }) => ({
+              title,
+              period: '',
+              description: '',
+              points: details,
+              badges: [],
+            }))}
             stack={oss.stack}
           />
         ))}
