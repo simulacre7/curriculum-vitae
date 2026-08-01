@@ -29,12 +29,12 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "I work on Vuddy’s commerce frontend and an AI character chat product. I build both customer-facing interfaces and the Creator Studio and Admin tools used to operate them.",
+      "summary": "Exploring AI-native product development and internal operations automation while building creator-commerce frontend systems. I use GitHub-centered collaboration, executable prototypes, and browser automation to reduce the cost of product changes and repeated investigation work.",
       "projects": [
         {
-          "title": "AI Character Chat Web and Admin",
+          "title": "AI Character Chat Service",
           "period": "May 2026–Present",
-          "summary": "I am building a Web interface for conversations with AI characters and an Admin for authoring and reviewing character content. The product is being prepared for release.",
+          "summary": "I am building the user-facing AI character chat experience and an Admin for authoring and reviewing character content. The product is being prepared for release.",
           "details": [
             "Separated in-progress streamed responses from persisted chat history and handled send, completion, failure, and regeneration states",
             "Built authoring and review tools for stories, lorebooks, search keywords, and other character content",
@@ -55,7 +55,13 @@
         {
           "title": "PageAgent-based Internal Operations Automation",
           "period": "Mar 2026–Present",
-          "summary": "Built a prototype to reduce repetitive CS and QA checks. It began as a generative UI experiment for reconstructing results, then shifted to a PageAgent execution layer that connected and operated the existing tools."
+          "summary": "Turned repeated CS/QA investigation work into an automation target, connecting natural-language requests to browser actions and verifiable result UI.",
+          "details": [
+            "Connected account, payment, and mapping data from several internal tools so operators could compare the necessary context in one result view",
+            "Extended Alibaba PageAgent for a Chrome Managed Profile environment to automate tab navigation, clicks, and inputs",
+            "Separated LLM output from reproducible action sequences and result presentation",
+            "Simplified repeated CS/QA investigation work that required manually checking multiple tables and services"
+          ]
         }
       ],
       "stack": [

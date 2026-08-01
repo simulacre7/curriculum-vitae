@@ -32,6 +32,7 @@ interface AffiliationProps {
   details?: string[];
   stack?: string[];
   extra?: string | React.ReactNode;
+  allowPrintBreak?: boolean;
 }
 
 interface BadgeProps {
@@ -103,6 +104,7 @@ export function Affiliation({
   details,
   stack,
   extra,
+  allowPrintBreak = false,
 }: AffiliationProps) {
   const projectItems =
     projectList && projectList.length > 0 ? projectList : null;
@@ -112,7 +114,7 @@ export function Affiliation({
   const hasRightColumnContent = Boolean(projectItems || detailItems);
 
   return (
-    <div css={styles.rowStyle}>
+    <div css={styles.rowStyle(allowPrintBreak)}>
       <div css={styles.leftColumnStyle}>
         <div css={styles.affiliationTextStyle}>{name}</div>
         {info.map(({ position, period }) => (

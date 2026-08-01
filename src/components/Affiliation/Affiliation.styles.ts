@@ -6,7 +6,7 @@ export const containerStyle = () => css`
   padding: 1rem 0;
 `;
 
-export const rowStyle = () => css`
+export const rowStyle = (allowPrintBreak: boolean) => css`
   display: flex;
   width: 100%;
 
@@ -19,8 +19,8 @@ export const rowStyle = () => css`
 
   @media print {
     flex-direction: row;
-    break-inside: avoid;
-    page-break-inside: avoid;
+    break-inside: ${allowPrintBreak ? 'auto' : 'avoid'};
+    page-break-inside: ${allowPrintBreak ? 'auto' : 'avoid'};
   }
 `;
 

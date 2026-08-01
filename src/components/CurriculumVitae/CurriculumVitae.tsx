@@ -82,16 +82,19 @@ export function CurriculumVitae() {
       </Section>
       <Section title="Experience" printBreakBefore>
         {experience.map(
-          ({
-            company,
-            role,
-            period,
-            summary,
-            details,
-            stack,
-            projects,
-            aliases,
-          }) => {
+          (
+            {
+              company,
+              role,
+              period,
+              summary,
+              details,
+              stack,
+              projects,
+              aliases,
+            },
+            experienceIndex
+          ) => {
             const projectList = projects?.map<Project>(
               ({
                 title,
@@ -135,6 +138,7 @@ export function CurriculumVitae() {
                 details={projectList ? undefined : details}
                 stack={stack}
                 extra={aliasNode}
+                allowPrintBreak={experienceIndex === 0}
               />
             );
           }
