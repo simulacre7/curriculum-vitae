@@ -32,11 +32,22 @@ type CareAbout = {
   description: string;
 };
 
+type OpenSource = {
+  name: string;
+  uri?: string;
+  role: string;
+  period: string;
+  summary: string;
+  details?: string[];
+  stack?: string[];
+};
+
 export function CurriculumVitae() {
   const { t } = useTranslation(['common']);
 
   const experience = t('experience', { returnObjects: true }) as Experience[];
   const careAbout = t('careAbout', { returnObjects: true }) as CareAbout[];
+  const openSource = t('openSource', { returnObjects: true }) as OpenSource[];
   const education = t('education', { returnObjects: true }) as Education[];
   const publications = t('publications', {
     returnObjects: true,
@@ -143,6 +154,24 @@ export function CurriculumVitae() {
             );
           }
         )}
+      </Section>
+      <Section title="Open Source" printBreakBefore>
+        {openSource.map((oss) => (
+          <Affiliation
+            key={oss.name}
+            name={oss.name}
+            uri={oss.uri}
+            info={[
+              {
+                position: oss.role,
+                period: oss.period,
+              },
+            ]}
+            summary={oss.summary}
+            details={oss.details}
+            stack={oss.stack}
+          />
+        ))}
       </Section>
       <Section title="Education" printBreakBefore>
         {education.map((edu) => (

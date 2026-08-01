@@ -63,6 +63,37 @@ export const affiliationTextStyle = (theme: Theme) => css`
 
   display: flex;
   flex-wrap: wrap;
+
+  & > a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  & > a:visited {
+    color: inherit;
+  }
+
+  & > a:hover {
+    color: ${theme.colors.deepGreen};
+  }
+
+  & > a:focus-visible {
+    outline: 2px solid ${theme.colors.deepGreen};
+    outline-offset: 3px;
+  }
+
+  & > a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+  }
+`;
+
+export const githubMarkStyle = css`
+  width: 0.62em;
+  height: 0.62em;
+  flex-shrink: 0;
 `;
 
 export const projectListContainerStyle = (theme: Theme) => css`
