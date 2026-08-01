@@ -4,6 +4,13 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
+import {
+  Browser,
+  BrowserTag,
+  detectBrowserPlatform,
+  install,
+  resolveBuildId,
+} from '@puppeteer/browsers';
 import QRCode from 'qrcode';
 import sharp from 'sharp';
 
@@ -66,13 +73,38 @@ const chromeCandidates = [
   process.env.CHROME_PATH,
 ].filter(Boolean);
 
-const chrome = chromeCandidates.find((candidate) => existsSync(candidate));
-
-if (!chrome) {
-  throw new Error(
-    'Chrome, Chromium, or Edge was not found. Set CHROME_PATH to a browser executable.'
+const resolveChrome = async () => {
+  const installedChrome = chromeCandidates.find((candidate) =>
+    existsSync(candidate)
   );
-}
+
+  if (installedChrome) return installedChrome;
+
+  if (process.env.NETLIFY !== 'true') {
+    throw new Error(
+      'Chrome, Chromium, or Edge was not found. Set CHROME_PATH to a browser executable.'
+    );
+  }
+
+  const platform = detectBrowserPlatform();
+  if (!platform) {
+    throw new Error('Could not determine the platform for Chrome download.');
+  }
+
+  const browser = Browser.CHROMEHEADLESSSHELL;
+  const buildId = await resolveBuildId(browser, platform, BrowserTag.STABLE);
+  const downloadedChrome = await install({
+    browser,
+    buildId,
+    cacheDir: resolve(root, '.cache', 'puppeteer'),
+    platform,
+    downloadProgressCallback: 'default',
+  });
+
+  return downloadedChrome.executablePath;
+};
+
+const chrome = await resolveChrome();
 
 const escapeHtml = (value) =>
   String(value)
@@ -500,6 +532,7 @@ for (const target of pdfTargets) {
     [
       '--headless',
       '--disable-gpu',
+      ...(process.env.NETLIFY === 'true' ? ['--no-sandbox'] : []),
       '--no-first-run',
       '--no-default-browser-check',
       '--no-pdf-header-footer',
