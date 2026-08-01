@@ -29,12 +29,12 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "I work on Vuddy’s commerce frontend and Samantha, an AI character chat product. I build both customer-facing interfaces and the Creator Studio and Admin tools used to operate them.",
+      "summary": "I work on Vuddy’s commerce frontend and an AI character chat product. I build both customer-facing interfaces and the Creator Studio and Admin tools used to operate them.",
       "projects": [
         {
-          "title": "Samantha Web and Admin",
+          "title": "AI Character Chat Web and Admin",
           "period": "May 2026–Present",
-          "summary": "I am building Samantha’s Web and Admin frontends. I implemented streamed conversations and content authoring and review workflows, and am preparing the product for release.",
+          "summary": "I am building a Web interface for conversations with AI characters and an Admin for authoring and reviewing character content. The product is being prepared for release.",
           "details": [
             "Separated in-progress streamed responses from persisted chat history and handled send, completion, failure, and regeneration states",
             "Built authoring and review tools for stories, lorebooks, search keywords, and other character content",
@@ -43,6 +43,7 @@
         },
         {
           "title": "Vuddy Commerce Frontend",
+          "uri": "https://vuddy.io/",
           "period": "Jul 2025–Present",
           "summary": "Built and maintained Vuddy’s customer web, Creator Studio, and internal Admin. Worked across the commerce flow from class discovery and checkout to orders, cancellations, returns, and exchanges.",
           "details": [
@@ -73,6 +74,7 @@
       "projects": [
         {
           "title": "RIDI Web Platform",
+          "uri": "https://ridibooks.com/",
           "period": "May 2022–Jul 2025",
           "summary": "Used server-declared UI and island architecture to gradually move legacy pages into React while lowering the execution cost of operational UI changes and A/B tests.",
           "details": [

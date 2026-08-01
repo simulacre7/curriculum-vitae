@@ -3,6 +3,7 @@ import * as styles from './Affiliation.styles';
 
 export type Project = {
   title: string;
+  uri?: string;
   period: string;
   description: string;
   points: string[];
@@ -56,14 +57,17 @@ function Badge({ name }: BadgeProps) {
 function Project({ projectList }: ProjectProps) {
   return (
     <div css={styles.projectContainer}>
-      {projectList.map(({ title, period, description, points, badges }) => {
+      {projectList.map((project) => {
+        const { title, uri, period, description, points, badges } = project;
         const descriptionText = description?.trim().length ? description : null;
         const pointItems = points?.length ? points : null;
         const badgeItems = badges?.length ? badges : null;
 
         return (
           <div key={title} css={styles.projectItemStyle}>
-            <div css={styles.projectTitleStyle}>{title}</div>
+            <div css={styles.projectTitleStyle}>
+              {uri ? <a href={uri}>{title}</a> : title}
+            </div>
             <div css={styles.projectPeriodStyle}>{period}</div>
             {descriptionText ? (
               <div css={styles.projectDescriptionStyle}>{descriptionText}</div>

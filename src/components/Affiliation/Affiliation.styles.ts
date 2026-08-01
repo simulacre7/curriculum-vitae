@@ -127,6 +127,27 @@ export const projectTitleStyle = (theme: Theme) => css`
   break-after: avoid;
   page-break-after: avoid;
 
+  & > a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: ${theme.colors.green};
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.15em;
+  }
+
+  & > a:visited {
+    color: inherit;
+  }
+
+  & > a:hover {
+    color: ${theme.colors.deepGreen};
+  }
+
+  & > a:focus-visible {
+    outline: 2px solid ${theme.colors.deepGreen};
+    outline-offset: 3px;
+  }
+
   ${orBelow(
     BreakPoint.DesktopSmall,
     css`

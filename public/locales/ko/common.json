@@ -29,12 +29,12 @@
       "company": "Levvels",
       "role": "프론트엔드 엔지니어",
       "period": "2025.07–현재",
-      "summary": "Vuddy의 커머스 프론트엔드와 Samantha의 AI 캐릭터 채팅 서비스를 만들고 있습니다. 소비자 웹과 Creator Studio, 내부 Admin을 함께 다룹니다.",
+      "summary": "Vuddy의 커머스 프론트엔드와 AI 캐릭터 챗 서비스를 만들고 있습니다. 소비자 웹과 Creator Studio, 내부 Admin을 함께 다룹니다.",
       "projects": [
         {
-          "title": "Samantha Web·Admin",
+          "title": "AI 캐릭터 챗 Web·Admin",
           "period": "2026.05–현재",
-          "summary": "Samantha의 Web과 Admin 프론트엔드를 만들고 있습니다. 스트리밍 대화와 콘텐츠 작성·심사 기능을 구현해 릴리스를 준비하고 있습니다.",
+          "summary": "AI 캐릭터와 대화하며 이야기를 이어가는 Web과 캐릭터 콘텐츠를 작성·심사하는 Admin을 만들고 있습니다. 현재 릴리스를 준비하고 있습니다.",
           "details": [
             "진행 중인 스트리밍 응답과 저장된 대화를 분리하고 전송·완료·실패·재생성 상태 구현",
             "스토리·로어북·검색 키워드 등 캐릭터 콘텐츠의 작성·심사 화면 구현",
@@ -43,6 +43,7 @@
         },
         {
           "title": "Vuddy 커머스 프론트엔드",
+          "uri": "https://vuddy.io/",
           "period": "2025.07–현재",
           "summary": "Vuddy의 소비자 웹, Creator Studio, 내부 Admin을 구현하고 운영했습니다. 클래스 탐색과 결제부터 주문, 취소·반품·교환까지 커머스 흐름을 맡았습니다.",
           "details": [
@@ -73,6 +74,7 @@
       "projects": [
         {
           "title": "리디 웹 플랫폼",
+          "uri": "https://ridibooks.com/",
           "period": "2022.05–2025.07",
           "summary": "서버 주도 UI와 아일랜드 아키텍쳐로 레거시 페이지를 React로 점진적으로 이전했습니다. 운영 UI 변경과 A/B 테스트를 더 빠르게 실행했습니다.",
           "details": [

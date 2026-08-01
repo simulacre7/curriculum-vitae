@@ -20,6 +20,7 @@ type Experience = {
 
 type ExperienceProject = {
   title: string;
+  uri?: string;
   period: string;
   summary?: string;
   details?: string[];
@@ -94,12 +95,14 @@ export function CurriculumVitae() {
             const projectList = projects?.map<Project>(
               ({
                 title,
+                uri,
                 period: projectPeriod,
                 summary: projectSummary,
                 details: projectDetails,
                 stack: projectStack,
               }) => ({
                 title,
+                uri,
                 period: projectPeriod,
                 description: projectSummary ?? '',
                 points: projectDetails ?? [],
