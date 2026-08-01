@@ -136,7 +136,10 @@
       "role": "Research Engineer",
       "period": "Feb 2020–May 2022",
       "summary": "Designed product flows, visualizations, and interactions that helped non-expert users work with complex AI and analytics systems. The focus was not technology first, but the usability, explainability, and workflow of AI systems.",
-      "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
+      "aliases": [
+        "Currently TmaxBizAI",
+        "Formerly TmaxData"
+      ],
       "projects": [
         {
           "title": "Legacy System React Migration",
@@ -176,13 +179,29 @@
       "role": "Contributor",
       "period": "2026.07–present",
       "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design; all four PRs merged.",
-      "details": [
-        "Filled client test gaps: fishing state transitions, bilinear water-surface sampling, and click-intent routing (#56)",
-        "UX fixes: cancel scheduled sounds when a cast is aborted, fall back to walking on out-of-range water clicks — exposing the server constant through WebAssembly so client and server share one value (#64, #65)",
-        "Solved unbounded growth of the server's terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)",
-        "Driving a minimap design proposal that addresses the maintainer's stated concerns on performance and server data range (#11)"
+      "stack": [
+        "TypeScript",
+        "Svelte",
+        "Rust",
+        "WebAssembly",
+        "Vitest"
       ],
-      "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"]
+      "projects": [
+        {
+          "title": "Client",
+          "details": [
+            "Filled test gaps: fishing state transitions, bilinear water-surface sampling, and click-intent routing (#56)",
+            "UX fixes: cancel scheduled sounds when a cast is aborted (#64); fall back to walking on out-of-range water clicks, exposing the server constant through WebAssembly so client and server share one value (#65)",
+            "Driving a minimap design proposal that addresses the maintainer's stated concerns on performance and server data range (#11)"
+          ]
+        },
+        {
+          "title": "Server",
+          "details": [
+            "Solved unbounded growth of the terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)"
+          ]
+        }
+      ]
     }
   ],
   "education": [
@@ -210,7 +229,12 @@
             "Implemented a web-based movie recommendation system for experimental environments",
             "Designed data-driven UI experiments to observe interaction between people and recommendation algorithms"
           ],
-          "badges": ["Python", "Flask", "Surprise", "jQuery"]
+          "badges": [
+            "Python",
+            "Flask",
+            "Surprise",
+            "jQuery"
+          ]
         },
         {
           "title": "Modeling Web User Behavior",
@@ -221,7 +245,12 @@
             "Dealt with various web environments such as data analysis tools like Tableau, history education tools based on Wikipedia documents, and card games",
             "Utilized data analysis tools such as Tableau and implemented a history education tool based on Wikipedia documents"
           ],
-          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
+          "badges": [
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "scikit-learn"
+          ]
         }
       ]
     }
@@ -230,7 +259,9 @@
     {
       "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
       "uri": "https://arxiv.org/abs/2108.00151",
-      "authors": ["Kihwan Kim"],
+      "authors": [
+        "Kihwan Kim"
+      ],
       "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
       "points": [
         "Investigated how to deliver random items to capture user preferences in recommendation systems",
@@ -263,7 +294,12 @@
     {
       "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
       "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
-      "authors": ["Kihwan Kim", "Sanghoon Kim", "Chunggi Lee", "Sungahn Ko"],
+      "authors": [
+        "Kihwan Kim",
+        "Sanghoon Kim",
+        "Chunggi Lee",
+        "Sungahn Ko"
+      ],
       "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
       "points": [
         "Proposed a system to detect addiction disorders from smartphone usage logs through Inverse Reinforcement Learning"
@@ -293,7 +329,12 @@
     {
       "title": "A Survey of Visualization Techniques for Interpreting Deep Learning",
       "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
-      "authors": ["Jaesung Lee", "Kihwan Kim", "Chunggi Lee", "Sungahn Ko"],
+      "authors": [
+        "Jaesung Lee",
+        "Kihwan Kim",
+        "Chunggi Lee",
+        "Sungahn Ko"
+      ],
       "conference": "Noise & Vibration, Vol.27 No.6, 2017.11",
       "points": [
         "Summarized and investigated visualization techniques for interpreting deep learning models"

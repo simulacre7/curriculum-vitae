@@ -90,6 +90,17 @@ export const affiliationTextStyle = (theme: Theme) => css`
   }
 `;
 
+export const refLinkStyle = (theme: Theme) => css`
+  color: ${theme.colors.green};
+  text-decoration: underline;
+  font-size: inherit;
+  font-weight: inherit;
+
+  &:visited {
+    color: ${theme.colors.green};
+  }
+`;
+
 export const githubMarkStyle = css`
   width: 0.62em;
   height: 0.62em;

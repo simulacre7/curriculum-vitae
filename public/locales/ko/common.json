@@ -136,7 +136,10 @@
       "role": "연구원",
       "period": "2020.02–2022.05",
       "summary": "비전문가도 AI/분석 기능을 사용할 수 있도록 AutoML 플랫폼의 사용 과정, 시각화, 인터랙션을 설계했습니다. 예측값과 근거를 함께 확인할 수 있는 UI를 구현했습니다.",
-      "aliases": ["現 티맥스비즈에이아이", "舊 티맥스데이터"],
+      "aliases": [
+        "現 티맥스비즈에이아이",
+        "舊 티맥스데이터"
+      ],
       "projects": [
         {
           "title": "레거시 시스템 React 전환",
@@ -176,13 +179,29 @@
       "role": "Contributor",
       "period": "2026.07–현재",
       "summary": "AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly)에 기여하고 있습니다. 게임 개발 경험 없이 시작해 클라이언트 테스트에서 Rust 서버 설계까지 기여 범위를 넓혔고, 4건의 PR이 모두 머지되었습니다.",
-      "details": [
-        "클라이언트 테스트 공백 해소: 낚시 상태 전이, 수면 높이 이중선형 샘플링, 클릭 인텐트 분기 (#56)",
-        "UX 수정: 어보트된 캐스팅의 예약 사운드 취소, 사거리 밖 물 클릭은 이동으로 폴백 — 서버 상수를 WebAssembly로 노출해 클라이언트·서버가 값을 공유 (#64, #65)",
-        "서버 지형 타일 캐시의 무제한 성장 해결: 읽기 경합 없는 세대-스윕 eviction과 용량 퓨즈 설계·구현 (#68)",
-        "유보적이던 메인테이너의 우려(성능, 서버 데이터 범위)를 반영한 미니맵 기능 설계 제안 진행 중 (#11)"
+      "stack": [
+        "TypeScript",
+        "Svelte",
+        "Rust",
+        "WebAssembly",
+        "Vitest"
       ],
-      "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"]
+      "projects": [
+        {
+          "title": "클라이언트",
+          "details": [
+            "테스트 공백 해소: 낚시 상태 전이, 수면 높이 이중선형 샘플링, 클릭 인텐트 분기 (#56)",
+            "UX 수정: 어보트된 캐스팅의 예약 사운드 취소 (#64), 사거리 밖 물 클릭은 이동으로 폴백 — 서버 상수를 WebAssembly로 노출해 클라이언트·서버가 값을 공유 (#65)",
+            "유보적이던 메인테이너의 우려(성능, 서버 데이터 범위)를 반영한 미니맵 기능 설계 제안 진행 중 (#11)"
+          ]
+        },
+        {
+          "title": "서버",
+          "details": [
+            "지형 타일 캐시의 무제한 성장 해결: 읽기 경합 없는 세대-스윕 eviction과 용량 퓨즈 설계·구현 (#68)"
+          ]
+        }
+      ]
     }
   ],
   "education": [
@@ -210,7 +229,12 @@
             "웹 기반 영화 추천 실험 시스템 구현",
             "사용자와 추천 알고리즘의 상호작용을 관찰하는 UI 실험 설계"
           ],
-          "badges": ["Python", "Flask", "Surprise", "jQuery"]
+          "badges": [
+            "Python",
+            "Flask",
+            "Surprise",
+            "jQuery"
+          ]
         },
         {
           "title": "웹 사용자 행동 모델링",
@@ -221,7 +245,12 @@
             "데이터 분석, 역사 교육, 카드 게임 환경을 다룸",
             "Tableau와 위키피디아 기반 교육 도구 활용"
           ],
-          "badges": ["Python", "TensorFlow", "Keras", "scikit-learn"]
+          "badges": [
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "scikit-learn"
+          ]
         }
       ]
     }
@@ -230,7 +259,9 @@
     {
       "title": "An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems",
       "uri": "https://arxiv.org/abs/2108.00151",
-      "authors": ["김기환"],
+      "authors": [
+        "김기환"
+      ],
       "conference": "A Computing Research Repository (CoRR), 2108.00151, 2021",
       "points": [
         "추천 시스템이 사용자 취향을 파악하기 위해 랜덤 아이템을 노출하는 방식 연구",
@@ -263,7 +294,12 @@
     {
       "title": "Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction",
       "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
-      "authors": ["김기환", "김상훈", "이충기", "고성안"],
+      "authors": [
+        "김기환",
+        "김상훈",
+        "이충기",
+        "고성안"
+      ],
       "conference": "ACM International Conference on Mobile Systems, Applications, and Services (MobiSys), 2019",
       "points": [
         "스마트폰 사용 로그와 Inverse Reinforcement Learning으로 중독 질환 여부 감지 시스템 제안"
@@ -293,9 +329,16 @@
     {
       "title": "시각화 기반 딥러닝 분석 기술",
       "uri": "http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060&language=ko_KR",
-      "authors": ["이재성", "김기환", "이충기", "고성안"],
+      "authors": [
+        "이재성",
+        "김기환",
+        "이충기",
+        "고성안"
+      ],
       "conference": "소음진동 제27권 제6호 2017.11",
-      "points": ["딥러닝 모델을 해석하기 위한 시각화 기법 정리 및 조사"]
+      "points": [
+        "딥러닝 모델을 해석하기 위한 시각화 기법 정리 및 조사"
+      ]
     }
   ]
 }
