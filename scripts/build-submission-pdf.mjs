@@ -138,7 +138,7 @@ const createCoverHtml = (totalPages) => {
 
       .rule {
         margin-top: 64px;
-        border-top: 1px solid rgba(62, 180, 137, 0.26);
+        border-top: 1px solid rgba(8, 127, 104, 0.26);
       }
 
       .section {
@@ -149,7 +149,7 @@ const createCoverHtml = (totalPages) => {
       }
 
       .number {
-        color: #3eb489;
+        color: #087f68;
         font-size: 11pt;
         font-weight: 700;
       }
@@ -186,13 +186,12 @@ const createCoverHtml = (totalPages) => {
   <body>
     <main class="page">
       <div class="eyebrow">Curriculum Vitae · Portfolio</div>
-      <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
+      <h1><span style="color: #087f68;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #087f68;">&gt;</span></h1>
       <div class="role">Frontend Engineer</div>
       <p class="summary">
-        이력서와 포트폴리오를 하나로 묶어, HCI와 Visual Analytics 연구에서 시작해 AI 시스템,
-        제품 플랫폼, 내부 운영 자동화로 이어진 작업을 정리했습니다. 복잡한 시스템을 사람이
-        이해하고 사용할 수 있게 만든 프론트엔드 구현과 브라우저 자동화 작업을 중심으로
-        담았습니다.
+        이력서에는 Vuddy 커머스와 Samantha 실시간 채팅·콘텐츠 관리 작업을 최근 경력으로
+        정리했습니다. 이어지는 포트폴리오에는 내부 운영 자동화, 서버 주도 UI, 렌더링 최적화,
+        AutoML UI 작업을 담았습니다.
       </p>
 
       <div class="rule"></div>
@@ -286,7 +285,7 @@ const createPortfolioCoverHtml = (totalPages) => {
 
       .rule {
         margin-top: 64px;
-        border-top: 1px solid rgba(62, 180, 137, 0.26);
+        border-top: 1px solid rgba(8, 127, 104, 0.26);
       }
 
       .section {
@@ -297,7 +296,7 @@ const createPortfolioCoverHtml = (totalPages) => {
       }
 
       .number {
-        color: #3eb489;
+        color: #087f68;
         font-size: 11pt;
         font-weight: 700;
       }
@@ -334,12 +333,12 @@ const createPortfolioCoverHtml = (totalPages) => {
   <body>
     <main class="page">
       <div class="eyebrow">Portfolio</div>
-      <h1><span style="color: #3eb489;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #3eb489;">&gt;</span></h1>
+      <h1><span style="color: #087f68;">&lt;</span>김기환<span style="color: #5e5e5e;">&nbsp;/&nbsp;</span><span style="color: #087f68;">&gt;</span></h1>
       <div class="role">Frontend Engineer</div>
       <p class="summary">
-        HCI와 Visual Analytics 연구에서 시작해 AI 시스템, 제품 플랫폼, 내부 운영 자동화로
-        이어진 작업을 정리했습니다. 복잡한 시스템을 사람이 이해하고 사용할 수 있게 만든
-        프론트엔드 구현과 브라우저 자동화 작업입니다.
+        대학원에서 HCI와 Visual Analytics를 연구했고, 이후 AutoML 플랫폼과 콘텐츠 서비스,
+        내부 운영 자동화를 만들었습니다. 사용자가 보는 화면과 운영 도구를 함께 다룬 사례를
+        정리했습니다.
       </p>
 
       <div class="rule"></div>

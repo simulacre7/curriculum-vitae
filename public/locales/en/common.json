@@ -1,26 +1,27 @@
 {
   "name": "Kh.Kim",
-  "summary": "Frontend Engineer with 7 years of experience.\n\nMy work started in HCI and Visual Analytics, where I studied how people understand and work with complex systems. That interest has continued through AutoML and explainable AI (XAI), data visualization, content platforms, server-driven UI, and internal operations automation.\n\nRecently, I have been interested in using AI to help people make better decisions with less effort. Through GitHub-centered collaboration, browser automation, and executable prototypes, I am exploring ways to make scattered information and evidence easier to work with.",
+  "summary": "I have worked as a frontend engineer since 2020.\n\nMy recent work covers Vuddy's purchase and order flows and Samantha's real-time chat and content-management interfaces. I build both customer-facing products and the tools used to operate them.\n\nI studied HCI and Visual Analytics in graduate school before moving into product engineering. Since then I have worked on AutoML, content platforms, commerce, and AI character chat products. A recurring part of my work is clarifying expected behavior when product requirements, designs, and APIs do not line up cleanly.",
+  "actions": {
+    "ariaLabel": "Resume formats",
+    "pdf": "Terminal PDF",
+    "terminal": "Terminal CV"
+  },
   "careAbout": [
     {
+      "title": "Product Frontend",
+      "description": "I build customer-facing products and operations tools across connected flows such as purchase, orders, conversation, and content management."
+    },
+    {
+      "title": "Stateful Interfaces",
+      "description": "For real-time responses, payments, and orders, I make intermediate and failure states explicit rather than treating them as edge cases."
+    },
+    {
       "title": "Human-System Interaction",
-      "description": "My starting point is HCI and Visual Analytics: turning complex information, tools, and models into interfaces people can understand, inspect, and use."
+      "description": "My background in HCI and Visual Analytics informs how I present complex information and AI model output in usable interfaces."
     },
     {
-      "title": "Understandable AI Systems",
-      "description": "In AutoML and explainable AI (XAI), I built product UI that helps non-expert users inspect predictions, evidence, and edge cases before they act."
-    },
-    {
-      "title": "Product Experimentation Infrastructure",
-      "description": "I used server-driven UI and gradual migration to decouple operational UI changes and A/B tests from deployment cycles."
-    },
-    {
-      "title": "AI-Native Development Workflow",
-      "description": "I am exploring how AI agents can turn ideas into executable prototypes that teams can review as product-like interfaces."
-    },
-    {
-      "title": "Collaboration and Operations Tooling",
-      "description": "Through GitHub-centered workflows, internal-tool integration, and browser automation, I reduce the cost of moving between people, tools, and information."
+      "title": "Platform and Operations",
+      "description": "I use server-driven UI to separate routine interface changes from release cycles, and browser automation to reduce repetitive operational checks."
     }
   ],
   "present": "Present",
@@ -29,50 +30,83 @@
       "company": "Levvels",
       "role": "Frontend Engineer",
       "period": "Jul 2025–Present",
-      "summary": "Exploring AI-native product development and internal operations automation while building creator-commerce frontend systems. I use GitHub-centered collaboration, executable prototypes, and browser automation to reduce the cost of product changes and repeated investigation work.",
+      "summary": "I build customer and operations interfaces for Vuddy and Samantha. My work covers checkout and order flows, real-time AI chat states, content management, and browser-based operations automation.",
       "projects": [
         {
-          "title": "PageAgent-based Internal Operations Automation",
-          "period": "Mar 2026–Present",
-          "summary": "Turned repeated CS/QA investigation work into an automation target, connecting natural-language requests to browser actions and verifiable result UI.",
+          "title": "Samantha Web and Admin",
+          "period": "May 2026–Present",
+          "summary": "I am building the Web and Admin frontends for Samantha, an AI character chat product. I implemented streamed conversation state and content authoring and review workflows. The product is now in release preparation.",
+          "featured": true,
           "details": [
-            "Connected account, payment, and mapping data from several internal tools so operators could compare the necessary context in one result view",
-            "Extended Alibaba PageAgent for a Chrome Managed Profile environment to automate tab navigation, clicks, and inputs",
-            "Separated LLM output from reproducible action sequences and result presentation",
-            "Simplified repeated CS/QA investigation work that required manually checking multiple tables and services"
+            "Separated persisted chat history from in-progress responses and implemented SSE flows for sending, completion, failure, blocking, and regeneration",
+            "Built admin workflows for stories, lorebooks, search keywords, adult-mode review, and intro editors that preserved speaker order",
+            "Compared product documentation, Figma, and Swagger, then recorded implementation decisions and QA scenarios"
+          ],
+          "stack": [
+            "Next.js 16",
+            "React 19",
+            "TanStack Query",
+            "Zustand",
+            "SSE",
+            "OpenAPI",
+            "Playwright"
           ]
         },
         {
           "title": "Vuddy Commerce Frontend",
           "period": "Jul 2025–Present",
-          "summary": "Improved commerce flows such as product discovery, cart, and authentication while using analytics and design-system patterns to lower frontend change cost.",
+          "summary": "Built and maintained commerce flows across Vuddy's consumer web, Creator Studio, and internal Admin, covering classes, products, orders, cancellations, returns, and exchanges.",
+          "featured": true,
           "details": [
-            "Tracked and improved operational issues in cart and authentication flows",
-            "Reflected user-flow and operations context from Amplitude and ChannelTalk into frontend improvements",
-            "Organized reusable frontend patterns through the design system to reduce repeated implementation work"
+            "Connected class discovery, product details, video, checkout, Studio order management, and Admin tools for products, students, and passes",
+            "Updated cart v3 and adapted identity verification, applications from derivative-work creators, and cancellation, return, and exchange flows to policy and API changes",
+            "Refined the HLS home carousel and mobile WebView behavior for safe areas, scrolling, and back navigation"
+          ],
+          "stack": [
+            "Next.js",
+            "TanStack Query",
+            "vanilla-extract",
+            "Storybook",
+            "Sentry",
+            "Mixpanel"
           ]
+        },
+        {
+          "title": "PageAgent-based Internal Operations Automation",
+          "period": "Mar 2026–Present",
+          "summary": "Built a browser-automation prototype for repetitive CS/QA checks, turning natural-language requests into browser actions and showing the actions and evidence in one view.",
+          "details": [
+            "Connected account, payment, and mapping data from several internal tools so operators could compare the necessary context in one result view",
+            "Extended Alibaba PageAgent for a Chrome Managed Profile environment to automate tab navigation, clicks, and inputs",
+            "Separated LLM responses from the browser actions actually taken and the evidence shown to operators",
+            "Automated recurring CS/QA checks that previously required manual cross-checking across tables and services"
+          ],
+          "stack": ["Alibaba PageAgent", "React", "TypeScript", "Chrome"]
         }
       ],
       "stack": [
-        "React",
         "Next.js",
+        "React",
         "TypeScript",
-        "Browser Agent",
-        "Generative UI",
-        "Amplitude",
-        "ChannelTalk"
+        "TanStack Query",
+        "Zustand",
+        "SSE",
+        "OpenAPI",
+        "Playwright",
+        "Sentry",
+        "Mixpanel"
       ]
     },
     {
       "company": "RIDI Corp.",
       "role": "Frontend Engineer",
       "period": "May 2022–Jul 2025",
-      "summary": "Focused on reducing the dependency between product experimentation, operational UI changes, and deployment cycles in a large content platform. Through server-driven UI and gradual migration, I helped create structures that let operators adjust and test experiences faster.",
+      "summary": "I used server-driven UI and incremental migration to separate operational interface changes and A/B tests from release cycles.",
       "projects": [
         {
           "title": "RIDI Web Platform",
           "period": "May 2022–Jul 2025",
-          "summary": "Used server-declared UI and island architecture to gradually move legacy pages into React while lowering the execution cost of operational UI changes and A/B tests.",
+          "summary": "Used server-declared UI and island architecture to move legacy pages to React incrementally. This let the team run operational UI changes and A/B tests with fewer release dependencies.",
           "details": [
             "Rendered server-declared UI on the client to decouple screen changes from deployment cycles",
             "Migrated PHP pages toward React incrementally to reduce migration risk",
@@ -83,7 +117,7 @@
         {
           "title": "Large-scale List Rendering Optimization",
           "period": "May 2022–Jul 2025",
-          "summary": "Improved list rendering structure and loading experience so large-scale content exploration would not limit user experience or product experimentation.",
+          "summary": "Used windowing and loading states to keep large content lists responsive.",
           "details": [
             "Analyzed frame drops from large DOM trees",
             "Rendered only the visible range with windowing",
@@ -118,13 +152,13 @@
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
       "period": "Feb 2020–May 2022",
-      "summary": "Designed product flows, visualizations, and interactions that helped non-expert users work with complex AI and analytics systems. The focus was not technology first, but the usability, explainability, and workflow of AI systems.",
+      "summary": "I designed AutoML workflows and visualizations for people without model-development experience, including interfaces that showed predictions alongside their supporting evidence.",
       "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
       "projects": [
         {
           "title": "Legacy System React Migration",
           "period": "Jan 2021–May 2022",
-          "summary": "Moved a tightly coupled internal UI library toward React to create a more consistent and extensible foundation for platform interfaces.",
+          "summary": "Reorganized a tightly coupled internal UI library and replaced legacy widgets with React components.",
           "details": [
             "Modularized legacy UI code and improved interface structure",
             "Developed reusable components to replace bespoke legacy widgets"

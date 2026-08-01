@@ -142,8 +142,8 @@ const images = [
     makeCvSvg({
       heading: 'Curriculum Vitae',
       name: '김기환',
-      role: 'Software Engineer',
-      focus: 'Human-System Interaction · Experimentation · AI-Native Workflows',
+      role: 'Frontend Engineer',
+      focus: 'Product Frontend · Real-time Chat · Commerce Operations',
     }),
   ],
   [
@@ -151,8 +151,8 @@ const images = [
     makeCvSvg({
       heading: 'Curriculum Vitae',
       name: 'Kihwan Kim',
-      role: 'Software Engineer',
-      focus: 'Human-System Interaction · Experimentation · AI-Native Workflows',
+      role: 'Frontend Engineer',
+      focus: 'Product Frontend · Real-time Chat · Commerce Operations',
     }),
   ],
   [

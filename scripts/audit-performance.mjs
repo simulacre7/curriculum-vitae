@@ -25,7 +25,7 @@ const routes = [
     expectedFontRequests: 1,
     minTextLength: 4000,
     maxCls: 0.001,
-    expectedHtml: 'Frontend Engineer with 7 years',
+    expectedHtml: 'I have worked as a frontend engineer since 2020',
   },
   {
     path: '/bash/ko/',
@@ -237,7 +237,7 @@ const assertStaticBuild = async () => {
   }
   if (
     !enHtml.includes('<div id="root"><style') ||
-    !enHtml.includes('Frontend Engineer with 7 years')
+    !enHtml.includes('I have worked as a frontend engineer since 2020')
   ) {
     failures.push('/en is not prerendered with English CV content.');
   }

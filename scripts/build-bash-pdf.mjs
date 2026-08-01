@@ -21,15 +21,14 @@ const pdfTargets = [
     pathLabel: 'kihwan.kim/bash',
     title: '김기환 Terminal CV',
     heading: '김기환',
-    subtitle: 'Software Engineer',
+    subtitle: 'Frontend Engineer',
     contactItems: [
       ['email', 'juljin1875@gmail.com'],
       ['linkedin', 'https://www.linkedin.com/in/1875/'],
       ['github', 'https://github.com/simulacre7/'],
       ['web', 'https://kihwan.kim'],
     ],
-    focus:
-      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
+    focus: 'focus: 제품 프론트엔드, 실시간 채팅, 커머스 운영 도구',
     noProject: '관련 프로젝트를 찾지 못했습니다.',
   },
   {
@@ -41,15 +40,14 @@ const pdfTargets = [
     pathLabel: 'kihwan.kim/bash/en',
     title: 'Kihwan Kim Terminal CV',
     heading: 'Kihwan Kim',
-    subtitle: 'Software Engineer',
+    subtitle: 'Frontend Engineer',
     contactItems: [
       ['email', 'juljin1875@gmail.com'],
       ['linkedin', 'https://www.linkedin.com/in/1875/'],
       ['github', 'https://github.com/simulacre7/'],
       ['web', 'https://kihwan.kim'],
     ],
-    focus:
-      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
+    focus: 'focus: product frontend, real-time chat, commerce operations',
     noProject: 'No matching project found.',
   },
 ];

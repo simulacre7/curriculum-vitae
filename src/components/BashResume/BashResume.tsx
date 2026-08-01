@@ -138,8 +138,7 @@ const copy = {
     ],
     ready: 'ready. try `about` first.',
     noProject: '관련 프로젝트를 찾지 못했습니다.',
-    focus:
-      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
+    focus: 'focus: 제품 프론트엔드, 실시간 채팅, 커머스 운영 도구',
     guide: [
       '읽기 좋은 명령어',
       '  about    소개',
@@ -188,8 +187,7 @@ const copy = {
     ],
     ready: 'ready. try `about` first.',
     noProject: 'No matching project found.',
-    focus:
-      'focus: HCI, complex systems, experimentation infrastructure, AI-native workflows',
+    focus: 'focus: product frontend, real-time chat, commerce operations',
     guide: [
       'Readable commands',
       '  about    profile',

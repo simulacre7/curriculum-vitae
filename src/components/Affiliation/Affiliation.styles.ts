@@ -24,6 +24,13 @@ export const rowStyle = () => css`
   }
 `;
 
+export const printBreakableRowStyle = css`
+  @media print {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+`;
+
 export const leftColumnStyle = () => css`
   flex-basis: 50%;
   padding-right: 2rem;
