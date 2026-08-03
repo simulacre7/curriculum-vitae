@@ -188,7 +188,7 @@
       </li>
       <li>
         <strong>End-to-end 문제 해결</strong> — TypeScript 클라이언트에서 Rust
-        서버까지 수정 범위를 넓혀 원인 지점에서 해결 (OpenMMO, 4개 PR 병합)
+        서버까지 수정 범위를 넓혀 원인 지점에서 해결 (OpenMMO, 5개 PR 병합)
       </li>
     </ul>
 
@@ -341,8 +341,9 @@
       </div>
       <p class="role-summary">
         AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스
-        MMORPG(Rust·Svelte·Three.js·WebAssembly). 게임 개발 경험 없이 시작해 4건의
-        PR을 모두 머지시키며 클라이언트에서 서버 설계까지 기여 범위를 확장.
+        MMORPG(Rust·Svelte·Three.js·WebAssembly). 게임 개발 경험 없이 시작해 5건의
+        PR을 모두 병합시키며 클라이언트 테스트에서 서버 설계와 신규 기능까지 기여
+        범위를 확장.
       </p>
       <div class="project">
         <ul>
@@ -356,9 +357,15 @@
             해결 — 읽기 경합 없는 설계 (<a href="https://github.com/Julian-adv/OpenMMO/issues/68">#68</a>)
           </li>
           <li>
-            메인테이너의 성능·데이터 범위 우려를 반영한 미니맵 설계 제안 진행 중
-            (<a href="https://github.com/Julian-adv/OpenMMO/issues/11">#11</a>) — coding agent(Claude Code)와 페어로 진행하며 검증
-            체계(테스트·린트·타입·포맷)를 통과한 변경만 제출
+            HUD 미니맵 설계·구현: 유보적이던 메인테이너를 설계 제안으로 설득한 뒤,
+            기존 지형 타일과 회전 규약을 재사용해 서버 변경 없이 구현. 파티 시스템
+            작성자의 리뷰를 받아 상시 폴링을 유발하는 마커를 v1에서 제외하고 상태 갱신
+            누락 버그를 근본 원인에서 수정
+            (<a href="https://github.com/Julian-adv/OpenMMO/issues/11">#11</a>, <a href="https://github.com/Julian-adv/OpenMMO/issues/77">#77</a>)
+          </li>
+          <li>
+            coding agent(Claude Code)와 페어로 진행하며 검증 체계(테스트·린트·타입·포맷)를
+            통과한 변경만 제출
           </li>
         </ul>
       </div>
