@@ -175,7 +175,7 @@
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
       "period": "2026.07–present",
-      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design and shipped features; all five PRs merged.",
+      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design and shipped features; all six PRs merged.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
         {
@@ -190,6 +190,12 @@
           "title": "Server",
           "details": [
             "Solved unbounded growth of the terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)"
+          ]
+        },
+        {
+          "title": "Docs & onboarding",
+          "details": [
+            "Hit the onboarding gap myself — a fresh checkout renders a black world without baked terrain — and documented the missing step in the dev setup (#78)"
           ]
         }
       ]
