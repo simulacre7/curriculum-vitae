@@ -175,7 +175,7 @@
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
       "period": "2026.07–현재",
-      "summary": "AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly)에 기여하고 있습니다. 게임 개발 경험 없이 시작해 클라이언트 테스트에서 Rust 서버 설계와 신규 기능까지 기여 범위를 넓혔고, 5건의 PR이 모두 병합되었습니다.",
+      "summary": "AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly)에 기여하고 있습니다. 게임 개발 경험 없이 시작해 클라이언트 테스트에서 Rust 서버 설계와 신규 기능까지 기여 범위를 넓혔고, 6건의 PR이 모두 병합되었습니다.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
         {
@@ -190,6 +190,12 @@
           "title": "서버",
           "details": [
             "지형 타일 캐시의 무제한 성장 해결: 읽기 경합 없는 세대-스윕 eviction과 용량 퓨즈 설계·구현 (#68)"
+          ]
+        },
+        {
+          "title": "문서·온보딩",
+          "details": [
+            "신규 기여자가 지형 데이터 없이 검은 화면을 만나는 온보딩 공백을 직접 겪고 개발 셋업 문서에 반영 (#78)"
           ]
         }
       ]
