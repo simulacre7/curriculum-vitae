@@ -188,7 +188,7 @@
       </li>
       <li>
         <strong>End-to-end 문제 해결</strong> — TypeScript 클라이언트에서 Rust
-        서버까지 수정 범위를 넓혀 원인 지점에서 해결 (OpenMMO, 6개 PR 병합)
+        서버까지 수정 범위를 넓혀 원인 지점에서 해결 (OpenMMO, 7개 PR 병합)
       </li>
     </ul>
 
@@ -341,7 +341,7 @@
       </div>
       <p class="role-summary">
         AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스
-        MMORPG(Rust·Svelte·Three.js·WebAssembly). 게임 개발 경험 없이 시작해 6건의
+        MMORPG(Rust·Svelte·Three.js·WebAssembly). 게임 개발 경험 없이 시작해 7건의
         PR을 모두 병합시키며 클라이언트 테스트에서 서버 설계와 신규 기능까지 기여
         범위를 확장.
       </p>
@@ -353,8 +353,10 @@
             단일 값 공유 (<a href="https://github.com/Julian-adv/OpenMMO/issues/56">#56</a>, <a href="https://github.com/Julian-adv/OpenMMO/issues/64">#64</a>, <a href="https://github.com/Julian-adv/OpenMMO/issues/65">#65</a>)
           </li>
           <li>
-            Rust 서버 지형 캐시의 무제한 성장을 세대-스윕 eviction과 용량 퓨즈로
-            해결 — 읽기 경합 없는 설계 (<a href="https://github.com/Julian-adv/OpenMMO/issues/68">#68</a>)
+            Rust 서버: 지형 캐시의 무제한 성장을 읽기 경합 없는 세대-스윕 eviction과
+            용량 퓨즈로 해결 (<a href="https://github.com/Julian-adv/OpenMMO/issues/68">#68</a>). 계정 단위 밴/해제 운영 명령 — 캐릭터가 아니라
+            계정을 키로 세션을 퇴출하고, 기록·퇴출·로그인 검사를 세션 락으로 직렬화
+            (<a href="https://github.com/Julian-adv/OpenMMO/issues/95">#95</a>)
           </li>
           <li>
             HUD 미니맵 설계·구현: 유보적이던 메인테이너를 설계 제안으로 설득한 뒤,

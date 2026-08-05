@@ -175,7 +175,7 @@
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
       "period": "2026.07–present",
-      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design and shipped features; all six PRs merged.",
+      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design and shipped features; all seven PRs merged.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
         {
@@ -189,7 +189,8 @@
         {
           "title": "Server",
           "details": [
-            "Solved unbounded growth of the terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)"
+            "Solved unbounded growth of the terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)",
+          "Shipped account-level ban and unban operator commands: eviction is keyed by account rather than character name, and the ban write, the eviction, and the login-side check are serialized under the existing session lock so a connection that passed the check cannot register afterwards. Regression tests pin the expiry-versus-reban ordering and recovery for an account whose characters are gone (#95)"
           ]
         },
         {
