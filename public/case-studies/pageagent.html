@@ -364,6 +364,24 @@
           margin: 0 auto;
           padding: 48px 28px 96px;
         }
+
+        /* Print flows each .page onto its own sheet; on screen the A4
+           min-height and page breaks disappear, so separate sections
+           explicitly instead — a rule only where a new case study
+           (.case-header) begins, a plain gap for continuation pages. */
+        .page {
+          min-height: 0;
+        }
+
+        .page + .page {
+          margin-top: 40px;
+        }
+
+        .page:has(.case-header) {
+          margin-top: 72px;
+          padding-top: 56px;
+          border-top: 1px solid rgba(62, 180, 137, 0.28);
+        }
       }
 
       /* The multi-column grids assume A4 width; stack them on narrow screens. */
