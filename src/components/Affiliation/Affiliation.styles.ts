@@ -173,9 +173,12 @@ export const projectTitleStyle = (theme: Theme) => css`
     color: inherit;
     font-weight: inherit;
     text-decoration: none;
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.35em;
+  }
+
+  /* Keep the link mark in inline flow so it trails the last word even
+     when the title wraps; inline-flex would pin it to the first line. */
+  & > a > svg {
+    margin-left: 0.3em;
   }
 
   & > a:visited {
