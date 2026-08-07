@@ -4,23 +4,23 @@
   "careAbout": [
     {
       "title": "Human-System Interaction",
-      "description": "My starting point is HCI and Visual Analytics: turning complex information, tools, and models into interfaces people can understand, inspect, and use."
+      "description": "I came from HCI and Visual Analytics research. The work is making a model's output something a person can actually interrogate on screen."
     },
     {
       "title": "Understandable AI Systems",
-      "description": "In AutoML and explainable AI (XAI), I built product UI that helps non-expert users inspect predictions, evidence, and edge cases before they act."
+      "description": "I built the prediction-explanation UI for an AutoML product. Without the reasoning beside the number, a non-expert has no basis for acting on it."
     },
     {
       "title": "Product Experimentation Infrastructure",
-      "description": "I used server-driven UI and gradual migration to decouple operational UI changes and A/B tests from deployment cycles."
+      "description": "Server-driven UI let us change screens and run A/B tests without waiting on a release. Existing screens moved over gradually rather than in one rewrite."
     },
     {
       "title": "AI-Native Development Workflow",
-      "description": "I am exploring how AI agents can turn ideas into executable prototypes that teams can review as product-like interfaces."
+      "description": "I would rather show a working screen than describe an idea in a document. Pairing with an agent shortens that gap to a day or two."
     },
     {
       "title": "Collaboration and Operations Tooling",
-      "description": "Through GitHub-centered workflows, internal-tool integration, and browser automation, I reduce the cost of moving between people, tools, and information."
+      "description": "Every tool keeps its own context, which leaves a person to carry state between them — what the issue said into the PR, what the log showed into the thread. That carrying belongs in tooling: GitHub workflows, internal-tool integration, browser automation."
     }
   ],
   "present": "Present",
@@ -175,28 +175,29 @@
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
       "period": "2026.07–present",
-      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Started with no game-development background and expanded from client tests to Rust server design and shipped features; all seven PRs merged.",
+      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Game development was new to me; I started with client tests and now work mostly on the Rust server, and all seven PRs have been merged.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
         {
           "title": "Client",
           "details": [
-            "Designed and shipped the HUD minimap: turned a hesitant maintainer around with a written design proposal, then built it with zero server change by reusing the existing terrain bakes and rotation convention. After review from the party system's author, dropped the markers that would have made a poll continuous and fixed a missing store update at its source (#11, #77)",
-            "Filled test gaps: fishing state transitions, bilinear water-surface sampling, and click-intent routing (#56)",
-            "UX fixes: cancel scheduled sounds when a cast is aborted (#64); fall back to walking on out-of-range water clicks, exposing the server constant through WebAssembly so client and server share one value (#65)"
+            "Built the HUD minimap after a written design proposal turned a hesitant maintainer around, reusing the existing terrain bakes and rotation convention so the server needed no change (#11, #77)",
+            "Dropped the party markers that would have kept the client polling, following review from the party system's author, and fixed the missing store update found along the way at its source (#77)",
+            "Filled test gaps around fishing state transitions, bilinear water-surface sampling, and click-intent routing (#56)",
+            "Changed an out-of-range water click to walk toward the target and exposed the server constant through WebAssembly so both sides read one value (#65), and cancelled scheduled fishing sounds that fired after the session ended (#64)"
           ]
         },
         {
           "title": "Server",
           "details": [
-            "Solved unbounded growth of the terrain tile caches: designed and implemented generation-swept eviction with a capacity fuse, keeping the contention-free read path (#68)",
-          "Shipped account-level ban and unban operator commands: eviction is keyed by account rather than character name, and the ban write, the eviction, and the login-side check are serialized under the existing session lock so a connection that passed the check cannot register afterwards. Regression tests pin the expiry-versus-reban ordering and recovery for an account whose characters are gone (#95)"
+            "Bounded terrain tile caches that only ever grew, sweeping by generation under a capacity fuse while leaving the read path lock-free (#68)",
+            "Built account-level ban and unban for operators, cutting sessions by account rather than character so an alt cannot walk back in, and closing the window where a connection past the check still registers (#95)"
           ]
         },
         {
           "title": "Docs & onboarding",
           "details": [
-            "Hit the onboarding gap myself — a fresh checkout renders a black world without baked terrain — and documented the missing step in the dev setup (#78)"
+            "Documented the terrain bake step in the dev setup after hitting the black-world onboarding gap myself (#78)"
           ]
         }
       ]
