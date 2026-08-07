@@ -22,6 +22,14 @@ pnpm dev
 
 Generate submission PDFs from the Korean resume and the portfolio PDF in the sibling `pageagent-generative-ui-case-study` repository. The combined file and standalone portfolio include their own cover pages.
 
+# Hosted case study
+
+`public/case-studies/pageagent.html` is a copy of `../pageagent-generative-ui-case-study/submission/case-study.html`, served at https://kihwan.kim/case-studies/pageagent.html and linked from the PageAgent project entry in both locales. When the case study changes, refresh the copy:
+
+```bash
+cp ../pageagent-generative-ui-case-study/submission/case-study.html public/case-studies/pageagent.html
+```
+
 ```bash
 pnpm build:submission-pdf
 ```
