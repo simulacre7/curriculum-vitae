@@ -24,6 +24,9 @@ export const globalStyles = (theme: Theme) => css`
 
   @page {
     size: A4;
+    /* Reserves the footer band that build-submission-pdf.mjs draws over the
+       printed page, so body text cannot run under the rule. */
+    margin-bottom: 14mm;
   }
 
   * {

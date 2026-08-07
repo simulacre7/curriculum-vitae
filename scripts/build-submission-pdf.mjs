@@ -427,7 +427,9 @@ const drawSubmissionFooters = async (pdf, { footerLabels, skipPages = 0 }) => {
   const color = rgb(0.58, 0.58, 0.58);
   const ruleColor = rgb(0.82, 0.9, 0.87);
   const fontSize = 8;
-  const y = 38;
+  // Sits inside the page's bottom margin (see @page in App.styles.ts), so the
+  // rule is drawn under the text block instead of across its last line.
+  const y = 20;
 
   pdf.getPages().forEach((page, index) => {
     if (index < skipPages) {
@@ -441,8 +443,8 @@ const drawSubmissionFooters = async (pdf, { footerLabels, skipPages = 0 }) => {
     const rightX = width - 52 - font.widthOfTextAtSize(label, fontSize);
 
     page.drawLine({
-      start: { x: leftX, y: y + 23 },
-      end: { x: width - 52, y: y + 23 },
+      start: { x: leftX, y: y + 14 },
+      end: { x: width - 52, y: y + 14 },
       thickness: 0.6,
       color: ruleColor,
     });

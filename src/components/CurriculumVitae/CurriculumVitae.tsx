@@ -172,6 +172,7 @@ export function CurriculumVitae() {
               },
             ]}
             summary={oss.summary}
+            allowPrintBreak
             projectList={oss.projects?.map<Project>(({ title, details }) => ({
               title,
               period: '',

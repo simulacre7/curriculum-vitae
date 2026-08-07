@@ -182,10 +182,8 @@
         {
           "title": "Client",
           "details": [
-            "Built the HUD minimap after a written design proposal turned a hesitant maintainer around, reusing the existing terrain bakes and rotation convention so the server needed no change (#11, #77)",
-            "Dropped the party markers that would have kept the client polling, following review from the party system's author, and fixed the missing store update found along the way at its source (#77)",
-            "Filled test gaps around fishing state transitions, bilinear water-surface sampling, and click-intent routing (#56)",
-            "Changed an out-of-range water click to walk toward the target and exposed the server constant through WebAssembly so both sides read one value (#65), and cancelled scheduled fishing sounds that fired after the session ended (#64)"
+            "Built the HUD minimap after a written design proposal turned a hesitant maintainer around, reusing the existing terrain bakes and rotation convention so the server needed no change. Following review from the party system's author, dropped the markers that would have kept the client polling and fixed the missing store update found along the way at its source (#11, #77)",
+            "Filled test gaps around fishing state transitions, bilinear water-surface sampling, and click-intent routing. An out-of-range water click now walks toward the target, with the server constant exposed through WebAssembly so both sides read one value, and scheduled sounds are cancelled when the session ends (#56, #64, #65)"
           ]
         },
         {
