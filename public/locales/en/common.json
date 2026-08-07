@@ -28,12 +28,12 @@
     {
       "company": "Levvels",
       "role": "Frontend Engineer",
-      "period": "Jul 2025–Present",
+      "period": "Jul 2025 – Present",
       "summary": "Exploring AI-native product development and internal operations automation while building creator-commerce frontend systems. I use GitHub-centered collaboration, executable prototypes, and browser automation to reduce the cost of product changes and repeated investigation work.",
       "projects": [
         {
           "title": "AI Character Chat Service",
-          "period": "May 2026–Present",
+          "period": "May 2026 – Present",
           "summary": "I am building the user-facing AI character chat experience and an Admin for authoring and reviewing character content. The product is being prepared for release.",
           "details": [
             "Separated in-progress streamed responses from persisted chat history and handled send, completion, failure, and regeneration states",
@@ -44,7 +44,7 @@
         {
           "title": "Vuddy Commerce",
           "uri": "https://vuddy.io/",
-          "period": "Jul 2025–Present",
+          "period": "Jul 2025 – Present",
           "summary": "Built and maintained Vuddy’s customer web, Creator Studio, and internal Admin. Worked across the commerce flow from class discovery and checkout to orders, cancellations, returns, and exchanges.",
           "details": [
             "Built class discovery, video, and checkout flows along with Studio order management and Admin tools for products, students, and passes",
@@ -55,7 +55,7 @@
         {
           "title": "PageAgent-based Internal Operations Automation",
           "uri": "https://kihwan.kim/case-studies/pageagent.html",
-          "period": "Mar 2026–Present",
+          "period": "Mar 2026 – Present",
           "summary": "Turned repeated CS/QA investigation work into an automation target, connecting natural-language requests to browser actions and verifiable result UI.",
           "details": [
             "Connected account, payment, and mapping data from several internal tools so operators could compare the necessary context in one result view",
@@ -83,13 +83,13 @@
     {
       "company": "RIDI Corp.",
       "role": "Frontend Engineer",
-      "period": "May 2022–Jul 2025",
+      "period": "May 2022 – Jul 2025",
       "summary": "Focused on reducing the dependency between product experimentation, operational UI changes, and deployment cycles in a large content platform. Through server-driven UI and gradual migration, I helped create structures that let operators adjust and test experiences faster.",
       "projects": [
         {
           "title": "RIDI Web Platform",
           "uri": "https://ridibooks.com/",
-          "period": "May 2022–Jul 2025",
+          "period": "May 2022 – Jul 2025",
           "summary": "Used server-declared UI and island architecture to gradually move legacy pages into React while lowering the execution cost of operational UI changes and A/B tests.",
           "details": [
             "Rendered server-declared UI on the client to decouple screen changes from deployment cycles",
@@ -100,7 +100,7 @@
         },
         {
           "title": "Large-scale List Rendering Optimization",
-          "period": "May 2022–Jul 2025",
+          "period": "May 2022 – Jul 2025",
           "summary": "Improved list rendering structure and loading experience so large-scale content exploration would not limit user experience or product experimentation.",
           "details": [
             "Analyzed frame drops from large DOM trees",
@@ -111,7 +111,7 @@
         },
         {
           "title": "User Environment Stabilization",
-          "period": "May 2022–Jul 2025",
+          "period": "May 2022 – Jul 2025",
           "summary": "Reduced instability caused by browser, device, and extension differences, improving both product experience and operational response.",
           "details": [
             "Tracked real-user errors with Sentry",
@@ -135,13 +135,13 @@
     {
       "company": "TmaxEnterprise",
       "role": "Research Engineer",
-      "period": "Feb 2020–May 2022",
+      "period": "Feb 2020 – May 2022",
       "summary": "Designed product flows, visualizations, and interactions that helped non-expert users work with complex AI and analytics systems. The focus was not technology first, but the usability, explainability, and workflow of AI systems.",
       "aliases": ["Currently TmaxBizAI", "Formerly TmaxData"],
       "projects": [
         {
           "title": "Legacy System React Migration",
-          "period": "Jan 2021–May 2022",
+          "period": "Jan 2021 – May 2022",
           "summary": "Moved a tightly coupled internal UI library toward React to create a more consistent and extensible foundation for platform interfaces.",
           "details": [
             "Modularized legacy UI code and improved interface structure",
@@ -150,7 +150,7 @@
         },
         {
           "title": "AutoML Platform",
-          "period": "Feb 2020–May 2022",
+          "period": "Feb 2020 – May 2022",
           "summary": "Designed and implemented codeless studio flows and explainable AI visualizations so users without model-development experience could explore and operate AI capabilities.",
           "details": [
             "Implemented a codeless studio for non-expert model builders",
@@ -175,7 +175,7 @@
       "name": "OpenMMO",
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
-      "period": "2026.07–present",
+      "period": "2026.07 – Present",
       "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Game development was new to me; I started with client tests and now work mostly on the Rust server, and all eight PRs have been merged.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
@@ -209,18 +209,18 @@
       "degrees": [
         {
           "degree": "Master of Science in Computer Science",
-          "period": "2018.03–2020.02"
+          "period": "2018.03 – 2020.02"
         },
         {
           "degree": "Bachelor of Science in Technology Management (Multi-disciplinary major in Computer Science)",
-          "period": "2013.03–2018.02"
+          "period": "2013.03 – 2018.02"
         }
       ],
       "projects": [
         {
           "title": "AI-driven UI and Recommender System Research",
           "uri": "https://arxiv.org/abs/2108.00151",
-          "period": "2019.01–2020.02",
+          "period": "2019.01 – 2020.02",
           "description": "Studied how recommender systems should communicate algorithmic exploration so users can understand the system and provide higher-quality feedback.",
           "points": [
             "Measured the impact of transparency on data quality in the explore-exploit problem of recommendation systems",
@@ -234,7 +234,7 @@
         {
           "title": "Modeling Web User Behavior",
           "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
-          "period": "2019.02–2020.02",
+          "period": "2019.02 – 2020.02",
           "description": "Modeled decision-making and behavior patterns in complex web environments to better understand interaction between people and systems.",
           "points": [
             "Estimated user reward functions from behavior logs through Inverse Reinforcement Learning",
