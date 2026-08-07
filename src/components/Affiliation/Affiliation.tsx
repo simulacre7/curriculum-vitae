@@ -71,6 +71,21 @@ function GitHubMark() {
   );
 }
 
+// Octicons link (MIT). Marks titles that lead somewhere other than a
+// GitHub repository, so linked entries read as links without hovering.
+function LinkMark() {
+  return (
+    <svg
+      css={styles.githubMarkStyle}
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z" />
+    </svg>
+  );
+}
+
 /** Turn #123 references into repo links. GitHub's /issues/N redirects to
  *  the pull request when the number is a PR, so one path covers both. */
 function linkifyRefs(text: string, refBaseUri?: string) {
@@ -109,7 +124,14 @@ function Project({ projectList, refBaseUri }: ProjectProps) {
         return (
           <div key={title} css={styles.projectItemStyle}>
             <div css={styles.projectTitleStyle}>
-              {uri ? <a href={uri}>{title}</a> : title}
+              {uri ? (
+                <a href={uri}>
+                  {title}
+                  <LinkMark />
+                </a>
+              ) : (
+                title
+              )}
             </div>
             <div css={styles.projectPeriodStyle}>{period}</div>
             {descriptionText ? (

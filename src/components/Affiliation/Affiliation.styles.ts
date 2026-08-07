@@ -173,6 +173,9 @@ export const projectTitleStyle = (theme: Theme) => css`
     color: inherit;
     font-weight: inherit;
     text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
   }
 
   & > a:visited {
