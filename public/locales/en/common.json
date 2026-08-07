@@ -54,6 +54,7 @@
         },
         {
           "title": "PageAgent-based Internal Operations Automation",
+          "uri": "https://kihwan.kim/case-studies/pageagent.html",
           "period": "Mar 2026–Present",
           "summary": "Turned repeated CS/QA investigation work into an automation target, connecting natural-language requests to browser actions and verifiable result UI.",
           "details": [
