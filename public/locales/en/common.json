@@ -221,6 +221,7 @@
       "projects": [
         {
           "title": "AI-driven UI and Recommender System Research",
+          "uri": "https://arxiv.org/abs/2108.00151",
           "period": "2019.01–2020.02",
           "description": "Studied how recommender systems should communicate algorithmic exploration so users can understand the system and provide higher-quality feedback.",
           "points": [
@@ -234,6 +235,7 @@
         },
         {
           "title": "Modeling Web User Behavior",
+          "uri": "https://dl.acm.org/citation.cfm?doid=3307334.3328599",
           "period": "2019.02–2020.02",
           "description": "Modeled decision-making and behavior patterns in complex web environments to better understand interaction between people and systems.",
           "points": [
