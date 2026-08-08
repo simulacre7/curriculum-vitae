@@ -54,7 +54,7 @@
         },
         {
           "title": "PageAgent-based Internal Operations Automation",
-          "uri": "https://kihwan.kim/case-studies/pageagent.html",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#pageagent",
           "period": "Mar 2026 – Present",
           "summary": "Turned repeated CS/QA investigation work into an automation target, connecting natural-language requests to browser actions and verifiable result UI.",
           "details": [
@@ -89,6 +89,7 @@
         {
           "title": "RIDI Web Platform",
           "uri": "https://ridibooks.com/",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#rigrid",
           "period": "May 2022 – Jul 2025",
           "summary": "Used server-declared UI and island architecture to gradually move legacy pages into React while lowering the execution cost of operational UI changes and A/B tests.",
           "details": [
@@ -100,6 +101,7 @@
         },
         {
           "title": "Large-scale List Rendering Optimization",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#content-rendering",
           "period": "May 2022 – Jul 2025",
           "summary": "Improved list rendering structure and loading experience so large-scale content exploration would not limit user experience or product experimentation.",
           "details": [
@@ -150,6 +152,7 @@
         },
         {
           "title": "AutoML Platform",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#automl-xai",
           "period": "Feb 2020 – May 2022",
           "summary": "Designed and implemented codeless studio flows and explainable AI visualizations so users without model-development experience could explore and operate AI capabilities.",
           "details": [
@@ -220,6 +223,7 @@
         {
           "title": "AI-driven UI and Recommender System Research",
           "uri": "https://arxiv.org/abs/2108.00151",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#recsys-exploration",
           "period": "2019.01 – 2020.02",
           "description": "Studied how recommender systems should communicate algorithmic exploration so users can understand the system and provide higher-quality feedback.",
           "points": [

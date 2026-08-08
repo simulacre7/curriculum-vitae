@@ -216,6 +216,33 @@ export const projectPeriodStyle = (theme: Theme) => css`
   page-break-after: avoid;
 `;
 
+export const projectCaseStudyStyle = (theme: Theme) => css`
+  ${projectTextStyle(theme)}
+  margin-bottom: 1rem;
+
+  & > a {
+    color: ${theme.colors.deepGreen};
+    text-decoration: none;
+  }
+
+  & > a > svg {
+    margin-left: 0.3em;
+  }
+
+  & > a:visited {
+    color: ${theme.colors.deepGreen};
+  }
+
+  & > a:hover {
+    text-decoration: underline;
+  }
+
+  & > a:focus-visible {
+    outline: 2px solid ${theme.colors.deepGreen};
+    outline-offset: 3px;
+  }
+`;
+
 export const projectDescriptionStyle = (theme: Theme) => css`
   ${projectTextStyle(theme)}
   margin-bottom: 1rem;
