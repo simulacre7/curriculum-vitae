@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as styles from './Publication.styles';
+import { LinkMark } from '../LinkMark';
 
 const MY_NAME_LIST = ['Kihwan Kim', '김기환'];
 
@@ -22,7 +23,10 @@ export function Publication({
   return (
     <div css={styles.containerStyle}>
       <h3 css={styles.titleStyle}>
-        <a href={uri}>{title}</a>
+        <a href={uri}>
+          {title}
+          <LinkMark />
+        </a>
       </h3>
       {authors.length > 0 && (
         <p css={styles.authorStyle}>
