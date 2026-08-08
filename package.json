@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@11.17.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && node scripts/generate-og-images.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir .tmp-ssr --emptyOutDir true && node scripts/build-og-pages.mjs && node scripts/prerender-cv-pages.mjs && node scripts/build-bash-pdf.mjs",
