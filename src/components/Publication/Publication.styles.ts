@@ -8,24 +8,43 @@ export const containerStyle = css`
 `;
 
 export const titleStyle = (theme: Theme) => css`
+  color: ${theme.colors.black};
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.334;
   margin-bottom: 0.5rem;
+
   & > a {
-    color: ${theme.colors.green};
-    text-decoration: underline;
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1.334;
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  /* Keep the link mark in inline flow so it trails the last word even
+     when the title wraps; inline-flex would pin it to the first line. */
+  & > a svg {
+    margin-left: 0.3em;
+  }
+
+  & > a:visited {
+    color: inherit;
+  }
+
+  & > a:hover {
+    color: ${theme.colors.deepGreen};
+  }
+
+  & > a:focus-visible {
+    outline: 2px solid ${theme.colors.deepGreen};
+    outline-offset: 3px;
   }
 
   @media print {
     break-after: avoid;
     page-break-after: avoid;
     margin-bottom: 0.25rem;
-
-    & > a {
-      font-size: 0.9rem;
-      line-height: 1.2;
-    }
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 `;
 
