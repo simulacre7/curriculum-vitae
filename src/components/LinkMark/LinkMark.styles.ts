@@ -5,3 +5,7 @@ export const markStyle = css`
   height: 0.62em;
   flex-shrink: 0;
 `;
+
+export const tailStyle = css`
+  white-space: nowrap;
+`;

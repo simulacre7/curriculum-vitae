@@ -14,3 +14,31 @@ export function LinkMark() {
     </svg>
   );
 }
+
+/** The mark is an inline replaced element, so a line may break between it
+ *  and the text it follows, stranding it alone on the last line. Binding it
+ *  to the final word removes that break opportunity. Text with no space is
+ *  left unbound: a single long run — Korean without spaces, say — still
+ *  needs to break somewhere. */
+export function TextWithLinkMark({ text }: { text: string }) {
+  const splitAt = text.trimEnd().lastIndexOf(' ');
+
+  if (splitAt === -1) {
+    return (
+      <>
+        {text}
+        <LinkMark />
+      </>
+    );
+  }
+
+  return (
+    <>
+      {text.slice(0, splitAt + 1)}
+      <span css={styles.tailStyle}>
+        {text.slice(splitAt + 1)}
+        <LinkMark />
+      </span>
+    </>
+  );
+}

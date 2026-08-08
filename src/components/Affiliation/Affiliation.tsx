@@ -1,6 +1,6 @@
 // Experience 및 Education 섹션에 활용되는 Affiliation 컴포넌트
 import * as styles from './Affiliation.styles';
-import { LinkMark } from '../LinkMark';
+import { TextWithLinkMark } from '../LinkMark';
 
 export type Project = {
   title: string;
@@ -123,8 +123,7 @@ function Project({ projectList, refBaseUri }: ProjectProps) {
             <div css={styles.projectTitleStyle}>
               {uri ? (
                 <a href={uri}>
-                  {title}
-                  <LinkMark />
+                  <TextWithLinkMark text={title} />
                 </a>
               ) : (
                 title
@@ -134,8 +133,7 @@ function Project({ projectList, refBaseUri }: ProjectProps) {
             {caseStudyUri ? (
               <div css={styles.projectCaseStudyStyle}>
                 <a href={caseStudyUri}>
-                  Case study
-                  <LinkMark />
+                  <TextWithLinkMark text="Case study" />
                 </a>
               </div>
             ) : null}

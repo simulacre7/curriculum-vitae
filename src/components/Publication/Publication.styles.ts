@@ -22,7 +22,7 @@ export const titleStyle = (theme: Theme) => css`
 
   /* Keep the link mark in inline flow so it trails the last word even
      when the title wraps; inline-flex would pin it to the first line. */
-  & > a > svg {
+  & > a svg {
     margin-left: 0.3em;
   }
 
