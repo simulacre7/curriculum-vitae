@@ -21,6 +21,7 @@ type Experience = {
 type ExperienceProject = {
   title: string;
   uri?: string;
+  caseStudyUri?: string;
   period: string;
   summary?: string;
   details?: string[];
@@ -113,6 +114,7 @@ export function CurriculumVitae() {
               ({
                 title,
                 uri,
+                caseStudyUri,
                 period: projectPeriod,
                 summary: projectSummary,
                 details: projectDetails,
@@ -120,6 +122,7 @@ export function CurriculumVitae() {
               }) => ({
                 title,
                 uri,
+                caseStudyUri,
                 period: projectPeriod,
                 description: projectSummary ?? '',
                 points: projectDetails ?? [],

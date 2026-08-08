@@ -54,7 +54,7 @@
         },
         {
           "title": "PageAgent 기반 내부 운영 자동화",
-          "uri": "https://kihwan.kim/case-studies/pageagent.html",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#pageagent",
           "period": "2026.03 – 현재",
           "summary": "CS/QA 담당자가 여러 내부 도구를 오가며 확인하던 일을 브라우저 자동화로 줄였습니다. 자연어 요청을 실행 절차로 바꾸고, 결과와 근거를 한 화면에 정리했습니다.",
           "details": [
@@ -89,6 +89,7 @@
         {
           "title": "리디 웹 플랫폼",
           "uri": "https://ridibooks.com/",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#rigrid",
           "period": "2022.05 – 2025.07",
           "summary": "서버 주도 UI와 아일랜드 아키텍쳐로 레거시 페이지를 React로 점진적으로 이전했습니다. 운영 UI 변경과 A/B 테스트를 더 빠르게 실행했습니다.",
           "details": [
@@ -100,6 +101,7 @@
         },
         {
           "title": "대규모 리스트 렌더링 최적화",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#content-rendering",
           "period": "2022.05 – 2025.07",
           "summary": "대량 콘텐츠 탐색에서 렌더링 병목이 사용자 경험을 해치지 않도록 리스트 구조와 로딩 경험을 개선했습니다.",
           "details": [
@@ -150,6 +152,7 @@
         },
         {
           "title": "AutoML 플랫폼",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#automl-xai",
           "period": "2020.02 – 2022.05",
           "summary": "모델 개발 경험이 없는 사용자를 위한 Codeless 개발 스튜디오와 예측 근거 시각화를 구현했습니다.",
           "details": [
@@ -220,6 +223,7 @@
         {
           "title": "AI 기반 UI와 추천 시스템 연구",
           "uri": "https://arxiv.org/abs/2108.00151",
+          "caseStudyUri": "https://kihwan.kim/case-studies/pageagent.html#recsys-exploration",
           "period": "2019.01 – 2020.02",
           "description": "추천 시스템의 탐색용 아이템 노출을 사용자가 어떻게 이해하는지 연구했습니다. 더 나은 피드백을 끌어내는 설명 방식을 실험했습니다.",
           "points": [

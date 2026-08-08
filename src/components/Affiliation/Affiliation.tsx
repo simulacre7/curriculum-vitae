@@ -4,6 +4,9 @@ import * as styles from './Affiliation.styles';
 export type Project = {
   title: string;
   uri?: string;
+  /** Case study section on the hosted page, kept separate so a project can
+      link to the thing it built and to the write-up about building it. */
+  caseStudyUri?: string;
   period: string;
   description: string;
   points: string[];
@@ -116,7 +119,15 @@ function Project({ projectList, refBaseUri }: ProjectProps) {
   return (
     <div css={styles.projectContainer}>
       {projectList.map((project) => {
-        const { title, uri, period, description, points, badges } = project;
+        const {
+          title,
+          uri,
+          caseStudyUri,
+          period,
+          description,
+          points,
+          badges,
+        } = project;
         const descriptionText = description?.trim().length ? description : null;
         const pointItems = points?.length ? points : null;
         const badgeItems = badges?.length ? badges : null;
@@ -134,6 +145,14 @@ function Project({ projectList, refBaseUri }: ProjectProps) {
               )}
             </div>
             <div css={styles.projectPeriodStyle}>{period}</div>
+            {caseStudyUri ? (
+              <div css={styles.projectCaseStudyStyle}>
+                <a href={caseStudyUri}>
+                  Case study
+                  <LinkMark />
+                </a>
+              </div>
+            ) : null}
             {descriptionText ? (
               <div css={styles.projectDescriptionStyle}>{descriptionText}</div>
             ) : null}
