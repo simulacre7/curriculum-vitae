@@ -14,10 +14,7 @@ const portfolioCoverHtml = resolve(tempDir, 'portfolio-cover.html');
 const portfolioCoverPdf = resolve(tempDir, 'KihwanKim_Portfolio_Cover.pdf');
 const cvPdf = resolve(tempDir, 'KihwanKim_CV.pdf');
 const portfolioPdf = resolve(
-  root,
-  '..',
-  'pageagent-generative-ui-case-study',
-  'submission',
+  tempDir,
   'KihwanKim_PageAgent_InternalOps_CaseStudy.pdf'
 );
 const combinedOutputPdf = resolve(
@@ -42,10 +39,6 @@ if (!chrome) {
   throw new Error(
     'Chrome, Chromium, or Edge was not found. Set CHROME_PATH to a browser executable.'
   );
-}
-
-if (!existsSync(portfolioPdf)) {
-  throw new Error(`Portfolio PDF was not found: ${portfolioPdf}`);
 }
 
 mkdirSync(submissionDir, { recursive: true });
@@ -513,6 +506,10 @@ const mergePdfs = async (cvFooterLabels) => {
 
   writeFileSync(combinedOutputPdf, await mergedPdf.save());
 };
+
+run('node', ['scripts/build-case-study-pdf.mjs'], {
+  env: { ...process.env, CASE_STUDY_PDF_OUT: portfolioPdf },
+});
 
 run('pnpm', ['build']);
 

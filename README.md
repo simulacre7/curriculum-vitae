@@ -18,17 +18,21 @@ pnpm install
 pnpm dev
 ```
 
-# Submission PDF
+# Case study
 
-Generate submission PDFs from the Korean resume and the portfolio PDF in the sibling `pageagent-generative-ui-case-study` repository. The combined file and standalone portfolio include their own cover pages.
+`public/case-studies/pageagent.html` holds the software engineering case studies. It is served at https://kihwan.kim/case-studies/pageagent.html, linked from the PageAgent project entry in both locales, and printed to PDF as the portfolio half of the submission files. Edit that file directly; there is no second copy to keep in sync.
 
-# Hosted case study
-
-`public/case-studies/pageagent.html` is a copy of `../pageagent-generative-ui-case-study/submission/case-study.html`, served at https://kihwan.kim/case-studies/pageagent.html and linked from the PageAgent project entry in both locales. When the case study changes, refresh the copy:
+Print it on its own when you only need the case study PDF:
 
 ```bash
-cp ../pageagent-generative-ui-case-study/submission/case-study.html public/case-studies/pageagent.html
+pnpm build:case-study-pdf
 ```
+
+The PDF lands in `.tmp-submission/` by default. Set `CASE_STUDY_PDF_OUT` to write it elsewhere.
+
+# Submission PDF
+
+Generate submission PDFs from the Korean resume and the case study. The combined file and standalone portfolio include their own cover pages.
 
 ```bash
 pnpm build:submission-pdf
@@ -41,6 +45,8 @@ submission/KihwanKim_CV_and_Portfolio.pdf
 submission/KihwanKim_CV.pdf
 submission/KihwanKim_Portfolio.pdf
 ```
+
+Both commands render through headless Chrome, Chromium, or Edge. Set `CHROME_PATH` when the browser executable is not found automatically.
 
 # Performance Audit
 
