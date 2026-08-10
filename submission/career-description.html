@@ -23,11 +23,11 @@
       }
       @page {
         size: A4;
-        margin: 18mm 16mm;
+        margin: 16mm;
       }
       body {
-        font-family:
-          'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR', sans-serif;
+        font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR',
+          sans-serif;
         color: var(--black);
         font-size: 10.5pt;
         line-height: 1.58;
@@ -143,7 +143,7 @@
         margin-top: 6px;
       }
       footer {
-        margin-top: 24px;
+        margin-top: 14px;
         padding-top: 8px;
         border-top: 1px solid var(--line);
         color: var(--grey);
@@ -188,7 +188,7 @@
       </li>
       <li>
         <strong>End-to-end 문제 해결</strong> — TypeScript 클라이언트에서 Rust
-        서버까지 수정 범위를 넓혀 원인 지점에서 해결 (OpenMMO, 8개 PR 병합)
+        서버까지 수정 범위를 넓혀 원인 지점에서 해결 (OpenMMO, 9개 PR 병합)
       </li>
     </ul>
 
@@ -216,7 +216,9 @@
             전송·완료·실패·재생성 상태를 설계·구현 — 중단과 재시도가 잦은 LLM
             응답 특성을 상태 머신으로 흡수
           </li>
-          <li>스토리·로어북·검색 키워드 등 캐릭터 콘텐츠의 작성·심사 화면 구현</li>
+          <li>
+            스토리·로어북·검색 키워드 등 캐릭터 콘텐츠의 작성·심사 화면 구현
+          </li>
           <li>
             기획 문서·Figma·Swagger 간 불일치를 정리해 구현 기준과 QA 시나리오
             수립
@@ -256,8 +258,12 @@
           취소·반품·교환까지 커머스 전 흐름 담당.
         </p>
         <ul>
-          <li>클래스 탐색·영상·결제, Studio 주문 관리, Admin 상품·이용권 관리 구현</li>
-          <li>HLS 홈 캐러셀과 모바일 WebView의 safe area·스크롤·뒤로가기 개선</li>
+          <li>
+            클래스 탐색·영상·결제, Studio 주문 관리, Admin 상품·이용권 관리 구현
+          </li>
+          <li>
+            HLS 홈 캐러셀과 모바일 WebView의 safe area·스크롤·뒤로가기 개선
+          </li>
         </ul>
       </div>
       <p class="stack">
@@ -284,7 +290,9 @@
         </p>
         <ul>
           <li>대량 DOM 렌더링의 프레임 드랍을 계측·분석</li>
-          <li>windowing으로 뷰포트 영역만 렌더링, 스크롤 위치·동적 높이 처리</li>
+          <li>
+            windowing으로 뷰포트 영역만 렌더링, 스크롤 위치·동적 높이 처리
+          </li>
           <li>skeleton UI로 초기 로딩 경험 개선</li>
         </ul>
       </div>
@@ -292,7 +300,9 @@
       <div class="project">
         <h4>리디 웹 플랫폼 — 서버 주도 UI와 점진적 이전</h4>
         <ul>
-          <li>서버 주도 UI를 클라이언트에서 해석해 화면 변경과 배포 주기 분리</li>
+          <li>
+            서버 주도 UI를 클라이언트에서 해석해 화면 변경과 배포 주기 분리
+          </li>
           <li>PHP 페이지를 React 구조로 점진 이전, 마이그레이션 위험 완화</li>
           <li>
             모바일·데스크탑·E-ink 등 특수 디바이스 환경 안정성 유지, Sentry 기반
@@ -322,8 +332,13 @@
             모델 개발 경험이 없는 사용자를 위한 Codeless 개발 스튜디오와
             <strong>예측값·근거를 함께 확인하는 시각화 대시보드</strong> 구현
           </li>
-          <li>AutoML 엔진과 모델 개발자 간 인터페이스 연구, 초기 제품 구조 구체화</li>
-          <li>용도가 뒤섞인 사내 UI 라이브러리를 정리하고 레거시 위젯을 React로 대체</li>
+          <li>
+            AutoML 엔진과 모델 개발자 간 인터페이스 연구, 초기 제품 구조 구체화
+          </li>
+          <li>
+            용도가 뒤섞인 사내 UI 라이브러리를 정리하고 레거시 위젯을 React로
+            대체
+          </li>
         </ul>
       </div>
       <p class="stack">React · TypeScript · Material-UI · Python</p>
@@ -341,32 +356,55 @@
       </div>
       <p class="role-summary">
         AI 에이전트와 인간이 동일한 프로토콜로 플레이하는 오픈소스
-        MMORPG(Rust·Svelte·Three.js·WebAssembly). 게임 개발은 처음이었고, 클라이언트
-        테스트로 시작해 지금은 Rust 서버 쪽을 주로 본다. PR 8건 모두 병합. coding
-        agent(Claude Code)와 페어로 진행하며 테스트·린트·타입·포맷을 통과한 변경만 제출.
+        MMORPG(Rust·Svelte·Three.js·WebAssembly). 게임 개발은 처음이었고,
+        클라이언트 테스트로 시작해 지금은 Rust 서버 쪽을 주로 본다. PR 9건 모두
+        병합. coding agent(Claude Code)와 페어로 진행하며
+        테스트·린트·타입·포맷을 통과한 변경만 제출.
       </p>
       <div class="project">
         <ul>
           <li>
-            낚시 상태 전이·수면 높이 샘플링·클릭 인텐트 분기의 테스트 공백을 채우고, 세션이 끊길
-            때 뒤늦게 울리던 예약 사운드를 취소. 사거리 밖 물 클릭은 이동으로 바꾸고 사거리 값을
-            WebAssembly로 노출해 양쪽이 같은 값을 참조
-            (<a href="https://github.com/Julian-adv/OpenMMO/issues/56">#56</a>, <a href="https://github.com/Julian-adv/OpenMMO/issues/64">#64</a>, <a href="https://github.com/Julian-adv/OpenMMO/issues/65">#65</a>)
+            낚시 상태 전이·수면 높이 샘플링·클릭 인텐트 분기의 테스트 공백을
+            채우고, 세션이 끊길 때 뒤늦게 울리던 예약 사운드를 취소. 사거리 밖
+            물 클릭은 이동으로 바꾸고 사거리 값을 WebAssembly로 노출해 양쪽이
+            같은 값을 참조 (<a
+              href="https://github.com/Julian-adv/OpenMMO/issues/56"
+              >#56</a
+            >,
+            <a href="https://github.com/Julian-adv/OpenMMO/issues/64">#64</a>,
+            <a href="https://github.com/Julian-adv/OpenMMO/issues/65">#65</a>)
           </li>
           <li>
-            Rust 서버의 지형 타일 캐시가 쌓이기만 하고 줄지 않아, 읽기 경로는 락 없이 둔 채
-            세대 단위로 쓸어내고 용량 상한 적용 (<a href="https://github.com/Julian-adv/OpenMMO/issues/68">#68</a>). 운영자용 밴은 캐릭터가 아닌
-            계정으로 끊고, 검사를 지난 접속이 그대로 들어오는 틈을 세션 락으로 막음 (<a href="https://github.com/Julian-adv/OpenMMO/issues/95">#95</a>)
+            Rust 서버의 지형 타일 캐시가 쌓이기만 하고 줄지 않아, 읽기 경로는 락
+            없이 둔 채 세대 단위로 쓸어내고 용량 상한 적용 (<a
+              href="https://github.com/Julian-adv/OpenMMO/issues/68"
+              >#68</a
+            >). 운영자용 밴은 캐릭터가 아닌 계정으로 끊고, 검사를 지난 접속이
+            그대로 들어오는 틈을 세션 락으로 막음 (<a
+              href="https://github.com/Julian-adv/OpenMMO/issues/95"
+              >#95</a
+            >)
           </li>
           <li>
-            HUD 미니맵은 반대하던 메인테이너를 설계 제안서로 설득한 뒤 구현. 서버는 고치지 않고
-            기존 지형 타일을 쓰고, 위치를 계속 물어봐야 하는 파티원 마커는 리뷰를 받아 v1에서 뺌
-            (<a href="https://github.com/Julian-adv/OpenMMO/issues/11">#11</a>, <a href="https://github.com/Julian-adv/OpenMMO/issues/77">#77</a>)
+            HUD 미니맵은 반대하던 메인테이너를 설계 제안서로 설득한 뒤 구현.
+            서버는 고치지 않고 기존 지형 타일을 쓰고, 위치를 계속 물어봐야 하는
+            파티원 마커는 리뷰를 받아 v1에서 뺌 (<a
+              href="https://github.com/Julian-adv/OpenMMO/issues/11"
+              >#11</a
+            >,
+            <a href="https://github.com/Julian-adv/OpenMMO/issues/77">#77</a>)
           </li>
           <li>
-            밤에는 상인이 자서 거래처가 없어 어두워지면 좌판을 여는 야간 상인 추가, 상인 정의가 두
-            파일에 나뉘어 한쪽만 넣으면 띄울 수 없는 상점이 생기므로 그 불일치를 잡는 테스트도 작성
-            (<a href="https://github.com/Julian-adv/OpenMMO/issues/111">#111</a>)
+            상인의 취침 스케줄은 에이전트 쪽 데이터라 서버가 못 보므로, 서버에
+            보이는 침대 점유로 수면을 판정해 잠든 상인과의 거래와 미리 열어둔
+            상점 창의 결제를 검증 한 곳에서 차단 (<a
+              href="https://github.com/Julian-adv/OpenMMO/issues/103"
+              >#103</a
+            >). 밤 거래 공백은 어두워지면 좌판을 여는 야간 상인으로 채우고, 두
+            파일에 나뉜 상인 정의가 한쪽만 등록된 경우를 잡는 테스트 작성 (<a
+              href="https://github.com/Julian-adv/OpenMMO/issues/111"
+              >#111</a
+            >)
           </li>
         </ul>
       </div>
@@ -374,8 +412,8 @@
 
     <footer>
       <p>
-        학력: 울산과학기술원(UNIST) 컴퓨터공학 석사 — HCI·Visual Analytics
-        연구, 추천 시스템의 탐색 투명성 논문(CoRR 2021) 외 4편은 이력서 참조
+        학력: 울산과학기술원(UNIST) 컴퓨터공학 석사 — HCI·Visual Analytics 연구,
+        추천 시스템의 탐색 투명성 논문(CoRR 2021) 외 4편은 이력서 참조
       </p>
       <p>
         이 문서의 상세 링크는
