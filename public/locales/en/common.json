@@ -179,7 +179,7 @@
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
       "period": "2026.07 – Present",
-      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Game development was new to me; I started with client tests and now work mostly on the Rust server, and all eight PRs have been merged.",
+      "summary": "Contributing to an open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · Three.js · WebAssembly). Game development was new to me; I started with client tests and now work mostly on the Rust server, and all nine PRs have been merged.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
         {
@@ -194,6 +194,7 @@
           "details": [
             "Bounded terrain tile caches that only ever grew, sweeping by generation under a capacity fuse while leaving the read path lock-free (#68)",
             "Built account-level ban and unban for operators, cutting sessions by account rather than character so an alt cannot walk back in, and closing the window where a connection past the check still registers (#95)",
+            "Refused trade with a sleeping merchant: her sleep schedule is agent-side data the server never sees, so the bed-occupancy interaction it does see stands in for sleep. The check sits in the one validator every trade path already passes through, which also stops a shop window opened before bedtime from charging the buyer (#103)",
             "Added a night merchant who opens a stall after dark, since the town's only shop sleeps and nothing was open at night. A merchant is defined across two files, so a test now catches the half-added case that would leave a shop no agent can run (#111)"
           ]
         },
