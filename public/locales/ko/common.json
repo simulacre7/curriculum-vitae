@@ -179,7 +179,7 @@
       "uri": "https://github.com/Julian-adv/OpenMMO",
       "role": "Contributor",
       "period": "2026.07 – 현재",
-      "summary": "AI 에이전트와 사람이 같은 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly)에 기여하고 있습니다. 게임 개발은 처음이었고, 클라이언트 테스트로 시작해 지금은 Rust 서버 쪽을 주로 봅니다. 올린 PR 9건은 모두 병합됐습니다.",
+      "summary": "AI 에이전트와 사람이 같은 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly)에 기여하고 있습니다. 게임 개발은 처음이었고, 클라이언트 테스트로 시작해 지금은 Rust 서버 쪽을 주로 봅니다. 올린 PR 10건은 모두 병합됐습니다.",
       "stack": ["TypeScript", "Svelte", "Rust", "WebAssembly", "Vitest"],
       "projects": [
         {
@@ -201,7 +201,8 @@
         {
           "title": "문서·온보딩",
           "details": [
-            "지형을 굽기 전에는 화면이 까맣게 나오는 온보딩 공백을 직접 겪고 개발 셋업 문서에 반영 (#78)"
+            "지형을 굽기 전에는 화면이 까맣게 나오는 온보딩 공백을 직접 겪고 개발 셋업 문서에 반영 (#78)",
+            "CI가 검사하는 명령들이 워크플로 파일에만 있고 착수 전 확인할 것도 흩어져 있어, 새 기여자가 CI 실패나 중복 작업으로 배우던 것들을 CONTRIBUTING 가이드로 모음. 세 언어 README에서 링크 (#118)"
           ]
         }
       ]
