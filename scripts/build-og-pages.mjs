@@ -11,7 +11,7 @@ const pages = [
     path: '/',
     title: '김기환 | CV',
     description:
-      '복잡한 시스템을 이해하기 쉬운 화면과 자동화로 풀어낸 프론트엔드 엔지니어 김기환의 CV입니다.',
+      '복잡한 시스템을 이해하기 쉬운 화면과 자동화로 풀어낸 소프트웨어 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -25,7 +25,7 @@ const pages = [
     path: '/ko',
     title: '김기환 | CV',
     description:
-      '복잡한 시스템을 이해하기 쉬운 화면과 자동화로 풀어낸 프론트엔드 엔지니어 김기환의 CV입니다.',
+      '복잡한 시스템을 이해하기 쉬운 화면과 자동화로 풀어낸 소프트웨어 엔지니어 김기환의 CV입니다.',
     image: '/og/cv-ko.png',
     alternates: [
       { lang: 'x-default', path: '/' },
@@ -39,7 +39,7 @@ const pages = [
     path: '/en',
     title: 'Kihwan Kim | Curriculum Vitae',
     description:
-      'Kihwan Kim’s CV: frontend engineering across human-system interaction, experimentation systems, and AI-native workflows.',
+      'Kihwan Kim’s CV: software engineering across human-system interaction, experimentation systems, and AI-native workflows.',
     image: '/og/cv-en.png',
     alternates: [
       { lang: 'x-default', path: '/' },
