@@ -30,7 +30,7 @@
           sans-serif;
         color: var(--black);
         font-size: 10.5pt;
-        line-height: 1.5;
+        line-height: 1.45;
         max-width: 178mm;
         margin: 0 auto;
         word-break: keep-all;
@@ -86,8 +86,7 @@
         break-after: avoid;
       }
       .org {
-        margin-bottom: 18px;
-        break-inside: avoid-page;
+        margin-bottom: 14px;
       }
       .org-head {
         display: flex;
@@ -417,6 +416,29 @@
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>
+          vite-plus —
+          <a href="https://github.com/voidzero-dev/vite-plus">Contributor</a>
+        </h3>
+        <span class="meta">2026.08</span>
+      </div>
+      <p class="role-summary">
+        Vite·Vitest를 만든 VoidZero의 툴체인(Rust·TypeScript). 쉘 래퍼가 전역 -C
+        &lt;dir&gt; 플래그 뒤의 vp env use를 인식하지 못해 환경 변경이 현재 쉘
+        세션에 적용되지 않던 문제를 setup.rs에서 수정. 자동완성이
+        zsh·Fish·Nushell·PowerShell에서 작업 디렉토리 옵션을 보존하도록 맞추고 네
+        쉘 통합 템플릿을 스냅샷 테스트로 고정 (<a
+          href="https://github.com/voidzero-dev/vite-plus/pull/2508"
+          >#2508</a
+        >,
+        <a href="https://github.com/voidzero-dev/vite-plus/issues/2056"
+          >이슈 #2056</a
+        >).
+      </p>
     </div>
 
     <footer>

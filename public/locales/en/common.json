@@ -206,6 +206,22 @@
           ]
         }
       ]
+    },
+    {
+      "name": "vite-plus",
+      "uri": "https://github.com/voidzero-dev/vite-plus",
+      "role": "Contributor",
+      "period": "2026.08",
+      "summary": "Contributing to vite-plus, the toolchain from VoidZero (the team behind Vite and Vitest), a Rust · TypeScript hybrid. I traced a shell-integration gap where the working-directory flag was dropped, fixed it on the Rust side, and covered it with snapshot tests before it merged.",
+      "stack": ["Rust", "Shell"],
+      "projects": [
+        {
+          "title": "Shell integrations",
+          "details": [
+            "Generated shell wrappers didn't recognize a vp env use that followed the global -C <dir> flag (-C <dir> · -C<dir> · -C=<dir>), so the environment change never applied to the current shell session; fixed in setup.rs. Also made vpr completions preserve the working-directory option across zsh, Fish, Nushell, and PowerShell, and pinned the four shells' integration templates with snapshot tests (#2508, issue #2056)."
+          ]
+        }
+      ]
     }
   ],
   "education": [
