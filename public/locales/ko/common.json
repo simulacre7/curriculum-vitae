@@ -206,6 +206,22 @@
           ]
         }
       ]
+    },
+    {
+      "name": "vite-plus",
+      "uri": "https://github.com/voidzero-dev/vite-plus",
+      "role": "Contributor",
+      "period": "2026.08",
+      "summary": "Vite·Vitest를 만든 VoidZero의 툴체인 vite-plus(Rust · TypeScript 하이브리드)에 기여. 쉘 통합이 작업 디렉토리 플래그를 놓치던 문제를 찾아 Rust 쪽에서 고치고 스냅샷 테스트로 덮어 병합했습니다.",
+      "stack": ["Rust", "Shell"],
+      "projects": [
+        {
+          "title": "쉘 통합",
+          "details": [
+            "생성되는 쉘 래퍼가 전역 -C <dir> 플래그(-C <dir> · -C<dir> · -C=<dir>) 뒤에 오는 vp env use를 인식하지 못해 환경 변경이 현재 쉘 세션에 적용되지 않던 문제를 setup.rs에서 수정. vpr 자동완성도 zsh · Fish · Nushell · PowerShell에서 작업 디렉토리 옵션을 보존하도록 맞추고, 네 쉘의 통합 템플릿을 스냅샷 테스트로 고정 (#2508, 이슈 #2056)"
+          ]
+        }
+      ]
     }
   ],
   "education": [
