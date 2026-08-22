@@ -76,23 +76,28 @@ function GitHubMark() {
 }
 
 /** Turn #123 references into repo links. GitHub's /issues/N redirects to
- *  the pull request when the number is a PR, so one path covers both. */
+ *  the pull request when the number is a PR, so one path covers both.
+ *  A repo-qualified ref like other-repo#123 links into that sibling repo
+ *  of refBaseUri's org, mirroring GitHub's cross-repo reference syntax. */
 function linkifyRefs(text: string, refBaseUri?: string) {
   if (!refBaseUri) return text;
-  const parts = text.split(/(#\d+)/g);
+  const parts = text.split(/([A-Za-z][\w.-]*#\d+|#\d+)/g);
   if (parts.length === 1) return text;
   return parts.map((part, index) => {
-    const match = /^#(\d+)$/.exec(part);
-    return match ? (
+    const match = /^([A-Za-z][\w.-]*)?#(\d+)$/.exec(part);
+    if (!match) return part;
+    const [, repo, number] = match;
+    const baseUri = repo
+      ? refBaseUri.replace(/\/[^/]+$/, `/${repo}`)
+      : refBaseUri;
+    return (
       <a
         key={`${part}-${index}`}
         css={styles.refLinkStyle}
-        href={`${refBaseUri}/issues/${match[1]}`}
+        href={`${baseUri}/issues/${number}`}
       >
         {part}
       </a>
-    ) : (
-      part
     );
   });
 }

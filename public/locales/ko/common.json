@@ -212,13 +212,25 @@
       "uri": "https://github.com/voidzero-dev/vite-plus",
       "role": "Contributor",
       "period": "2026.08",
-      "summary": "Vite·Vitest를 만든 VoidZero의 툴체인 vite-plus(Rust · TypeScript 하이브리드)에 기여. 쉘 통합이 작업 디렉토리 플래그를 놓치던 문제를 찾아 Rust 쪽에서 고치고 스냅샷 테스트로 덮어 병합했습니다.",
-      "stack": ["Rust", "Shell"],
+      "summary": "Vite·Vitest를 만든 VoidZero의 툴체인 vite-plus(Rust · TypeScript 하이브리드)에 기여. 쉘 통합 수정(Rust)이 병합됐고, 지금은 태스크 러너 vite-task의 캐시(TypeScript)를 고치면서 두 저장소에 걸친 이슈 분석과 PR 리뷰를 병행합니다.",
+      "stack": ["Rust", "TypeScript", "Shell"],
       "projects": [
         {
           "title": "쉘 통합",
           "details": [
-            "생성되는 쉘 래퍼가 전역 -C <dir> 플래그(-C <dir> · -C<dir> · -C=<dir>) 뒤에 오는 vp env use를 인식하지 못해 환경 변경이 현재 쉘 세션에 적용되지 않던 문제를 setup.rs에서 수정. vpr 자동완성도 zsh · Fish · Nushell · PowerShell에서 작업 디렉토리 옵션을 보존하도록 맞추고, 네 쉘의 통합 템플릿을 스냅샷 테스트로 고정 (#2508, 이슈 #2056)"
+            "생성되는 쉘 래퍼가 전역 -C <dir> 플래그(-C <dir> · -C<dir> · -C=<dir>) 뒤에 오는 vp env use를 인식하지 못해 환경 변경이 현재 쉘 세션에 적용되지 않던 문제를 setup.rs에서 수정. vpr 자동완성도 zsh · Fish · Nushell · PowerShell에서 작업 디렉토리 옵션을 보존하도록 맞추고, 네 쉘의 통합 템플릿을 스냅샷 테스트로 고정. 리뷰 과정에서 생성 스크립트의 set -u/NO_UNSET 안전성 보강과 PowerShell 타입 안전성 수정을 더하고 실행 가능한 회귀 테스트로 덮음 (#2508, 이슈 #2056)"
+          ]
+        },
+        {
+          "title": "태스크 러너 캐시 (vite-task)",
+          "details": [
+            "추적 대상 환경 변수 일괄 조회가 필터링 전의 전체 환경으로 검증돼, GitHub Actions에서 실행마다 바뀌는 변수(ACTIONS_ORCHESTRATION_ID 등)가 캐시를 매번 무효화하던 문제. 기존 untrackedEnv 계약을 일괄 조회로 확장해 기록·검증은 필터링하고 반환값은 그대로 유지, 단위·e2e 스냅샷 테스트 포함 (vite-task#693 리뷰 중, 메인테이너가 등록한 이슈 vite-task#505)"
+          ]
+        },
+        {
+          "title": "분석·리뷰",
+          "details": [
+            "태스크 러너가 package.json 스크립트에 npm 생명주기 환경 변수를 노출하지 않는 문제를 근본 원인까지 분석하고, vite-plus 쪽 수정만으로는 캐시 활성 태스크를 덮지 못하는 이유를 정리 (vite-task#692). vite-plus 리뷰에서는 제안된 수정이 환경 지문 필터링에 조용히 걸러지는 문제(#2385)와 Oxlint·Oxfmt 설정 마이그레이션 PR의 검증된 엣지 3건(#2483)을 확인"
           ]
         }
       ]
