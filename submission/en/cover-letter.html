@@ -1,0 +1,157 @@
+<!doctype html>
+<!--
+  커버레터 원본 (Cloudflare — VoidZero Engineer). PDF 재생성:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless --print-to-pdf=submission/en/KihwanKim_CoverLetter.pdf \
+    --no-pdf-header-footer submission/en/cover-letter.html
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cover Letter — Kihwan Kim</title>
+    <style>
+      :root {
+        --black: #1a1a1a;
+        --grey: #6b6b6b;
+        --green: #007a3d;
+        --line: #e3e3e3;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @page {
+        size: A4;
+        margin: 20mm 18mm;
+      }
+      body {
+        font-family: 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', sans-serif;
+        color: var(--black);
+        font-size: 10.5pt;
+        line-height: 1.55;
+        max-width: 174mm;
+        margin: 0 auto;
+      }
+      p {
+        text-wrap: pretty;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-bottom: 2px solid var(--black);
+        padding-bottom: 8px;
+        margin-bottom: 18px;
+      }
+      header h1 {
+        font-size: 16pt;
+      }
+      header .who {
+        text-align: right;
+        font-size: 9pt;
+        color: var(--grey);
+        line-height: 1.5;
+      }
+      header .who strong {
+        font-size: 11.5pt;
+        color: var(--black);
+      }
+      a {
+        color: var(--green);
+        text-decoration: none;
+      }
+      .meta {
+        color: var(--grey);
+        font-size: 9.5pt;
+        margin-bottom: 16px;
+      }
+      .body p {
+        margin-bottom: 12px;
+      }
+      .signoff {
+        margin-top: 20px;
+      }
+      .signoff .name {
+        margin-top: 14px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cover Letter</h1>
+      <div class="who">
+        <strong>Kihwan Kim</strong> — Software Engineer<br />
+        juljin1875@gmail.com ·
+        <a href="https://kihwan.kim">kihwan.kim</a> ·
+        <a href="https://github.com/simulacre7">github.com/simulacre7</a>
+      </div>
+    </header>
+
+    <p class="meta">
+      VoidZero Engineer — Cloudflare · Application for the Seoul location
+    </p>
+
+    <div class="body">
+      <p>Dear VoidZero team,</p>
+
+      <p>
+        The most direct thing I can tell you is that I have already started
+        doing this job. This month I began contributing to Vite+ and vite-task
+        as <a href="https://github.com/simulacre7">simulacre7</a>, because the
+        problems the team works on — toolchains that thousands of developers
+        sit inside all day — are the ones I want to keep solving.
+      </p>
+
+      <p>
+        In vite-plus, I traced why <code>vp env use</code> behind the global
+        <code>-C &lt;dir&gt;</code> flag never reached the current shell
+        session, fixed it on the Rust side across POSIX sh/zsh, fish, Nushell,
+        and PowerShell, and pinned the generated integration templates with
+        snapshot tests — merged as
+        <a href="https://github.com/voidzero-dev/vite-plus/pull/2508">#2508</a>
+        after two review rounds that also hardened the scripts against
+        <code>set -u</code>/NO_UNSET and fixed a PowerShell type-safety edge.
+        In vite-task, my PR
+        <a href="https://github.com/voidzero-dev/vite-task/pull/693">#693</a>
+        (in review) extends the untrackedEnv contract to tracked bulk env
+        queries, fixing cache-enabled builds that missed on every GitHub
+        Actions run because per-run variables leaked into cache validation.
+        Along the way I filed a root-cause analysis of npm lifecycle env not
+        reaching package.json scripts
+        (<a href="https://github.com/voidzero-dev/vite-task/issues/692">#692</a>)
+        and reviewed adjacent PRs (#2385, #2483), verifying every finding
+        against the sources before commenting. Digging into ambiguous,
+        cross-repo issues and writing them up clearly is the part of this work
+        I enjoy most.
+      </p>
+
+      <p>
+        Behind that is seven years of engineering where the through-line has
+        been making complex systems legible to the people using them. At RIDI
+        I decoupled operational UI changes from deploy cycles with
+        server-driven UI and optimized large-list rendering on a major content
+        platform; at Levvels I build AI-native products; at TmaxEnterprise I
+        turned AutoML and explainable-AI systems into interfaces non-experts
+        could act on, on top of an M.S. in HCI and Visual Analytics. My Rust
+        experience extends beyond vite-plus: in the open-source MMORPG OpenMMO
+        I have ten merged PRs reaching from the TypeScript client into the
+        Rust server — cache eviction, account bans, trade validation — each
+        landed through written design proposals and review.
+      </p>
+
+      <p>
+        I am based in South Korea, so Seoul is a natural fit, and
+        asynchronous, written collaboration across time zones is how I have
+        been working with the VoidZero maintainers already. I would love to
+        make it my job.
+      </p>
+
+      <div class="signoff">
+        <p>Sincerely,</p>
+        <p class="name">Kihwan Kim</p>
+      </div>
+    </div>
+  </body>
+</html>

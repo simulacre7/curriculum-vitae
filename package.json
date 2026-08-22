@@ -10,6 +10,7 @@
     "build:og-images": "node scripts/generate-og-images.mjs",
     "build:case-study-pdf": "node scripts/build-case-study-pdf.mjs",
     "build:submission-pdf": "node scripts/build-submission-pdf.mjs",
+    "build:en-cv-pdf": "node scripts/build-en-cv-pdf.mjs",
     "audit:performance": "pnpm build && node scripts/audit-performance.mjs",
     "audit:lighthouse": "pnpm build && node scripts/audit-lighthouse.mjs",
     "audit:site": "pnpm build && node scripts/audit-performance.mjs && node scripts/audit-lighthouse.mjs",
