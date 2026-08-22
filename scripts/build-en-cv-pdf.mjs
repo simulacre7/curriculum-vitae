@@ -2,7 +2,13 @@
 // Prints the site's /en route the same way build-submission-pdf.mjs prints
 // /ko, then stamps the same page-number footers.
 import { execFileSync, spawn } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -111,7 +117,38 @@ const drawFooters = async (pdf) => {
   });
 };
 
+// The public /en route stylizes the nameplate as "Kh.Kim", but a job
+// submission should carry the applicant's full name. The en locale is
+// bundled into the JS at build time, so patch the built output (which only
+// this print run serves) instead of the public site's source.
+const patchApplicantName = () => {
+  const distDir = resolve(root, 'dist');
+  const assetsDir = resolve(distDir, 'assets');
+  const targets = [
+    resolve(distDir, 'en', 'index.html'),
+    ...readdirSync(assetsDir)
+      .filter((file) => file.endsWith('.js'))
+      .map((file) => resolve(assetsDir, file)),
+  ];
+
+  let patched = 0;
+  for (const file of targets) {
+    if (!existsSync(file)) continue;
+    const content = readFileSync(file, 'utf8');
+    if (!content.includes('Kh.Kim')) continue;
+    writeFileSync(file, content.replaceAll('Kh.Kim', 'Kihwan Kim'));
+    patched += 1;
+  }
+
+  if (patched === 0) {
+    throw new Error(
+      'Expected to patch "Kh.Kim" to the full applicant name in dist, but found no occurrences.'
+    );
+  }
+};
+
 run('pnpm', ['build']);
+patchApplicantName();
 
 const server = spawn(
   'pnpm',
