@@ -194,6 +194,7 @@
       <div class="proj">
         <ul>
           <li>Fixed a shell-integration gap in Rust where the global working-directory flag (-C) was dropped before the env command, so the change never reached the current shell; kept it consistent across zsh, Fish, Nushell, and PowerShell and pinned the templates with snapshot tests (#2508)</li>
+          <li>In the vite-task task runner, bulk env queries were validated against the unfiltered environment, so per-run CI variables broke caching on every GitHub Actions run; extended the untrackedEnv contract to bulk queries with unit and e2e coverage (#693, in review)</li>
         </ul>
       </div>
     </div>

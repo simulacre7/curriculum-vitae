@@ -23,7 +23,7 @@
       }
       @page {
         size: A4;
-        margin: 16mm;
+        margin: 16mm 16mm 13mm;
       }
       body {
         font-family: 'Apple SD Gothic Neo', 'Pretendard', 'Noto Sans KR',
@@ -142,8 +142,8 @@
         margin-top: 6px;
       }
       footer {
-        margin-top: 14px;
-        padding-top: 8px;
+        margin-top: 8px;
+        padding-top: 5px;
         border-top: 1px solid var(--line);
         color: var(--grey);
         font-size: 8.5pt;
@@ -437,7 +437,12 @@
         >,
         <a href="https://github.com/voidzero-dev/vite-plus/issues/2056"
           >이슈 #2056</a
-        >).
+        >). 태스크 러너 vite-task에서는 CI의 실행별 환경 변수가 캐시를 매번
+        무효화하던 문제를 untrackedEnv 계약 확장으로 수정 (<a
+          href="https://github.com/voidzero-dev/vite-task/pull/693"
+          >#693</a
+        >
+        리뷰 중).
       </p>
     </div>
 

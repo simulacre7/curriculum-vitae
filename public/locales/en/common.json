@@ -212,13 +212,25 @@
       "uri": "https://github.com/voidzero-dev/vite-plus",
       "role": "Contributor",
       "period": "2026.08",
-      "summary": "Contributing to vite-plus, the toolchain from VoidZero (the team behind Vite and Vitest), a Rust · TypeScript hybrid. I traced a shell-integration gap where the working-directory flag was dropped, fixed it on the Rust side, and covered it with snapshot tests before it merged.",
-      "stack": ["Rust", "Shell"],
+      "summary": "Contributing to vite-plus, the toolchain from VoidZero (the team behind Vite and Vitest), a Rust · TypeScript hybrid. Started with a merged shell-integration fix on the Rust side; now working on the vite-task task runner's cache on the TypeScript side, alongside issue analysis and PR review across both repos.",
+      "stack": ["Rust", "TypeScript", "Shell"],
       "projects": [
         {
           "title": "Shell integrations",
           "details": [
-            "Generated shell wrappers didn't recognize a vp env use that followed the global -C <dir> flag (-C <dir> · -C<dir> · -C=<dir>), so the environment change never applied to the current shell session; fixed in setup.rs. Also made vpr completions preserve the working-directory option across zsh, Fish, Nushell, and PowerShell, and pinned the four shells' integration templates with snapshot tests (#2508, issue #2056)."
+            "Generated shell wrappers didn't recognize a vp env use that followed the global -C <dir> flag (-C <dir> · -C<dir> · -C=<dir>), so the environment change never applied to the current shell session; fixed in setup.rs. Also made vpr completions preserve the working-directory option across zsh, Fish, Nushell, and PowerShell, and pinned the four shells' integration templates with snapshot tests. Review rounds added set -u/NO_UNSET hardening of the generated scripts and a PowerShell type-safety fix, each covered by executable regression tests (#2508, issue #2056)."
+          ]
+        },
+        {
+          "title": "Task runner cache (vite-task)",
+          "details": [
+            "Tracked bulk env queries were validated against the full unfiltered environment, so per-run CI variables such as ACTIONS_ORCHESTRATION_ID invalidated the cache on every GitHub Actions run. Extended the existing untrackedEnv contract to bulk queries — filtered when recording and validating, served unchanged — with unit and e2e snapshot coverage (vite-task#693, in review, maintainer-filed issue vite-task#505)."
+          ]
+        },
+        {
+          "title": "Analysis & review",
+          "details": [
+            "Root-caused the task runner not exposing npm lifecycle env to package.json scripts and showed why a vite-plus-side fix can't reach cache-enabled tasks (vite-task#692). Reviews on vite-plus surfaced the same env-fingerprint filtering silently stripping the proposed lifecycle-env fix (#2385) and three verified edge cases in the Oxlint/Oxfmt config migration (#2483)."
           ]
         }
       ]
