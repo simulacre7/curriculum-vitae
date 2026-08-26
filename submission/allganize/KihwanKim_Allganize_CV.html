@@ -1,0 +1,207 @@
+<!doctype html>
+<!--
+  Allganize FDE(SW) - Solutions Architect 지원용 영어 CV.
+  기존 FDE CV 기반으로 엔터프라이즈 LLM 솔루션 배포 + AI 코딩 도구 앵글로 튜닝.
+  PDF 재생성:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless --print-to-pdf=submission/allganize/KihwanKim_Allganize_CV.pdf \
+    --no-pdf-header-footer submission/allganize/KihwanKim_Allganize_CV.html
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kihwan Kim — CV (Solutions Architect / Forward Deployed Engineer)</title>
+    <style>
+      :root {
+        --black: #1a1a1a; --grey: #6b6b6b; --green: #007a3d; --line: #e3e3e3;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      @page { size: A4; margin: 15mm 16mm; }
+      body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: var(--black); font-size: 10pt; line-height: 1.46;
+        max-width: 178mm; margin: 0 auto;
+      }
+      p, li { text-wrap: pretty; }
+      header {
+        display: flex; justify-content: space-between; align-items: baseline;
+        border-bottom: 2px solid var(--black); padding-bottom: 8px; margin-bottom: 12px;
+      }
+      header h1 { font-size: 18pt; }
+      header .role { font-size: 9.5pt; color: var(--green); font-weight: 600; margin-top: 2px; }
+      header .who { text-align: right; font-size: 8.5pt; color: var(--grey); line-height: 1.5; }
+      a { color: var(--green); text-decoration: none; }
+      .intro { margin: 10px 0 14px; font-size: 9.5pt; }
+      h2 {
+        font-size: 11.5pt; margin: 16px 0 8px; padding-bottom: 3px;
+        border-bottom: 1px solid var(--line); break-after: avoid;
+      }
+      .highlights { margin: 0 0 6px; padding: 0; }
+      .highlights li { margin-left: 16px; margin-bottom: 3px; }
+      .highlights strong { color: var(--black); }
+      .org { margin-bottom: 12px; break-inside: avoid-page; }
+      .org-head { display: flex; justify-content: space-between; align-items: baseline; }
+      .org-head h3 { font-size: 10.5pt; }
+      .org-head .meta { color: var(--grey); font-size: 8.5pt; }
+      .role-summary { color: var(--grey); font-size: 9pt; margin: 2px 0 5px; }
+      .proj { margin: 6px 0 6px 6px; }
+      .proj h4 { font-size: 9.5pt; margin-bottom: 1px; }
+      .proj h4 .tag { font-weight: 600; font-size: 7.5pt; color: var(--green); background: rgba(0,122,61,.08); border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: 1px; }
+      .proj ul { margin-left: 16px; }
+      .proj li { margin-bottom: 1.5px; font-size: 9pt; }
+      .stack { color: var(--grey); font-size: 8pt; margin-top: 4px; }
+      footer { margin-top: 14px; padding-top: 6px; border-top: 1px solid var(--line); color: var(--grey); font-size: 8pt; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Kihwan Kim</h1>
+        <div class="role">Software Engineer · 7 years — deploying LLM solutions with the customers and teams who use them</div>
+      </div>
+      <div class="who">
+        juljin1875@gmail.com<br />
+        <a href="https://kihwan.kim">kihwan.kim</a> ·
+        <a href="https://github.com/simulacre7">github.com/simulacre7</a><br />
+        Seoul, South Korea
+      </div>
+    </header>
+
+    <p class="intro">
+      Software engineer with 7 years of experience turning ambiguous business
+      problems into deployed AI solutions. At Levvels I embedded with an
+      operations team, scoped how they carried state across several internal
+      tools to make one decision, and shipped an agent-based automation that cut
+      hours of manual investigation to minutes — then fed what I learned in the
+      field back into the product. I build with AI coding tools daily (Claude
+      Code, under a builder/reviewer workflow with output verification), and my
+      background in HCI and Visual Analytics keeps me focused on making LLM output
+      something people can trust and act on. I own problems end to end — from a
+      customer conversation to a working interface — and I am at home in Python
+      and the Unix command line.
+    </p>
+
+    <h2>Highlights</h2>
+    <ul class="highlights">
+      <li><strong>Agentic AI deployment, field to product</strong> — defined the problem with an operations team, deployed an agent that turns natural-language requests into browser actions across internal tools, and channeled field insight back into product improvements (Levvels, PageAgent)</li>
+      <li><strong>AI-assisted development</strong> — ship daily with Claude Code under a builder/reviewer workflow: the builder writes, a separate model reviews, and behavior is pinned by tests before merge — the review caught a P0 just before submission in a live coding test</li>
+      <li><strong>Making LLM output usable for non-experts</strong> — built codeless studio flows and explainable-AI visualizations so enterprise users without an ML background could operate an AutoML platform and act on its predictions (TmaxEnterprise)</li>
+      <li><strong>Owning across the stack</strong> — contributed 10 merged PRs to an open-source game, from the TypeScript client into the Rust server; I can stand up a usable interface as well as work the backend</li>
+    </ul>
+
+    <h2>Experience</h2>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>Levvels — Software Engineer</h3>
+        <span class="meta">Jul 2025 – Present</span>
+      </div>
+      <p class="role-summary">
+        AI-native product development and internal operations automation —
+        scoping problems in the field and turning them into deployed solutions.
+      </p>
+      <div class="proj">
+        <h4>PageAgent-based Operations Automation <span class="tag">agentic AI · deployment</span></h4>
+        <ul>
+          <li>Embedded with the operations team to define the real problem: staff carried state across customer chat, delivery tracking, internal admin, and email to make a single decision</li>
+          <li>Designed and deployed an agent-based automation that turned hours of manual investigation into minutes, connecting the needed context into one verifiable result view</li>
+          <li>Extended Alibaba's open-source PageAgent for a Chrome Managed Profile and added a Slack human-in-the-loop hand-off the base tool lacked, so a stuck automation fails loudly to a person instead of returning a wrong result silently</li>
+          <li>Fed field insights back to the product team, and separated LLM output from reproducible action sequences so operators can re-verify each conclusion against its source</li>
+        </ul>
+      </div>
+      <div class="proj">
+        <h4>AI Character Chat <span class="tag">LLM streaming</span></h4>
+        <ul>
+          <li>Separated in-progress streamed responses from persisted history; designed the send / complete / fail / regenerate state machine for interrupt-and-retry-heavy LLM responses</li>
+          <li>Built authoring and review tooling for character content and reconciled specs across product docs, Figma, and Swagger</li>
+        </ul>
+      </div>
+      <p class="stack">React · Next.js · TypeScript · Node.js · SSE · Playwright · Python · Claude Code · PageAgent · Generative UI</p>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>RIDI Corp. — Frontend Engineer</h3>
+        <span class="meta">May 2022 – Jul 2025</span>
+      </div>
+      <p class="role-summary">
+        Kept operational UI changes and experiments off the deployment critical
+        path on a large, high-traffic content platform.
+      </p>
+      <div class="proj">
+        <h4>Server-driven UI &amp; large-scale rendering</h4>
+        <ul>
+          <li>Rendered server-declared UI on the client to decouple screen changes from deploys; migrated PHP pages toward React incrementally to lower risk</li>
+          <li>Optimized large-list rendering with windowing and dynamic-height measurement; used Redis to cache server-driven UI payloads and reduce backend load; tracked real-user errors with Sentry</li>
+        </ul>
+      </div>
+      <p class="stack">React · Next.js · TypeScript · Server-driven UI · Redis · Sentry · Virtualization</p>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>TmaxEnterprise — Research Engineer</h3>
+        <span class="meta">Feb 2020 – May 2022</span>
+      </div>
+      <p class="role-summary">
+        Made complex AI and analytics usable for non-experts — usability and
+        explainability first.
+      </p>
+      <div class="proj">
+        <h4>AutoML Platform <span class="tag">explainable AI · Python</span></h4>
+        <ul>
+          <li>Built a codeless studio so users without model-development experience could build and operate models</li>
+          <li>Developed explainable-AI visualizations that show the reasoning beside the prediction, so a non-expert has a basis to act</li>
+        </ul>
+      </div>
+      <p class="stack">React · TypeScript · Material-UI · Python</p>
+    </div>
+
+    <h2>Open Source</h2>
+    <div class="org">
+      <div class="org-head">
+        <h3><a href="https://github.com/Julian-adv/OpenMMO">OpenMMO</a> — Contributor</h3>
+        <span class="meta">Jul 2026 – Present</span>
+      </div>
+      <div class="proj">
+        <ul>
+          <li>10 PRs merged, owning changes end-to-end from the TypeScript client into the <strong>Rust server</strong> (cache eviction, account bans, trade validation) while learning a new backend language on a live codebase</li>
+          <li>Paired with a coding agent under a builder/reviewer workflow, pinning behavior with tests before submission</li>
+        </ul>
+      </div>
+    </div>
+    <div class="org">
+      <div class="org-head">
+        <h3><a href="https://github.com/voidzero-dev/vite-plus">vite-plus</a> — Contributor</h3>
+        <span class="meta">Aug 2026</span>
+      </div>
+      <div class="proj">
+        <ul>
+          <li>Fixed a shell-integration gap in Rust and covered the four shells' templates with snapshot tests (#2508, merged) — VoidZero, the team behind Vite and Vitest</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Education</h2>
+    <div class="org">
+      <div class="org-head">
+        <h3>Ulsan National Institute of Science and Technology (UNIST)</h3>
+        <span class="meta">2013 – 2020</span>
+      </div>
+      <p class="role-summary">
+        M.S. in Computer Science (HCI · Visual Analytics; human–AI collaboration).<br />
+        B.S. in Technology Management (CS multi-disciplinary major).
+      </p>
+      <div class="proj">
+        <ul>
+          <li>“An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems” — <strong>CoRR 2021</strong> · <a href="https://arxiv.org/abs/2108.00151">arxiv.org/abs/2108.00151</a></li>
+          <li>“Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction” — <strong>MobiSys '19</strong> · <a href="https://dl.acm.org/doi/10.1145/3307334.3328599">dl.acm.org/doi/10.1145/3307334.3328599</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      Full CV, case studies, and portfolio at <a href="https://kihwan.kim">kihwan.kim</a>.
+    </footer>
+  </body>
+</html>
