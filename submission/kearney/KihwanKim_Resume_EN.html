@@ -1,7 +1,6 @@
 <!doctype html>
 <!--
-  Kearney(AI.X) 내부 검토용 영문 Resume — 요청 항목(생년월일·성별, 학력/경력 년월+전공, 공백) 포함.
-  PDF 재생성:
+  Kearney(AI.X) 내부 검토용 영문 Resume. PDF 재생성:
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
     --headless --print-to-pdf=submission/kearney/KihwanKim_Resume_EN.pdf \
     --no-pdf-header-footer submission/kearney/KihwanKim_Resume_EN.html
@@ -41,30 +40,27 @@
       .org li { margin-bottom: 2px; font-size: 9.3pt; }
       .note { color: var(--grey); font-size: 8.7pt; font-style: italic; margin-top: 3px; }
       .stack { color: var(--grey); font-size: 8.5pt; }
-      .two { display: flex; gap: 26px; }
-      .two > div { flex: 1; }
       footer { margin-top: 14px; padding-top: 7px; border-top: 1px solid var(--line); color: var(--grey); font-size: 8.3pt; }
     </style>
   </head>
   <body>
     <header>
       <h1>Kihwan Kim</h1>
-      <div class="role">Software Engineer · 7 years — deploying AI systems and connecting them to business value</div>
+      <div class="role">Software Engineer · 6+ years · Building AI products and automation for real operational workflows</div>
       <div class="meta">
-        Date of Birth: February 21, 1994 &nbsp;·&nbsp; Gender: Male &nbsp;·&nbsp; Seoul, South Korea<br />
+        Date of Birth: February 21, 1994 &nbsp;·&nbsp; Gender: Male &nbsp;·&nbsp; Address: Seoul, South Korea<br />
         juljin1875@gmail.com &nbsp;·&nbsp; <a href="https://kihwan.kim">kihwan.kim</a> &nbsp;·&nbsp; <a href="https://github.com/simulacre7">github.com/simulacre7</a>
       </div>
     </header>
 
     <h2>Summary</h2>
     <p class="intro">
-      Software engineer with 7 years of experience turning ambiguous problems into
-      deployed AI solutions and usable products. Background in HCI and Visual
-      Analytics research on human–AI collaboration; since then I have embedded with
-      operations teams and non-expert users to turn scattered tools and model
-      outputs into end-to-end solutions — from an AutoML platform for non-experts
-      to agent-based operations automation. I own problems from discovery through
-      production and connect technical work to business outcomes.
+      Software engineer with 6+ years of experience building production software and
+      AI-enabled products. My background in HCI and visual analytics shapes how I
+      translate complex models and fragmented workflows into tools that non-expert
+      users can operate. I have built products ranging from a no-code AutoML studio to
+      AI-agent automation for operations teams, owning work from problem discovery
+      through production deployment.
     </p>
 
     <h2>Experience</h2>
@@ -76,8 +72,8 @@
       </div>
       <p class="sub">AI-native product development and internal operations automation.</p>
       <ul>
-        <li>Embedded with the operations team, scoped how they carried state across several internal tools to make one decision, and deployed an agent-based automation (PageAgent) that cut hours of manual investigation to minutes; fed field insights back into the product</li>
-        <li>Built the AI character chat experience: separated in-progress streamed responses from persisted history and designed a send / complete / fail / regenerate state machine over SSE</li>
+        <li>Mapped how operations staff gathered context across multiple internal tools, then deployed PageAgent, an AI-agent workflow that reduced manual investigation from hours to minutes. Used findings from deployment to inform product improvements</li>
+        <li>Built the AI character chat experience: separated in-progress streamed responses from persisted history, and implemented an SSE-based state machine covering send, completion, failure, and regeneration</li>
         <li>Built and maintained commerce frontend (consumer web, creator studio, admin) across discovery, checkout, and post-order flows</li>
       </ul>
       <p class="stack">React · Next.js · TypeScript · SSE · Node.js · PageAgent</p>
@@ -90,7 +86,7 @@
       </div>
       <p class="sub">Large, high-traffic content platform.</p>
       <ul>
-        <li>Rendered server-declared UI on the client to decouple screen changes from deploys; migrated legacy PHP pages toward React incrementally to lower risk</li>
+        <li>Implemented server-driven UI so teams could update screens without client deployments; incrementally migrated legacy PHP pages to React</li>
         <li>Optimized large-list rendering with windowing and dynamic heights; used Redis to cache server-driven UI payloads; tracked real-user errors with Sentry</li>
       </ul>
       <p class="stack">React · Next.js · TypeScript · Server-driven UI · Redis · Virtualization</p>
@@ -103,8 +99,8 @@
       </div>
       <p class="sub">Made complex AI and analytics usable for non-experts — usability and explainability first.</p>
       <ul>
-        <li>Built a codeless studio so users without model-development experience could build and operate models on an AutoML platform</li>
-        <li>Developed explainable-AI (XAI) visualizations that show the reasoning beside the prediction, so a non-expert has a basis to act</li>
+        <li>Built a no-code studio so users without model-development experience could build and operate models on an AutoML platform</li>
+        <li>Developed explainable-AI (XAI) visualizations that displayed model explanations alongside predictions, helping non-expert users interpret results</li>
       </ul>
     </div>
 
@@ -116,31 +112,20 @@
       </div>
       <ul>
         <li><strong>M.S. in Computer Science and Engineering</strong> — 2018.03 – 2020.02 · research in Human–Computer Interaction and Visual Analytics (human–AI collaboration)</li>
-        <li><strong>B.S. in Technology Management</strong> — 2013.03 – 2018.02 · multi-disciplinary majors: Technology Management / Information Systems / Entrepreneurship, and Computer Science and Engineering</li>
+        <li><strong>B.S. in Technology Management</strong> — 2013.03 – 2018.02 · two multi-disciplinary tracks: (1) “Technology Management / Information System / Entrepreneurship”; (2) “Computer Science and Engineering”</li>
       </ul>
     </div>
 
     <h2>Military Service</h2>
     <div class="org">
-      <p style="font-size: 9.3pt;">Completed — Technical Research Personnel (전문연구요원), a 3-year alternative military service fulfilled across the TmaxEnterprise (2020.02 – 2022.05) and RIDI Corp. roles above; continued at RIDI Corp. after completing the service.</p>
-    </div>
-
-    <h2>Publications</h2>
-    <div class="org">
-      <ul>
-        <li><strong>Kihwan Kim</strong>. “An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems.” CoRR 2021 · <a href="https://arxiv.org/abs/2108.00151">arxiv.org/abs/2108.00151</a></li>
-        <li>Cheonbok Park, Chunggi Lee, Hyojin Bahng, Yunwon Tae, <strong>Kihwan Kim</strong>, Seungmin Jin, Sungahn Ko, Jaegul Choo. “ST-GRAT: A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed.” CIKM 2020 · <a href="https://dl.acm.org/doi/10.1145/3340531.3411940">dl.acm.org/doi/10.1145/3340531.3411940</a></li>
-        <li><strong>Kihwan Kim</strong>, Sanghoon Kim, Chunggi Lee, Sungahn Ko. “Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction.” MobiSys 2019 · <a href="https://dl.acm.org/doi/10.1145/3307334.3328599">dl.acm.org/doi/10.1145/3307334.3328599</a></li>
-        <li>Juyoung Oh, Chunggi Lee, Hwiyeon Kim, <strong>Kihwan Kim</strong>, Osang Kwon, Eric D. Ragan, Bum Chul Kwon, Sungahn Ko. “An Empirical Study on the Relationship Between the Number of Coordinated Views and Visual Analysis.” CoRR · <a href="https://arxiv.org/abs/2204.09524">arxiv.org/abs/2204.09524</a></li>
-        <li>Jaesung Lee, <strong>Kihwan Kim</strong>, Chunggi Lee, Sungahn Ko. “A Survey of Visualization Techniques for Interpreting Deep Learning.” Noise &amp; Vibration (journal) 2017 · <a href="http://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07266060">dbpia.co.kr</a></li>
-      </ul>
+      <p style="font-size: 9.3pt;">Completed — Technical Research Personnel (alternative military service), 2020.05 – 2023.05. Completed service while employed at TmaxEnterprise and RIDI Corp.; remained at RIDI after completion.</p>
     </div>
 
     <h2>Skills</h2>
     <div class="org">
       <ul>
         <li><strong>Frontend / Full-stack:</strong> React, Next.js, TypeScript, Node.js, SSE, server-driven UI, large-scale rendering / virtualization</li>
-        <li><strong>AI in production:</strong> Generative UI (LLM streaming UI), agent-based automation, explainable AI</li>
+        <li><strong>Applied AI:</strong> Generative UI, LLM streaming interfaces, agent-based automation, explainable AI (XAI)</li>
       </ul>
     </div>
 
@@ -151,7 +136,7 @@
         <span class="period">2026.07 – Present</span>
       </div>
       <p class="sub">Open-source MMORPG where AI agents and humans play through the same protocol (Rust · Svelte · WebAssembly).</p>
-      <ul><li>10 PRs merged, owning changes end-to-end from the TypeScript client into the Rust server — cache eviction, account bans, trade validation.</li></ul>
+      <ul><li>10 PRs merged across the TypeScript client and Rust server, including cache eviction, account-ban handling, and trade validation</li></ul>
     </div>
     <div class="org">
       <div class="org-head">
@@ -159,11 +144,20 @@
         <span class="period">2026.08 – Present</span>
       </div>
       <p class="sub">Toolchain from VoidZero — the team behind Vite and Vitest (Rust · TypeScript).</p>
-      <ul><li>Fixed a shell-integration bug in Rust (dropped working-directory flag) and covered the four shells’ templates with snapshot tests — merged (#2508).</li></ul>
+      <ul><li>Fixed a Rust shell-integration bug that dropped the working-directory flag, and added snapshot coverage for templates across four shells — merged (#2508)</li></ul>
+    </div>
+
+    <h2>Selected Publications</h2>
+    <div class="org">
+      <ul>
+        <li><strong>Kihwan Kim</strong>. “An Empirical Analysis on Transparent Algorithmic Exploration in Recommender Systems.” CoRR 2021 · <a href="https://arxiv.org/abs/2108.00151">arxiv.org/abs/2108.00151</a></li>
+        <li>Cheonbok Park, Chunggi Lee, Hyojin Bahng, Yunwon Tae, <strong>Kihwan Kim</strong>, Seungmin Jin, Sungahn Ko, Jaegul Choo. “ST-GRAT: A Novel Spatio-temporal Graph Attention Network for Accurately Forecasting Dynamically Changing Road Speed.” CIKM 2020 · <a href="https://dl.acm.org/doi/10.1145/3340531.3411940">dl.acm.org/doi/10.1145/3340531.3411940</a></li>
+        <li><strong>Kihwan Kim</strong>, Sanghoon Kim, Chunggi Lee, Sungahn Ko. “Modeling Exploration/Exploitation Decisions through Mobile Sensing for Understanding Mechanisms of Addiction.” MobiSys 2019 · <a href="https://dl.acm.org/doi/10.1145/3307334.3328599">dl.acm.org/doi/10.1145/3307334.3328599</a></li>
+      </ul>
     </div>
 
     <footer>
-      No employment gaps between the roles above. Additional details, case studies, and portfolio at <a href="https://kihwan.kim">kihwan.kim</a>.
+      Employment gaps: None. Additional details, case studies, and portfolio at <a href="https://kihwan.kim">kihwan.kim</a>.
     </footer>
   </body>
 </html>
