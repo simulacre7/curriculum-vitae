@@ -230,7 +230,8 @@
         {
           "title": "Analysis & review",
           "details": [
-            "Root-caused the task runner not exposing npm lifecycle env to package.json scripts and showed why a vite-plus-side fix can't reach cache-enabled tasks (vite-task#692). Reviews on vite-plus surfaced the same env-fingerprint filtering silently stripping the proposed lifecycle-env fix (#2385) and three verified edge cases in the Oxlint/Oxfmt config migration (#2483)."
+            "Root-caused the task runner not exposing npm lifecycle env to package.json scripts and showed why a vite-plus-side fix can't reach cache-enabled tasks (vite-task#692). Reviews on vite-plus surfaced the same env-fingerprint filtering silently stripping the proposed lifecycle-env fix (#2385).",
+            "Reviewed the dynamic Oxlint/Oxfmt config migration PR with three empirically-verified findings the author adopted, then co-authored the PR's PTY snapshot test for its new hard-error path and ran the full 154-case migration suite as its final verification (#2483, in review). Triage along the way produced a PTY-suite flakiness report backed by a five-run reproduction matrix (#2565)."
           ]
         }
       ]
