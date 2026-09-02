@@ -1,0 +1,204 @@
+<!doctype html>
+<!--
+  토스 커뮤니티 FE 대규모 채용(토스 Ads) 지원용 국문 이력서+경력기술서 통합본.
+  실제 이력(Allganize CV / 경력기술서)을 FE-craft 각(SDK·인터페이스 설계, 고밀도 어드민,
+  모노레포/툴체인, AI 워크플로우, 매출 인접)으로 재구성. 사실 불변, 강조점만 조정.
+  PDF 재생성:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless --print-to-pdf=submission/toss/KihwanKim_Toss.pdf \
+    --no-pdf-header-footer submission/toss/KihwanKim_Toss.html
+-->
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>김기환 — 이력서·경력기술서 (Frontend, 토스 Ads)</title>
+    <style>
+      :root { --black:#1a1a1a; --grey:#6b6b6b; --green:#007a3d; --line:#e3e3e3; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      @page { size:A4; margin:14mm 16mm; }
+      body {
+        font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif;
+        color:var(--black); font-size:10.5pt; line-height:1.48;
+        max-width:178mm; margin:0 auto; word-break:keep-all; overflow-wrap:break-word;
+      }
+      p, li { text-wrap:pretty; }
+      header {
+        display:flex; justify-content:space-between; align-items:baseline;
+        border-bottom:2px solid var(--black); padding-bottom:8px; margin-bottom:12px;
+      }
+      header h1 { font-size:18pt; }
+      header .role { font-size:9.5pt; color:var(--green); font-weight:600; margin-top:2px; }
+      header .who { text-align:right; font-size:8.5pt; color:var(--grey); line-height:1.5; }
+      a { color:var(--green); text-decoration:none; }
+      .intro { margin:10px 0 12px; font-size:9.5pt; }
+      h2 {
+        font-size:11.5pt; margin:15px 0 7px; padding-bottom:3px;
+        border-bottom:1px solid var(--line); break-after:avoid;
+      }
+      .highlights { margin:0 0 6px; padding:0; }
+      .highlights li { margin-left:17px; margin-bottom:3px; }
+      .highlights strong { color:var(--black); }
+      .org { margin-bottom:11px; break-inside:avoid-page; }
+      .org-head { display:flex; justify-content:space-between; align-items:baseline; }
+      .org-head h3 { font-size:10.5pt; }
+      .org-head .meta { color:var(--grey); font-size:8.5pt; }
+      .role-summary { color:var(--grey); font-size:9pt; margin:2px 0 5px; }
+      .proj { margin:6px 0 6px 6px; }
+      .proj h4 { font-size:9.5pt; margin-bottom:1px; }
+      .proj h4 .tag { font-weight:600; font-size:7.5pt; color:var(--green); background:rgba(0,122,61,.08); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:1px; white-space:nowrap; }
+      .proj .desc { color:var(--grey); font-size:8.7pt; margin-bottom:2px; }
+      .proj ul { margin-left:17px; }
+      .proj li { margin-bottom:1.5px; font-size:9pt; }
+      .stack { color:var(--grey); font-size:8pt; margin-top:4px; }
+      footer { margin-top:12px; padding-top:6px; border-top:1px solid var(--line); color:var(--grey); font-size:8pt; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>김기환</h1>
+        <div class="role">프론트엔드 엔지니어 · 7년 — 화면부터 SDK·툴체인까지, 지표에 닿는 제품을 만드는 사람</div>
+      </div>
+      <div class="who">
+        juljin1875@gmail.com<br />
+        <a href="https://kihwan.kim">kihwan.kim</a> ·
+        <a href="https://github.com/simulacre7">github.com/simulacre7</a><br />
+        서울, 대한민국
+      </div>
+    </header>
+
+    <p class="intro">
+      React·TypeScript로 7년간 제품을 만들어온 프론트엔드 엔지니어입니다. 유저가 보는
+      화면뿐 아니라 <strong>다른 개발자가 쓰는 SDK·툴체인</strong>, 상태가 복잡한
+      <strong>고밀도 어드민</strong>, 커진 코드베이스의 구조까지 다뤄왔습니다.
+      주어진 개발을 넘어 문제를 스스로 정의하고, 제약 안에서 무엇을 택하고 무엇을
+      포기했는지 설명하는 방식으로 일하며, TypeScript 클라이언트에서 Rust 서버·툴체인까지
+      필요한 곳이면 직접 고쳐 문제를 끝까지 해결합니다. Claude Code를 빌더/리뷰어
+      워크플로로 매일 씁니다.
+    </p>
+
+    <h2>핵심 역량</h2>
+    <ul class="highlights">
+      <li><strong>다른 개발자가 쓰는 것 — SDK·툴체인·라이브러리</strong>: Vite·Vitest를 만든 VoidZero 툴체인에서 쉘 통합 버그를 Rust로 고치고 네 개 쉘 템플릿을 스냅샷 테스트로 고정(<a href="https://github.com/voidzero-dev/vite-plus/pull/2508">vite-plus #2508</a>, 병합). 태스크 러너의 실행별 환경변수가 캐시를 매번 무효화하던 문제를 <code>untrackedEnv</code> 계약 확장으로 수정(<a href="https://github.com/voidzero-dev/vite-task/pull/693">vite-task #693</a>). 사내 UI 라이브러리 정리·PageAgent 확장 경험</li>
+      <li><strong>고밀도 어드민 · 대규모 렌더링</strong>: windowing·동적 높이·스크롤 복원으로 대량 리스트 가상화(리디), 탐색·결제부터 취소·반품·교환·정산까지 상태 복잡한 커머스 어드민·스튜디오 구현(Vuddy)</li>
+      <li><strong>커진 코드베이스의 구조 세우기</strong>: 서버 주도 UI로 화면 변경을 배포 주기와 분리, PHP 페이지를 React로 점진 마이그레이션, 뒤섞인 사내 위젯 라이브러리 정리·React 대체</li>
+      <li><strong>AI를 도구가 아니라 일하는 방식으로</strong>: Claude Code 빌더/리뷰어(빌더 작성→별도 모델 리뷰→테스트로 고정)를 매일 사용, LLM 스트리밍 응답을 상태 머신으로, 에이전트 출력의 신뢰성을 UI 구조(Generative UI)로 해결</li>
+      <li><strong>End-to-end · 팀 경계 넘기</strong>: 오픈소스 MMORPG에 <strong>10개 PR 병합</strong>, TypeScript 클라이언트에서 Rust 서버까지 직접 수정하고 반대하던 메인테이너를 설계 제안서로 설득(<a href="https://github.com/Julian-adv/OpenMMO">OpenMMO</a>)</li>
+    </ul>
+
+    <h2>경력</h2>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>Levvels — 프론트엔드 엔지니어</h3>
+        <span class="meta">2025.07 – 현재</span>
+      </div>
+      <p class="role-summary">AI-Native 제품과 내부 운영 자동화. GitHub 중심 협업과 동작하는 프로토타입으로 변경안을 빠르게 확인.</p>
+      <div class="proj">
+        <h4>Vuddy 커머스 프론트엔드 <span class="tag">커머스 · 어드민</span></h4>
+        <p class="desc">소비자 웹·Creator Studio·내부 Admin — 탐색·결제부터 취소·반품·교환까지 커머스 전 흐름.</p>
+        <ul>
+          <li>클래스 탐색·영상·결제, Studio 주문 관리, Admin 상품·이용권 관리 구현 — 상태가 복잡한 어드민 화면 다수</li>
+          <li>HLS 홈 캐러셀과 모바일 WebView의 safe area·스크롤·뒤로가기 개선(네이티브 연동 환경)</li>
+        </ul>
+      </div>
+      <div class="proj">
+        <h4>PageAgent 기반 운영 자동화 <span class="tag">Generative UI · 지표</span></h4>
+        <p class="desc">CS/QA가 여러 내부 도구를 오가며 확인하던 일을 브라우저 자동화로 대체, 결과와 근거를 한 화면에.</p>
+        <ul>
+          <li>LLM 응답과 실제 실행 절차를 분리해 같은 요청을 재검증 가능하게 — 에이전트 출력의 신뢰성 문제를 UI 구조로 해결</li>
+          <li>계정·결제·매핑 정보를 여러 내부 도구에서 모아 한 화면에서 비교하는 뷰 구성, 수 시간의 수작업 조사를 수 분으로 단축</li>
+          <li>Chrome Managed Profile에 맞게 Alibaba PageAgent를 확장(탭 이동·클릭·입력 자동화)하고 Slack HITL 경로 추가</li>
+        </ul>
+      </div>
+      <div class="proj">
+        <h4>AI 캐릭터 챗 <span class="tag">LLM 스트리밍</span></h4>
+        <ul>
+          <li>진행 중 스트리밍 응답과 저장된 대화를 분리하고 전송·완료·실패·재생성 상태를 설계·구현 — 중단·재시도가 잦은 LLM 응답 특성을 상태 머신으로 흡수</li>
+          <li>스토리·로어북·검색 키워드 등 콘텐츠 작성·심사 화면 구현, 기획·Figma·Swagger 불일치를 정리해 구현 기준·QA 시나리오 수립</li>
+        </ul>
+      </div>
+      <p class="stack">React · Next.js · TypeScript · TanStack Query · Zustand · SSE · Playwright · Sentry · Mixpanel · PageAgent · Generative UI · Claude Code</p>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>리디주식회사 — 프론트엔드 엔지니어</h3>
+        <span class="meta">2022.05 – 2025.07</span>
+      </div>
+      <p class="role-summary">대규모 트래픽 콘텐츠 플랫폼. 서버 주도 UI와 점진적 마이그레이션으로 운영 UI 변경·A/B 테스트를 배포 주기와 분리.</p>
+      <div class="proj">
+        <h4>대규모 리스트 렌더링 최적화 <span class="tag">가상화</span></h4>
+        <ul>
+          <li>대량 DOM 렌더링의 프레임 드랍을 계측·분석하고, windowing으로 뷰포트 영역만 렌더링(스크롤 위치·동적 높이 처리)</li>
+          <li>skeleton UI로 초기 로딩 경험 개선, 서버 주도 UI 페이로드를 Redis로 캐싱해 백엔드 부하 절감</li>
+        </ul>
+      </div>
+      <div class="proj">
+        <h4>리디 웹 플랫폼 — 서버 주도 UI · 점진적 이전</h4>
+        <ul>
+          <li>서버가 선언한 UI를 클라이언트에서 해석해 화면 변경과 배포 주기 분리, PHP 페이지를 React 구조로 점진 이전하며 마이그레이션 위험 완화</li>
+          <li>모바일·데스크탑·E-ink 등 특수 디바이스 안정성 유지, Sentry로 실사용자 오류 추적, 외부 확장 프로그램 충돌 대응</li>
+        </ul>
+      </div>
+      <p class="stack">Next.js · React · TypeScript · Emotion · Jest · 서버 주도 UI · Redis · Sentry · Virtualization · PHP</p>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>티맥스엔터프라이즈 — 연구원</h3>
+        <span class="meta">2020.02 – 2022.05</span>
+      </div>
+      <p class="role-summary">비전문가도 AI/분석 기능을 쓸 수 있도록 AutoML 플랫폼의 사용 과정·시각화·인터랙션 설계.</p>
+      <div class="proj">
+        <h4>AutoML 플랫폼 <span class="tag">예측 근거 시각화 · 라이브러리 정리</span></h4>
+        <ul>
+          <li>모델 개발 경험이 없는 사용자를 위한 코드 없는 스튜디오와 예측값·근거를 함께 확인하는 시각화 대시보드 구현</li>
+          <li>AutoML 엔진과 모델 개발자 간 인터페이스 연구로 초기 제품 구조 구체화, 용도가 뒤섞인 사내 UI 라이브러리를 정리하고 레거시 위젯을 React로 대체</li>
+        </ul>
+      </div>
+      <p class="stack">React · TypeScript · Material-UI · Python</p>
+    </div>
+
+    <h2>오픈소스 <span style="font-weight:400;font-size:9pt;color:var(--grey)">— 라이브코딩에서 함께 볼 수 있는 공개 코드</span></h2>
+    <div class="org">
+      <div class="org-head">
+        <h3><a href="https://github.com/voidzero-dev/vite-plus">vite-plus · vite-task</a> (VoidZero) — Contributor</h3>
+        <span class="meta">2026.08 – 현재</span>
+      </div>
+      <div class="proj">
+        <ul>
+          <li>쉘 래퍼가 전역 <code>-C &lt;dir&gt;</code> 플래그 뒤의 <code>vp env use</code>를 인식하지 못해 환경 변경이 현재 쉘에 적용되지 않던 문제를 <code>setup.rs</code>에서 수정, zsh·Fish·Nushell·PowerShell 자동완성이 작업 디렉토리 옵션을 보존하도록 맞추고 네 쉘 통합 템플릿을 스냅샷 테스트로 고정 (<a href="https://github.com/voidzero-dev/vite-plus/pull/2508">#2508</a>, 병합)</li>
+          <li>태스크 러너 vite-task에서 CI의 실행별 환경 변수가 캐시를 매번 무효화하던 문제를 <code>untrackedEnv</code> 계약 확장으로 수정 (<a href="https://github.com/voidzero-dev/vite-task/pull/693">#693</a>, 리뷰 중)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="org">
+      <div class="org-head">
+        <h3><a href="https://github.com/Julian-adv/OpenMMO">OpenMMO</a> — Contributor</h3>
+        <span class="meta">2026.07 – 현재</span>
+      </div>
+      <p class="role-summary">AI 에이전트와 인간이 같은 프로토콜로 플레이하는 오픈소스 MMORPG(Rust·Svelte·Three.js·WebAssembly). 클라이언트 테스트로 시작해 지금은 Rust 서버를 주로 봄. <strong>PR 10건 모두 병합</strong>.</p>
+      <div class="proj">
+        <ul>
+          <li>지형 타일 캐시가 쌓이기만 하던 문제를 읽기 경로는 락 없이 둔 채 세대 단위로 쓸어내고 용량 상한 적용(#68), 검사를 지난 접속이 그대로 들어오는 틈을 세션 락으로 막음(#95)</li>
+          <li>HUD 미니맵은 반대하던 메인테이너를 <strong>설계 제안서로 설득</strong>한 뒤 구현, 리뷰를 받아 v1 범위를 조정(#11·#77). 직접 겪은 온보딩 공백을 개발 문서·CONTRIBUTING 가이드로 메움(#78·#118)</li>
+          <li>coding agent와 빌더/리뷰어로 페어링, 테스트·린트·타입·포맷을 통과한 변경만 제출</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>학력</h2>
+    <div class="org">
+      <div class="org-head">
+        <h3>울산과학기술원 (UNIST)</h3>
+        <span class="meta">2013 – 2020</span>
+      </div>
+      <p class="role-summary">전산학 석사 (HCI · Visual Analytics; 사람–AI 협업) · 기술경영 학사 (전산학 융합전공)</p>
+    </div>
+
+    <footer>
+      전체 이력·케이스 스터디·포트폴리오는 <a href="https://kihwan.kim">kihwan.kim</a> · 코드는 <a href="https://github.com/simulacre7">github.com/simulacre7</a>.
+    </footer>
+  </body>
+</html>
