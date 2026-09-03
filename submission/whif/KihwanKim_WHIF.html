@@ -1,0 +1,226 @@
+<!doctype html>
+<!--
+  BUNKERKIDS(WHIF) Full-stack Product Engineer 검토용 국문 이력서+경력기술서 통합본.
+  submission/toss/KihwanKim_Toss.html의 A4 compact CV 톤을 유지하고,
+  WHIF 공고의 "시작 무기 + E2E product engineer" 문맥에 맞춰 재구성.
+  PDF 재생성:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+    --headless --print-to-pdf=outputs/KihwanKim_WHIF_Fullstack_Product_Engineer.pdf \
+    --no-pdf-header-footer work/KihwanKim_WHIF.html
+-->
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>김기환 — 이력서·경력기술서 (AI Product Engineer, WHIF)</title>
+    <style>
+      :root { --black:#1a1a1a; --grey:#6b6b6b; --green:#007a3d; --line:#e3e3e3; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      @page { size:A4; margin:15mm 16mm; }
+      body {
+        font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',sans-serif;
+        color:var(--black); font-size:10.5pt; line-height:1.5;
+        max-width:178mm; margin:0 auto; word-break:keep-all; overflow-wrap:break-word;
+      }
+      p, li { text-wrap:pretty; }
+      header {
+        display:flex; justify-content:space-between; align-items:baseline;
+        border-bottom:2px solid var(--black); padding-bottom:8px; margin-bottom:12px;
+      }
+      header h1 { font-size:18pt; }
+      header .role { font-size:9.5pt; color:var(--green); font-weight:600; margin-top:2px; }
+      header .who { text-align:right; font-size:8.5pt; color:var(--grey); line-height:1.5; }
+      a { color:var(--green); text-decoration:none; }
+      .intro { margin:11px 0 13px; font-size:9.7pt; }
+      h2 {
+        font-size:11.5pt; margin:16px 0 7px; padding-bottom:3px;
+        border-bottom:1px solid var(--line); break-after:avoid;
+      }
+      .highlights { margin:0; padding:0; }
+      .highlights li { margin-left:17px; margin-bottom:5px; }
+      .highlights strong { color:var(--black); }
+      .org { margin-bottom:12px; }
+      .org-head { display:flex; justify-content:space-between; align-items:baseline; }
+      .org-head h3 { font-size:10.5pt; }
+      .org-head .meta { color:var(--grey); font-size:8.5pt; }
+      .role-summary { color:var(--grey); font-size:9pt; margin:2px 0 6px; }
+      .proj { margin:7px 0 7px 6px; break-inside:avoid-page; }
+      .proj h4 { font-size:9.5pt; margin-bottom:2px; }
+      .proj h4 .tag {
+        font-weight:600; font-size:7.5pt; color:var(--green);
+        background:rgba(0,122,61,.08); border-radius:4px; padding:1px 6px;
+        margin-left:6px; vertical-align:1px; white-space:nowrap;
+      }
+      .proj ul { margin-left:17px; }
+      .proj li { margin-bottom:2.5px; font-size:9pt; }
+      .stack { color:var(--grey); font-size:8pt; margin-top:5px; }
+      footer { margin-top:13px; padding-top:6px; border-top:1px solid var(--line); color:var(--grey); font-size:8pt; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>김기환</h1>
+        <div class="role">Frontend-first Full-stack Product Engineer · AI Chat / LLM UX / Commerce</div>
+      </div>
+      <div class="who">
+        <a href="mailto:juljin1875@gmail.com">juljin1875@gmail.com</a><br />
+        <a href="https://kihwan.kim">kihwan.kim</a> ·
+        <a href="https://github.com/simulacre7">github.com/simulacre7</a><br />
+        서울, 대한민국
+      </div>
+    </header>
+
+    <p class="intro">
+      React·TypeScript를 주 무기로 프로덕션 제품을 만들어온 7년 차 엔지니어입니다.
+      최근에는 AI 캐릭터 챗의 LLM 스트리밍 런타임, 결제·구독 흐름, PageAgent 기반 운영 자동화를
+      다뤘습니다. 프론트엔드를 시작점으로 API 계약, LLM 응답, 정책 상태, 결제 실패 경로까지 연결해
+      기능을 끝까지 완성하는 방식으로 일합니다.
+    </p>
+
+    <h2>핵심 역량</h2>
+    <ul class="highlights">
+      <li><strong>AI 캐릭터 챗 · LLM UX</strong> — 사용자 메시지 전송, assistant delta, complete, blocked/error, retryable failure를 분리한 스트리밍 상태 모델 구현. 재생성, 후보 버전 선택, 실패 후 재시도, 구조화 메시지 refetch까지 포함해 AI 챗 특유의 비동기 정합성을 다룸</li>
+      <li><strong>Frontend-first full-stack ownership</strong> — PM/policy 문서를 FE-facing spec으로 정리하고, 화면 정책·API 계약·상태 모델·테스트를 함께 설계. 문제 해결에 필요하면 LLM 실험, 백엔드 계약, 결제 흐름, 운영 도구까지 함께 봄</li>
+      <li><strong>유료 B2C 제품 · 운영 자동화</strong> — 결제·구독·권한 흐름에서 PG 오류, 진행 lock, 성공 후 사용자/구독 정보 갱신 등 매출과 직결된 실패 경로를 처리. PageAgent 기반 QA/CS 자동화에서는 LLM 결과와 실제 실행 근거를 분리하고 사람이 이어받을 수 있는 흐름을 설계</li>
+    </ul>
+
+    <h2>경력</h2>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>Levvels — 프론트엔드 엔지니어 / AI Product Engineer</h3>
+        <span class="meta">2025.07 – 현재</span>
+      </div>
+      <p class="role-summary">AI 챗, 생성형 UI, 브라우저 에이전트, 커머스/결제 영역을 제품 단위로 구현·운영.</p>
+
+      <div class="proj">
+        <h4>AI 캐릭터 챗 프론트엔드 런타임 <span class="tag">LLM 스트리밍</span></h4>
+        <ul>
+          <li>Next.js App Router, TypeScript, TanStack Query, Zustand 기반 AI 캐릭터 챗 웹 프론트엔드 기반 구조 구현</li>
+          <li>진행 중 스트리밍 응답과 저장된 대화를 분리하고 전송·완료·실패·재생성 상태 머신으로 설계 — 중단·재시도가 잦은 LLM 응답 특성을 흡수</li>
+          <li>단일 진행(single-flight), stale refetch 무효화, stream completion 이후 구조화 메시지 재조회로 진행 중 응답과 서버 read model의 정합성 제어</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <h4>커머스·결제 프론트엔드 <span class="tag">Payment · subscription</span></h4>
+        <ul>
+          <li>상품 선택, checkout, 결제 결과, 결제 수단 변경, 구독 해지/재개 등 유료 서비스의 핵심 전환 흐름 구현</li>
+          <li>KCP 결제창 연동, PG 오류 코드·메시지 노출, 결제 진행 lock, 성공 후 사용자/구독 정보 갱신 등 실패 경로를 사용자 행동으로 연결</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <h4>PageAgent 기반 QA/CS 자동화 <span class="tag">Browser Agent</span></h4>
+        <ul>
+          <li>Alibaba PageAgent를 사내 QA/CS 자동화용 Chrome Extension으로 확장하고, LiteLLM 호환 endpoint·Claude 모델 설정·사내 네트워크 경로 통제 기준 정리</li>
+          <li>QA/CS 담당자가 여러 시스템을 오가며 반복 확인하던 흐름을 브라우저 에이전트가 수행할 수 있도록 route/auth/checklist reference 주입</li>
+          <li>AI가 조용히 실패하지 않도록 결과 확인, 실패 이유 노출, 사람이 이어받을 수 있는 운영 흐름을 함께 설계</li>
+        </ul>
+      </div>
+      <p class="stack">React · Next.js · TypeScript · TanStack Query · Zustand · SSE · Jest · Playwright · Storybook · LLM API · Browser Agent · Chrome Extension · Sentry · Amplitude · ChannelTalk</p>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>RIDI Corp. — 프론트엔드 개발자</h3>
+        <span class="meta">2022.05 – 2025.07</span>
+      </div>
+      <p class="role-summary">MAU 213만 규모 콘텐츠 플랫폼에서 서버 주도 UI, 점진적 React 전환, 렌더링 성능과 사용자 환경 안정화 담당.</p>
+      <div class="proj">
+        <h4>서버 주도 UI — RiGrid <span class="tag">Schema-driven UI</span></h4>
+        <ul>
+          <li>운영자가 서버에서 선언한 UI를 클라이언트가 해석하고 렌더링하는 구조를 구현해 운영 UI 변경과 실험을 배포 주기에서 분리</li>
+          <li>GraphQL 기반 Grid/Cell 인터페이스로 UI 구성과 비즈니스 데이터를 분리하고, 기존 클라이언트를 깨지 않도록 스키마 확장</li>
+        </ul>
+      </div>
+      <div class="proj">
+        <h4>대규모 리스트 렌더링 최적화 <span class="tag">Performance</span></h4>
+        <ul>
+          <li>6,000개 이상 콘텐츠 리스트에서 대량 DOM 렌더링으로 발생한 프레임 드랍과 상호작용 지연을 분석</li>
+          <li>windowing, 동적 높이 처리, 스크롤 위치 복원, skeleton UI를 적용해 고밀도 화면의 체감 속도와 안정성을 개선</li>
+        </ul>
+      </div>
+      <div class="proj">
+        <h4>사용자 환경 안정화 <span class="tag">Production reliability</span></h4>
+        <ul>
+          <li>Sentry 기반 실제 사용자 오류 추적, 번역 플러그인 충돌 대응, E-ink 기기 렌더링 이슈 해결 등 다양한 실행 환경의 안정화 수행</li>
+          <li>PHP/Twig 기반 페이지를 React 구조로 점진 이전하며 기존 운영 환경을 깨지 않는 migration 전략 수행</li>
+        </ul>
+      </div>
+      <p class="stack">React · Next.js · TypeScript · Emotion · Jest · PHP · Twig · GraphQL · Sentry · Virtualization</p>
+    </div>
+
+    <div class="org">
+      <div class="org-head">
+        <h3>TmaxEnterprise — 연구원</h3>
+        <span class="meta">2020.02 – 2022.05</span>
+      </div>
+      <p class="role-summary">AutoML 플랫폼과 비전문가용 AI 도구의 제품 흐름과 프론트엔드 인터페이스 설계.</p>
+      <div class="proj">
+        <h4>AutoML 플랫폼·XAI 대시보드 <span class="tag">AI UX · Python</span></h4>
+        <ul>
+          <li>비전문가가 모델 학습·평가 흐름을 사용할 수 있는 codeless AutoML studio와 설명 가능한 AI 시각화 대시보드 구현</li>
+          <li>모델 전체는 feature importance로, 개별 예측은 surrogate model과 대표 인스턴스로 설명하고 What-if 흐름 구성</li>
+          <li>jQuery 기반 레거시 UI를 React로 전환하며 재사용 가능한 컴포넌트 구조와 더 명확한 API 경계를 설계</li>
+        </ul>
+      </div>
+      <p class="stack">React · TypeScript · Material-UI · Sass · Python · jQuery</p>
+    </div>
+
+    <h2>오픈소스·사이드 프로젝트</h2>
+    <div class="org">
+      <div class="org-head">
+        <h3><a href="https://github.com/Julian-adv/OpenMMO">OpenMMO</a> — Contributor</h3>
+        <span class="meta">2026.07 – 현재</span>
+      </div>
+      <p class="role-summary">AI 에이전트와 인간이 같은 프로토콜로 플레이하는 오픈소스 MMORPG(Rust · Svelte · Three.js · WebAssembly).</p>
+      <div class="proj">
+        <ul>
+          <li>클라이언트 테스트와 문서 개선으로 시작해 Rust 서버 이슈까지 범위를 넓혔고, 지형 타일 캐시 정리·세션 락 등 서버 안정성 개선에 기여</li>
+          <li>HUD 미니맵 제안은 설계 문서로 범위를 합의한 뒤 구현했고, 온보딩 공백은 개발 문서와 CONTRIBUTING 가이드로 보완</li>
+        </ul>
+      </div>
+    </div>
+    <div class="org">
+      <div class="org-head">
+        <h3><a href="https://github.com/voidzero-dev/vite-plus">vite-plus · vite-task</a> — Contributor</h3>
+        <span class="meta">2026.08 – 현재</span>
+      </div>
+      <p class="role-summary">Vite 생태계 VoidZero의 Vite+ 툴체인(Rust · TypeScript).</p>
+      <div class="proj">
+        <ul>
+          <li>쉘 래퍼가 전역 <code>-C &lt;dir&gt;</code> 뒤의 <code>vp env use</code>를 인식하지 못하던 문제를 수정하고 네 개 쉘 통합 템플릿을 테스트로 고정</li>
+          <li>태스크 러너의 CI 실행별 환경 변수가 캐시를 무효화하던 문제를 <code>untrackedEnv</code> 계약 확장으로 개선</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>학력·연구</h2>
+    <div class="org">
+      <div class="org-head">
+        <h3>울산과학기술원 (UNIST)</h3>
+        <span class="meta">2013.03 – 2020.02</span>
+      </div>
+      <p class="role-summary">컴퓨터공학 석사 · 기술경영학 학사(컴퓨터공학 융합전공). HCI, Visual Analytics, 추천 시스템의 사용자 피드백과 로그 품질 연구.</p>
+      <div class="proj">
+        <ul>
+          <li>웹 기반 영화 추천 실험 시스템을 구현하고 Amazon MTurk 참가자 94명의 사용 로그와 설문 응답을 분석</li>
+          <li>사용자가 AI 시스템의 판단을 어떻게 이해하고 신뢰하는지에 대한 연구 관점을 실제 AI 제품 개발에 연결</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>대표 기술 역량</h2>
+    <ul class="highlights">
+      <li><strong>Frontend</strong> — React, Next.js, TypeScript, SPA architecture, App Router, mobile web, design system, server/schema-driven UI</li>
+      <li><strong>AI Product</strong> — LLM streaming UI, chat state machine, prompt/API integration, regeneration flow, structured UI, Browser Agent</li>
+      <li><strong>Backend-adjacent</strong> — API contract design, schema-based communication, async workflow, payment integration, Python scripting, Rust contribution</li>
+      <li><strong>Quality / Operation</strong> — Jest, Playwright, Storybook, typecheck/lint, Sentry, monitoring-friendly error states, agentic coding review loop</li>
+    </ul>
+
+    <footer>
+      전체 이력·케이스 스터디는 <a href="https://kihwan.kim">kihwan.kim</a> · 코드는 <a href="https://github.com/simulacre7">github.com/simulacre7</a>.
+    </footer>
+  </body>
+</html>
